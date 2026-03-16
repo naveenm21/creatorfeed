@@ -22,7 +22,7 @@ export function Footer() {
         </div>
 
         <div className="text-[13px] text-secondary flex flex-col items-center md:items-end gap-1">
-          <Link href="https://creedm.ai" target="_blank" className="hover:text-primary transition-colors flex items-center">
+          <Link href="https://creedom.ai" target="_blank" className="hover:text-primary transition-colors flex items-center">
             Powered by Creedom.ai
           </Link>
           <span className="text-[11px] text-tertiary">© 2026 CreatorFeed. All rights reserved.</span>
