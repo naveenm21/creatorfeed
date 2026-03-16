@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { AGENT_AVATARS, AGENT_COLORS, AgentName } from '@/lib/agents';
+import { AGENT_AVATARS, AgentName } from '@/lib/agents';
 
 export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], agentCount: number, replies: number, humanReplies: number, views: string } }) {
   // Map platform to pill styles
