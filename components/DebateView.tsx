@@ -370,48 +370,41 @@ export function DebateView({
                   className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[90px] resize-none mb-4"
                 />
 
-                <div className="mb-4">
-                  <span className="text-[12px] text-secondary mr-3 font-medium">Responding to:</span>
-                  <div className="inline-flex flex-wrap gap-2 mt-2">
-                    {['General', ...uniqueAgentNames].map(agt => {
-                      const isSelected = respondingTo === agt;
-                      const agtColor = AGENT_COLORS[agt as keyof typeof AGENT_COLORS] || '#888';
-                      return (
-                        <button
-                          key={agt}
-                          onClick={() => setRespondingTo(agt)}
-                          className={`text-[12px] px-3 py-1 rounded-full border transition-colors ${
-                            isSelected ? 'text-white border-transparent' : 'text-secondary border-[#1F1F1F] hover:border-gray-500'
-                          }`}
-                          style={isSelected ? { backgroundColor: agt === 'General' ? '#7C3AED' : agtColor } : {}}
-                        >{agt}</button>
-                      );
-                    })}
-                  </div>
-                </div>
-
                 <div className="flex flex-col sm:flex-row gap-3 mb-4">
                   {['agree', 'disagree'].map(s => (
                     <button
                       key={s}
                       onClick={() => setSentiment(sentiment === s ? '' : s)}
-                      className={`flex-1 h-9 rounded-lg text-[13px] font-medium border transition-colors flex items-center justify-center ${
+                      className={`flex-1 h-11 rounded-xl text-[14px] font-medium border transition-all flex items-center justify-center gap-2 ${
                         sentiment === s
-                          ? s === 'agree' ? 'bg-green-900/40 text-green-400 border-green-500' : 'bg-red-900/40 text-red-400 border-red-500'
-                          : `bg-[#111] text-secondary border-[#1F1F1F] ${s === 'agree' ? 'hover:border-green-500/50' : 'hover:border-red-500/50'}`
+                          ? s === 'agree' ? 'bg-green-500 text-white border-green-500' : 'bg-red-500 text-white border-red-500'
+                          : `bg-[#111] text-secondary border-[#1F1F1F] ${s === 'agree' ? 'hover:border-green-500/50 hover:text-green-400' : 'hover:border-red-500/50 hover:text-red-400'}`
                       }`}
                     >
-                      {s === 'agree' ? '↑ I agree with the agents' : '↓ I disagree — here\'s why'}
+                      {s === 'agree' ? (
+                        <>
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                          I agree with agents
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                          I don't agree with agents
+                        </>
+                      )}
                     </button>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center justify-between mt-6">
                   <span className="text-[12px] text-tertiary">No account needed to reply</span>
                   <button
-                    onClick={handleReplySubmit}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleReplySubmit();
+                    }}
                     disabled={replySubmitting || !replyText.trim()}
-                    className="bg-gradient-to-r from-brandprimary to-brandorange text-white text-[13px] font-medium px-5 py-2 rounded-xl hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold px-8 py-3 rounded-xl hover:opacity-90 transform active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brandprimary/20"
                   >
                     {replySubmitting ? 'Posting...' : 'Post Your Take →'}
                   </button>
@@ -423,27 +416,18 @@ export function DebateView({
                   <p className="text-center text-secondary py-8">No community replies yet. Be the first!</p>
                 ) : (
                   humanReplies.map((item, i) => {
-                    const tagColor = item.agent_referenced ? (AGENT_COLORS[item.agent_referenced as keyof typeof AGENT_COLORS] || '#888') : null;
                     return (
                       <div key={item.id}>
                         <div className="flex flex-col">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="text-[14px] font-bold text-white">{item.author_name || 'Anonymous'}</span>
-                            {item.sentiment === 'agree' && <span className="text-green-400 text-[11px] font-medium bg-green-500/10 px-2 py-0.5 rounded-full">Agreed</span>}
-                            {item.sentiment === 'disagree' && <span className="text-red-400 text-[11px] font-medium bg-red-500/10 px-2 py-0.5 rounded-full">Disagreed</span>}
+                          <div className="flex items-center gap-3 mb-2">
+                            <span className="text-[15px] font-bold text-white">{item.author_name || 'Anonymous'}</span>
+                            {item.sentiment === 'agree' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
+                            {item.sentiment === 'disagree' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
+                            <span className="text-[12px] text-[#444] ml-auto">
+                              {new Date(item.created_at).toLocaleDateString()}
+                            </span>
                           </div>
-                          {item.agent_referenced && (
-                            <div className="mb-2">
-                              <span
-                                className="inline-flex items-center text-[12px] font-medium px-2.5 py-0.5 rounded-full"
-                                style={{ color: tagColor || '#FFF', backgroundColor: tagColor ? `${tagColor}20` : '#222', border: `1px solid ${tagColor}40` }}
-                              >
-                                <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" /></svg>
-                                Responding to {item.agent_referenced}
-                              </span>
-                            </div>
-                          )}
-                          <p className="text-[15px] text-secondary leading-[1.6]">{item.reply_text}</p>
+                          <p className="text-[15px] text-secondary leading-[1.6] bg-[#0A0A0A] p-4 rounded-xl border border-[#1F1F1F]">{item.reply_text}</p>
                         </div>
                         {i !== humanReplies.length - 1 && <div className="w-full h-px bg-[#1F1F1F] mt-6" />}
                       </div>
@@ -463,19 +447,19 @@ export function DebateView({
               ) : (
                 <>
                   {verdict && (
-                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-8">
+                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-10">
                       <div className="flex items-center gap-2 mb-4">
                         <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
                         <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">AI Consensus Verdict</span>
                       </div>
-                      <p className="text-[15px] text-white leading-[1.8] mb-5">{verdict.verdict_text}</p>
+                      <p className="text-[16px] text-white leading-[1.8] mb-6 font-medium">{verdict.verdict_text}</p>
                       {(verdict.key_takeaway_1 || verdict.key_takeaway_2 || verdict.key_takeaway_3) && (
-                        <div className="space-y-2 border-t border-[#1F1F1F] pt-4 mt-2">
-                          <p className="text-[12px] uppercase tracking-widest text-secondary font-bold mb-3">Key Takeaways</p>
+                        <div className="space-y-4 border-t border-[#1F1F1F] pt-6 mt-2">
+                          <p className="text-[12px] uppercase tracking-widest text-secondary font-bold mb-1">Key Takeaways</p>
                           {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
-                            <div key={i} className="flex items-start gap-3">
-                              <span className="text-brandprimary font-bold text-[14px] mt-0.5">{i + 1}.</span>
-                              <p className="text-[14px] text-secondary leading-relaxed">{t}</p>
+                            <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+                              <span className="text-brandprimary font-black text-[16px]">{i + 1}</span>
+                              <p className="text-[14px] text-primary leading-relaxed">{t}</p>
                             </div>
                           ))}
                         </div>
@@ -484,18 +468,18 @@ export function DebateView({
                   )}
 
                   {finalPositions.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-4">Individual Agent Closings</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="mb-12">
+                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-6 pl-1">Individual Agent Closings</h3>
+                      <div className="space-y-6">
                         {finalPositions.map(fp => {
                           const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
                           return (
-                            <div key={fp.id} className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl p-4 flex flex-col">
-                              <div className="flex items-center gap-2 mb-2">
-                                <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-[11px] font-bold" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
-                                <span className="font-bold text-white text-[13px]">{fp.agent_name}</span>
+                            <div key={fp.id} className="border-l-[3px] pl-6 py-1 transition-all" style={{ borderLeftColor: color }}>
+                              <div className="flex items-center gap-3 mb-3">
+                                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-black shadow-lg" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
+                                <span className="font-bold text-white text-[15px]">{fp.agent_name}</span>
                               </div>
-                              <p className="text-[13px] text-secondary leading-relaxed line-clamp-3">{fp.response_text}</p>
+                              <p className="text-[14px] text-secondary leading-[1.7]">{fp.response_text}</p>
                             </div>
                           );
                         })}
