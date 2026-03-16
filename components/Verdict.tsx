@@ -1,16 +1,21 @@
-export function Verdict({ content }: { content: string }) {
+export function Verdict({ content, agentCount }: { content: string, agentCount: number }) {
   return (
-    <div className="bg-[#0A0A0A] border rounded-r-xl border-borderdefault border-l-0 relative p-5 pl-6">
-      <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gold rounded-l-md"></div>
+    <div className="bg-[#0A0A0A] border rounded-xl border-borderdefault relative p-5 overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-gold"></div>
       
-      <div className="mb-2">
-        <span className="text-[12px] font-medium text-gold uppercase tracking-[0.05em]">
-          The Verdict
+      <div className="mb-3 mt-1 flex items-center space-x-2">
+        <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+        <span className="text-[13px] font-bold text-white uppercase tracking-[0.05em]">
+          The AI Verdict
         </span>
       </div>
       
-      <div className="text-[16px] font-medium text-white leading-[1.7] whitespace-pre-wrap">
+      <div className="text-[15px] font-normal text-primary leading-[1.6] whitespace-pre-wrap mb-4">
         {content}
+      </div>
+
+      <div className="text-[12px] text-tertiary border-t border-borderdefault pt-3">
+        Synthesized from {agentCount} AI perspectives
       </div>
     </div>
   );

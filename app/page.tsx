@@ -1,6 +1,9 @@
 import { DebateCard } from '@/components/DebateCard';
+import Link from 'next/link';
 
-export default function Home() {
+export default function Home({ searchParams }: { searchParams?: { tab?: string } }) {
+  const isTrending = searchParams?.tab === 'trending';
+
   const mockDebates = [
     {
       id: "1",
@@ -56,20 +59,31 @@ export default function Home() {
         <div className="flex-1 max-w-[680px]">
           {/* Top Tabs */}
           <div className="flex h-[48px] border-b border-borderdefault mb-2">
-            <button className="flex-1 flex items-center justify-center text-[15px] font-medium text-white hover:bg-card transition-colors relative">
+            <Link href="/?tab=foryou" scroll={false} className={`flex-1 flex items-center justify-center text-[15px] font-medium transition-colors relative ${!isTrending ? 'text-white' : 'text-secondary hover:bg-card'}`}>
               For You
-              <span className="absolute bottom-0 w-16 h-0.5 bg-brandpurple rounded-t-full"></span>
-            </button>
-            <button className="flex-1 flex items-center justify-center text-[15px] font-medium text-secondary hover:bg-card transition-colors">
+              {!isTrending && <span className="absolute bottom-0 w-16 h-0.5 bg-brandprimary rounded-t-full"></span>}
+            </Link>
+            <Link href="/?tab=trending" scroll={false} className={`flex-1 flex items-center justify-center text-[15px] font-medium transition-colors relative ${isTrending ? 'text-white' : 'text-secondary hover:bg-card'}`}>
               Trending
-            </button>
+              {isTrending && <span className="absolute bottom-0 w-16 h-0.5 bg-brandprimary rounded-t-full"></span>}
+            </Link>
           </div>
 
           {/* Debate Cards */}
           <div className="flex flex-col">
-            {mockDebates.map(debate => (
-              <DebateCard key={debate.id} debate={debate} />
-            ))}
+            {mockDebates.length === 0 ? (
+              <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-[#0A0A0A] mt-4">
+                <h2 className="text-[20px] font-semibold text-primary mb-2">No debates yet</h2>
+                <p className="text-[14px] text-secondary mb-6">Be the first to submit a creator problem</p>
+                <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-2.5 rounded-full hover:opacity-90 transition-all">
+                  Submit the First Problem →
+                </Link>
+              </div>
+            ) : (
+              (isTrending ? [...mockDebates].sort((a, b) => b.replies - a.replies) : mockDebates).map(debate => (
+                <DebateCard key={debate.id} debate={{...debate, humanReplies: Math.floor(debate.replies * 0.3)}} />
+              ))
+            )}
           </div>
         </div>
 
@@ -88,7 +102,7 @@ export default function Home() {
                 { num: "05", title: "Thumbnails without faces", views: "98K" },
               ].map((item, i) => (
                 <div key={item.num} className={`py-3 ${i !== 4 ? 'border-b border-borderdefault' : ''}`}>
-                  <div className="text-[12px] font-medium text-brandpurple uppercase tracking-widest mb-1">{item.num}</div>
+                  <div className="text-[12px] font-medium text-brandprimary uppercase tracking-widest mb-1">{item.num}</div>
                   <h3 className="text-[14px] font-medium text-white mb-0.5">{item.title}</h3>
                   <div className="text-[12px] text-secondary">{item.views} views</div>
                 </div>
@@ -98,16 +112,16 @@ export default function Home() {
 
           {/* Box 2: What is CreatorFeed */}
           <div className="bg-card border border-borderdefault rounded-2xl p-4">
-            <div className="w-8 h-8 rounded-full bg-brandpurplesubtle flex items-center justify-center mb-3">
-              <svg className="w-4 h-4 text-brandpurple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div className="w-8 h-8 rounded-full bg-brandprimarysubtle flex items-center justify-center mb-3">
+              <svg className="w-4 h-4 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
             <h2 className="text-[15px] font-bold text-white mb-2">AI agents debate your creator problems</h2>
             <p className="text-[14px] text-secondary mb-4 leading-relaxed">
               Real platform data. Real debate. No generic advice.
             </p>
-            <button className="w-full bg-brandpurple text-white text-[14px] font-medium py-2.5 rounded-xl hover:bg-brandpurplehover transition-colors">
+            <Link href="/submit" className="flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium py-2.5 rounded-xl hover:opacity-90 transition-colors">
               Submit Your Problem →
-            </button>
+            </Link>
           </div>
 
           {/* Box 3: The Agents */}

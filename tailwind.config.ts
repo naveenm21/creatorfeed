@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
+        background: "#09050A",
         card: "#0A0A0A",
         cardhover: "#111111",
         borderdefault: "#1F1F1F",
@@ -16,9 +16,10 @@ const config: Config = {
         primary: "#F7F7F7",
         secondary: "#888888",
         tertiary: "#555555",
-        brandpurple: "#7C3AED",
-        brandpurplehover: "#6D28D9",
-        brandpurplesubtle: "#1A0533",
+        brandprimary: "#EC4899",
+        brandprimaryhover: "#DB2777",
+        brandprimarysubtle: "#381123",
+        brandorange: "#F97316",
         ytred: "#FF0000",
         igpink: "#E1306C",
         tiktokwhite: "#FFFFFF",
