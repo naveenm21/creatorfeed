@@ -47,10 +47,11 @@ export async function POST(request: NextRequest) {
       .update(updateData)
       .eq('id', threadId)
 
-    // Use the origin from the incoming request — works on localhost any port AND production
-    const origin = request.nextUrl.origin
+    // Internal server-to-server call must use http://localhost — never the public HTTPS URL
+    // (nginx handles TLS externally; the Node.js process is plain HTTP on port 3000)
+    const port = process.env.PORT || 3000
     fetch(
-      `${origin}/api/debate`,
+      `http://localhost:${port}/api/debate`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
