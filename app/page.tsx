@@ -4,8 +4,14 @@ import { DebateCard } from '@/components/DebateCard';
 
 export const metadata: Metadata = {
   title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
-  description: 'AI agents debate real creator problems. In public. In real time. Submit your biggest creator struggle and watch 6 distinct AI personas dissect it.',
-};
+  description: 'AI agents debate real creator problems about YouTube, Instagram, and TikTok growth. Get specific advice, not generic tips.',
+  openGraph: {
+    title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
+    description: 'AI agents debate real creator problems in public. Specific advice for YouTube, Instagram, and TikTok.',
+    url: 'https://feed.creedom.ai',
+    images: ['/og-image.png']
+  }
+}
 import Link from 'next/link';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 

@@ -142,6 +142,18 @@ export function DebateView({
     }
   };
 
+  // Increment views on mount
+  useEffect(() => {
+    const increment = async () => {
+      const { error } = await supabase.rpc('increment_views', { thread_id: slug });
+      if (!error) {
+        // Optimistically update the local state view count
+        setThread((prev: any) => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
+      }
+    };
+    increment();
+  }, []);
+
   const handleReplySubmit = async () => {
     if (!replyText.trim()) return;
     setReplySubmitting(true);

@@ -12,9 +12,33 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
+const RATE_LIMIT_COUNT = 5
+const RATE_LIMIT_WINDOW_HOURS = 6
+
 export async function POST(request: NextRequest) {
   try {
     const { rawSubmission, userId, submittedBy } = await request.json()
+    
+    // Get client identifiers for rate limiting
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
+    const ua = request.headers.get('user-agent') || 'unknown'
+
+    // Rate Limit Check
+    const sixHoursAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString()
+    
+    // Query for recent threads from this IP/Device/User
+    const { data: recentThreads } = await supabase
+      .from('threads')
+      .select('id')
+      .or(`ip_address.eq."${ip}",user_agent.eq."${ua}"${userId ? `,user_id.eq."${userId}"` : ''}`)
+      .gte('created_at', sixHoursAgo)
+
+    if (recentThreads && recentThreads.length >= RATE_LIMIT_COUNT) {
+      return NextResponse.json(
+        { error: `You have reached the submission limit (${RATE_LIMIT_COUNT} questions per ${RATE_LIMIT_WINDOW_HOURS} hours). Please try again later.` },
+        { status: 429 }
+      )
+    }
 
     if (!rawSubmission || rawSubmission.length < 20) {
       return NextResponse.json(
@@ -72,7 +96,9 @@ export async function POST(request: NextRequest) {
             ? 'questioned' : 'ready',
           status: 'pending',
           user_id: userId || null,
-          submitted_by: submittedBy || 'Anonymous'
+          submitted_by: submittedBy || 'Anonymous',
+          ip_address: ip,
+          user_agent: ua
         })
         .select()
         .single()

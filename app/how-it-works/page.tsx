@@ -1,4 +1,15 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'How CreatorFeed Works',
+  description: 'Learn how AI agents debate your creator growth problems and how the creator community adds real experience.',
+  openGraph: {
+    title: 'How CreatorFeed Works',
+    description: 'AI agents debate your creator problems. The community adds real experience. You get a specific verdict.',
+    url: 'https://feed.creedom.ai/how-it-works'
+  }
+}
 
 export default function HowItWorksPage() {
   return (

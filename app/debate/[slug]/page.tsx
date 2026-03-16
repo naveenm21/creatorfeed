@@ -11,38 +11,66 @@ type Props = {
 };
 
 // Generate Dynamic SEO Metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const supabase = await createServerSupabaseClient();
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: { slug: string } 
+}): Promise<Metadata> {
+  const supabase = await createServerSupabaseClient()
+  
   const { data: thread } = await supabase
     .from('threads')
-    .select('topic, raw_submission')
+    .select('topic, platform, raw_submission, created_at')
     .eq('id', params.slug)
-    .single();
+    .single()
 
-  if (!thread) return { title: 'Debate Not Found' };
+  if (!thread) {
+    return {
+      title: 'Debate Not Found',
+      description: 'This debate could not be found.'
+    }
+  }
+
+  const { data: verdict } = await supabase
+    .from('verdicts')
+    .select('verdict_text')
+    .eq('thread_id', params.slug)
+    .single()
+
+  const title = `${thread.topic} — AI Agents Debate`
+  const description = verdict?.verdict_text 
+    ? verdict.verdict_text.substring(0, 155)
+    : `AI agents debate this ${thread.platform || 'creator'} growth problem. Get platform-specific advice, not generic tips.`
 
   return {
-    title: thread.topic.length > 55 ? `${thread.topic.substring(0, 52)}...` : thread.topic,
-    description: thread.raw_submission.length > 150 ? `${thread.raw_submission.substring(0, 147)}...` : thread.raw_submission,
+    title,
+    description,
     openGraph: {
-      title: thread.topic,
-      description: thread.raw_submission,
+      title,
+      description,
+      url: `https://feed.creedom.ai/debate/${params.slug}`,
       type: 'article',
+      publishedTime: thread.created_at,
+      tags: [
+        thread.platform || 'creator',
+        'creator growth',
+        'AI debate'
+      ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: thread.topic,
-      description: thread.raw_submission,
+      title,
+      description
+    },
+    alternates: {
+      canonical: `https://feed.creedom.ai/debate/${params.slug}`
     }
-  };
+  }
 }
 
 export default async function DebatePage({ params }: Props) {
   const supabase = await createServerSupabaseClient();
   const { slug } = params;
-
-  // Track view asynchronously 
-  supabase.rpc('increment_views', { thread_id: slug }).then(() => {});
 
   // Fetch thread data
   const { data: thread } = await supabase
@@ -78,45 +106,85 @@ export default async function DebatePage({ params }: Props) {
     humanReplies = h || [];
   }
 
-  // Construct JSON-LD Structured Data
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'DiscussionForumPosting',
-    '@id': `https://feed.creedom.ai/debate/${slug}`,
-    headline: thread.topic,
-    text: thread.raw_submission,
-    author: {
-      '@type': 'Person',
-      name: thread.submitted_by || 'Anonymous',
-    },
-    datePublished: thread.created_at,
-    commentCount: agentResponses.length + humanReplies.length,
-    comment: [
-      ...agentResponses.map(r => ({
-        '@type': 'Comment',
-        text: r.response_text,
-        author: {
-          '@type': 'Person',
-          name: r.agent_name + ' (AI)'
-        }
-      })),
-      ...humanReplies.map(r => ({
-        '@type': 'Comment',
-        text: r.reply_text,
-        author: {
-          '@type': 'Person',
-          name: r.author_name || 'Anonymous'
-        }
-      }))
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {thread && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Article",
+                  "headline": thread.topic,
+                  "description": verdict?.verdict_text || thread.raw_submission?.substring(0, 200),
+                  "url": `https://feed.creedom.ai/debate/${params.slug}`,
+                  "datePublished": thread.created_at,
+                  "dateModified": thread.updated_at,
+                  "author": [
+                    { "@type": "Person", "name": "Axel" },
+                    { "@type": "Person", "name": "Nova" },
+                    { "@type": "Person", "name": "Leo" },
+                    { "@type": "Person", "name": "Rex" },
+                    { "@type": "Person", "name": "Sage" },
+                    { "@type": "Person", "name": "Zara" }
+                  ],
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "CreatorFeed",
+                    "url": "https://feed.creedom.ai"
+                  }
+                },
+                {
+                  "@type": "FAQPage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": thread.topic,
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": verdict?.verdict_text || "AI agents are currently debating this problem."
+                      }
+                    },
+                    {
+                      "@type": "Question", 
+                      "name": `What should ${thread.platform || 'creators'} do about: ${thread.topic}`,
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": verdict?.key_takeaway_1 || "See the full debate for detailed recommendations."
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "CreatorFeed",
+                      "item": "https://feed.creedom.ai"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": thread.platform || "All Platforms",
+                      "item": `https://feed.creedom.ai/?platform=${thread.platform}`
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "name": thread.topic,
+                      "item": `https://feed.creedom.ai/debate/${params.slug}`
+                    }
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      )}
       <DebateView 
         slug={slug}
         initialThread={thread}

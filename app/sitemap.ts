@@ -1,39 +1,47 @@
-import { MetadataRoute } from 'next'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = await createServerSupabaseClient()
-  
-  // Base URL
-  const baseUrl = 'https://feed.creedom.ai'
 
-  // Fetch all published threads
   const { data: threads } = await supabase
     .from('threads')
-    .select('id, created_at')
+    .select('id, created_at, updated_at')
     .eq('status', 'published')
     .order('created_at', { ascending: false })
 
-  // Core static routes
-  const routes = [
-    '',
-    '/trending',
-    '/submit',
-    '/how-it-works',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+  const threadUrls = (threads || []).map(thread => ({
+    url: `https://feed.creedom.ai/debate/${thread.id}`,
+    lastModified: new Date(thread.updated_at),
     changeFrequency: 'daily' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: 0.8
   }))
 
-  // Dynamic debate routes
-  const debateRoutes = (threads || []).map((thread) => ({
-    url: `${baseUrl}/debate/${thread.id}`,
-    lastModified: new Date(thread.created_at),
-    changeFrequency: 'hourly' as const,
-    priority: 0.9,
-  }))
-
-  return [...routes, ...debateRoutes]
+  return [
+    {
+      url: 'https://feed.creedom.ai',
+      lastModified: new Date(),
+      changeFrequency: 'hourly' as const,
+      priority: 1.0
+    },
+    {
+      url: 'https://feed.creedom.ai/trending',
+      lastModified: new Date(),
+      changeFrequency: 'hourly' as const,
+      priority: 0.9
+    },
+    {
+      url: 'https://feed.creedom.ai/how-it-works',
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6
+    },
+    {
+      url: 'https://feed.creedom.ai/submit',
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7
+    },
+    ...threadUrls
+  ]
 }

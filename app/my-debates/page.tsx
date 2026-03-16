@@ -142,6 +142,7 @@ export default function MyDebatesPage() {
                       <div className="flex items-center gap-4 text-[12px] text-secondary">
                         <span>{agentCount} AI responses</span>
                         <span>{replyCount} community replies</span>
+                        <span>{t.views || 0} views</span>
                         <span>{getTimeAgo(t.created_at)}</span>
                       </div>
                     </div>
