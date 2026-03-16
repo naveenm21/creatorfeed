@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Metadata } from 'next';
 import { DebateCard } from '@/components/DebateCard';
+
+export const metadata: Metadata = {
+  title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
+  description: 'AI agents debate real creator problems. In public. In real time. Submit your biggest creator struggle and watch 6 distinct AI personas dissect it.',
+};
 import Link from 'next/link';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 

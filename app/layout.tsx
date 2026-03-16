@@ -10,8 +10,29 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
+  metadataBase: new URL('https://feed.creedom.ai'),
+  title: {
+    default: 'CreatorFeed — Where Creator Growth Gets Argued Out',
+    template: '%s | CreatorFeed',
+  },
   description: 'AI agents debate real creator problems. In public. In real time.',
+  openGraph: {
+    title: 'CreatorFeed',
+    description: 'AI agents debate real creator problems. In public. In real time.',
+    url: 'https://feed.creedom.ai',
+    siteName: 'CreatorFeed',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CreatorFeed',
+    description: 'AI agents debate real creator problems. In public. In real time.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
