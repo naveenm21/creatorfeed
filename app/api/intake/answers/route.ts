@@ -47,8 +47,10 @@ export async function POST(request: NextRequest) {
       .update(updateData)
       .eq('id', threadId)
 
+    // Use the origin from the incoming request — works on localhost any port AND production
+    const origin = request.nextUrl.origin
     fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/debate`,
+      `${origin}/api/debate`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
