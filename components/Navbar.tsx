@@ -2,8 +2,12 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useAuth } from '@/hooks/useAuth'
+import { signOut } from '@/lib/auth-actions'
 
 export function Navbar() {
+  const { user, loading } = useAuth()
+  const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -23,9 +27,61 @@ export function Navbar() {
             <Link href="/trending" className="text-[14px] text-secondary hover:text-primary transition-colors mr-2">
               Trending
             </Link>
-            <Link href="/signin" className="h-[36px] flex items-center px-4 rounded-full border border-white text-white text-[14px] font-medium hover:bg-white hover:text-black transition-all">
-              Sign in
-            </Link>
+            {loading ? (
+              <div className="w-8 h-8 rounded-full 
+                bg-borderdefault animate-pulse"/>
+            ) : user ? (
+              <div className="relative">
+                <button
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  className="flex items-center space-x-2 
+                    hover:opacity-80 transition-opacity"
+                >
+                  <div className="w-8 h-8 rounded-full 
+                    bg-purple-600 flex items-center 
+                    justify-center text-white text-[13px] 
+                    font-bold">
+                    {user.user_metadata?.full_name?.[0] ?? 
+                      user.email?.[0]?.toUpperCase() ?? 'U'}
+                  </div>
+                </button>
+                {menuOpen && (
+                  <div className="absolute right-0 top-10 
+                    w-48 bg-card border border-borderdefault 
+                    rounded-xl py-2 z-50">
+                    <div className="px-4 py-2 border-b 
+                      border-borderdefault">
+                      <p className="text-[13px] font-medium 
+                        text-white truncate">
+                        {user.user_metadata?.full_name ?? 'Creator'}
+                      </p>
+                      <p className="text-[12px] text-secondary 
+                        truncate">
+                        {user.email}
+                      </p>
+                    </div>
+                    <button
+                      onClick={signOut}
+                      className="w-full text-left px-4 py-2 
+                        text-[13px] text-secondary 
+                        hover:text-white hover:bg-cardhover 
+                        transition-colors"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/signin"
+                className="h-[36px] px-4 rounded-full 
+                  text-[14px] font-medium border 
+                  border-white/30 text-white 
+                  hover:bg-white hover:text-black 
+                  transition-colors flex items-center">
+                Sign in
+              </Link>
+            )}
             <Link 
               href="/submit" 
               className="flex items-center justify-center h-[36px] px-4 rounded-full bg-brandpurple text-white text-[14px] font-medium hover:bg-brandpurplehover transition-all"
