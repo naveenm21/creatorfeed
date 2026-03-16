@@ -7,6 +7,9 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get('code')
   const next = requestUrl.searchParams.get('next') ?? '/'
 
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL 
+    || 'https://feed.creedom.ai'
+
   if (code) {
     const cookieStore = await cookies()
     const supabase = createServerClient(
@@ -27,11 +30,8 @@ export async function GET(request: NextRequest) {
         },
       }
     )
-
     await supabase.auth.exchangeCodeForSession(code)
   }
 
-  return NextResponse.redirect(
-    new URL(next, requestUrl.origin)
-  )
+  return NextResponse.redirect(new URL(next, appUrl))
 }
