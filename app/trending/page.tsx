@@ -1,22 +1,43 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createClient } from '@/lib/supabase';
 
 export default function TrendingPage() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [threads, setThreads] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const supabase = createClient();
 
-  const trendingDebates = [
-    { num: '01', id: 't1', title: 'Why is my YouTube Shorts reach completely dead after hitting 1M total views?', creator: 'Colin & Samir', platform: 'YouTube', views: '244K', replies: 89, agents: 5, fast: true },
-    { num: '02', id: 't2', title: 'Sponsor rates in Q3 2024: Agencies are offering half of what they paid last year', creator: 'Justin Moore', platform: 'Multi-platform', views: '198K', replies: 142, agents: 4, fast: true },
-    { num: '03', id: 't3', title: 'TikTok organic reach updates — algorithm shifts hurting established accounts?', creator: 'Rene Ritchie', platform: 'TikTok', views: '155K', replies: 67, agents: 3, fast: false },
-    { num: '04', id: 't4', title: 'Patreon vs YouTube Memberships. Should I migrate everyone over?', creator: 'MKBHD', platform: 'Multi-platform', views: '142K', replies: 112, agents: 5, fast: false },
-    { num: '05', id: 't5', title: 'Thumbnails without faces... Are we finally moving past the open mouth thumbnail meta?', creator: 'Paddy Galloway', platform: 'YouTube', views: '98K', replies: 44, agents: 4, fast: false },
-  ];
+  useEffect(() => {
+    async function fetchTrending() {
+      const { data } = await supabase
+        .from('threads')
+        .select(`
+          id,
+          topic,
+          platform,
+          submitted_by,
+          views,
+          created_at,
+          agent_responses(count),
+          human_replies(count)
+        `)
+        .eq('status', 'published')
+        .order('views', { ascending: false })
+        .limit(50);
+        
+      if (data) setThreads(data);
+      setLoading(false);
+    }
+    fetchTrending();
+  }, [supabase]);
 
   const filteredDebates = activeFilter === 'All' 
-    ? trendingDebates 
-    : trendingDebates.filter(item => item.platform === activeFilter);
+    ? threads 
+    : threads.filter(item => item.platform === activeFilter || (activeFilter === 'Multi-platform' && item.platform === null));
 
   return (
     <main className="min-h-screen pt-12 pb-24 px-4 fade-in">
@@ -44,27 +65,37 @@ export default function TrendingPage() {
 
         {/* Trending List */}
         <div className="flex flex-col border border-borderdefault rounded-2xl bg-card overflow-hidden">
-          {filteredDebates.length === 0 ? (
+          {loading ? (
+            <div className="p-12 flex justify-center">
+               <div className="w-6 h-6 border-2 border-brandprimary border-t-transparent rounded-full animate-spin"/>
+            </div>
+          ) : filteredDebates.length === 0 ? (
             <div className="p-8 text-center text-secondary">
               No trending debates found for {activeFilter}.
             </div>
           ) : (
             filteredDebates.map((item, i) => {
+              const platform = item.platform || "Multi-platform";
               let badgeStyle = "bg-[#FFFFFF15] text-[#FFFFFF]"; 
-              if (item.platform === "YouTube") badgeStyle = "bg-[#FF000015] text-[#FF4444]";
-              if (item.platform === "Instagram") badgeStyle = "bg-[#E1306C15] text-[#E1306C]";
+              if (platform === "YouTube") badgeStyle = "bg-[#FF000015] text-[#FF4444]";
+              if (platform.includes("Instagram")) badgeStyle = "bg-[#E1306C15] text-[#E1306C]";
+              if (platform.includes("TikTok")) badgeStyle = "bg-[#00F2FE15] text-[#00F2FE]";
+
+              const isHot = (new Date().getTime() - new Date(item.created_at).getTime()) < 86400000 && ((item.human_replies?.[0]?.count || 0) + (item.agent_responses?.[0]?.count || 0) > 5);
 
               return (
                 <div key={item.id} className={`p-5 flex flex-col sm:flex-row sm:items-start gap-4 hover:bg-cardhover transition-colors ${i !== filteredDebates.length - 1 ? 'border-b border-borderdefault' : ''}`}>
-                  <div className="text-[18px] font-bold text-brandprimary pt-1 w-8 shrink-0">{item.num}</div>
+                  <div className="text-[18px] font-bold text-brandprimary pt-1 w-8 shrink-0">
+                    {(i + 1).toString().padStart(2, '0')}
+                  </div>
                   
                   <div className="flex-1 w-full">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="text-[14px] font-semibold text-primary">{item.creator}</span>
+                      <span className="text-[14px] font-semibold text-primary">{item.submitted_by || 'Anonymous'}</span>
                       <span className={`text-[11px] uppercase tracking-wide px-2 py-0.5 rounded-full ${badgeStyle}`}>
-                        {item.platform}
+                        {platform}
                       </span>
-                      {item.fast && (
+                      {isHot && (
                         <span className="flex items-center text-orange-500 text-[12px] font-medium ml-1">
                           <svg className="w-4 h-4 mr-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" /></svg>
                           Hot
@@ -73,14 +104,14 @@ export default function TrendingPage() {
                     </div>
                     
                     <h3 className="text-[16px] font-semibold text-primary leading-snug mb-3 pr-4">
-                      {item.title}
+                      {item.topic}
                     </h3>
                     
                     <div className="flex items-center justify-between mt-auto w-full">
                       <div className="flex items-center space-x-4 text-[13px] text-secondary">
-                        <span>{item.views} views</span>
-                        <span>{item.replies} replies</span>
-                        <span>{item.agents} agents</span>
+                        <span>{item.views > 1000 ? `${(item.views/1000).toFixed(0)}K` : item.views || 0} views</span>
+                        <span>{item.human_replies?.[0]?.count || 0} replies</span>
+                        <span>{item.agent_responses?.[0]?.count || 0} agents</span>
                       </div>
                       <Link href={`/debate/${item.id}`} className="text-brandprimary text-[13px] font-medium hover:underline shrink-0">
                         Read Debate →

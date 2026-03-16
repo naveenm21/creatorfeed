@@ -1,0 +1,18 @@
+
+> creatorfeed@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ✓ Compiled /api/intake in 106ms (147 modules)
+Thread insert error: {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "threads"'
+}
+ POST /api/intake 500 in 5664ms

@@ -60,6 +60,15 @@ export function Navbar() {
                         {user.email}
                       </p>
                     </div>
+                    <Link
+                      href="/my-debates"
+                      className="w-full block text-left px-4 py-2 
+                        text-[13px] text-secondary 
+                        hover:text-white hover:bg-cardhover 
+                        transition-colors border-b border-borderdefault"
+                    >
+                      My Debates
+                    </Link>
                     <button
                       onClick={signOut}
                       className="w-full text-left px-4 py-2 

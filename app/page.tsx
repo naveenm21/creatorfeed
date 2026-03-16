@@ -1,6 +1,20 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DebateCard } from '@/components/DebateCard';
 import Link from 'next/link';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
+
+function getTimeAgo(dateString: string): string {
+  const date = new Date(dateString)
+  const now = new Date()
+  const seconds = Math.floor(
+    (now.getTime() - date.getTime()) / 1000
+  )
+  if (seconds < 3600) 
+    return `${Math.floor(seconds/60)}m ago`
+  if (seconds < 86400) 
+    return `${Math.floor(seconds/3600)}h ago`
+  return `${Math.floor(seconds/86400)}d ago`
+}
 
 export default async function Home() {
   const supabase = await createServerSupabaseClient();
@@ -8,48 +22,46 @@ export default async function Home() {
   // Fetch real published threads
   const { data: threads } = await supabase
     .from('threads')
-    .select('*')
+    .select(`
+      id,
+      topic,
+      platform,
+      creator_handle,
+      submitted_by,
+      raw_submission,
+      views,
+      created_at,
+      agent_responses(count),
+      human_replies(count)
+    `)
     .eq('status', 'published')
     .order('created_at', { ascending: false })
     .limit(20);
 
-  // Group processing helper
-  const resolvedDebates = await Promise.all((threads || []).map(async (t) => {
-    // Count responses
-    const { count: aiCount } = await supabase
-      .from('agent_responses')
-      .select('id', { count: 'exact', head: true })
-      .eq('thread_id', t.id);
-
-    // Fetch initial responses to populate agents
-    const { data: agentsData } = await supabase
-      .from('agent_responses')
-      .select('agent_name')
-      .eq('thread_id', t.id)
-      .eq('round_number', 1);
-
-    const agents = Array.from(new Set(agentsData?.map(a => a.agent_name) || []));
-
-    // Get verdict snippet
-    const { data: verdict } = await supabase
-      .from('verdicts')
-      .select('verdict_text')
-      .eq('thread_id', t.id)
-      .single();
-
-    return {
-      id: t.id,
-      creatorName: t.submitted_by || 'Anonymous',
-      platform: t.platform || 'General',
-      title: t.topic,
-      agents,
-      preview: verdict?.verdict_text || t.raw_submission.substring(0, 150) + '...',
-      views: '1',
-      replies: aiCount || 0,
-      humanReplies: 0,
-      timePosted: new Date(t.created_at).toLocaleDateString()
-    };
+  const debates = (threads || []).map(thread => ({
+    id: thread.id,
+    creatorName: thread.submitted_by || 'Anonymous',
+    platform: thread.platform || 'Multi-platform',
+    title: thread.topic,
+    agents: [], // To be populated dynamically if needed inside component or left empty
+    agentCount: (thread.agent_responses as any)?.[0]?.count || 0,
+    humanReplies: (thread.human_replies as any)?.[0]?.count || 0,
+    preview: (thread.raw_submission || 'No details provided').substring(0, 150) + '...',
+    views: thread.views > 1000 
+      ? `${(thread.views/1000).toFixed(0)}K` 
+      : (thread.views || 0).toString(),
+    replies: ((thread.agent_responses as any)?.[0]?.count || 0) + ((thread.human_replies as any)?.[0]?.count || 0),
+    timePosted: getTimeAgo(thread.created_at),
+    slug: thread.id
   }));
+
+  // Fetch Trending Sidebar
+  const { data: trendingThreads } = await supabase
+    .from('threads')
+    .select('topic, views, id')
+    .eq('status', 'published')
+    .order('views', { ascending: false })
+    .limit(5);
 
   return (
     <main className="min-h-screen pt-6 pb-20 fade-in">
@@ -63,11 +75,14 @@ export default async function Home() {
               For You
               <span className="absolute bottom-0 w-16 h-0.5 bg-brandprimary rounded-t-full"></span>
             </Link>
+            <Link href="/trending" className="flex-1 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:bg-card">
+              Trending
+            </Link>
           </div>
 
           {/* Debate Cards */}
           <div className="flex flex-col">
-            {resolvedDebates.length === 0 ? (
+            {debates.length === 0 ? (
               <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-[#0A0A0A] mt-4">
                 <h2 className="text-[20px] font-semibold text-primary mb-2">No debates yet</h2>
                 <p className="text-[14px] text-secondary mb-6">Be the first to submit a creator problem</p>
@@ -76,8 +91,8 @@ export default async function Home() {
                 </Link>
               </div>
             ) : (
-              resolvedDebates.map(debate => (
-                <DebateCard key={debate.id} debate={{...debate}} />
+              debates.map(debate => (
+                <DebateCard key={debate.id} debate={debate} />
               ))
             )}
           </div>
@@ -89,17 +104,15 @@ export default async function Home() {
           <div className="bg-card border border-borderdefault rounded-2xl p-4">
             <h2 className="text-[15px] font-bold text-white mb-3">Trending</h2>
             <div className="flex flex-col">
-              {[
-                { num: "01", title: "Should podcasts go video-first?", views: "244K" },
-                { num: "02", title: "Sponsor rates in Q3 2024", views: "198K" },
-                { num: "03", title: "TikTok organic reach updates", views: "155K" },
-                { num: "04", title: "Patreon vs YouTube Memberships", views: "142K" },
-                { num: "05", title: "Thumbnails without faces", views: "98K" },
-              ].map((item, i) => (
-                <div key={item.num} className={`py-3 ${i !== 4 ? 'border-b border-borderdefault' : ''}`}>
-                  <div className="text-[12px] font-medium text-brandprimary uppercase tracking-widest mb-1">{item.num}</div>
-                  <h3 className="text-[14px] font-medium text-white mb-0.5">{item.title}</h3>
-                  <div className="text-[12px] text-secondary">{item.views} views</div>
+              {(trendingThreads || []).map((item, i) => (
+                <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-borderdefault' : ''}`}>
+                  <div className="text-[12px] font-medium text-brandprimary uppercase tracking-widest mb-1">0{i + 1}</div>
+                  <Link href={`/debate/${item.id}`} className="text-[14px] font-medium text-white mb-0.5 block hover:underline line-clamp-2">
+                    {item.topic}
+                  </Link>
+                  <div className="text-[12px] text-secondary">
+                    {item.views > 1000 ? `${(item.views/1000).toFixed(0)}K` : item.views || 0} views
+                  </div>
                 </div>
               ))}
             </div>
