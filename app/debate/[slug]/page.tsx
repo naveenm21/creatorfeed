@@ -26,6 +26,8 @@ type HumanReply = {
   created_at: string;
 };
 
+const ALL_AGENTS = ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'];
+
 export default function DebatePage({ params }: { params: Promise<{ slug: string }> }) {
   const unwrappedParams = use(params);
   const slug = unwrappedParams.slug;
@@ -46,52 +48,88 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
   const [humanReplies, setHumanReplies] = useState<HumanReply[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [liveStatus, setLiveStatus] = useState<'debating' | 'published' | 'pending' | 'failed' | null>(null);
+  const [typingAgent, setTypingAgent] = useState<string | null>(null);
 
   const supabase = createClient();
 
-  const fetchDebate = async () => {
-    const { data: t, error } = await supabase.from('threads').select('*').eq('id', slug).single();
-    if (error || !t) { setNotFound(true); setLoading(false); return; }
-    setThread(t);
+  // Fetch all data for a published thread
+  const fetchFullDebate = async () => {
+    const [{ data: r }, { data: v }, { data: h }] = await Promise.all([
+      supabase.from('agent_responses').select('*').eq('thread_id', slug)
+        .order('round_number', { ascending: true })
+        .order('response_order', { ascending: true }),
+      supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
+      supabase.from('human_replies').select('*').eq('thread_id', slug).order('created_at', { ascending: true }),
+    ]);
 
-    if (t.status === 'published') {
-      const [{ data: r }, { data: v }, { data: h }] = await Promise.all([
-        supabase.from('agent_responses').select('*').eq('thread_id', slug)
-          .order('round_number', { ascending: true })
-          .order('response_order', { ascending: true }),
-        supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
-        supabase.from('human_replies').select('*').eq('thread_id', slug).order('created_at', { ascending: true }),
-      ]);
-
-      if (r) {
-        setAgentResponses(r.filter((x: AgentResponse) => !x.is_final_position));
-        setFinalPositions(r.filter((x: AgentResponse) => x.is_final_position));
-      }
-      setVerdict(v);
-      setHumanReplies(h || []);
-
-      // Increment views
-      supabase.rpc('increment_views', { thread_id: slug }).then(() => {});
+    if (r) {
+      setAgentResponses(r.filter((x: AgentResponse) => !x.is_final_position));
+      setFinalPositions(r.filter((x: AgentResponse) => x.is_final_position));
     }
-    setLoading(false);
+    setVerdict(v);
+    setHumanReplies(h || []);
+    supabase.rpc('increment_views', { thread_id: slug }).then(() => {});
   };
 
+  // Initial load
   useEffect(() => {
-    fetchDebate();
+    async function init() {
+      const { data: t, error } = await supabase.from('threads').select('*').eq('id', slug).single();
+      if (error || !t) { setNotFound(true); setLoading(false); return; }
+      setThread(t);
+      setLiveStatus(t.status);
+
+      if (t.status === 'published') {
+        await fetchFullDebate();
+      }
+      setLoading(false);
+    }
+    init();
   }, [slug]);
 
-  // Poll every 5s while debating
+  // Live polling while debating — fetch new agent_responses every 3 seconds
   useEffect(() => {
-    if (!thread || thread.status !== 'debating') return;
-    const interval = setInterval(async () => {
-      const { data } = await supabase.from('threads').select('status').eq('id', slug).single();
-      if (data?.status === 'published') {
-        clearInterval(interval);
-        fetchDebate();
+    if (!liveStatus || liveStatus === 'published' || liveStatus === 'failed') return;
+
+    const poll = setInterval(async () => {
+      // Check thread status
+      const { data: statusData } = await supabase
+        .from('threads')
+        .select('status')
+        .eq('id', slug)
+        .single();
+
+      if (statusData?.status === 'published') {
+        setLiveStatus('published');
+        clearInterval(poll);
+        await fetchFullDebate();
+        return;
       }
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [thread?.status]);
+
+      // Fetch any newly posted agent responses
+      const { data: r } = await supabase
+        .from('agent_responses')
+        .select('*')
+        .eq('thread_id', slug)
+        .order('round_number', { ascending: true })
+        .order('response_order', { ascending: true });
+
+      if (r) {
+        const nonFinal = r.filter((x: AgentResponse) => !x.is_final_position);
+        const final = r.filter((x: AgentResponse) => x.is_final_position);
+        setAgentResponses(nonFinal);
+        setFinalPositions(final);
+
+        // Figure out which agent is "next" (typing)
+        const respondedAgents = new Set(nonFinal.map((x: AgentResponse) => x.agent_name));
+        const nextAgent = ALL_AGENTS.find(a => !respondedAgents.has(a)) || null;
+        setTypingAgent(nextAgent);
+      }
+    }, 3000);
+
+    return () => clearInterval(poll);
+  }, [liveStatus, slug]);
 
   const handleTabSwitch = (tab: string) => {
     setActiveTab(tab);
@@ -147,42 +185,14 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
     </main>
   );
 
-  // ── STATE 3: ACTIVELY DEBATING ──
-  if (thread.status === 'debating' || thread.status === 'pending') {
-    const agents = ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'];
-    return (
-      <main className="min-h-screen flex flex-col items-center justify-center gap-8 px-4 text-center">
-        <div className="max-w-[480px] mx-auto">
-          <div className="flex justify-center gap-3 mb-8">
-            {agents.map((name) => {
-              const color = AGENT_COLORS[name as keyof typeof AGENT_COLORS];
-              return (
-                <div key={name} className="flex flex-col items-center gap-1.5">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm animate-pulse"
-                    style={{ backgroundColor: color }}
-                  >{name[0]}</div>
-                </div>
-              );
-            })}
-          </div>
-          <h1 className="text-[26px] font-bold text-white mb-3">Agents are debating this right now...</h1>
-          <p className="text-secondary text-[15px] mb-2">This usually takes 1–3 minutes. The page will update automatically.</p>
-          <p className="text-tertiary text-[13px] italic">&quot;{thread.topic}&quot;</p>
-          <div className="mt-8 w-full bg-[#1F1F1F] rounded-full h-1.5 overflow-hidden">
-            <div className="bg-gradient-to-r from-brandprimary to-brandorange h-full rounded-full animate-pulse w-2/3" />
-          </div>
-        </div>
-      </main>
-    );
-  }
-
-  // ── STATE 4: PUBLISHED ──
+  // ── SHARED LAYOUT (both live and published) ──
   const platform = thread.platform || 'Platform';
   let badgeStyle = 'bg-[#FFFFFF15] text-[#FFFFFF]';
   if (platform === 'YouTube') badgeStyle = 'bg-[#FF000015] text-[#FF4444]';
   if (platform.includes('Instagram')) badgeStyle = 'bg-[#E1306C15] text-[#E1306C]';
   if (platform.includes('TikTok')) badgeStyle = 'bg-[#00F2FE15] text-[#00F2FE]';
+
+  const isLive = liveStatus === 'debating' || liveStatus === 'pending';
 
   const roundsMap = agentResponses.reduce((acc, curr) => {
     if (!acc[curr.round_number]) acc[curr.round_number] = [];
@@ -202,9 +212,15 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
 
           {/* THREAD HEADER */}
           <div className="mb-6">
-            <div className="flex items-center space-x-2 mb-3">
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
               <span className="text-[15px] font-semibold text-primary">{thread.submitted_by || 'Anonymous'}</span>
               <span className={`text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full ${badgeStyle}`}>{platform}</span>
+              {isLive && (
+                <span className="flex items-center gap-1.5 text-[11px] font-bold text-yellow-400 uppercase tracking-widest">
+                  <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+                  Live
+                </span>
+              )}
             </div>
             <h1 className="text-[28px] font-bold text-white tracking-[-0.01em] leading-snug mb-4">{thread.topic}</h1>
             <div className="text-[14px] text-secondary leading-relaxed mb-4 border-l-2 border-[#333] pl-4 italic">
@@ -216,6 +232,7 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
               <span>{humanReplies.length} creator responses</span>
               <span>·</span>
               <span>{thread.views || 0} views</span>
+              {isLive && <span>· <span className="text-yellow-400">Agents still debating...</span></span>}
             </div>
           </div>
           <div className="w-full h-px bg-[#1F1F1F] mb-0" />
@@ -247,50 +264,107 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
 
             {/* TAB 1: AI DEBATE */}
             <div className={activeTab === 'AI Debate' ? 'block' : 'hidden'}>
-              {rounds.map((roundNum) => (
-                <div key={roundNum} className="mb-12">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="h-px bg-[#1F1F1F] flex-1" />
-                    <span className="text-[11px] uppercase tracking-widest font-bold text-brandprimary">Round {roundNum}</span>
-                    <div className="h-px bg-[#1F1F1F] flex-1" />
-                  </div>
-                  {roundsMap[roundNum].map((agent: AgentResponse, i: number) => {
-                    const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
-                    const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
-                    return (
-                      <div key={agent.id} className="mb-6">
-                        <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[16px] font-bold shrink-0" style={{ backgroundColor: color }}>
-                              {agent.agent_name.charAt(0)}
-                            </div>
-                            <div className="flex flex-col">
-                              <span className="text-[15px] font-bold text-white leading-tight">{agent.agent_name}</span>
-                              <span className="text-[13px] text-secondary">{expertise}</span>
-                            </div>
-                            {agent.position && agent.position !== 'none' && (
-                              <div className="ml-auto">
-                                <span className={`text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded-full ${
-                                  agent.position === 'agree' ? 'bg-green-500/10 text-green-400' :
-                                  agent.position === 'disagree' ? 'bg-red-500/10 text-red-400' :
-                                  'bg-blue-500/10 text-blue-400'
-                                }`}>{agent.position}</span>
-                              </div>
-                            )}
-                          </div>
-                          <p className="text-[15px] text-white leading-[1.7] mb-3 pr-2">{agent.response_text}</p>
+
+              {/* Live: show agent circles at top while debating */}
+              {isLive && (
+                <div className="mb-8 bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-5">
+                  <p className="text-[12px] text-secondary uppercase tracking-widest font-bold mb-4">
+                    {agentResponses.length === 0 ? 'Waiting for agents to start...' : 'Agents responding...'}
+                  </p>
+                  <div className="flex gap-3 flex-wrap">
+                    {ALL_AGENTS.map(name => {
+                      const color = AGENT_COLORS[name as keyof typeof AGENT_COLORS];
+                      const hasResponded = agentResponses.some(r => r.agent_name === name);
+                      const isTyping = typingAgent === name;
+                      return (
+                        <div key={name} className="flex flex-col items-center gap-1.5">
+                          <div
+                            className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all ${
+                              isTyping ? 'animate-pulse ring-2 ring-white/50 ring-offset-1 ring-offset-black' :
+                              hasResponded ? 'opacity-100' : 'opacity-30'
+                            }`}
+                            style={{ backgroundColor: color }}
+                          >{name[0]}</div>
+                          <span className="text-[10px] text-secondary">{
+                            isTyping ? '...' : hasResponded ? '✓' : name
+                          }</span>
                         </div>
-                        {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-[#1F1F1F] mt-6" />}
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              ))}
+              )}
+
+              {/* Responses */}
+              {agentResponses.length === 0 && isLive ? (
+                <div className="text-center py-16 text-secondary text-[15px]">
+                  The debate will appear here as agents respond. This usually takes 1–3 minutes.
+                </div>
+              ) : rounds.length === 0 && !isLive ? (
+                <div className="text-center py-16 text-secondary text-[15px]">No responses yet.</div>
+              ) : (
+                rounds.map((roundNum) => (
+                  <div key={roundNum} className="mb-12">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="h-px bg-[#1F1F1F] flex-1" />
+                      <span className="text-[11px] uppercase tracking-widest font-bold text-brandprimary">Round {roundNum}</span>
+                      <div className="h-px bg-[#1F1F1F] flex-1" />
+                    </div>
+                    {roundsMap[roundNum].map((agent: AgentResponse, i: number) => {
+                      const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
+                      const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
+                      return (
+                        <div key={agent.id} className="mb-6 animate-[fadeIn_0.4s_ease-out_forwards]">
+                          <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[16px] font-bold shrink-0" style={{ backgroundColor: color }}>
+                                {agent.agent_name.charAt(0)}
+                              </div>
+                              <div className="flex flex-col">
+                                <span className="text-[15px] font-bold text-white leading-tight">{agent.agent_name}</span>
+                                <span className="text-[13px] text-secondary">{expertise}</span>
+                              </div>
+                              {agent.position && agent.position !== 'none' && (
+                                <div className="ml-auto">
+                                  <span className={`text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded-full ${
+                                    agent.position === 'agree' ? 'bg-green-500/10 text-green-400' :
+                                    agent.position === 'disagree' ? 'bg-red-500/10 text-red-400' :
+                                    'bg-blue-500/10 text-blue-400'
+                                  }`}>{agent.position}</span>
+                                </div>
+                              )}
+                            </div>
+                            <p className="text-[15px] text-white leading-[1.7] mb-3 pr-2">{agent.response_text}</p>
+                          </div>
+                          {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-[#1F1F1F] mt-6" />}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))
+              )}
+
+              {/* "Next agent responding" indicator */}
+              {isLive && typingAgent && (
+                <div className="mt-4 border border-[#1F1F1F] rounded-xl p-4 bg-[#0A0A0A] flex items-center gap-3">
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold animate-pulse shrink-0"
+                    style={{ backgroundColor: AGENT_COLORS[typingAgent as keyof typeof AGENT_COLORS] || '#888' }}
+                  >{typingAgent[0]}</div>
+                  <span className="text-[13px] text-secondary">
+                    <span className="text-white font-medium">{typingAgent}</span> is forming a response...
+                  </span>
+                  <div className="ml-auto flex gap-1">
+                    {[0, 1, 2].map(i => (
+                      <span key={i} className="w-1.5 h-1.5 rounded-full bg-brandprimary animate-bounce" style={{ animationDelay: `${i * 0.15}s` }} />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* TAB 2: COMMUNITY */}
             <div className={activeTab === 'Community' ? 'block' : 'hidden'}>
-              {/* Reply Composer */}
               <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-4 mb-8">
                 {replySuccess && (
                   <div className="mb-4 text-green-400 text-[14px] font-medium bg-green-500/10 px-4 py-2 rounded-xl">
@@ -359,7 +433,6 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
                 </div>
               </div>
 
-              {/* Replies List */}
               <div className="space-y-6">
                 {humanReplies.length === 0 ? (
                   <p className="text-center text-secondary py-8">No community replies yet. Be the first!</p>
@@ -397,78 +470,103 @@ export default function DebatePage({ params }: { params: Promise<{ slug: string 
 
             {/* TAB 3: VERDICT */}
             <div className={activeTab === 'Verdict' ? 'block' : 'hidden'}>
-              {/* Final Positions */}
-              {finalPositions.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-4">Final Agent Positions</h3>
-                  <div className="space-y-4">
-                    {finalPositions.map(fp => {
-                      const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
-                      return (
-                        <div key={fp.id} className="border-l-2 pl-4 py-1" style={{ borderLeftColor: color }}>
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[12px] font-bold" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
-                            <span className="font-bold text-white text-[14px]">{fp.agent_name}</span>
-                          </div>
-                          <p className="text-[14px] text-secondary leading-relaxed">{fp.response_text}</p>
-                        </div>
-                      );
-                    })}
-                  </div>
+              {isLive ? (
+                <div className="text-center py-16 text-secondary">
+                  <div className="w-6 h-6 border-2 border-brandprimary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <p>The verdict will appear once all agents have finished debating.</p>
                 </div>
-              )}
-
-              {/* Synthesized Verdict */}
-              {verdict && (
-                <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
-                    <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">AI Consensus Verdict</span>
-                  </div>
-                  <p className="text-[15px] text-white leading-[1.8] mb-5">{verdict.verdict_text}</p>
-                  {(verdict.key_takeaway_1 || verdict.key_takeaway_2 || verdict.key_takeaway_3) && (
-                    <div className="space-y-2 border-t border-[#1F1F1F] pt-4 mt-2">
-                      <p className="text-[12px] uppercase tracking-widest text-secondary font-bold mb-3">Key Takeaways</p>
-                      {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <span className="text-brandprimary font-bold text-[14px] mt-0.5">{i + 1}.</span>
-                          <p className="text-[14px] text-secondary leading-relaxed">{t}</p>
-                        </div>
-                      ))}
+              ) : (
+                <>
+                  {finalPositions.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-4">Final Agent Positions</h3>
+                      <div className="space-y-4">
+                        {finalPositions.map(fp => {
+                          const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
+                          return (
+                            <div key={fp.id} className="border-l-2 pl-4 py-1" style={{ borderLeftColor: color }}>
+                              <div className="flex items-center gap-2 mb-1.5">
+                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[12px] font-bold" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
+                                <span className="font-bold text-white text-[14px]">{fp.agent_name}</span>
+                              </div>
+                              <p className="text-[14px] text-secondary leading-relaxed">{fp.response_text}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
-                </div>
+
+                  {verdict && (
+                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
+                        <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">AI Consensus Verdict</span>
+                      </div>
+                      <p className="text-[15px] text-white leading-[1.8] mb-5">{verdict.verdict_text}</p>
+                      {(verdict.key_takeaway_1 || verdict.key_takeaway_2 || verdict.key_takeaway_3) && (
+                        <div className="space-y-2 border-t border-[#1F1F1F] pt-4 mt-2">
+                          <p className="text-[12px] uppercase tracking-widest text-secondary font-bold mb-3">Key Takeaways</p>
+                          {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
+                            <div key={i} className="flex items-start gap-3">
+                              <span className="text-brandprimary font-bold text-[14px] mt-0.5">{i + 1}.</span>
+                              <p className="text-[14px] text-secondary leading-relaxed">{t}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div className="bg-card border border-borderdefault rounded-2xl p-6 text-center">
+                    <h3 className="text-[18px] font-bold text-white mb-2">Has this debate helped you?</h3>
+                    <p className="text-[14px] text-secondary mb-4">Submit your own creator problem and get 6 AI agents to debate it publicly.</p>
+                    <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-all">
+                      Submit Your Problem →
+                    </Link>
+                  </div>
+                </>
               )}
-
-              {/* Creedom CTA */}
-              <div className="bg-card border border-borderdefault rounded-2xl p-6 text-center">
-                <h3 className="text-[18px] font-bold text-white mb-2">Has this debate helped you?</h3>
-                <p className="text-[14px] text-secondary mb-4">Submit your own creator problem and get 6 AI agents to debate it publicly.</p>
-                <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-all">
-                  Submit Your Problem →
-                </Link>
-              </div>
             </div>
-
           </div>
         </div>
 
         {/* RIGHT SIDEBAR */}
         <div className="w-full lg:w-[300px] shrink-0 lg:sticky lg:top-[80px] self-start order-1 lg:order-2 space-y-4">
-          {verdict && (
-            <Verdict content={verdict.verdict_text} agentCount={finalPositions.length || agentResponses.length} />
-          )}
-          {activeTab !== 'Verdict' && (
-            <button
-              onClick={() => handleTabSwitch('Verdict')}
-              className="w-full bg-brandprimarysubtle border border-brandprimary/30 text-brandprimary text-[13px] font-semibold py-3 rounded-xl hover:bg-brandprimary/20 transition-colors"
-            >
-              View Full Verdict →
-            </button>
-          )}
+          {isLive ? (
+            <div className="bg-card border border-[#2A2A2A] rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                <span className="text-[13px] font-bold text-white uppercase tracking-widest">Live Debate</span>
+              </div>
+              <p className="text-[13px] text-secondary leading-relaxed mb-3">Agents are forming their arguments. New responses appear automatically.</p>
+              <div className="h-1.5 w-full bg-[#1F1F1F] rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-brandprimary to-brandorange rounded-full animate-pulse" style={{ width: `${Math.min(100, (agentResponses.length / 6) * 100)}%` }} />
+              </div>
+              <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
+            </div>
+          ) : verdict ? (
+            <>
+              <Verdict content={verdict.verdict_text} agentCount={finalPositions.length || agentResponses.length} />
+              {activeTab !== 'Verdict' && (
+                <button
+                  onClick={() => handleTabSwitch('Verdict')}
+                  className="w-full bg-brandprimarysubtle border border-brandprimary/30 text-brandprimary text-[13px] font-semibold py-3 rounded-xl hover:bg-brandprimary/20 transition-colors"
+                >
+                  View Full Verdict →
+                </button>
+              )}
+            </>
+          ) : null}
         </div>
-
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </main>
   );
 }

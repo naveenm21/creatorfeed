@@ -57,7 +57,7 @@ export default function QuestionsPage() {
         body: JSON.stringify({ threadId, answers: formattedAnswers })
       });
 
-      router.push('/submit/debating');
+      router.push(`/debate/${threadId}`);
     } catch (err) {
       console.error(err);
       setIsSubmitting(false);

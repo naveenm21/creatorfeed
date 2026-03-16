@@ -124,7 +124,7 @@ export default function MyDebatesPage() {
               const replyCount = (t.human_replies as any)?.[0]?.count || 0;
 
               return (
-                <div key={t.id} className="bg-card border border-borderdefault rounded-2xl p-5 hover:border-borderhover transition-colors">
+                <Link key={t.id} href={`/debate/${t.id}`} className="block bg-card border border-borderdefault rounded-2xl p-5 hover:border-borderhover transition-colors cursor-pointer">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -145,20 +145,15 @@ export default function MyDebatesPage() {
                         <span>{getTimeAgo(t.created_at)}</span>
                       </div>
                     </div>
-                    <div className="shrink-0">
-                      {t.status === 'published' ? (
-                        <Link
-                          href={`/debate/${t.id}`}
-                          className="text-[13px] font-medium text-brandprimary hover:underline whitespace-nowrap"
-                        >
-                          View Debate →
-                        </Link>
-                      ) : t.status === 'debating' ? (
-                        <span className="text-[12px] text-yellow-400 animate-pulse">Still debating...</span>
-                      ) : null}
+                    <div className="shrink-0 text-brandprimary text-[13px] font-medium">
+                      {t.status === 'debating' ? (
+                        <span className="text-yellow-400 animate-pulse text-[12px]">Live →</span>
+                      ) : (
+                        <span>View →</span>
+                      )}
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
