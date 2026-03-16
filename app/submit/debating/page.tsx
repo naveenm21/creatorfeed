@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase';
 
 export default function DebatingPage() {
   const router = useRouter();
@@ -21,15 +22,31 @@ export default function DebatingPage() {
 
   useEffect(() => {
     // Get temporary thread ID
-    const tId = localStorage.getItem('tempThreadId') || 'pending_thread';
+    const tId = sessionStorage.getItem('tempThreadId') || 'pending_thread';
     setThreadId(tId);
 
-    // Mock Flow: Redirect to Home after 10 seconds
-    const redirectTimer = setTimeout(() => {
-      localStorage.removeItem('tempSubmissionText');
-      localStorage.removeItem('tempThreadId');
+    if (!tId || tId.startsWith('pending')) {
       router.push('/');
-    }, 10000);
+      return;
+    }
+
+    const supabase = createClient();
+
+    // Poll Supabase every 5s for status 'published'
+    const pollInterval = setInterval(async () => {
+      const { data } = await supabase
+        .from('threads')
+        .select('status')
+        .eq('id', tId)
+        .single();
+        
+      if (data?.status === 'published') {
+        sessionStorage.removeItem('tempSubmissionText');
+        sessionStorage.removeItem('tempQuestions');
+        sessionStorage.removeItem('tempThreadId');
+        router.push(`/debate/${tId}`);
+      }
+    }, 5000);
 
     // Cycle messages every 3 seconds
     const messageInterval = setInterval(() => {
@@ -44,13 +61,13 @@ export default function DebatingPage() {
       });
     }, 1000);
 
-    // Show Share block after 30 seconds (won't appear in 10s mock flow, but left for reality)
+    // Show Share block after 30 seconds
     const showShareTimer = setTimeout(() => {
       setShowShare(true);
     }, 30000);
 
     return () => {
-      clearTimeout(redirectTimer);
+      clearInterval(pollInterval);
       clearInterval(messageInterval);
       clearInterval(progressInterval);
       clearTimeout(showShareTimer);

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -10,35 +11,60 @@ export default function QuestionsPage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Form State
-  const [platform, setPlatform] = useState('');
-  const [followers, setFollowers] = useState('');
-  const [whatChanged, setWhatChanged] = useState('');
+  // Dynamic Form State
+  const [questions, setQuestions] = useState<any[]>([]);
+  const [threadId, setThreadId] = useState('');
+  const [answers, setAnswers] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    // Client-side only retrieval mapping the previous step
-    const savedText = localStorage.getItem('tempSubmissionText') || '';
-    if (!savedText) {
+    const savedText = sessionStorage.getItem('tempSubmissionText') || '';
+    const savedThread = sessionStorage.getItem('tempThreadId');
+    const savedQs = sessionStorage.getItem('tempQuestions');
+    
+    if (!savedThread) {
       router.push('/submit');
+      return;
     }
     setSubmissionText(savedText);
+    setThreadId(savedThread);
+    if (savedQs) {
+      setQuestions(JSON.parse(savedQs));
+    }
   }, [router]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!platform || !followers || !whatChanged) return;
+    if (!isFormComplete || isSubmitting) return;
     
     setIsSubmitting(true);
     
-    // Using a setTimeout mock loop for API request representation
-    setTimeout(() => {
-      // Mock thread ID creation
-      localStorage.setItem('tempThreadId', 'thread_' + Math.random().toString(36).substr(2, 9));
+    try {
+      const formattedAnswers = questions.map(q => ({
+        question_order: q.question_order,
+        answer: answers[q.question_order] || ''
+      }));
+
+      // Basic field mappings
+      const platformQ = questions.find(q => q.question_text.toLowerCase().includes('platform'));
+      if (platformQ) formattedAnswers.push({ field: 'platform', answer: answers[platformQ.question_order] } as any);
+      
+      const followerQ = questions.find(q => q.question_text.toLowerCase().includes('follower'));
+      if (followerQ) formattedAnswers.push({ field: 'follower_range', answer: answers[followerQ.question_order] } as any);
+
+      await fetch('/api/intake/answers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ threadId, answers: formattedAnswers })
+      });
+
       router.push('/submit/debating');
-    }, 1000);
+    } catch (err) {
+      console.error(err);
+      setIsSubmitting(false);
+    }
   };
 
-  const isFormComplete = platform && followers && whatChanged.length > 5;
+  const isFormComplete = questions.length > 0 && questions.every(q => !q.is_required || !!answers[q.question_order]);
 
   return (
     <main className="min-h-screen pt-12 pb-24 px-4 fade-in">
@@ -94,58 +120,36 @@ export default function QuestionsPage() {
           
           <form onSubmit={handleSubmit} className="space-y-8">
             
-            {/* Question 1: Platform */}
-            <div>
-              <label className="block text-white text-[16px] font-medium mb-3">Which platform is this about?</label>
-              <div className="flex flex-wrap gap-3">
-                {['YouTube', 'Instagram', 'TikTok', 'Multi-platform'].map(opt => (
-                  <button
-                    key={opt}
-                    type="button"
-                    onClick={() => setPlatform(opt)}
-                    className={`px-4 py-2.5 rounded-xl text-[14px] font-medium transition-all border ${
-                      platform === opt 
-                        ? 'bg-brandprimary border-brandprimary text-white' 
-                        : 'bg-[#111] border-[#222] text-secondary hover:border-[#444]'
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                ))}
+            {questions.map((q) => (
+              <div key={q.question_order}>
+                <label className="block text-white text-[16px] font-medium mb-3">{q.question_text}</label>
+                {q.question_type === 'multiple_choice' && q.options ? (
+                  <div className="flex flex-wrap gap-3">
+                    {q.options.map((opt: string) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setAnswers(prev => ({ ...prev, [q.question_order]: opt }))}
+                        className={`px-4 py-2.5 rounded-xl text-[14px] font-medium transition-all border ${
+                          answers[q.question_order] === opt 
+                            ? 'bg-brandprimary border-brandprimary text-white' 
+                            : 'bg-[#111] border-[#222] text-secondary hover:border-[#444]'
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <textarea
+                    value={answers[q.question_order] || ''}
+                    onChange={(e) => setAnswers(prev => ({ ...prev, [q.question_order]: e.target.value }))}
+                    placeholder="Type your answer here..."
+                    className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
+                  />
+                )}
               </div>
-            </div>
-
-            {/* Question 2: Followers */}
-            <div>
-              <label className="block text-white text-[16px] font-medium mb-3">How many followers do you have?</label>
-              <div className="flex flex-wrap gap-3">
-                {['Under 10K', '10K-100K', '100K-1M', 'Over 1M'].map(opt => (
-                  <button
-                    key={opt}
-                    type="button"
-                    onClick={() => setFollowers(opt)}
-                    className={`px-4 py-2.5 rounded-xl text-[14px] font-medium transition-all border ${
-                      followers === opt 
-                        ? 'bg-brandprimary border-brandprimary text-white' 
-                        : 'bg-[#111] border-[#222] text-secondary hover:border-[#444]'
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Question 3: What Changed? */}
-            <div>
-              <label className="block text-white text-[16px] font-medium mb-3">What changed around the time this started?</label>
-              <textarea
-                value={whatChanged}
-                onChange={(e) => setWhatChanged(e.target.value)}
-                placeholder="Ex. Switched editing styles, algorithm update, took a break..."
-                className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
-              />
-            </div>
+            ))}
 
             <button
               type="submit"

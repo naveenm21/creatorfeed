@@ -14,19 +14,39 @@ export default function SubmitPage() {
     setProblemText(text);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (problemText.length < 20) return;
     
     setIsSubmitting(true);
     
-    // Store in localStorage temporarily as requested by the spec
-    localStorage.setItem('tempSubmissionText', problemText);
-    
-    // Simulate short network delay then route to step 2
-    setTimeout(() => {
-      router.push('/submit/questions');
-    }, 600);
+    try {
+      const res = await fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          rawSubmission: problemText,
+          userId: user?.id
+        })
+      });
+      
+      if (!res.ok) throw new Error('Intake failed');
+      
+      const data = await res.json();
+      
+      if (data.needsQuestions) {
+        sessionStorage.setItem('tempThreadId', data.threadId);
+        sessionStorage.setItem('tempQuestions', JSON.stringify(data.questions));
+        sessionStorage.setItem('tempSubmissionText', problemText);
+        router.push('/submit/questions');
+      } else {
+        sessionStorage.setItem('tempThreadId', data.threadId);
+        router.push('/submit/debating');
+      }
+    } catch (err) {
+      console.error(err);
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
