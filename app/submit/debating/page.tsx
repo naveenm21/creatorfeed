@@ -126,11 +126,11 @@ export default function DebatingPage() {
               <input 
                 type="text" 
                 readOnly 
-                value={`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedm.ai'}/debate/${threadId}`}
+                value={`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`}
                 className="flex-1 bg-[#111] border border-[#1F1F1F] rounded-lg px-3 py-2 text-[12px] text-secondary focus:outline-none"
               />
               <button 
-                onClick={() => navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedm.ai'}/debate/${threadId}`)}
+                onClick={() => navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`)}
                 className="bg-[#222] hover:bg-[#333] border border-[#333] text-white px-4 py-2 rounded-lg text-[12px] font-medium transition-colors"
               >
                 Copy

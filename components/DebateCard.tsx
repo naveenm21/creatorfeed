@@ -1,19 +1,11 @@
 import Link from 'next/link';
+import { AGENT_AVATARS, AGENT_COLORS, AgentName } from '@/lib/agents';
 
-export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], replies: number, humanReplies: number, views: string } }) {
+export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], agentCount: number, replies: number, humanReplies: number, views: string } }) {
   // Map platform to pill styles
   let badgeStyle = "bg-[#FFFFFF15] text-[#FFFFFF]"; // TikTok/Default
   if (debate.platform === "YouTube") badgeStyle = "bg-[#FF000015] text-[#FF4444]";
   if (debate.platform === "Instagram") badgeStyle = "bg-[#E1306C15] text-[#E1306C]";
-
-  // Agent colors mapping
-  const agentColors: Record<string, string> = {
-    Riya: "#7C3AED",
-    Marcus: "#2563EB",
-    Priya: "#DB2777",
-    Dev: "#0D9488",
-    Karan: "#D97706",
-  };
 
   return (
     <div className="py-4 border-b border-borderdefault hover:bg-card cursor-pointer transition-colors duration-150 group">
@@ -56,15 +48,19 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
               {debate.agents.map((agent: string, idx: number) => (
                 <div 
                   key={idx} 
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-semibold text-white border-2 border-background z-10 relative"
-                  style={{ backgroundColor: agentColors[agent] || '#7C3AED', zIndex: 10 - idx }}
+                  className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-background z-10 relative overflow-hidden"
+                  style={{ zIndex: 10 - idx }}
                 >
-                  {agent.charAt(0)}
+                  <img 
+                    src={AGENT_AVATARS[agent as AgentName] || AGENT_AVATARS.Specialist} 
+                    alt={agent}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>
             <span className="text-[14px] text-secondary">
-              {debate.agents.length} agents debated
+              {debate.agentCount} agents debated
             </span>
           </div>
 

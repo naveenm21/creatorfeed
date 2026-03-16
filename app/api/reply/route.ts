@@ -20,11 +20,10 @@ export async function POST(request: NextRequest) {
 
     // Map UI values to DB constraint values
     const sentimentMap: Record<string, string> = {
-      agree: 'positive',
-      disagree: 'negative',
-      positive: 'positive',
-      negative: 'negative',
-      neutral: 'neutral',
+      agree: 'agreed',
+      disagree: 'disagreed',
+      agreed: 'agreed',
+      disagreed: 'disagreed',
     }
     const mappedSentiment = sentiment ? (sentimentMap[sentiment] ?? null) : null
 
@@ -41,9 +40,9 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (error) {
-      console.error('Reply insert error:', error)
+      console.error('SERVER-SIDE REPLY INSERT ERROR:', error)
       return NextResponse.json(
-        { error: 'Failed to save reply' },
+        { error: 'Failed to save reply', details: error },
         { status: 500 }
       )
     }

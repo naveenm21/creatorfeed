@@ -4,7 +4,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Verdict } from '@/components/Verdict';
 import { createClient } from '@/lib/supabase';
-import { AGENT_COLORS, AGENT_EXPERTISE } from '@/lib/agents';
+import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
 
 type AgentResponse = {
@@ -302,8 +302,12 @@ export function DebateView({
                         <div key={agent.id} className="mb-6 animate-[fadeIn_0.4s_ease-out_forwards]">
                           <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
                             <div className="flex items-center gap-3 mb-2">
-                              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[16px] font-bold shrink-0" style={{ backgroundColor: color }}>
-                                {agent.agent_name.charAt(0)}
+                              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center border-2 z-10 relative overflow-hidden shrink-0" style={{ borderColor: color }}>
+                                <img 
+                                  src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
+                                  alt={agent.agent_name}
+                                  className="w-full h-full object-cover"
+                                />
                               </div>
                               <div className="flex flex-col">
                                 <span className="text-[15px] font-bold text-white leading-tight">{agent.agent_name}</span>
@@ -389,7 +393,7 @@ export function DebateView({
                       ) : (
                         <>
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                          I don't agree with agents
+                          I don&apos;t agree with agents
                         </>
                       )}
                     </button>
@@ -421,8 +425,8 @@ export function DebateView({
                         <div className="flex flex-col">
                           <div className="flex items-center gap-3 mb-2">
                             <span className="text-[15px] font-bold text-white">{item.author_name || 'Anonymous'}</span>
-                            {item.sentiment === 'agree' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
-                            {item.sentiment === 'disagree' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
+                            {item.sentiment === 'agreed' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
+                            {item.sentiment === 'disagreed' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
                             <span className="text-[12px] text-[#444] ml-auto">
                               {new Date(item.created_at).toLocaleDateString()}
                             </span>
@@ -476,7 +480,13 @@ export function DebateView({
                           return (
                             <div key={fp.id} className="border-l-[3px] pl-6 py-1 transition-all" style={{ borderLeftColor: color }}>
                               <div className="flex items-center gap-3 mb-3">
-                                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-black shadow-lg" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
+                                <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden">
+                                  <img 
+                                    src={AGENT_AVATARS[fp.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
+                                    alt={fp.agent_name}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
                                 <span className="font-bold text-white text-[15px]">{fp.agent_name}</span>
                               </div>
                               <p className="text-[14px] text-secondary leading-[1.7]">{fp.response_text}</p>

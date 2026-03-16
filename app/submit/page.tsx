@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,10 +9,14 @@ export default function SubmitPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [problemText, setProblemText] = useState('');
+  const [customName, setCustomName] = useState((user?.user_metadata as any)?.display_name || user?.email?.split('@')[0] || '');
+  const [isAnonymous, setIsAnonymous] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleExampleClick = (text: string) => {
     setProblemText(text);
+    setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -19,6 +24,7 @@ export default function SubmitPage() {
     if (problemText.length < 20) return;
     
     setIsSubmitting(true);
+    setError(null);
     
     try {
       const res = await fetch('/api/intake', {
@@ -26,11 +32,15 @@ export default function SubmitPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           rawSubmission: problemText,
-          userId: user?.id
+          userId: user?.id,
+          submittedBy: isAnonymous ? 'Anonymous' : (customName || 'Anonymous')
         })
       });
       
-      if (!res.ok) throw new Error('Intake failed');
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.error || 'Intake failed');
+      }
       
       const data = await res.json();
       
@@ -43,8 +53,9 @@ export default function SubmitPage() {
         sessionStorage.setItem('tempThreadId', data.threadId);
         router.push('/submit/debating');
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      setError(err.message);
       setIsSubmitting(false);
     }
   };
@@ -85,17 +96,72 @@ export default function SubmitPage() {
               Write it in your own words. The more specific, the better the debate.
             </p>
           </div>
+
+          {error && (
+            <div className="mb-6 bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3 animate-slideIn">
+              <svg className="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <div className="flex-1">
+                <p className="text-[14px] font-bold text-white mb-0.5">Content Blocked</p>
+                <p className="text-[13px] text-red-100/70 leading-relaxed">{error}</p>
+              </div>
+            </div>
+          )}
           
           <form onSubmit={handleSubmit}>
             <div className="mb-6 relative">
               <textarea
                 value={problemText}
-                onChange={(e) => setProblemText(e.target.value)}
+                onChange={(e) => {
+                  setProblemText(e.target.value);
+                  if (error) setError(null);
+                }}
                 placeholder="Example: My YouTube views dropped 60% last month after I started posting daily instead of 3x a week. I have 45K subscribers. I haven't changed my content style but something clearly changed with the algorithm. I tried posting at different times but nothing worked."
-                className="w-full bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl px-5 py-4 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px] min-h-[200px] resize-y"
+                className={`w-full bg-[#0A0A0A] border rounded-xl px-5 py-4 text-white placeholder-secondary focus:outline-none transition-colors text-[15px] min-h-[200px] resize-y shadow-inner ${
+                  error ? 'border-red-500/50' : 'border-[#1F1F1F] focus:border-brandprimary'
+                }`}
               />
               <div className="absolute bottom-4 right-4 text-[12px] text-tertiary">
                 {problemText.length} characters
+              </div>
+            </div>
+
+            {/* IDENTITY SETTINGS */}
+            <div className="bg-[#111] border border-[#1F1F1F] rounded-2xl p-6 mb-8">
+              <h3 className="text-[14px] font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+                <svg className="w-4 h-4 text-brandprimary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                Identity Settings
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex-1">
+                    <label className="block text-[12px] text-secondary font-medium mb-1.5 ml-1">Display Name</label>
+                    <input 
+                      type="text"
+                      disabled={isAnonymous}
+                      value={customName}
+                      onChange={(e) => setCustomName(e.target.value)}
+                      placeholder="Your Name or Nickname"
+                      className="w-full bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl px-4 py-2.5 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-all text-[14px] disabled:opacity-30"
+                    />
+                  </div>
+                </div>
+
+                <label className="flex items-center gap-3 cursor-pointer group p-3 rounded-xl border border-transparent hover:border-[#1F1F1F] transition-all">
+                  <div className="relative flex items-center">
+                    <input 
+                      type="checkbox"
+                      checked={isAnonymous}
+                      onChange={(e) => setIsAnonymous(e.target.checked)}
+                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-[#333] transition-all checked:border-brandprimary checked:bg-brandprimary"
+                    />
+                    <svg className="absolute h-3.5 w-3.5 text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[14px] font-medium text-white group-hover:text-brandprimary transition-colors">Post Anonymously</span>
+                    <span className="text-[12px] text-tertiary">Your name will be hidden from the public debate</span>
+                  </div>
+                </label>
               </div>
             </div>
 

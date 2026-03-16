@@ -7,6 +7,7 @@ import {
   AGENT_ROUTING,
   MODERATOR_PROMPT,
   VERDICT_PROMPT,
+  ORCHESTRATOR_PROMPT,
   AgentName
 } from '@/lib/agents'
 
@@ -69,6 +70,8 @@ function cleanResponse(responseText: string): string {
 
 async function runAgentResponse(
   agent: AgentName,
+  persona: string,
+  expertise: string,
   context: string,
   previousResponses: AgentResponseRecord[],
   roundNumber: number,
@@ -94,7 +97,7 @@ Be direct and specific.`
   const message = await anthropic.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 400,
-    system: AGENT_PERSONAS[agent],
+    system: persona,
     messages: [{ role: 'user', content: userMessage }]
   })
 
@@ -107,7 +110,7 @@ Be direct and specific.`
   await supabase.from('agent_responses').insert({
     thread_id: threadId,
     agent_name: agent,
-    expertise: AGENT_EXPERTISE[agent],
+    expertise: expertise,
     response_text: responseText,
     round_number: roundNumber,
     response_order: responseOrder,
@@ -179,6 +182,8 @@ Has consensus been reached?`
 
 async function collectFinalPositions(
   agents: AgentName[],
+  personas: Record<string, string>,
+  expertise: Record<string, string>,
   context: string,
   allResponses: AgentResponseRecord[],
   threadId: string
@@ -189,10 +194,8 @@ async function collectFinalPositions(
     const message = await anthropic.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 150,
-      system: AGENT_PERSONAS[agent],
-      messages: [{
-        role: 'user',
-        content: `${context}
+      system: personas[agent],
+      messages: [{ role: 'user', content: `${context}
 
 After this full debate, give your FINAL position 
 in ONE sentence. Be direct and specific.
@@ -210,7 +213,7 @@ What is your single most important recommendation?`
       .insert({
         thread_id: threadId,
         agent_name: agent,
-        expertise: AGENT_EXPERTISE[agent],
+        expertise: expertise[agent],
         response_text: finalText,
         round_number: 99,
         response_order: 99,
@@ -266,9 +269,19 @@ Generate the verdict based on these final positions.`
     }
   }
 
+  let finalVerdictText = verdictData.verdict_text || '';
+  
+  if (verdictData.disclaimer) {
+    finalVerdictText += `\n\n${verdictData.disclaimer}`;
+  }
+  
+  if (verdictData.reference_links && verdictData.reference_links.length > 0) {
+    finalVerdictText += `\n\nReference Links:\n` + verdictData.reference_links.join('\n');
+  }
+
   await supabase.from('verdicts').insert({
     thread_id: threadId,
-    verdict_text: verdictData.verdict_text,
+    verdict_text: finalVerdictText,
     key_takeaway_1: verdictData.key_takeaway_1,
     key_takeaway_2: verdictData.key_takeaway_2,
     key_takeaway_3: verdictData.key_takeaway_3,
@@ -341,10 +354,41 @@ ${answersContext ?
   `Additional context from intake:\n${answersContext}` 
   : ''}`
 
+    // Dynamic Agent Orchestration
+    const orchestratorMessage = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 300,
+      system: ORCHESTRATOR_PROMPT,
+      messages: [{ role: 'user', content: context }]
+    })
+
+    const orchRaw = orchestratorMessage.content[0].type === 'text'
+      ? orchestratorMessage.content[0].text : '{}'
+    
+    let dynamicAgent: { name: string, expertise: string, persona: string } | null = null
+    try {
+      const orchResult = JSON.parse(orchRaw.replace(/```json\n?|\n?```/g, '').trim())
+      if (orchResult.needs_specialist && orchResult.specialist) {
+        dynamicAgent = orchResult.specialist
+      }
+    } catch {
+      console.warn('Orchestrator failed to parse JSON')
+    }
+
+    // Local metadata merge
+    const localPersonas = { ...AGENT_PERSONAS }
+    const localExpertise = { ...AGENT_EXPERTISE }
+
     const selectedAgents = selectAgents(
       thread.platform, 
       thread.topic
     )
+
+    if (dynamicAgent) {
+      selectedAgents.push(dynamicAgent.name)
+      localPersonas[dynamicAgent.name] = dynamicAgent.persona
+      localExpertise[dynamicAgent.name] = dynamicAgent.expertise
+    }
 
     const allResponses: AgentResponseRecord[] = []
     let totalExchanges = 0
@@ -360,6 +404,8 @@ ${answersContext ?
         
         const response = await runAgentResponse(
           agent,
+          localPersonas[agent],
+          localExpertise[agent],
           context,
           allResponses,
           totalRounds,
@@ -391,6 +437,8 @@ ${answersContext ?
 
     const finalPositions = await collectFinalPositions(
       selectedAgents,
+      localPersonas,
+      localExpertise,
       context,
       allResponses,
       threadId

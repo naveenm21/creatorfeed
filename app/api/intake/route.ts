@@ -14,7 +14,7 @@ const supabase = createClient(
 
 export async function POST(request: NextRequest) {
   try {
-    const { rawSubmission, userId } = await request.json()
+    const { rawSubmission, userId, submittedBy } = await request.json()
 
     if (!rawSubmission || rawSubmission.length < 20) {
       return NextResponse.json(
@@ -52,6 +52,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    if (intakeData.is_off_topic) {
+      return NextResponse.json(
+        { error: 'This cannot be posted and this is a platform for content creators.' },
+        { status: 400 }
+      )
+    }
+
     const { data: thread, error: threadError } = 
       await supabase
         .from('threads')
@@ -65,7 +72,7 @@ export async function POST(request: NextRequest) {
             ? 'questioned' : 'ready',
           status: 'pending',
           user_id: userId || null,
-          submitted_by: 'Anonymous'
+          submitted_by: submittedBy || 'Anonymous'
         })
         .select()
         .single()
