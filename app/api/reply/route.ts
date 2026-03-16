@@ -18,12 +18,22 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Map UI values to DB constraint values
+    const sentimentMap: Record<string, string> = {
+      agree: 'positive',
+      disagree: 'negative',
+      positive: 'positive',
+      negative: 'negative',
+      neutral: 'neutral',
+    }
+    const mappedSentiment = sentiment ? (sentimentMap[sentiment] ?? null) : null
+
     const { data, error } = await supabase
       .from('human_replies')
       .insert({
         thread_id: threadId,
         agent_referenced: agentReferenced || null,
-        sentiment: sentiment || null,
+        sentiment: mappedSentiment,
         reply_text: replyText,
         author_name: authorName || 'Anonymous'
       })
