@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const next = requestUrl.searchParams.get('next') ?? '/'
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL 
-    || 'https://feed.creedom.ai'
+    || 'https://feed.creedm.ai'
 
   if (code) {
     const cookieStore = await cookies()
