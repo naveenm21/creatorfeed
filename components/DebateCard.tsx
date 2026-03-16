@@ -51,6 +51,7 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
                   className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-background z-10 relative overflow-hidden"
                   style={{ zIndex: 10 - idx }}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={AGENT_AVATARS[agent as AgentName] || AGENT_AVATARS.Specialist} 
                     alt={agent}

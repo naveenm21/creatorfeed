@@ -303,6 +303,7 @@ export function DebateView({
                           <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
                             <div className="flex items-center gap-3 mb-2">
                               <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center border-2 z-10 relative overflow-hidden shrink-0" style={{ borderColor: color }}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img 
                                   src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
                                   alt={agent.agent_name}
@@ -481,6 +482,7 @@ export function DebateView({
                             <div key={fp.id} className="border-l-[3px] pl-6 py-1 transition-all" style={{ borderLeftColor: color }}>
                               <div className="flex items-center gap-3 mb-3">
                                 <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden">
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
                                   <img 
                                     src={AGENT_AVATARS[fp.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
                                     alt={fp.agent_name}
