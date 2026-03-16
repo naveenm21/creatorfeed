@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
 'use client';
 
-import { useState, useRef, useEffect, use } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Verdict } from '@/components/Verdict';
 import { createClient } from '@/lib/supabase';
 import { AGENT_COLORS, AGENT_EXPERTISE } from '@/lib/agents';
@@ -28,9 +28,8 @@ type HumanReply = {
 
 const ALL_AGENTS = ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'];
 
-export default function DebatePage({ params }: { params: Promise<{ slug: string }> }) {
-  const unwrappedParams = use(params);
-  const slug = unwrappedParams.slug;
+export default function DebatePage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
 
   const [activeTab, setActiveTab] = useState('AI Debate');
   const [respondingTo, setRespondingTo] = useState('General');
