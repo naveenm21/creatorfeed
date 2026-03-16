@@ -63,6 +63,7 @@ export function DebateView({
   const [liveStatus, setLiveStatus] = useState<'debating' | 'published' | 'pending' | 'failed' | null>(initialThread?.status || null);
   const [typingAgent, setTypingAgent] = useState<string | null>(null);
   const [showShareDialog, setShowShareDialog] = useState(false);
+  const [showFullDescription, setShowFullDescription] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('');
 
   useEffect(() => {
@@ -249,6 +250,37 @@ export function DebateView({
                 Share
               </button>
             </div>
+
+            {/* PROBLEM DESCRIPTION (Expandable) */}
+            {thread?.raw_submission && (
+              <div className="mt-4 p-4 border border-white/10 rounded-xl bg-white/5">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
+                    <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  </div>
+                  <span className="text-[12px] font-bold text-secondary uppercase tracking-widest">Problem Description</span>
+                </div>
+                <p className={`text-[15px] text-secondary leading-relaxed transition-all duration-300 ${!showFullDescription ? 'line-clamp-2' : ''}`}>
+                  {thread.raw_submission}
+                </p>
+                {thread.raw_submission.length > 150 && (
+                  <button 
+                    onClick={() => setShowFullDescription(!showFullDescription)}
+                    className="mt-2 text-[13px] font-bold text-brandprimary hover:underline flex items-center gap-1 transition-all"
+                  >
+                    {showFullDescription ? 'See less' : 'See more'}
+                    <svg 
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${showFullDescription ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+            )}
           </div>
           <div className="w-full h-px bg-[#1F1F1F] mb-0" />
 
