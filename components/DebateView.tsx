@@ -211,9 +211,6 @@ export function DebateView({
               )}
             </div>
             <h1 className="text-[28px] font-bold text-white tracking-[-0.01em] leading-snug mb-4">{thread.topic}</h1>
-            <div className="text-[14px] text-secondary leading-relaxed mb-4 border-l-2 border-[#333] pl-4 italic">
-              &quot;{thread.raw_submission}&quot;
-            </div>
             <div className="text-[13px] text-secondary flex flex-wrap gap-x-2 gap-y-1 items-center">
               <span>{agentResponses.length} AI responses</span>
               <span>·</span>
@@ -465,28 +462,8 @@ export function DebateView({
                 </div>
               ) : (
                 <>
-                  {finalPositions.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-4">Final Agent Positions</h3>
-                      <div className="space-y-4">
-                        {finalPositions.map(fp => {
-                          const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
-                          return (
-                            <div key={fp.id} className="border-l-2 pl-4 py-1" style={{ borderLeftColor: color }}>
-                              <div className="flex items-center gap-2 mb-1.5">
-                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[12px] font-bold" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
-                                <span className="font-bold text-white text-[14px]">{fp.agent_name}</span>
-                              </div>
-                              <p className="text-[14px] text-secondary leading-relaxed">{fp.response_text}</p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-
                   {verdict && (
-                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-6">
+                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-8">
                       <div className="flex items-center gap-2 mb-4">
                         <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
                         <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">AI Consensus Verdict</span>
@@ -503,6 +480,26 @@ export function DebateView({
                           ))}
                         </div>
                       )}
+                    </div>
+                  )}
+
+                  {finalPositions.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-4">Individual Agent Closings</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {finalPositions.map(fp => {
+                          const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
+                          return (
+                            <div key={fp.id} className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl p-4 flex flex-col">
+                              <div className="flex items-center gap-2 mb-2">
+                                <div className="w-6 h-6 rounded-full flex items-center justify-center text-white text-[11px] font-bold" style={{ backgroundColor: color }}>{fp.agent_name[0]}</div>
+                                <span className="font-bold text-white text-[13px]">{fp.agent_name}</span>
+                              </div>
+                              <p className="text-[13px] text-secondary leading-relaxed line-clamp-3">{fp.response_text}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
 
