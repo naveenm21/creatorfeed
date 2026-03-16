@@ -139,9 +139,28 @@ export function Navbar() {
               <Link href="/trending" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
                 Trending
               </Link>
-              <Link href="/signin" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
-                Sign in
-              </Link>
+              {loading ? (
+                <div className="h-[44px] w-1/2 bg-borderdefault animate-pulse rounded-lg mb-4" />
+              ) : user ? (
+                <>
+                  <Link href="/my-debates" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
+                    My Debates
+                  </Link>
+                  <button 
+                    onClick={() => {
+                      signOut();
+                      setMobileMenuOpen(false);
+                    }} 
+                    className="text-[18px] font-semibold text-left text-secondary pb-4 border-b border-borderdefault"
+                  >
+                    Sign out
+                  </button>
+                </>
+              ) : (
+                <Link href="/signin" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
+                  Sign in
+                </Link>
+              )}
               <Link href="/submit" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brandprimary to-brandorange">
                 Submit a Problem →
               </Link>

@@ -321,7 +321,9 @@ Rules:
 - The verdict must resolve the core disagreements
 - Reference specific agents where helpful
 - CRITICAL: If the topic involves tax, legal, or financial advice, YOU MUST include a mandatory, clear disclaimer: "DISCLAIMER: This is not professional [legal/tax/financial] advice. Always consult with a certified professional in your jurisdiction."
-- Reference actual facts or official platform documentation links if mentioned in the debate.
+- Reference actual facts or official platform documentation links ONLY if they were explicitly mentioned in the debate or are genuinely critical to the situation.
+- DO NOT force-fit reference links for every verdict. If no specific external resource is needed, leave the array empty.
+- For specialized topics like "tax", "legal", or "financial", prioritize including official government or platform documentation links if available.
 
 Output a JSON object with exactly this structure:
 {

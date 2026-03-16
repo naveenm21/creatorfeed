@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth'
+import { PROBLEM_TAGS } from '@/lib/constants/problem-tags';
 
 export default function SubmitPage() {
   const { user, loading } = useAuth();
@@ -13,6 +14,13 @@ export default function SubmitPage() {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [randomTags, setRandomTags] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Pick 3 random tags
+    const shuffled = [...PROBLEM_TAGS].sort(() => 0.5 - Math.random());
+    setRandomTags(shuffled.slice(0, 3));
+  }, []);
 
   const handleExampleClick = (text: string) => {
     setProblemText(text);
@@ -125,6 +133,19 @@ export default function SubmitPage() {
               </div>
             </div>
 
+            <div className="mb-8 flex flex-wrap gap-2 justify-center">
+              {randomTags.map((tag) => (
+                <button 
+                  key={tag}
+                  type="button"
+                  onClick={() => handleExampleClick(tag)}
+                  className="bg-[#111] hover:bg-[#1A1A1A] border border-[#1F1F1F] text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
+                >
+                  &quot;{tag}&quot;
+                </button>
+              ))}
+            </div>
+
             {/* IDENTITY SETTINGS */}
             <div className="bg-[#111] border border-[#1F1F1F] rounded-2xl p-6 mb-8">
               <h3 className="text-[14px] font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
@@ -163,30 +184,6 @@ export default function SubmitPage() {
                   </div>
                 </label>
               </div>
-            </div>
-
-            <div className="mb-8 flex flex-wrap gap-2 justify-center">
-              <button 
-                type="button"
-                onClick={() => handleExampleClick("My Instagram reach collapsed after brand deals")}
-                className="bg-[#111] hover:bg-[#1A1A1A] border border-[#1F1F1F] text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
-              >
-                &quot;My Instagram reach collapsed after brand deals&quot;
-              </button>
-              <button 
-                type="button"
-                onClick={() => handleExampleClick("YouTube views down 60% after daily posting")}
-                className="bg-[#111] hover:bg-[#1A1A1A] border border-[#1F1F1F] text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
-              >
-                &quot;YouTube views down 60% after daily posting&quot;
-              </button>
-              <button 
-                type="button"
-                onClick={() => handleExampleClick("TikTok growth stalled at 50K followers")}
-                className="bg-[#111] hover:bg-[#1A1A1A] border border-[#1F1F1F] text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
-              >
-                &quot;TikTok growth stalled at 50K followers&quot;
-              </button>
             </div>
 
             <button

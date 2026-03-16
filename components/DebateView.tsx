@@ -6,6 +6,7 @@ import { Verdict } from '@/components/Verdict';
 import { createClient } from '@/lib/supabase';
 import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
+import { ShareDialog } from '@/components/ShareDialog';
 
 type AgentResponse = {
   id: string;
@@ -61,6 +62,14 @@ export function DebateView({
   
   const [liveStatus, setLiveStatus] = useState<'debating' | 'published' | 'pending' | 'failed' | null>(initialThread?.status || null);
   const [typingAgent, setTypingAgent] = useState<string | null>(null);
+  const [showShareDialog, setShowShareDialog] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
 
   const supabase = createClient();
 
@@ -218,6 +227,15 @@ export function DebateView({
               <span>·</span>
               <span>{thread.views || 0} views</span>
               {isLive && <span>· <span className="text-yellow-400">Agents still debating...</span></span>}
+              <button 
+                onClick={() => setShowShareDialog(true)}
+                className="ml-auto lg:ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[12px] font-bold text-white hover:bg-white/10 transition-all group"
+              >
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current group-hover:rotate-12 transition-transform" strokeWidth="2.5">
+                  <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
+                </svg>
+                Share
+              </button>
             </div>
           </div>
           <div className="w-full h-px bg-[#1F1F1F] mb-0" />
@@ -542,6 +560,12 @@ export function DebateView({
         </div>
       </div>
 
+      <ShareDialog 
+        isOpen={showShareDialog} 
+        onClose={() => setShowShareDialog(false)} 
+        url={currentUrl}
+        title={thread.topic}
+      />
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(8px); }
