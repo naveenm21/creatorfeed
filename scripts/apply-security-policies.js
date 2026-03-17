@@ -9,7 +9,7 @@ async function migrate() {
   }
 
   const REF = 'xvnjqslxoqbcedtxsdgj';
-  const PASSWORD = 'CreatorFeed2026!@#';
+  const PASSWORD = 'CreatorFeed@2026';
 
   const client = new Client({
     host: 'aws-1-ap-southeast-1.pooler.supabase.com',
