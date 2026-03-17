@@ -102,10 +102,10 @@ Be direct and specific.`
   const position = extractPosition(rawText)
   const responseText = cleanResponse(rawText)
 
-  await supabaseAdmin.from('agent_responses').insert({
+  const { error: insertError } = await supabaseAdmin.from('agent_responses').insert({
     thread_id: threadId,
     agent_name: agent,
-    expertise: expertise,
+    expertise: expertise || 'Guest Specialist',
     response_text: responseText,
     round_number: roundNumber,
     response_order: responseOrder,
@@ -114,6 +114,10 @@ Be direct and specific.`
     agreed_count: 0,
     disagreed_count: 0
   })
+
+  if (insertError) {
+    console.error(`FAILED to insert response for ${agent}:`, insertError)
+  }
 
   return { 
     agentName: agent, 
@@ -356,10 +360,11 @@ ${answersContext ?
   `Additional context from intake:\n${answersContext}` 
   : ''}`
 
-    // Dynamic Agent Orchestration
+    // Guest Star Orchestration
+    console.log('Summoning orchestrator for potential Guest Star...')
     const orchestratorMessage = await anthropic.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 300,
+      max_tokens: 400,
       system: ORCHESTRATOR_PROMPT,
       messages: [{ role: 'user', content: context }]
     })
@@ -369,12 +374,14 @@ ${answersContext ?
     
     let dynamicAgent: { name: string, expertise: string, persona: string } | null = null
     try {
-      const orchResult = JSON.parse(orchRaw.replace(/```json\n?|\n?```/g, '').trim())
+      const cleanedJson = orchRaw.replace(/```json\n?|\n?```/g, '').trim()
+      const orchResult = JSON.parse(cleanedJson)
       if (orchResult.needs_specialist && orchResult.specialist) {
         dynamicAgent = orchResult.specialist
+        console.log(`Guest Star Summoned: ${orchResult.specialist.name} (${orchResult.specialist.expertise})`)
       }
-    } catch {
-      console.warn('Orchestrator failed to parse JSON')
+    } catch (e) {
+      console.warn('Orchestrator failed to parse JSON or no specialist needed:', e)
     }
 
     // Local metadata merge
