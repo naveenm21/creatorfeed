@@ -8,8 +8,8 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!
 })
 
-const RATE_LIMIT_COUNT = 5
-const RATE_LIMIT_WINDOW_HOURS = 6
+const RATE_LIMIT_COUNT = 10
+const RATE_LIMIT_WINDOW_HOURS = 1
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,12 +35,13 @@ export async function POST(request: NextRequest) {
     const { data: recentThreads } = await supabaseAdmin
       .from('threads')
       .select('id')
-      .or(`ip_address.eq."${ip}",user_agent.eq."${ua}"${userId ? `,user_id.eq."${userId}"` : ''}`)
+      .or(userId ? `user_id.eq."${userId}"` : `ip_address.eq."${ip}"`)
       .gte('created_at', sixHoursAgo)
 
     if (recentThreads && recentThreads.length >= RATE_LIMIT_COUNT) {
+      const windowText = RATE_LIMIT_WINDOW_HOURS === 1 ? 'hour' : `${RATE_LIMIT_WINDOW_HOURS} hours`
       return NextResponse.json(
-        { error: `You have reached the submission limit (${RATE_LIMIT_COUNT} questions per ${RATE_LIMIT_WINDOW_HOURS} hours). Please try again later.` },
+        { error: `Rate limit reached (${RATE_LIMIT_COUNT} submissions per ${windowText}). Please try again shortly.` },
         { status: 429 }
       )
     }

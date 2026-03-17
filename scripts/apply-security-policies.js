@@ -55,10 +55,6 @@ async function migrate() {
       CREATE POLICY "Users can view their own threads" 
         ON threads FOR SELECT USING (auth.uid() = user_id);
 
-      -- TEMPORARY: Allow anonymous insert for intake (until we switch to Service Role or Auth)
-      CREATE POLICY "Allow anonymous thread creation" 
-        ON threads FOR INSERT WITH CHECK (true);
-
       -- 3. Intake Questions
       CREATE POLICY "Intake questions are viewable by everyone" 
         ON intake_questions FOR SELECT USING (true);
