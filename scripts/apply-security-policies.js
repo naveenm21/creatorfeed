@@ -13,6 +13,9 @@ async function migrate() {
     await client.connect();
     console.log('Connected to database. Applying security policies...');
 
+    // Ensure we are in the public schema specifically
+    await client.query('SET search_path TO public;');
+
     // SQL to enable RLS and set policies
     const sql = `
       -- 1. Enable RLS on all tables
