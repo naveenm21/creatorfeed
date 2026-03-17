@@ -32,11 +32,19 @@ export async function POST(request: NextRequest) {
     // Rate Limit Check (Using Admin to bypass RLS)
     const sixHoursAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString()
     
-    const { data: recentThreads } = await supabaseAdmin
+    let query = supabaseAdmin
       .from('threads')
       .select('id')
-      .or(userId ? `user_id.eq."${userId}"` : `ip_address.eq."${ip}"`)
       .gte('created_at', sixHoursAgo)
+
+    if (userId) {
+      query = query.eq('user_id', userId)
+    } else {
+      // In a shared network (office), combine IP and UA to identify unique systems
+      query = query.eq('ip_address', ip).eq('user_agent', ua)
+    }
+
+    const { data: recentThreads } = await query
 
     if (recentThreads && recentThreads.length >= RATE_LIMIT_COUNT) {
       const windowText = RATE_LIMIT_WINDOW_HOURS === 1 ? 'hour' : `${RATE_LIMIT_WINDOW_HOURS} hours`
