@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: Request) {
   try {
     const supabase = await createServerSupabaseClient()
     const { data: { session } } = await supabase.auth.getSession()
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
       karma: data?.karma || 0,
       badges: data?.badges || []
     })
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
+  } catch (_error) {
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
