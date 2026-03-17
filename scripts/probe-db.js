@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 require('dotenv').config({ path: '.env.local' });
 
-const PASSWORD = 'CreatorFeed2026!@#';
+const PASSWORD = 'CreatorFeed@2026';
 const ENCODED_PWD = encodeURIComponent(PASSWORD);
 const REF = 'xvnjqslxoqbcedtxsdgj';
 
