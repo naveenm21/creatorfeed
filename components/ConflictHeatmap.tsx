@@ -48,7 +48,7 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
       </div>
 
       <div className="relative h-[80px] flex items-end gap-[2px]">
-        {responses.map((resp, i) => {
+        {responses.map((resp) => {
           const heat = getHeatValue(resp.position);
           const color = AGENT_COLORS[resp.agent_name as keyof typeof AGENT_COLORS] || '#FFF';
           
