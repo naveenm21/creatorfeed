@@ -12,8 +12,9 @@ export const metadata: Metadata = {
     images: ['/og-image.png']
   }
 }
-import Link from 'next/link';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { InfiniteFeed } from '@/components/InfiniteFeed';
+import Link from 'next/link';
 
 function getTimeAgo(dateString: string): string {
   const date = new Date(dateString)
@@ -103,9 +104,7 @@ export default async function Home() {
                 </Link>
               </div>
             ) : (
-              debates.map(debate => (
-                <DebateCard key={debate.id} debate={debate} />
-              ))
+              <InfiniteFeed initialDebates={debates as any} />
             )}
           </div>
         </div>
