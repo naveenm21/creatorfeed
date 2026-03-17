@@ -95,7 +95,7 @@ export default async function DebatePage({ params }: Props) {
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
       supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
-      supabase.from('human_replies').select('*').eq('thread_id', slug).order('created_at', { ascending: true }),
+      supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', slug).order('created_at', { ascending: true }),
     ]);
     
     if (r) {

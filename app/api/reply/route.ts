@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { awardKarma } from '@/lib/karma'
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,6 +40,7 @@ export async function POST(request: NextRequest) {
       .from('human_replies')
       .insert({
         thread_id: threadId,
+        user_id: user.id,
         agent_referenced: agentReferenced || null,
         sentiment: mappedSentiment,
         reply_text: replyText,
@@ -54,6 +56,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // Award Karma for community contribution
+    await awardKarma(user.id, 5, 'Posted a community reply')
 
     return NextResponse.json({ success: true, reply: data })
   } catch (error) {

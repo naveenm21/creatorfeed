@@ -21,11 +21,16 @@ type AgentResponse = {
 
 type HumanReply = {
   id: string;
+  user_id: string;
   author_name: string;
   reply_text: string;
   sentiment: string | null;
   agent_referenced: string | null;
   created_at: string;
+  author?: {
+    karma: number;
+    badges: string[];
+  };
 };
 
 const ALL_AGENTS = ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'];
@@ -82,7 +87,7 @@ export function DebateView({
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
       supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
-      supabase.from('human_replies').select('*').eq('thread_id', slug).order('created_at', { ascending: true }),
+      supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', slug).order('created_at', { ascending: true }),
     ]);
 
     if (r) {
@@ -503,7 +508,20 @@ export function DebateView({
                       <div key={item.id}>
                         <div className="flex flex-col">
                           <div className="flex items-center gap-3 mb-2">
-                            <span className="text-[15px] font-bold text-white">{item.author_name || 'Anonymous'}</span>
+                            <span className="text-[15px] font-bold text-white transition-colors">{item.author_name || 'Anonymous'}</span>
+                            {item.author && (
+                              <div className="flex items-center gap-2">
+                                <span className="flex items-center gap-0.5 text-[10px] font-bold text-brandprimary bg-brandprimary/10 px-1.5 py-0.5 rounded border border-brandprimary/20">
+                                  <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                  {item.author.karma} Karma
+                                </span>
+                                {item.author.badges?.map(badge => (
+                                  <span key={badge} className="text-[10px] font-bold text-teal-400 bg-teal-400/10 px-1.5 py-0.5 rounded border border-teal-400/20 uppercase tracking-tight">
+                                    {badge}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                             {item.sentiment === 'agreed' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
                             {item.sentiment === 'disagreed' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
                             <span className="text-[12px] text-[#444] ml-auto">

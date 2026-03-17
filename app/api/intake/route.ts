@@ -3,6 +3,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import { supabaseAdmin } from '@/lib/supabase-admin'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { INTAKE_AGENT_PROMPT } from '@/lib/agents'
+import { awardKarma } from '@/lib/karma'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!
@@ -123,6 +124,11 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to create thread' },
         { status: 500 }
       )
+    }
+
+    // Award Karma for starting a debate
+    if (userId) {
+      await awardKarma(userId, 10, 'Started a new debate thread')
     }
 
     if (intakeData.questions?.length > 0) {
