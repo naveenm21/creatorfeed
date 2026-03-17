@@ -9,10 +9,18 @@ const variants = [
   {
     host: 'aws-1-ap-southeast-1.pooler.supabase.com',
     port: 6543,
+    user: 'postgres',
+    password: PASSWORD,
+    database: REF, // Try project ref as database name
+    ssl: { rejectUnauthorized: false }
+  },
+  {
+    host: 'aws-1-ap-southeast-1.pooler.supabase.com',
+    port: 6543,
     user: `postgres.${REF}`,
     password: PASSWORD,
     database: 'postgres',
-    ssl: true
+    ssl: { rejectUnauthorized: false }
   },
   {
     host: '3.1.167.181',
