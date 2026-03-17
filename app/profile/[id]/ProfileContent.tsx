@@ -3,10 +3,34 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+interface Profile {
+  full_name: string | null;
+  karma: number;
+  badges: string[];
+}
+
+interface Debate {
+  id: string;
+  topic: string;
+  platform: string | null;
+  created_at: string;
+}
+
+interface Reply {
+  id: string;
+  thread_id: string;
+  reply_text: string;
+  sentiment: string | null;
+  created_at: string;
+  thread?: {
+    topic: string;
+  };
+}
+
 type ProfileContentProps = {
-  profile: any;
-  debates: any[];
-  replies: any[];
+  profile: Profile;
+  debates: Debate[];
+  replies: Reply[];
 };
 
 export function ProfileContent({ profile, debates, replies }: ProfileContentProps) {
@@ -106,7 +130,7 @@ export function ProfileContent({ profile, debates, replies }: ProfileContentProp
                       href={`/debate/${reply.thread_id}`}
                       className="text-[13px] font-bold text-brandprimary hover:underline block mb-3"
                     >
-                      Re: {(reply.thread as any)?.topic} →
+                      Re: {reply.thread?.topic} →
                     </Link>
                     <div className="bg-white/5 p-4 rounded-xl border border-white/5 mb-4 italic text-[15px] text-primary leading-relaxed">
                       &quot;{reply.reply_text}&quot;

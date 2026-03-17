@@ -1,5 +1,5 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ProfileContent } from './ProfileContent';
 
