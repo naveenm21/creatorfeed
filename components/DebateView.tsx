@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase';
 import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
 import { ShareDialog } from '@/components/ShareDialog';
+import { ConflictHeatmap } from '@/components/ConflictHeatmap';
 
 type AgentResponse = {
   id: string;
@@ -185,6 +186,20 @@ export function DebateView({
     }
   };
 
+  const scrollToResponse = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 150;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      
+      // Briefly highlight the response
+      el.classList.add('ring-2', 'ring-brandprimary', 'rounded-xl', 'animate-pulse');
+      setTimeout(() => {
+        el.classList.remove('ring-2', 'ring-brandprimary', 'rounded-xl', 'animate-pulse');
+      }, 2000);
+    }
+  };
+
 
   // ── STATE: NOT FOUND ──
   if (!thread) return (
@@ -347,10 +362,10 @@ export function DebateView({
                 <div className="text-center py-16 text-secondary text-[15px]">
                   The debate will appear here as agents respond. This usually takes 1–3 minutes.
                 </div>
-              ) : rounds.length === 0 && !isLive ? (
-                <div className="text-center py-16 text-secondary text-[15px]">No responses yet.</div>
               ) : (
-                rounds.map((roundNum) => (
+                <>
+                  <ConflictHeatmap responses={agentResponses} onNavigate={scrollToResponse} />
+                  {rounds.map((roundNum) => (
                   <div key={roundNum} className="mb-12">
                      <div className="flex items-center gap-4 mb-6">
                       <div className="h-px bg-[#1F1F1F] flex-1" />
@@ -361,7 +376,7 @@ export function DebateView({
                       const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
                       const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
                       return (
-                        <div key={agent.id} className="mb-6 animate-[fadeIn_0.4s_ease-out_forwards]">
+                        <div key={agent.id} id={agent.id} className="mb-6 animate-[fadeIn_0.4s_ease-out_forwards] transition-all duration-500">
                           <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
                             <div className="flex items-center gap-3 mb-2">
                               <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center border-2 z-10 relative overflow-hidden shrink-0" style={{ borderColor: color }}>
@@ -393,7 +408,8 @@ export function DebateView({
                       );
                     })}
                   </div>
-                ))
+                  ))}
+                </>
               )}
 
               {/* "Next agent responding" indicator */}
