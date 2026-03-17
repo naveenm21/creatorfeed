@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next';
-import { DebateCard } from '@/components/DebateCard';
 
 export const metadata: Metadata = {
   title: 'CreatorFeed — Where Creator Growth Gets Argued Out',

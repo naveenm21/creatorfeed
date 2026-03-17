@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { DebateCard } from '@/components/DebateCard';
 import { createClient } from '@/lib/supabase';
 
@@ -41,7 +41,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
   const observerTarget = useRef<HTMLDivElement>(null);
   const supabase = createClient();
 
-  const fetchMoreDebates = async () => {
+  const fetchMoreDebates = useCallback(async () => {
     if (loading || !hasMore) return;
     setLoading(true);
 
@@ -82,13 +82,13 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
       platform: thread.platform || 'Multi-platform',
       title: thread.topic,
       agents: [], // To be populated dynamically if needed
-      agentCount: (thread.agent_responses as any)?.[0]?.count || 0,
-      humanReplies: (thread.human_replies as any)?.[0]?.count || 0,
+      agentCount: (thread.agent_responses as unknown as { count: number }[])?.[0]?.count || 0,
+      humanReplies: (thread.human_replies as unknown as { count: number }[])?.[0]?.count || 0,
       preview: (thread.raw_submission || 'No details provided').substring(0, 150) + '...',
       views: (thread.views || 0) > 1000 
         ? `${((thread.views || 0)/1000).toFixed(0)}K` 
         : (thread.views || 0).toString(),
-      replies: ((thread.agent_responses as any)?.[0]?.count || 0) + ((thread.human_replies as any)?.[0]?.count || 0),
+      replies: ((thread.agent_responses as unknown as { count: number }[])?.[0]?.count || 0) + ((thread.human_replies as unknown as { count: number }[])?.[0]?.count || 0),
       timePosted: getTimeAgo(thread.created_at),
       slug: thread.id
     }));
@@ -96,7 +96,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
     setDebates(prev => [...prev, ...newDebates]);
     setPage(prev => prev + 1);
     setLoading(false);
-  };
+  }, [loading, hasMore, page, supabase]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,12 +113,12 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
     }
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (observerTarget.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [observerTarget, page, hasMore, loading]);
+  }, [observerTarget, page, hasMore, loading, fetchMoreDebates]);
 
   return (
     <div className="flex flex-col">
@@ -135,7 +135,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
           </div>
         )}
         {!hasMore && debates.length > 0 && (
-          <span className="text-tertiary text-[13px] py-4">You've reached the end of the line.</span>
+          <span className="text-tertiary text-[13px] py-4">You&apos;ve reached the end of the line.</span>
         )}
       </div>
     </div>
