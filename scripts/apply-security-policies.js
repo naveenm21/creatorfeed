@@ -8,7 +8,19 @@ async function migrate() {
     process.exit(1);
   }
 
-  const client = new Client({ connectionString });
+  const REF = 'xvnjqslxoqbcedtxsdgj';
+  const PASSWORD = 'CreatorFeed2026!@#';
+
+  const client = new Client({
+    host: 'aws-1-ap-southeast-1.pooler.supabase.com',
+    port: 6543,
+    user: `postgres.${REF}`,
+    password: PASSWORD,
+    database: 'postgres',
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 5000
+  });
+
   try {
     await client.connect();
     console.log('Connected to database. Applying security policies...');
