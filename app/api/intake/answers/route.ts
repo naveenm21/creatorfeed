@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+import { supabaseAdmin } from '@/lib/supabase-admin'
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     for (const answer of answers) {
-      await supabase
+      await supabaseAdmin
         .from('intake_questions')
         .update({ answer: answer.answer })
         .eq('thread_id', threadId)
@@ -42,11 +37,13 @@ export async function POST(request: NextRequest) {
       updateData.follower_range = followerAnswer.answer
     }
 
-    await supabase
+    await supabaseAdmin
       .from('threads')
       .update(updateData)
       .eq('id', threadId)
 
+    // Internal server-to-server call must use http://localhost — never the public HTTPS URL
+    // (nginx handles TLS externally; the Node.js process is plain HTTP on port 3000)
     // Internal server-to-server call must use http://localhost — never the public HTTPS URL
     // (nginx handles TLS externally; the Node.js process is plain HTTP on port 3000)
     const port = process.env.PORT || 3000
@@ -54,7 +51,10 @@ export async function POST(request: NextRequest) {
       `http://localhost:${port}/api/debate`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.INTERNAL_API_KEY}`
+        },
         body: JSON.stringify({ threadId })
       }
     ).catch(err => 

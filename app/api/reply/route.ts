@@ -1,15 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+import { createServerSupabaseClient } from '@/lib/supabase-server'
 
 export async function POST(request: NextRequest) {
   try {
+    const supabase = await createServerSupabaseClient()
+    
+    // 1. Validate Session
+    const { data: { session } } = await supabase.auth.getSession()
+    if (!session) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      )
+    }
+
+    const user = session.user
     const body = await request.json()
-    const { threadId, agentReferenced, sentiment, replyText, authorName } = body
+    const { threadId, agentReferenced, sentiment, replyText } = body
 
     if (!threadId || !replyText) {
       return NextResponse.json(
@@ -27,6 +34,7 @@ export async function POST(request: NextRequest) {
     }
     const mappedSentiment = sentiment ? (sentimentMap[sentiment] ?? null) : null
 
+    // 2. Perform Insert with verified identity
     const { data, error } = await supabase
       .from('human_replies')
       .insert({
@@ -34,7 +42,7 @@ export async function POST(request: NextRequest) {
         agent_referenced: agentReferenced || null,
         sentiment: mappedSentiment,
         reply_text: replyText,
-        author_name: authorName || 'Anonymous'
+        author_name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'Anonymous'
       })
       .select()
       .single()

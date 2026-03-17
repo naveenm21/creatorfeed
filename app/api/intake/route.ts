@@ -1,33 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
-import { createClient } from '@supabase/supabase-js'
+import { supabaseAdmin } from '@/lib/supabase-admin'
+import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { INTAKE_AGENT_PROMPT } from '@/lib/agents'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!
 })
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
-
 const RATE_LIMIT_COUNT = 5
 const RATE_LIMIT_WINDOW_HOURS = 6
 
 export async function POST(request: NextRequest) {
   try {
-    const { rawSubmission, userId, submittedBy } = await request.json()
+    const supabase = await createServerSupabaseClient()
+    const { data: { session } } = await supabase.auth.getSession()
     
+    const body = await request.json()
+    const { rawSubmission } = body
+    
+    // Use verified userId and metadata if session exists
+    const userId = session?.user.id || null
+    const submittedBy = session?.user.user_metadata?.full_name || 
+                        session?.user.email?.split('@')[0] || 
+                        'Anonymous'
+
     // Get client identifiers for rate limiting
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
     const ua = request.headers.get('user-agent') || 'unknown'
 
-    // Rate Limit Check
+    // Rate Limit Check (Using Admin to bypass RLS)
     const sixHoursAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString()
     
-    // Query for recent threads from this IP/Device/User
-    const { data: recentThreads } = await supabase
+    const { data: recentThreads } = await supabaseAdmin
       .from('threads')
       .select('id')
       .or(`ip_address.eq."${ip}",user_agent.eq."${ua}"${userId ? `,user_id.eq."${userId}"` : ''}`)
@@ -84,7 +89,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { data: thread, error: threadError } = 
-      await supabase
+      await supabaseAdmin
         .from('threads')
         .insert({
           raw_submission: rawSubmission,
@@ -95,8 +100,8 @@ export async function POST(request: NextRequest) {
           intake_status: intakeData.questions?.length > 0 
             ? 'questioned' : 'ready',
           status: 'pending',
-          user_id: userId || null,
-          submitted_by: submittedBy || 'Anonymous',
+          user_id: userId,
+          submitted_by: submittedBy,
           ip_address: ip,
           user_agent: ua
         })
@@ -130,7 +135,7 @@ export async function POST(request: NextRequest) {
         })
       )
 
-      await supabase
+      await supabaseAdmin
         .from('intake_questions')
         .insert(questionsToInsert)
     }

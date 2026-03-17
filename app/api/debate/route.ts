@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
-import { createClient } from '@supabase/supabase-js'
+import { supabaseAdmin } from '@/lib/supabase-admin'
 import { 
   AGENT_PERSONAS,
   AGENT_EXPERTISE,
@@ -14,11 +14,6 @@ import {
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!
 })
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
 
 const HARD_CAP = 15
 
@@ -107,7 +102,7 @@ Be direct and specific.`
   const position = extractPosition(rawText)
   const responseText = cleanResponse(rawText)
 
-  await supabase.from('agent_responses').insert({
+  await supabaseAdmin.from('agent_responses').insert({
     thread_id: threadId,
     agent_name: agent,
     expertise: expertise,
@@ -208,7 +203,7 @@ What is your single most important recommendation?`
 
     finalPositions.push(`${agent}: ${finalText}`)
 
-    await supabase
+    await supabaseAdmin
       .from('agent_responses')
       .insert({
         thread_id: threadId,
@@ -279,7 +274,7 @@ Generate the verdict based on these final positions.`
     finalVerdictText += `\n\nReference Links:\n` + verdictData.reference_links.join('\n');
   }
 
-  await supabase.from('verdicts').insert({
+  await supabaseAdmin.from('verdicts').insert({
     thread_id: threadId,
     verdict_text: finalVerdictText,
     key_takeaway_1: verdictData.key_takeaway_1,
@@ -292,7 +287,7 @@ Generate the verdict based on these final positions.`
     community_agree_percent: 0
   })
 
-  await supabase
+  await supabaseAdmin
     .from('threads')
     .update({ status: 'published' })
     .eq('id', threadId)
@@ -301,6 +296,13 @@ Generate the verdict based on these final positions.`
 export async function POST(request: NextRequest) {
   let threadId: string | undefined;
   try {
+    // Basic protection for internal trigger
+    const authHeader = request.headers.get('authorization')
+    if (process.env.NODE_ENV === 'production' && authHeader !== `Bearer ${process.env.INTERNAL_API_KEY}`) {
+      console.warn('Unauthorized attempt to trigger debate engine')
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const body = await request.json();
     threadId = body.threadId;
 
@@ -312,7 +314,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { data: thread, error: threadError } = 
-      await supabase
+      await supabaseAdmin
         .from('threads')
         .select('*')
         .eq('id', threadId)
@@ -325,12 +327,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    await supabase
+    await supabaseAdmin
       .from('threads')
       .update({ status: 'debating' })
       .eq('id', threadId)
 
-    const { data: intakeQuestions } = await supabase
+    const { data: intakeQuestions } = await supabaseAdmin
       .from('intake_questions')
       .select('*')
       .eq('thread_id', threadId)
@@ -466,7 +468,7 @@ ${answersContext ?
     console.error('Debate engine error:', error)
     
     if (threadId) {
-      await supabase
+      await supabaseAdmin
         .from('threads')
         .update({ status: 'failed' })
         .eq('id', threadId)
