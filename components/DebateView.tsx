@@ -166,7 +166,7 @@ export function DebateView({
       const { error } = await supabase.rpc('increment_views', { thread_id: slug });
       if (!error) {
         // Optimistically update the local state view count
-        setThread((prev: any) => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
+        // setThread((prev: any) => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
       }
     };
     increment();
@@ -284,8 +284,6 @@ export function DebateView({
               <span>{agentResponses.length} AI responses</span>
               <span>·</span>
               <span>{humanReplies.length} creator responses</span>
-              <span>·</span>
-              <span>{thread.views || 0} views</span>
               {isLive && <span>· <span className="text-yellow-400">Agents still debating...</span></span>}
               <button 
                 onClick={() => setShowShareDialog(true)}

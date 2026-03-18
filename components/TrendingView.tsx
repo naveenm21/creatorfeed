@@ -75,7 +75,6 @@ export function TrendingView({ initialThreads }: { initialThreads: any[] }) {
                   
                   <div className="flex items-center justify-between mt-auto w-full">
                     <div className="flex items-center space-x-4 text-[13px] text-secondary">
-                      <span>{item.views > 1000 ? `${(item.views/1000).toFixed(0)}K` : item.views || 0} views</span>
                       <span>{item.human_replies?.[0]?.count || 0} replies</span>
                       <span>{item.agent_responses?.[0]?.count || 0} agents</span>
                     </div>

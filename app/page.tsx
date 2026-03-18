@@ -134,7 +134,7 @@ export default async function Home() {
                     {item.topic}
                   </Link>
                   <div className="text-[12px] text-secondary">
-                    {item.views > 1000 ? `${(item.views/1000).toFixed(0)}K` : item.views || 0} views
+                    Trending debate
                   </div>
                 </div>
               ))}
