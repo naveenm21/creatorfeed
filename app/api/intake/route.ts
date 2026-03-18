@@ -18,11 +18,12 @@ export async function POST(request: NextRequest) {
     const { data: { session } } = await supabase.auth.getSession()
     
     const body = await request.json()
-    const { rawSubmission } = body
+    const { rawSubmission, submittedBy: bodySubmittedBy } = body
     
     // Use verified userId and metadata if session exists
     const userId = session?.user.id || null
-    const submittedBy = session?.user.user_metadata?.full_name || 
+    const submittedBy = bodySubmittedBy || 
+                        session?.user.user_metadata?.full_name || 
                         session?.user.email?.split('@')[0] || 
                         'Anonymous'
 

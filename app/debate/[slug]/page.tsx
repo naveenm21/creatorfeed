@@ -90,12 +90,13 @@ export default async function DebatePage({ params }: Props) {
   let humanReplies: any[] = [];
 
   if (thread.status === 'published') {
-    const [{ data: r }, { data: v }, { data: h }] = await Promise.all([
+    const [{ data: r }, { data: v }, { data: h }, { data: q }] = await Promise.all([
       supabase.from('agent_responses').select('*').eq('thread_id', slug)
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
       supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
       supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', slug).order('created_at', { ascending: true }),
+      supabase.from('intake_questions').select('*').eq('thread_id', slug).order('question_order', { ascending: true }),
     ]);
     
     if (r) {
@@ -104,6 +105,7 @@ export default async function DebatePage({ params }: Props) {
     }
     verdict = v;
     humanReplies = h || [];
+    (thread as any).intake_questions = q || [];
   }
 
   return (

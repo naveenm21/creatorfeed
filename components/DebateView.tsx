@@ -58,6 +58,9 @@ export function DebateView({
   const [authorName, setAuthorName] = useState('');
   const [replySubmitting, setReplySubmitting] = useState(false);
   const [replySuccess, setReplySuccess] = useState(false);
+  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+  const [isAnonymous, setIsAnonymous] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const [thread, setThread] = useState<any>(initialThread);
@@ -79,6 +82,14 @@ export function DebateView({
   }, []);
 
   const supabase = createClient();
+
+  // Fetch current user for ownership checks
+  useEffect(() => {
+    setMounted(true);
+    supabase.auth.getUser().then(({ data }) => {
+      if (data?.user) setCurrentUserId(data.user.id);
+    });
+  }, []);
 
   // Fetch all data for a published thread
   const fetchFullDebate = async () => {
@@ -161,6 +172,22 @@ export function DebateView({
     increment();
   }, []);
 
+  const handleDeleteReply = async (replyId: string) => {
+    if (!confirm('Are you sure you want to delete this takeaway? Your 5 karma points for this contribution will be revoked.')) return;
+    
+    try {
+      const res = await fetch(`/api/reply/${replyId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setHumanReplies(prev => prev.filter(r => r.id !== replyId));
+      } else {
+        alert('Failed to delete reply');
+      }
+    } catch (err) {
+      console.error('Delete error:', err);
+      alert('An error occurred while deleting');
+    }
+  };
+
   const handleReplySubmit = async () => {
     if (!replyText.trim()) return;
     setReplySubmitting(true);
@@ -173,7 +200,7 @@ export function DebateView({
           agentReferenced: respondingTo === 'General' ? null : respondingTo,
           sentiment: sentiment || null,
           replyText: replyText.trim(),
-          authorName: authorName.trim() || 'Anonymous',
+          isAnonymous: isAnonymous
         }),
       });
       if (res.ok) {
@@ -280,25 +307,47 @@ export function DebateView({
                   </div>
                   <span className="text-[12px] font-bold text-secondary uppercase tracking-widest">Problem Description</span>
                 </div>
-                <p className={`text-[15px] text-secondary leading-relaxed transition-all duration-300 ${!showFullDescription ? 'line-clamp-2' : ''}`}>
-                  {thread.raw_submission}
-                </p>
-                {thread.raw_submission.length > 150 && (
-                  <button 
-                    onClick={() => setShowFullDescription(!showFullDescription)}
-                    className="mt-2 text-[13px] font-bold text-brandprimary hover:underline flex items-center gap-1 transition-all"
-                  >
-                    {showFullDescription ? 'See less' : 'See more'}
-                    <svg 
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${showFullDescription ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                )}
+                {(() => {
+                  const hasQuestions = (thread.intake_questions || []).some((q: any) => q.answer);
+                  
+                  return (
+                    <>
+                      <div className={`text-[15px] text-secondary leading-relaxed transition-all duration-300 ${!showFullDescription ? 'line-clamp-3' : ''}`}>
+                        <p className="mb-2">{thread.raw_submission}</p>
+                        
+                        {(thread.intake_questions || [])
+                          .filter((q: any) => q.answer)
+                          .map((q: any, idx: number) => (
+                            <div key={idx} className="mt-4 border-t border-white/5 pt-3">
+                              <p className="text-[12px] font-bold text-brandprimary uppercase tracking-tight mb-1">
+                                {q.question_text}
+                              </p>
+                              <p className="text-white font-medium italic">
+                                &ldquo;{q.answer}&rdquo;
+                              </p>
+                            </div>
+                          ))}
+                      </div>
+
+                      {(thread.raw_submission.length > 200 || hasQuestions) && (
+                        <button 
+                          onClick={() => setShowFullDescription(!showFullDescription)}
+                          className="mt-3 text-[13px] font-bold text-brandprimary hover:underline flex items-center gap-1 transition-all"
+                        >
+                          {showFullDescription ? 'See less' : 'See more detail'}
+                          <svg 
+                            className={`w-3.5 h-3.5 transition-transform duration-200 ${showFullDescription ? 'rotate-180' : ''}`} 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             )}
           </div>
@@ -444,13 +493,29 @@ export function DebateView({
                     ✓ Your take was added!
                   </div>
                 )}
-                <input
-                  type="text"
-                  placeholder="Your name (optional)"
-                  value={authorName}
-                  onChange={e => setAuthorName(e.target.value)}
-                  className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-2.5 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] mb-3"
-                />
+                <div className="flex flex-col gap-3 mb-3">
+                  {!isAnonymous ? (
+                    <div className="text-[14px] text-secondary bg-white/5 px-4 py-2.5 rounded-xl border border-white/10 flex items-center justify-between">
+                       <span>Posting as <span className="text-white font-bold">{currentUserId ? 'your account' : 'Guest'}</span></span>
+                       <button 
+                         onClick={() => setIsAnonymous(true)}
+                         className="text-[12px] text-brandprimary font-bold hover:underline"
+                       >
+                         Switch to Anonymous
+                       </button>
+                    </div>
+                  ) : (
+                    <div className="text-[14px] text-teal-400 bg-teal-400/5 px-4 py-2.5 rounded-xl border border-teal-400/10 flex items-center justify-between">
+                       <span>Posting as <span className="font-bold uppercase tracking-tight">Anonymous</span></span>
+                       <button 
+                         onClick={() => setIsAnonymous(false)}
+                         className="text-[12px] text-secondary font-bold hover:underline"
+                       >
+                         Show my name
+                       </button>
+                    </div>
+                  )}
+                </div>
                 <textarea
                   placeholder="Share your experience or pushback..."
                   value={replyText}
@@ -509,7 +574,7 @@ export function DebateView({
                         <div className="flex flex-col">
                           <div className="flex items-center gap-3 mb-2">
                             <span className="text-[15px] font-bold text-white transition-colors">{item.author_name || 'Anonymous'}</span>
-                            {item.author && (
+                            {item.author && item.author_name !== 'Anonymous' && (
                               <div className="flex items-center gap-2">
                                 <span className="flex items-center gap-0.5 text-[10px] font-bold text-brandprimary bg-brandprimary/10 px-1.5 py-0.5 rounded border border-brandprimary/20">
                                   <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -525,8 +590,19 @@ export function DebateView({
                             {item.sentiment === 'agreed' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
                             {item.sentiment === 'disagreed' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
                             <span className="text-[12px] text-[#444] ml-auto">
-                              {new Date(item.created_at).toLocaleDateString()}
+                              {mounted ? new Date(item.created_at).toLocaleDateString() : null}
                             </span>
+                            {currentUserId === item.user_id && (
+                              <button 
+                                onClick={() => handleDeleteReply(item.id)}
+                                className="p-1.5 text-secondary hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-all ml-2"
+                                title="Delete my comment"
+                              >
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                              </button>
+                            )}
                           </div>
                           <p className="text-[15px] text-secondary leading-[1.6] bg-[#0A0A0A] p-4 rounded-xl border border-[#1F1F1F]">{item.reply_text}</p>
                         </div>

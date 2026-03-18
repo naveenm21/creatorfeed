@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     const user = session.user
     const body = await request.json()
-    const { threadId, agentReferenced, sentiment, replyText } = body
+    const { threadId, agentReferenced, sentiment, replyText, isAnonymous } = body
 
     if (!threadId || !replyText) {
       return NextResponse.json(
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         agent_referenced: agentReferenced || null,
         sentiment: mappedSentiment,
         reply_text: replyText,
-        author_name: user.user_metadata?.full_name || user.email?.split('@')[0] || 'Anonymous'
+        author_name: isAnonymous ? 'Anonymous' : (user.user_metadata?.full_name || user.email?.split('@')[0] || 'Anonymous')
       })
       .select()
       .single()

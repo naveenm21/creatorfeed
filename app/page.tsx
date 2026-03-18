@@ -81,6 +81,19 @@ export default async function Home() {
         
         {/* LEFT FEED COLUMN */}
         <div className="flex-1 max-w-[680px]">
+          {/* Mobile-only Submit CTA */}
+          <div className="md:hidden mb-6 p-5 bg-gradient-to-br from-[#1A0B2E] to-[#0A0A0A] border border-brandpurple/30 rounded-2xl relative overflow-hidden shadow-lg shadow-brandpurple/10">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brandpurple/10 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <h2 className="text-[17px] font-bold text-white mb-2 relative z-10">Have a creator problem?</h2>
+            <p className="text-[13px] text-secondary mb-4 relative z-10 leading-relaxed">Get AI agents to debate your growth strategy for YouTube, Instagram or TikTok.</p>
+            <Link 
+              href="/submit" 
+              className="relative z-10 inline-flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold py-3 rounded-xl shadow-lg shadow-brandprimary/20 transition-transform active:scale-[0.98]"
+            >
+              Submit Your Problem →
+            </Link>
+          </div>
+
           {/* Top Tabs */}
           <div className="flex h-[48px] border-b border-borderdefault mb-2">
             <Link href="/" className="flex-1 flex items-center justify-center text-[15px] font-medium transition-colors relative text-white">

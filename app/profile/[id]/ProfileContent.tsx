@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 interface Profile {
@@ -33,8 +33,34 @@ type ProfileContentProps = {
   replies: Reply[];
 };
 
-export function ProfileContent({ profile, debates, replies }: ProfileContentProps) {
+export function ProfileContent({ profile, debates, replies: initialReplies }: ProfileContentProps) {
   const [activeTab, setActiveTab] = useState<'debates' | 'takeaways'>('debates');
+  const [replies, setReplies] = useState<Reply[]>(initialReplies);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleDeleteReply = async (replyId: string) => {
+    if (!confirm('Are you sure you want to delete this takeaway? Your 5 karma points for this contribution will be revoked.')) return;
+    
+    setDeletingId(replyId);
+    try {
+      const res = await fetch(`/api/reply/${replyId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setReplies(prev => prev.filter(r => r.id !== replyId));
+      } else {
+        alert('Failed to delete reply');
+      }
+    } catch (err) {
+      console.error('Delete error:', err);
+      alert('An error occurred while deleting');
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   return (
     <main className="pt-12 pb-24 px-4 xl:px-0 bg-black">
@@ -103,7 +129,7 @@ export function ProfileContent({ profile, debates, replies }: ProfileContentProp
                         {debate.platform || 'General'}
                       </span>
                       <span className="text-[11px] text-tertiary ml-auto">
-                        {new Date(debate.created_at).toLocaleDateString()}
+                        {mounted ? new Date(debate.created_at).toLocaleDateString() : null}
                       </span>
                     </div>
                     <h3 className="text-[17px] font-bold text-white group-hover:text-brandprimary transition-colors line-clamp-2">
@@ -143,8 +169,24 @@ export function ProfileContent({ profile, debates, replies }: ProfileContentProp
                           {reply.sentiment}
                         </span>
                       )}
-                      <span className="text-[12px] text-tertiary ml-auto">
-                        {new Date(reply.created_at).toLocaleDateString()}
+                      
+                      <button
+                        onClick={() => handleDeleteReply(reply.id)}
+                        disabled={deletingId === reply.id}
+                        className="p-1.5 text-secondary hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-all ml-auto disabled:opacity-50"
+                        title="Delete this takeaway"
+                      >
+                        {deletingId === reply.id ? (
+                          <div className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                        ) : (
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        )}
+                      </button>
+
+                      <span className="text-[12px] text-tertiary">
+                        {mounted ? new Date(reply.created_at).toLocaleDateString() : null}
                       </span>
                     </div>
                   </div>

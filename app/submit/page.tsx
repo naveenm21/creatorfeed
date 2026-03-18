@@ -22,6 +22,12 @@ export default function SubmitPage() {
     setRandomTags(shuffled.slice(0, 3));
   }, []);
 
+  useEffect(() => {
+    if (user && !customName) {
+      setCustomName((user.user_metadata as any)?.full_name || user.email?.split('@')[0] || '');
+    }
+  }, [user, loading]);
+
   const handleExampleClick = (text: string) => {
     setProblemText(text);
     setError(null);
@@ -210,7 +216,7 @@ export default function SubmitPage() {
           </form>
 
           <div className="mt-8 text-center text-[13px] text-tertiary">
-            <p className="mb-4">Our AI will ask 2-3 quick questions, then 4-6 agents will debate your problem publicly</p>
+            <p className="mb-4">Our AI will ask 2-3 quick questions, then AI agents will debate your problem publicly</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
               <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-[#666]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Takes 2 minutes</span>
               <span className="hidden sm:inline">·</span>

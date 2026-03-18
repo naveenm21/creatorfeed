@@ -118,7 +118,7 @@ export function Navbar() {
             )}
             <Link 
               href="/submit" 
-              className="flex items-center justify-center h-[36px] px-4 rounded-full bg-brandpurple text-white text-[14px] font-medium hover:bg-brandpurplehover transition-all"
+              className="hidden md:flex items-center justify-center h-[36px] px-4 rounded-full bg-brandpurple text-white text-[14px] font-medium hover:bg-brandpurplehover transition-all"
               style={{ boxShadow: '0 0 20px rgba(124,58,237,0.3)' }}
             >
               Submit a Problem
