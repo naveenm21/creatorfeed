@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     
     // Use verified userId and metadata if session exists
     const userId = session?.user.id || null
-    const submittedBy = isSeeded ? 'CreatorFeed System' : (
+    const submittedBy = isSeeded ? 'Anonymous' : (
       bodySubmittedBy || 
       session?.user.user_metadata?.full_name || 
       session?.user.email?.split('@')[0] || 
