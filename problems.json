@@ -185,4 +185,716 @@
     "posted": false,
     "posted_at": null
   }
+  },
+  {
+    "id": 21,
+    "raw_submission": "I create educational content about Indian history on YouTube. I have 156,000 subscribers. My long form videos of 20-30 minutes get 80,000-120,000 views but YouTube keeps pushing me to make Shorts. When I made Shorts my long form views dropped 40% because YouTube started showing my channel to a different audience. Should I delete my Shorts and focus only on long form?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 22,
+    "raw_submission": "I am a makeup artist on Instagram with 67,000 followers. I have been doing brand deals for 2 years. Recently two brands I worked with were exposed for unethical practices. I had no idea at the time. My audience is angry and my engagement dropped from 5% to 1.2%. I have apologized but the comments are still hostile. How do I rebuild trust with my audience after promoting brands that turned out to be problematic?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 23,
+    "raw_submission": "I run a YouTube channel about personal finance specifically for millennials in India. I have 890,000 subscribers. SEBI recently sent me a notice saying some of my content could be considered investment advice which requires registration. I am not a registered advisor. I am scared to post new content until this is resolved but every week I do not post I lose momentum. What should I do?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 24,
+    "raw_submission": "My TikTok dance and transition content has 2.3 million followers. I built my entire audience on trending audio and dance challenges. TikTok is potentially getting banned in my country. I have tried moving my audience to Instagram Reels but my 2.3 million TikTok followers have only converted to 34,000 Instagram followers despite 6 months of cross-promotion. How do I migrate my audience before TikTok disappears?",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 25,
+    "raw_submission": "I have a YouTube channel about sustainable living with 43,000 subscribers. I have been approached by a fast fashion brand for a $5,000 sponsorship. My entire channel is built around anti-fast-fashion messaging. My audience would be furious. But I have not made any money from my channel in 8 months and I am considering quitting. Is there any ethical way to monetize a values-based channel without betraying your audience?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 26,
+    "raw_submission": "I post cricket analysis content on YouTube in Hindi with 1.8 million subscribers. During IPL season my videos get 800,000 to 2,000,000 views. During off season they drop to 50,000 to 80,000 views. My channel income drops 90% outside cricket season. I have tried expanding to football and kabaddi but my audience does not engage with non-cricket content. How do I build a sustainable year-round channel when my niche is seasonal?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 27,
+    "raw_submission": "I am a photographer sharing behind the scenes content on Instagram with 28,000 followers. A celebrity I photographed professionally shared one of my Instagram posts without credit and gained 2 million impressions from it. When I asked for credit they ignored me. Their fans are now attacking me in comments for asking. I have the copyright to the image. What should I do?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 28,
+    "raw_submission": "I create ASMR content on YouTube with 234,000 subscribers. My videos were getting 300,000 to 500,000 views consistently. YouTube demonetized three of my videos for ambiguous reasons saying they were not advertiser friendly. Since the demonetization flags my overall channel reach dropped even on videos that were not flagged. ASMR content is being treated as sensitive by the algorithm and I do not know whether to continue or pivot.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 29,
+    "raw_submission": "I run a comedy roast account on Instagram with 445,000 followers. I roast Bollywood celebrities and my content goes viral regularly. Three celebrities have sent me legal notices in the past year. My lawyer says I am within free speech rights but defending each notice costs me money and stress. One major OTT platform wants to sign me for a show but only if I tone down the roasting. Should I take the OTT deal and change my content or stay independent?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 30,
+    "raw_submission": "I teach spoken English on YouTube targeting tier 2 and tier 3 cities in India. I have 3.4 million subscribers. My CPM is very low at Rs 12 because my audience is not considered premium by advertisers. Despite having 3.4 million engaged subscribers I earn less than creators with 200,000 subscribers in metro cities. How do I monetize a mass market Indian audience that advertisers undervalue?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 31,
+    "raw_submission": "I have been creating YouTube content about web development for 3 years with 78,000 subscribers. My tutorial videos get 5,000-15,000 views. A large coding bootcamp offered to acquire my channel for $120,000. I am 24 years old. My channel makes $1,800 per month currently. Should I sell my channel or keep building it independently?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 32,
+    "raw_submission": "I post motivational content in Tamil on YouTube with 567,000 subscribers. My content performs extremely well in Tamil Nadu but poorly in Sri Lanka and Malaysia where there are large Tamil speaking populations. I have tried making content specifically for diaspora Tamil audiences but it gets rejected by my core Indian audience. How do I expand to global Tamil audiences without losing my existing base?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 33,
+    "raw_submission": "I create unboxing and review content on YouTube with 123,000 subscribers. Three months ago I gave an honest negative review of a popular smartphone. The brand blacklisted me and I lost 4 other brand deals from companies who heard about it. My honest review got 400,000 views and gained me 8,000 subscribers. But losing the brand deals cost me $18,000 in potential revenue. Was being honest the right business decision?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 34,
+    "raw_submission": "I post lifestyle and travel content on Instagram with 312,000 followers. I have a highly engaged audience but I have been posting the same aesthetic for 3 years and I am personally bored of it. I want to pivot to more raw and authentic content but every time I test a more casual style my engagement drops 60%. My audience seems to only want the polished version of me. How do I evolve my content without destroying what I built?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 35,
+    "raw_submission": "I am a gaming creator on YouTube with 89,000 subscribers. I built my channel on PUBG Mobile content. PUBG got banned in India for 2 years and during that time I lost 60% of my subscribers. PUBG came back and I rebuilt but now Battlegrounds Mobile India has much less cultural relevance than before. I am 19 years old and do not know whether to stay with gaming or pivot to a different niche entirely.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 36,
+    "raw_submission": "My Instagram food blog has 198,000 followers. I have been offered a cookbook deal by a major publisher. The advance is Rs 8 lakhs. Writing the book will take 8 months during which I will have to reduce my posting frequency significantly. My Instagram growth will likely slow or stop during that period. Is a cookbook deal worth pausing Instagram growth for a creator at my stage?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 37,
+    "raw_submission": "I create finance content on TikTok with 456,000 followers. My content is performing well but TikTok keeps restricting my videos that mention specific stock names. I cannot talk about individual stocks without getting shadowbanned. My competitors on YouTube can freely discuss stocks and build deeper authority. Should I move my primary platform from TikTok to YouTube even though I will be starting from zero there?",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 38,
+    "raw_submission": "I have a YouTube channel about parenting with 234,000 subscribers. I feature my two children aged 4 and 7 in most of my videos. My channel income is Rs 3.5 lakhs per month. I recently read about child privacy laws in other countries and started questioning whether featuring my children is ethical. If I stop featuring them my content format completely changes and I will likely lose most of my audience. What should I do?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 39,
+    "raw_submission": "I post street food content on Instagram Reels and YouTube Shorts simultaneously. On Instagram I have 890,000 followers and get 500,000 to 2,000,000 views per Reel. On YouTube Shorts I have 1.2 million subscribers but get only 50,000 to 200,000 views per Short despite having more subscribers. The same video performs 10x better on Instagram than YouTube. Should I stop posting on YouTube Shorts entirely and focus on Instagram?",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 40,
+    "raw_submission": "I am a stand-up comedian who started posting clips on YouTube 2 years ago. I have 45,000 subscribers. My clips get 10,000-50,000 views. I have been offered a Netflix India special. Accepting means I cannot post my best new material on YouTube for 12 months due to exclusivity clause. My YouTube growth will stagnate. But a Netflix special could 10x my offline career. Should I accept the exclusivity clause?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 41,
+    "raw_submission": "I run a YouTube channel teaching Carnatic music with 34,000 subscribers. My audience is deeply engaged with 8% engagement rate and 70% watch time. But my growth is extremely slow at 200-300 subscribers per month. The niche is too small for the algorithm to push my content to new audiences. I love the content but I am wondering if I need to add a more mainstream element to grow faster without betraying my core audience.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 42,
+    "raw_submission": "I post daily stock market analysis on YouTube with 678,000 subscribers. I have been consistent for 4 years. Last year I recommended a stock that dropped 60% after my recommendation. I genuinely believed in it and disclosed it was my opinion not advice. But 200 comments are from people who lost money following my analysis. My subscriber count dropped 45,000 in one week. How do I handle the ethical and business fallout from a wrong stock call?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 43,
+    "raw_submission": "I create wedding photography content on Instagram with 156,000 followers. My content is seasonal — extremely high engagement from October to February and almost no engagement from April to August. I have tried creating off-season content about engagement shoots and pre-wedding planning but my audience disengages completely. How do I build a year-round Instagram presence when my core business is seasonal?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 44,
+    "raw_submission": "I have been building a YouTube channel about electric vehicles in India for 2 years with 67,000 subscribers. A large automotive media company offered to acquire my channel and hire me as their EV correspondent for Rs 80,000 per month salary. My channel currently makes Rs 25,000 per month. The acquisition offer is Rs 40 lakhs. I am 28 years old. Should I sell and take the salary or keep building independently?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 45,
+    "raw_submission": "I post study with me and productivity content on YouTube targeting Indian students preparing for UPSC and JEE. I have 234,000 subscribers. My watch time is extremely high — average 45 minutes per session because students keep my videos on while studying. But my CPM is very low because advertisers do not value the student demographic. Despite 2 million monthly watch hours I earn only Rs 45,000 per month. How do I monetize a high watch time low CPM audience?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 46,
+    "raw_submission": "I create content about Indian startup ecosystem on LinkedIn and YouTube. On LinkedIn I have 89,000 followers and my posts get 50,000 to 200,000 impressions. On YouTube I have 12,000 subscribers and videos get 2,000-5,000 views. LinkedIn is clearly my stronger platform but YouTube has higher monetization potential. Should I double down on LinkedIn where I am winning or invest in building YouTube where I am weak?",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 47,
+    "raw_submission": "I run a true crime podcast that I also post on YouTube with 178,000 subscribers. YouTube has been demonetizing my episodes and adding content warnings that reduce their reach. True crime is being treated as sensitive content. My podcast on Spotify has 340,000 listeners and is fully monetized. Should I stop posting true crime on YouTube and focus entirely on Spotify and podcast platforms?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 48,
+    "raw_submission": "I am a fitness influencer on Instagram with 567,000 followers. I have been promoting a particular diet approach for 2 years. New research published last month directly contradicts the diet I have been recommending. Changing my position means admitting I was wrong to 567,000 people. Not changing means continuing to give advice that may be harmful. How do I handle being wrong at scale?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 49,
+    "raw_submission": "I create Minecraft content on YouTube with 234,000 subscribers. I built my channel during the Minecraft boom of 2020-2022. The game is still popular but the YouTube content market is completely saturated. My views dropped from 80,000 per video to 12,000 per video as the algorithm stopped pushing Minecraft content to new viewers. I am 16 years old and do not know whether to stay with the game I love or switch to trending games.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 50,
+    "raw_submission": "I post behind the scenes content from my restaurant on Instagram with 45,000 followers. My content goes viral occasionally — one video got 8 million views showing our kitchen during a rush. But I cannot replicate that virality consistently. Regular content gets 500-2,000 views. I do not have a content team. I am the chef and owner and I post whenever I have time. How do I build a consistent Instagram presence when running a restaurant takes 14 hours a day?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 51,
+    "raw_submission": "I have a YouTube channel about Indian classical dance with 23,000 subscribers. My videos are highly produced and take 3 weeks to create. I post once a month. My engagement is excellent at 9% but growth is extremely slow. A dancer friend with much lower production quality posts weekly and has 3x my subscribers. Should I sacrifice production quality to post more frequently?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 52,
+    "raw_submission": "I create relationship advice content on Instagram with 234,000 followers. My content performs well but I recently went through a public breakup that my followers know about. My followers are now questioning whether they should take relationship advice from someone whose own relationship failed. My engagement dropped 40% and comments are mean. How do I maintain credibility as a relationship creator after a public personal failure?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 53,
+    "raw_submission": "I post tech news and analysis on Twitter and YouTube. On Twitter I have 234,000 followers and strong engagement. On YouTube I have 45,000 subscribers. A large tech media company wants me to be their exclusive YouTube creator which means I have to stop my independent Twitter presence. The contract pays Rs 3 lakhs per month for 2 years. My current income from both platforms is Rs 1.2 lakhs per month. Should I take exclusivity?",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 54,
+    "raw_submission": "I am a wildlife photographer sharing content on Instagram with 178,000 followers. I got an opportunity to photograph a rare snow leopard in Ladakh. To do so I need to take 3 weeks off from posting. Every time I have taken a break longer than 10 days my reach drops significantly and takes 4-6 weeks to recover. But this is a once in a lifetime photography opportunity. How do I handle taking a necessary break without destroying my Instagram momentum?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 55,
+    "raw_submission": "I create content about ancient Indian temples and architecture on YouTube with 456,000 subscribers. My content requires extensive travel and research. Each video costs Rs 80,000-150,000 to produce. My AdSense revenue is Rs 2.8 lakhs per month but production costs eat most of it. Brand deals are rare because my niche does not attract mainstream advertisers. How do I make a financially sustainable channel when production costs are high and advertisers ignore my niche?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 56,
+    "raw_submission": "I post coding tutorials on YouTube with 156,000 subscribers. ChatGPT and AI coding tools have fundamentally changed how people learn to code. My tutorial views dropped 55% in 18 months as fewer people feel they need to learn syntax manually. My audience is shrinking not because of algorithm changes but because AI is making my content category less relevant. How do I pivot a coding education channel in the age of AI coding assistants?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 57,
+    "raw_submission": "I create content about ayurveda and natural healing on YouTube with 789,000 subscribers. The Indian government recently issued new guidelines restricting health claims in digital content. Three of my most popular videos — with a combined 12 million views — violate these new guidelines. If I delete them I lose significant SEO value and watch time. If I keep them I risk legal action. What should I do?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 58,
+    "raw_submission": "I have a TikTok account about Indian street fashion with 890,000 followers. A global fashion brand offered me an ambassador deal worth $50,000 for 6 months. The contract requires me to post exclusively about their brand and stop featuring local street fashion. My audience follows me specifically for discovering unknown local brands. Taking this deal means abandoning my content identity. How do I evaluate whether $50,000 is worth changing what made me successful?",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 59,
+    "raw_submission": "I post mental wellness content on YouTube in Telugu with 234,000 subscribers. I am a trained psychologist. My content helps people but I am constantly worried about giving wrong advice at scale. Last month a viewer sent me a message saying my video helped them avoid suicide. Another viewer said my advice made their anxiety worse. The responsibility is overwhelming. How do I continue creating mental health content responsibly when the stakes are this high?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 60,
+    "raw_submission": "I create content about Indian football on YouTube with 67,000 subscribers. Indian football has no viral moments and low search volume. My content is good but the niche ceiling is very low. I love football but I am watching cricket creators with lower quality content earn 10x what I earn. Should I switch to cricket content to access a bigger market even though I am passionate about growing Indian football coverage?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 61,
+    "raw_submission": "I post skincare content on Instagram targeting Indian skin tones with 345,000 followers. A global skincare brand approached me with a Rs 15 lakh deal but their products are not formulated for Indian skin and I genuinely believe they would not work well for my audience. My audience trusts me specifically because I only recommend products that work for darker skin tones. Is there any way to take this money without betraying that trust?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 62,
+    "raw_submission": "I run a YouTube channel about budget travel in India with 123,000 subscribers. My content helped people travel cheaply. Post-COVID travel costs have increased dramatically and my budget travel advice is no longer accurate. I cannot travel as cheaply as I used to and when I show real current costs my audience gets disappointed and disengages. My channel identity is built on budget travel but budget travel as I knew it no longer exists. How do I evolve?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 63,
+    "raw_submission": "I create science communication content in Hindi on YouTube with 1.2 million subscribers. I have been approached by three EdTech companies to create exclusive courses. Each offer pays Rs 25-40 lakhs but requires me to put my YouTube content behind a paywall. My entire mission is making science accessible and free. Paywalling my content contradicts everything I stand for. But I am 31 years old and have no retirement savings. How do I balance mission and financial security?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 64,
+    "raw_submission": "I post content about Indian women in sports on Instagram with 78,000 followers. My content gets good engagement from a core audience but discovery is very limited. Instagram does not surface women's sports content to new audiences the way it surfaces cricket or football content. I have documented evidence that my posts about male cricketers get 10x the organic reach of equally produced posts about female athletes. How do I grow when the platform systematically undervalues my niche?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 65,
+    "raw_submission": "I have a YouTube channel about DIY electronics and Arduino projects with 89,000 subscribers. My content is technical and my audience is highly engaged. A major electronics component company wants to sponsor my channel exclusively for Rs 1.2 lakhs per month. But they want me to integrate their products into every video even when better alternatives exist. My audience trusts my honest component recommendations. Should I take exclusive sponsorship that compromises honest recommendations?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 66,
+    "raw_submission": "I post comedy content on YouTube with 2.1 million subscribers. I have been offered a lead role in a Bollywood film. Preparing for the film requires 6 months where I cannot post consistently. My YouTube income is Rs 8 lakhs per month. The film pays Rs 50 lakhs total. If I go 6 months without posting I estimate losing 400,000 subscribers and significant algorithm momentum. Is the film worth the YouTube cost?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 67,
+    "raw_submission": "I create content about Indian classical music appreciation on YouTube with 45,000 subscribers. My audience is older — average age 45-60. YouTube is increasingly optimizing for younger audiences and my content is being shown less in recommendations. My core audience is dying — literally, many of my oldest subscribers have passed away over the years. I want to attract younger viewers to classical music but every time I make content for younger audiences my existing subscribers revolt. How do I build a bridge audience?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 68,
+    "raw_submission": "I am a travel creator who built 234,000 Instagram followers over 4 years. I got married last year and my spouse does not want to be featured on social media. My entire content identity was built on solo female travel. Now that I am married and my life has changed I do not know how to authentically evolve my content without either forcing my spouse on camera or pretending my life has not changed. How do I evolve a personal brand when your personal life changes?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 69,
+    "raw_submission": "I post cooking content in Marathi on YouTube with 567,000 subscribers. My content only reaches Marathi speaking audiences which limits my growth ceiling. I speak fluent Hindi and English. If I switch to Hindi I could potentially reach 500 million people instead of 90 million. But I would be abandoning the Marathi community that built me and starting over in a crowded Hindi cooking space. Should I switch languages to unlock growth?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 70,
+    "raw_submission": "I create content about Indian stock market for beginners with 890,000 YouTube subscribers. I have built significant authority and my audience trusts me deeply. I genuinely believe a market correction is coming in the next 6 months. If I say this publicly and I am wrong I lose credibility. If I do not say it and the correction happens my audience will ask why I did not warn them. How do I handle having a strong market view when being wrong at scale has consequences?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 71,
+    "raw_submission": "I post book review content on YouTube in English with 34,000 subscribers. BookTube is a small but passionate niche. I have been at 34,000 subscribers for 14 months with no growth despite posting weekly. My engagement rate is 11% which is extremely high. My audience loves me but nobody new is discovering my content. The algorithm simply does not push book content to new audiences. How do I grow when the algorithm ignores your niche regardless of quality?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 72,
+    "raw_submission": "I create educational content about the Indian constitution and legal rights on YouTube with 1.4 million subscribers. My content is genuinely important civic education. A political party approached me to create sponsored content that would subtly favor their policies. The money is Rs 50 lakhs. Accepting would compromise my editorial independence. Refusing means losing Rs 50 lakhs. My content is freely available and I make Rs 4 lakhs per month from AdSense. How do I protect editorial independence when political money is this large?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 73,
+    "raw_submission": "I post outdoor adventure content on Instagram with 156,000 followers. I had a serious accident on camera 6 months ago while attempting a difficult climb. I posted the accident footage and it went viral with 15 million views. Since then my audience expects increasingly dangerous content. I feel pressured to take bigger risks to maintain engagement. Three other adventure creators I know have been seriously injured in the past year. How do I maintain an adventure content career without being pressured into dangerous situations?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 74,
+    "raw_submission": "I have a YouTube channel about personal development with 678,000 subscribers. My most viewed videos are about overcoming depression and anxiety — topics I personally struggled with. I am now in a much better place mentally but my audience engagement drops significantly when I post about thriving. My audience seems to engage most when I am struggling. I feel pressure to perform vulnerability I no longer feel. How do I evolve a channel built on struggle when you have genuinely healed?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 75,
+    "raw_submission": "I create content about Indian history specifically about topics that mainstream history ignores. I have 345,000 YouTube subscribers. My content regularly gets reported and age-restricted even though it contains no violence or adult content — just historical information some people find politically uncomfortable. YouTube has manually reviewed and restored my content three times. But the reporting campaigns keep happening and each restriction hurts my channel for weeks. How do I protect my channel from coordinated false reporting?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 76,
+    "raw_submission": "I run a fashion content account on Instagram with 445,000 followers. Fast fashion brands pay the most for sponsorships. Sustainable fashion brands pay 70% less. My audience is young and price-sensitive — they buy fast fashion. I personally believe in sustainability but my audience does not share this value. I am turning down significant income to align with values my audience does not care about. Is it worth being sustainable when your audience is not?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 77,
+    "raw_submission": "I post daily news analysis on YouTube in Hindi with 2.8 million subscribers. I have been posting daily for 5 years without a single day off. I am experiencing severe burnout. My doctor told me I need to take a month off. Every time I have taken even 3 days off my channel loses significant momentum. I have a team of 8 people whose salaries depend on the channel. I cannot afford to take a break but I cannot afford not to. How do I handle creator burnout when people depend on you?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 78,
+    "raw_submission": "I create content about Indian street art and graffiti on Instagram with 89,000 followers. My content documents artists who are often not credited. A major international art publication wants to feature my work but they want exclusive rights to the images I have collected over 3 years. Giving them exclusivity means I cannot post this content on Instagram anymore. The exposure is significant but I lose control of 3 years of work. Is the exposure worth the exclusivity?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 79,
+    "raw_submission": "I have a YouTube channel about productivity specifically for students in India with 456,000 subscribers. I launched a paid course for Rs 2,999. Only 340 students enrolled despite having 456,000 subscribers — a conversion rate of 0.07%. My email list has 45,000 people. I spent Rs 8 lakhs producing the course and barely broke even. My audience loves my free content but will not pay for anything. How do I convert a large free audience into paying customers?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 80,
+    "raw_submission": "I post content about Indian women entrepreneurs on LinkedIn and Instagram. On LinkedIn I have 156,000 followers with strong B2B engagement. On Instagram I have 45,000 followers with consumer engagement. A major women's leadership conference wants me as a keynote speaker for Rs 5 lakhs. Preparing a keynote requires 3 weeks of work during which my content output drops. But speaking fees could become a significant revenue stream. How do I evaluate moving from content creator to professional speaker?",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 81,
+    "raw_submission": "I create content about Indian mythology on YouTube with 567,000 subscribers. My content is research-heavy and nuanced. A Bollywood producer wants to option my content to create a web series. The option fee is Rs 25 lakhs. But the contract gives them creative control and they could distort the mythology I have carefully researched. My audience trusts my accurate representation of mythology. Should I sell options on content that could be adapted inaccurately?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 82,
+    "raw_submission": "I post content about Indian classical art and miniature painting on Instagram with 34,000 followers. My content is a niche within a niche. Growth is extremely slow. I have been approached to collaborate with a much larger lifestyle creator who wants to feature Indian art but in a superficial way that I find inaccurate. Their audience is 2.3 million. A collaboration would expose my work to millions but the framing would be wrong. Is bad exposure better than no exposure?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 83,
+    "raw_submission": "I run a YouTube channel about Indian cycling culture with 23,000 subscribers. I have been cycling across India documenting local cycling communities for 2 years. A cycling equipment brand wants to sponsor my next journey for Rs 8 lakhs but requires me to use only their equipment even though some of it is not suitable for Indian road conditions. Accepting means potentially giving dangerous equipment advice to cyclists who trust me. How do I handle a sponsorship that could compromise safety?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 84,
+    "raw_submission": "I create content about Indian folk music on YouTube with 89,000 subscribers. I am one of the few creators documenting dying folk traditions from rural India. This work is important but has very low commercial potential. My documentation work costs Rs 2-3 lakhs per month in travel and production. My channel earns Rs 45,000 per month. I am losing money every month doing work that is culturally valuable but financially unsustainable. How do I fund important cultural documentation work through a YouTube channel?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 85,
+    "raw_submission": "I post content about Indian street photography on Instagram with 178,000 followers. I photograph people in public spaces. A recent viral controversy about a photographer who was attacked for photographing without consent has made my subjects increasingly hostile. My ability to photograph candidly in public has significantly reduced. Street photography without candid access loses its authenticity. How do I continue street photography content in an environment where photographing strangers is increasingly contested?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 86,
+    "raw_submission": "I have a YouTube channel about Indian chess with 45,000 subscribers. Chess content exploded globally during the pandemic. Praggnanandha and Gukesh becoming world champions created a brief Indian chess boom. That boom has now subsided and my views dropped 70% from peak. I built my channel on the chess boom wave and now the wave has passed. How do I build a sustainable chess content channel when the cultural moment that created my growth has ended?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 87,
+    "raw_submission": "I post daily affirmations and positive content on Instagram with 1.2 million followers. My content is intentionally positive and I never discuss negative topics. A major mental health crisis is trending in India and my audience is asking me to address it. My brand is built on positivity and I do not want to pivot to crisis content. But ignoring a genuine mental health emergency feels irresponsible. How do I handle pressure to address serious issues when your brand is built on positivity?",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 88,
+    "raw_submission": "I create content about Indian gaming culture on YouTube with 234,000 subscribers. I built my audience primarily through reaction content — reacting to other creators videos. YouTube has been sending me warnings that reaction content may violate fair use depending on how much I show. Three other reaction channels I know have been struck. My entire format is built on reaction content. Do I wait for a strike or proactively change my format?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 90,
+    "raw_submission": "I run a YouTube channel about Indian startups and entrepreneurship with 345,000 subscribers. I interviewed a founder 6 months ago who presented their startup positively. That startup has since been exposed as fraudulent and investors have lost crores. My interview is one of the first results when people search the founder's name. I had no idea they were fraudulent at the time. Should I delete the interview or add a disclaimer?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 91,
+    "raw_submission": "I create content about Indian parenting specifically attachment parenting on YouTube with 89,000 subscribers. My content advocates for a specific parenting philosophy. I am now questioning some of the parenting advice I have given over 3 years after reading newer research. I have 89,000 parents who may have followed my advice with their children. How do I publicly update my position on parenting advice when parents have already acted on my old advice?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 92,
+    "raw_submission": "I post fashion content on TikTok with 678,000 followers. I am dark-skinned and built my following specifically by being vocal about colorism in the fashion industry. A major fairness cream brand offered me Rs 18 lakhs for a campaign. Accepting would be the ultimate contradiction of everything I stand for. But Rs 18 lakhs is more than my annual content income. My audience would never forgive me. But I also need to pay my bills. How do I navigate this?",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 93,
+    "raw_submission": "I have a YouTube channel about Indian personal finance with 1.1 million subscribers. I have been approached by three crypto projects for sponsorships worth Rs 80 lakhs total. My audience trusts my financial advice. The crypto projects are not outright scams but they are high risk. My channel is built on conservative financial advice. Taking these deals would contradict my core message but Rs 80 lakhs is significant. How do I handle being approached by high-paying sponsors whose products contradict your advice?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 94,
+    "raw_submission": "I post content about Indian wildlife conservation on YouTube with 234,000 subscribers. I need to film in protected forest areas for my next series. The official permission process takes 8-12 months. Other creators film without permission illegally and their content performs better because they access restricted areas. Following the rules puts me at a competitive disadvantage. How do I compete with creators who break the rules when following the rules limits your content quality?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 95,
+    "raw_submission": "I create content about Indian street food specifically documenting vendors who are being displaced by urban development. I have 156,000 Instagram followers. The vendors I feature often get overwhelmed by tourists after I post about them which disrupts their livelihoods. Three vendors have asked me not to feature them anymore because the tourism attention made their work impossible. My content is destroying what it is trying to preserve. How do I document disappearing culture without accelerating its disappearance?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 96,
+    "raw_submission": "I run a YouTube channel about Indian space science and ISRO missions with 567,000 subscribers. After Chandrayaan-3 success my views peaked at 2 million per video. Now with no major ISRO mission for 18 months my views are back to 80,000-150,000. I am entirely dependent on external events I cannot control. How do I build a consistent space science channel when the exciting events are infrequent and unpredictable?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 97,
+    "raw_submission": "I post content about Indian board games and tabletop gaming on YouTube with 34,000 subscribers. My niche is tiny but deeply passionate. I have 34,000 subscribers after 3 years of consistent posting. A gaming cafe chain wants to hire me as their content head for Rs 1.2 lakhs per month. My channel earns Rs 18,000 per month. Taking the job means giving up independent content creation. Not taking it means continuing to struggle financially in a niche with low growth ceiling.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 98,
+    "raw_submission": "I create content about Indian ocean conservation on Instagram with 89,000 followers. My work documents plastic pollution in Indian coastal communities. A major plastic packaging company approached me for a greenwashing campaign where they want me to show their new recyclable packaging as a solution. The packaging is marginally better but still harmful. They are offering Rs 12 lakhs. Accepting would undermine my conservation credibility. Refusing means losing significant income for important conservation work. How do I handle being approached for greenwashing?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 99,
+    "raw_submission": "I post daily cricket commentary on YouTube with 3.4 million subscribers. I built my channel during the IPL boom. A rival creator with 8 million subscribers has started copying my exact analysis format, my visual style, and even my catchphrases. His production budget is significantly larger. My audience is loyal but I am losing the new viewer battle to a better-funded copycat. How do I compete with a well-funded creator who is systematically copying everything that made me successful?",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 100,
+    "raw_submission": "I create content about Indian independent cinema on YouTube with 123,000 subscribers. I have been offered a position as a film critic for a major OTT platform. The role pays Rs 2.5 lakhs per month and gives me early access to unreleased films. But the contract requires me to align my reviews with the platform's promotional interests — I cannot give negative reviews to their original content. My YouTube credibility is built entirely on honest criticism. Should I take a well-paying job that requires compromising critical independence?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  }
 ]
