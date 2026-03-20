@@ -14,6 +14,10 @@ const RATE_LIMIT_WINDOW_HOURS = 1
 
 export async function POST(request: NextRequest) {
   try {
+    const isSeeded = 
+      request.headers.get('x-service-role') === 
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+
     const supabase = await createServerSupabaseClient()
     const { data: { session } } = await supabase.auth.getSession()
     
@@ -22,38 +26,42 @@ export async function POST(request: NextRequest) {
     
     // Use verified userId and metadata if session exists
     const userId = session?.user.id || null
-    const submittedBy = bodySubmittedBy || 
-                        session?.user.user_metadata?.full_name || 
-                        session?.user.email?.split('@')[0] || 
-                        'Anonymous'
+    const submittedBy = isSeeded ? 'CreatorFeed System' : (
+      bodySubmittedBy || 
+      session?.user.user_metadata?.full_name || 
+      session?.user.email?.split('@')[0] || 
+      'Anonymous'
+    )
 
     // Get client identifiers for rate limiting
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown'
     const ua = request.headers.get('user-agent') || 'unknown'
 
     // Rate Limit Check (Using Admin to bypass RLS)
-    const sixHoursAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString()
-    
-    let query = supabaseAdmin
-      .from('threads')
-      .select('id')
-      .gte('created_at', sixHoursAgo)
+    if (!isSeeded) {
+      const sixHoursAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString()
+      
+      let query = supabaseAdmin
+        .from('threads')
+        .select('id')
+        .gte('created_at', sixHoursAgo)
 
-    if (userId) {
-      query = query.eq('user_id', userId)
-    } else {
-      // In a shared network (office), combine IP and UA to identify unique systems
-      query = query.eq('ip_address', ip).eq('user_agent', ua)
-    }
+      if (userId) {
+        query = query.eq('user_id', userId)
+      } else {
+        // In a shared network (office), combine IP and UA to identify unique systems
+        query = query.eq('ip_address', ip).eq('user_agent', ua)
+      }
 
-    const { data: recentThreads } = await query
+      const { data: recentThreads } = await query
 
-    if (recentThreads && recentThreads.length >= RATE_LIMIT_COUNT) {
-      const windowText = RATE_LIMIT_WINDOW_HOURS === 1 ? 'hour' : `${RATE_LIMIT_WINDOW_HOURS} hours`
-      return NextResponse.json(
-        { error: `Rate limit reached (${RATE_LIMIT_COUNT} submissions per ${windowText}). Please try again shortly.` },
-        { status: 429 }
-      )
+      if (recentThreads && recentThreads.length >= RATE_LIMIT_COUNT) {
+        const windowText = RATE_LIMIT_WINDOW_HOURS === 1 ? 'hour' : `${RATE_LIMIT_WINDOW_HOURS} hours`
+        return NextResponse.json(
+          { error: `Rate limit reached (${RATE_LIMIT_COUNT} submissions per ${windowText}). Please try again shortly.` },
+          { status: 429 }
+        )
+      }
     }
 
     if (!rawSubmission || rawSubmission.length < 20) {

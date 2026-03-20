@@ -301,8 +301,12 @@ export async function POST(request: NextRequest) {
   let threadId: string | undefined;
   try {
     // Basic protection for internal trigger
+    const isSeeded = 
+      request.headers.get('x-service-role') === 
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+
     const authHeader = request.headers.get('authorization')
-    if (process.env.NODE_ENV === 'production' && authHeader !== `Bearer ${process.env.INTERNAL_API_KEY}`) {
+    if (!isSeeded && process.env.NODE_ENV === 'production' && authHeader !== `Bearer ${process.env.INTERNAL_API_KEY}`) {
       console.warn('Unauthorized attempt to trigger debate engine')
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }

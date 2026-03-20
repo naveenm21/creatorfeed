@@ -53,6 +53,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           APP_URL: ${{ secrets.APP_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           BATCH_SIZE: ${{ steps.batch.outputs.size }}
         run: node scripts/seed-debate.js
         

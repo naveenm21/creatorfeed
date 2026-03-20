@@ -3,7 +3,15 @@ import { supabaseAdmin } from '@/lib/supabase-admin'
 
 export async function POST(request: NextRequest) {
   try {
+    const isSeeded = 
+      request.headers.get('x-service-role') === 
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+
     const { threadId, answers } = await request.json()
+
+    if (isSeeded) {
+      console.log(`Processing seeded answers for thread: ${threadId}`)
+    }
 
     if (!threadId || !answers) {
       return NextResponse.json(
@@ -53,7 +61,8 @@ export async function POST(request: NextRequest) {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.INTERNAL_API_KEY}`
+          'Authorization': `Bearer ${process.env.INTERNAL_API_KEY}`,
+          'x-service-role': process.env.SUPABASE_SERVICE_ROLE_KEY || ''
         },
         body: JSON.stringify({ threadId })
       }
