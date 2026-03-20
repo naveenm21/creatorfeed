@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "raw_submission": "I have a YouTube cooking channel with 8,200 subscribers. For the past 6 months my videos get between 150-400 views each. I post every Tuesday without fail. My thumbnails are clean, my titles use keywords, my watch time is above 55%. I have done everything the YouTube gurus say but nothing is moving. I feel invisible on the platform.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 2,
+    "raw_submission": "My Instagram fitness page has 34,000 followers. Six months ago my Reels were hitting 80,000-150,000 views consistently. Now the same style of content gets 4,000-8,000 views. I have not changed my posting frequency of 4x per week. My photos still get decent likes but Reels have completely died. I tried posting at different times and using trending audio but nothing worked.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 3,
+    "raw_submission": "I run a personal finance TikTok with 180,000 followers. My content was getting 50,000-200,000 views per video for a year. Last month I posted a video explaining index funds that got 4.2 million views overnight. Since then my regular videos are getting 8,000-15,000 views. It feels like the algorithm showed my content to a completely wrong audience during the viral moment and now my regular viewers are lost.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 4,
+    "raw_submission": "I am a travel YouTuber with 67,000 subscribers posting for 3 years. My videos consistently get 2,000-5,000 views. I have never had a breakout video despite covering unique destinations in Southeast Asia. My production quality is professional. My storytelling gets positive comments. But subscriber growth is 200-400 per month and has been flat for 18 months.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 5,
+    "raw_submission": "I have a tech review YouTube channel with 450,000 subscribers. My average views per video dropped from 180,000 to 65,000 over 8 months. I have not changed my content format. The drop happened gradually after YouTube changed how they recommend tech content. My subscribers are loyal but new viewer acquisition has completely stopped.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 6,
+    "raw_submission": "I run a mental health awareness Instagram with 125,000 followers. My engagement rate dropped from 6.2% to 1.8% over the past year. I post 5 times per week. I recently got flagged by Instagram for sensitive content on two posts which reduced their reach. I am worried the platform is suppressing mental health content systematically.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 7,
+    "raw_submission": "I am a Hindi language YouTuber covering stock market and investing with 2.3 million subscribers. My CPM dropped from Rs 180 to Rs 45 per thousand views over 2 years even though my views stayed consistent. I earn 75% less for the same work. I am considering switching to English content to access higher CPM markets but worried about losing my Hindi speaking audience.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 8,
+    "raw_submission": "I am a beauty creator on Instagram with 890,000 followers. I have been offered three brand deals this month worth $8,000, $12,000, and $22,000 respectively. The $22,000 deal is for a fast fashion brand that my audience has mixed feelings about. The $8,000 deal is for a clean beauty brand that perfectly matches my values. I do not know how to balance income with audience trust.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 9,
+    "raw_submission": "My TikTok account in the book review niche has 45,000 followers. BookTok was massive in 2022 and 2023 but feels saturated now. My videos get 2,000-8,000 views compared to 50,000-100,000 views two years ago for the same style of content. The niche has thousands of new creators who all look the same. I do not know if I should pivot my content style or find a sub-niche.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 10,
+    "raw_submission": "I run a YouTube channel about Indian street food with 1.1 million subscribers. I post 2 videos per week consistently. My English language videos average 800,000 views but my Hindi language videos average 120,000 views despite India being my largest audience. I do not understand why my own country's language performs worse with my Indian audience on a food channel.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 11,
+    "raw_submission": "I have been posting YouTube Shorts daily for 8 months. I have 23,000 subscribers from Shorts but when I post long form videos they get 200-500 views despite having 23,000 subscribers. It feels like Shorts and long form have completely separate audiences on my channel. I do not know if I should stop Shorts to focus on long form or keep both going.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 12,
+    "raw_submission": "I am a fitness coach on YouTube with 78,000 subscribers. A creator with 2 million subscribers copied my exact video format, thumbnail style, and series concept last month. Their version of my content is now ranking above mine in search for keywords I built over 2 years. I do not know whether to confront them publicly, ignore it, or pivot my format entirely.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 13,
+    "raw_submission": "I post productivity and study content on Instagram targeting college students. I have 210,000 followers. My engagement was strong at 4.5% for two years. In the last 4 months engagement dropped to 0.9%. I have not changed content style. I suspect my audience has graduated and aged out of my content but I do not know how to attract new college students without losing existing followers.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 14,
+    "raw_submission": "I run a YouTube channel teaching Python programming with 340,000 subscribers. I have been posting for 4 years. My beginner tutorials get 50,000-200,000 views but my advanced content gets 3,000-8,000 views. I want to create advanced content because it is more intellectually satisfying and differentiates me. But the algorithm clearly only rewards my beginner content. I feel trapped making content I have outgrown.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 15,
+    "raw_submission": "I am posting on YouTube, Instagram, and TikTok simultaneously with a team of two people including myself. YouTube has 89,000 subscribers, Instagram has 156,000 followers, TikTok has 34,000 followers. We are burning out trying to maintain all three. Each platform requires completely different content formats. Our quality is suffering because we are spread too thin. We need to cut platforms but do not know which one.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 16,
+    "raw_submission": "I create comedy sketches on Instagram Reels. I have 567,000 followers built over 3 years. My Reels were consistently getting 500,000 to 2,000,000 views. Four months ago views collapsed to 20,000-80,000 per Reel. Nothing changed in my content. Instagram support told me there is no issue with my account. I cannot find any pattern to which videos perform and which ones do not.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 17,
+    "raw_submission": "I have a YouTube channel about minimalism and simple living with 156,000 subscribers. I have been approached by a major home organization brand for a long term partnership worth $4,000 per month for 12 months. My audience is specifically anti-consumerist. Taking this deal feels contradictory to my channel values but $48,000 annually would let me quit my job and create full time. I do not know what to do.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 18,
+    "raw_submission": "I am a TikTok creator in the career advice niche with 92,000 followers. LinkedIn has been reaching out encouraging me to post my content there. My TikTok content gets 30,000-150,000 views. I tried LinkedIn for 3 months and my posts get 500-2,000 views despite having 8,000 LinkedIn connections. The effort to repurpose content for LinkedIn is high and returns are low. Should I keep trying LinkedIn or focus entirely on TikTok.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 19,
+    "raw_submission": "I run a YouTube channel about Indian history with 4.2 million subscribers. My videos average 1.5 to 3 million views. I have never monetized beyond AdSense. My monthly AdSense revenue is Rs 8 lakhs. I have been approached for a book deal, a documentary series, and a paid membership community. I do not know which revenue stream to pursue first without distracting from content creation.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 20,
+    "raw_submission": "I post daily vlogs on YouTube documenting my life as a 24 year old entrepreneur in Bangalore. I have 12,000 subscribers after 14 months of daily posting. Every successful daily vlogger I study seems to have had one breakthrough video that unlocked their growth. I have posted 420 videos and none have broken through. I am questioning whether daily vlogging still works as a format in 2026 or if the format is dead.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  }
+]
