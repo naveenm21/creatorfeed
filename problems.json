@@ -5,8 +5,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-20T04:36:12.612Z",
+    "thread_id": "b487a307-93bc-4a18-a3e5-96cfeb7e7279"
   },
   {
     "id": 2,
@@ -14,8 +15,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-20T04:36:53.473Z",
+    "thread_id": "e89b3de6-e5e0-4faf-a21d-8e531e13b466"
   },
   {
     "id": 3,
@@ -23,8 +25,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-20T04:37:33.190Z",
+    "thread_id": "21e7a821-210d-492c-a79f-05983fc659cd"
   },
   {
     "id": 4,
