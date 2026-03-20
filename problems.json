@@ -798,6 +798,15 @@
     "posted_at": null
   },
   {
+    "id": 89,
+    "raw_submission": "I post content about Indian handloom and weaving traditions on Instagram with 67,000 followers. I have documented over 200 weaving communities across India over 3 years. A luxury fashion house wants to use my documentation as research for their collection and pay me Rs 20 lakhs. But they will use this to create expensive products that will commodify the very traditions I am trying to preserve and the weavers will receive nothing. Is this ethical to accept?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
     "id": 90,
     "raw_submission": "I run a YouTube channel about Indian startups and entrepreneurship with 345,000 subscribers. I interviewed a founder 6 months ago who presented their startup positively. That startup has since been exposed as fraudulent and investors have lost crores. My interview is one of the first results when people search the founder's name. I had no idea they were fraudulent at the time. Should I delete the interview or add a disclaimer?",
     "platform": "YouTube",
