@@ -365,8 +365,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T15:51:26.577Z",
+    "thread_id": "116d12f9-d9b9-491e-9ce6-b15c0c55e6e7"
   },
   {
     "id": 38,
@@ -374,8 +375,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T15:52:11.844Z",
+    "thread_id": "248ea3c0-87c3-4e4c-bcaf-ad1f8d7e0096"
   },
   {
     "id": 39,
@@ -383,8 +385,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T15:52:52.802Z",
+    "thread_id": "2b142707-0b30-4f03-ba12-7aad316ed8fd"
   },
   {
     "id": 40,
