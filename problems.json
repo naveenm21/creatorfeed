@@ -335,8 +335,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T13:27:46.417Z",
+    "thread_id": "3a1b5766-280f-4664-bb16-6741533c9122"
   },
   {
     "id": 35,
@@ -344,8 +345,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T13:28:27.061Z",
+    "thread_id": "a9eea0c1-a7e1-4a25-9dbe-6ab5ecc7d208"
   },
   {
     "id": 36,
@@ -353,8 +355,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T13:29:07.999Z",
+    "thread_id": "1075d2d3-8be7-4a2b-a83b-a4124326563d"
   },
   {
     "id": 37,
