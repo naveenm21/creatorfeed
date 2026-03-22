@@ -275,8 +275,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T03:56:28.991Z",
+    "thread_id": "dec55b17-9ea5-46fe-83d1-bc48494a3c37"
   },
   {
     "id": 29,
@@ -284,8 +285,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T03:57:08.643Z",
+    "thread_id": "62a4e7b5-3293-4f6d-8290-5412aac92acd"
   },
   {
     "id": 30,
@@ -293,8 +295,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-22T03:57:47.303Z",
+    "thread_id": "c9e95617-40e3-490b-955b-aa48b26557e4"
   },
   {
     "id": 31,
