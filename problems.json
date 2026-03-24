@@ -485,8 +485,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T03:44:44.742Z",
+    "thread_id": "91513004-10dd-4572-86e1-cc4350108ca9"
   },
   {
     "id": 50,
@@ -494,8 +495,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T03:45:30.075Z",
+    "thread_id": "7c8f5125-d27e-457b-850f-877c4871ff3b"
   },
   {
     "id": 51,
@@ -503,8 +505,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T03:46:11.114Z",
+    "thread_id": "158246c2-ce72-494b-b8d0-da311e966cf1"
   },
   {
     "id": 52,
