@@ -515,8 +515,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T07:36:55.059Z",
+    "thread_id": "a766b8af-2f9a-4428-8938-07ae2a234897"
   },
   {
     "id": 53,
@@ -524,8 +525,9 @@
     "platform": "Multi-platform",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T07:37:34.712Z",
+    "thread_id": "e12d8053-fbf9-4619-876c-716b9faad999"
   },
   {
     "id": 54,
@@ -533,8 +535,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-24T07:38:14.108Z",
+    "thread_id": "6b909a8a-0da0-4496-a486-f49a317daa83"
   },
   {
     "id": 55,
