@@ -642,6 +642,37 @@ export function DebateView({
                     </div>
                   )}
 
+                  {/* PROMOTIONAL SECTION: Only for Instagram-related problems */}
+                  {thread.platform?.toLowerCase().includes('instagram') && (
+                    <div className="bg-gradient-to-br from-brandprimary/10 to-brandorange/10 border border-brandprimary/20 rounded-2xl p-6 mb-10">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-5 h-5 rounded-full bg-brandprimary/20 flex items-center justify-center">
+                          <svg className="w-3 h-3 text-brandprimary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                          </svg>
+                        </div>
+                        <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">Recommended Next Step</span>
+                      </div>
+                      
+                      <h3 className="text-[18px] font-bold text-white mb-2 leading-snug">
+                        Struggling with {thread.topic}?
+                      </h3>
+                      
+                      <p className="text-[14px] text-secondary leading-relaxed mb-6">
+                        This product can help you to solve that Instagram growth problem or understand your audience better. 
+                        Go and use this tool to become a better creator.
+                      </p>
+
+                      <Link 
+                        href="https://creedom.ai" 
+                        target="_blank"
+                        className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold px-8 py-3 rounded-xl hover:opacity-90 transform active:scale-[0.98] transition-all shadow-lg shadow-brandprimary/20"
+                      >
+                        Explore Creedom.ai →
+                      </Link>
+                    </div>
+                  )}
+
                   {finalPositions.length > 0 && (
                     <div className="mb-12">
                       <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-6 pl-1">Individual Agent Closings</h3>
