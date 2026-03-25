@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import Anthropic from '@anthropic-ai/sdk'
 import { supabaseAdmin } from '@/lib/supabase-admin'
 import { 
@@ -295,6 +296,11 @@ Generate the verdict based on these final positions.`
     .from('threads')
     .update({ status: 'published' })
     .eq('id', threadId)
+
+  // Revalidate sitemap and homepage when a new debate is published
+  revalidatePath('/sitemap.xml')
+  revalidatePath('/')
+  revalidatePath('/trending')
 }
 
 export async function POST(request: NextRequest) {
