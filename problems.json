@@ -785,8 +785,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-26T14:06:40.008Z",
+    "thread_id": "6f07ef6c-5a22-4876-b287-71a5053eaf2f"
   },
   {
     "id": 80,
@@ -794,8 +795,9 @@
     "platform": "Multi-platform",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-26T14:07:18.953Z",
+    "thread_id": "e9399dd2-d77c-4a7e-903b-4883ba5942a7"
   },
   {
     "id": 81,
@@ -803,8 +805,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-26T14:08:00.460Z",
+    "thread_id": "b4786653-e791-451c-9abb-11ba4dec81a1"
   },
   {
     "id": 82,
