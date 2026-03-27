@@ -935,8 +935,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-27T16:29:05.528Z",
+    "thread_id": "74225f23-c710-45d3-84eb-05dfef1a173d"
   },
   {
     "id": 95,
@@ -944,8 +945,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-27T16:29:45.440Z",
+    "thread_id": "09b2b123-2935-4825-b20f-05e1eb92d37b"
   },
   {
     "id": 96,
@@ -953,8 +955,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-27T16:30:25.787Z",
+    "thread_id": "2e27985d-81eb-43b6-809d-94768a99ba94"
   },
   {
     "id": 97,
