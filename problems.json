@@ -1015,8 +1015,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-30T14:10:46.145Z",
+    "thread_id": "a973be79-b3fd-4b05-8128-fb4a5d1391b8"
   },
   {
     "id": 103,
@@ -1024,8 +1025,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-30T14:11:27.551Z",
+    "thread_id": "324c685b-b451-4575-8530-11af8142880c"
   },
   {
     "id": 104,
@@ -1033,8 +1035,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-03-30T14:12:08.354Z",
+    "thread_id": "385ea4c2-36af-4af3-bf50-8f4664177bd7"
   },
   {
     "id": 105,
