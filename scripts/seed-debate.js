@@ -33,15 +33,12 @@ async function supabaseQuery(
   }
   if (body) options.body = JSON.stringify(body)
   
-  const fetch = (...args) => 
-    import('node-fetch')
-      .then(({default: f}) => f(...args))
-  
-  const fn = await fetch(
+  const fetch = (await import('node-fetch')).default
+  const response = await fetch(
     `${SUPABASE_URL}/rest/v1/${endpoint}`,
     options
   )
-  return fn.json()
+  return response.json()
 }
 
 async function generateAnswers(
@@ -122,15 +119,11 @@ async function submitProblem(problem) {
     `Submitting problem ${problem.id}...`
   )
 
-  const fetch = (...args) =>
-    import('node-fetch')
-      .then(({default: f}) => f(...args))
-
-  const fn = await fetch
+  const fetch = (await import('node-fetch')).default
 
   // Step 1: Call intake API with 
   // service role header
-  const intakeRes = await (await fn)(
+  const intakeRes = await fetch(
     `${APP_URL}/api/intake`,
     {
       method: 'POST',
@@ -169,7 +162,7 @@ async function submitProblem(problem) {
 
     // Step 2: Submit answers with 
     // service role header
-    const answersRes = await (await fn)(
+    const answersRes = await fetch(
       `${APP_URL}/api/intake/answers`,
       {
         method: 'POST',
@@ -194,7 +187,7 @@ async function submitProblem(problem) {
     console.log('Debate triggered.')
 
   } else {
-    await (await fn)(
+    await fetch(
       `${APP_URL}/api/debate`,
       {
         method: 'POST',

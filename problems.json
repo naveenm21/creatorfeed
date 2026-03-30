@@ -998,5 +998,906 @@
     "posted": true,
     "posted_at": "2026-03-28T07:29:04.467Z",
     "thread_id": "617dca2a-04e1-4a0b-b878-f4f4ccef42d7"
+  },
+  {
+    "id": 101,
+    "raw_submission": "I'm a tech reviewer on YouTube with 45K subscribers, but my growth has completely stalled for the past 6 months. I've tried different thumbnails, titles, and upload schedules, but nothing seems to move the needle anymore. My average views per video used to be 15K but now I'm lucky to get 8K. I think the algorithm might be saturated with similar tech content, but I'm not sure how to differentiate myself without completely changing my format.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": true,
+    "posted_at": "2026-03-30T09:16:00.775Z",
+    "thread_id": "6a053edb-c6c6-4f41-811c-2ba3809c6df5"
+  },
+  {
+    "id": 102,
+    "raw_submission": "As a beauty influencer with 850K Instagram followers, I've been approached by several brands but the payment offers are laughably low compared to my engagement rates. Most brands expect 50% discounts on my rates just because I'm not a mega-influencer at 1M+ yet. I'm struggling to figure out how to negotiate better deals without pricing myself out of the market entirely.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 103,
+    "raw_submission": "I create gaming content on TikTok and blew up with one viral clip that got 3M views, jumping me from 8K to 250K followers in two weeks. But now my audience expects that level of virality every single post and my engagement has dropped 60% because I can't replicate the lightning-in-a-bottle moment. I'm stressed and burned out trying to chase the viral formula.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 104,
+    "raw_submission": "I'm a finance educator on YouTube with 1.2M subscribers, but I'm completely burned out from producing weekly 20-minute videos. The comment section has become toxic with people arguing about crypto, and moderating takes hours every day. I love helping people understand finance but the constant negativity and demands for faster content are making me consider quitting entirely.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 105,
+    "raw_submission": "I'm a comedy creator with 34K TikTok followers and I've been trying to grow on Instagram Reels and YouTube Shorts with the same content, but each platform has completely different humor preferences. My TikTok audience finds my content hilarious but Reels gets barely 2% of the engagement. I'm struggling to figure out if I should create platform-specific content or if I'm just not cut out for multi-platform growth.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 106,
+    "raw_submission": "As a cooking channel creator with 2.3M YouTube subscribers, I've been doing traditional recipe content for 4 years but it's become oversaturated. I want to pivot to more entertainment-focused content with storytelling and cultural narratives, but I'm terrified of losing my existing audience. My community seems to expect the same format, and I don't know if a pivot will destroy what I've built.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 107,
+    "raw_submission": "I'm a history educator with 67K Instagram followers and my reach has been mysteriously cut by 70% in the last month even though I'm posting the same quality content. I suspect the Instagram algorithm is deprioritizing educational content in favor of entertainment, and I'm getting only 200-300 likes per post instead of the usual 2K. I don't know if I should abandon Instagram or completely change my content strategy.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 108,
+    "raw_submission": "I'm a micro-influencer in the fitness niche with 5.2K TikTok followers and I'm trying to reach 10K to unlock monetization features. My growth has been incredibly slow at 20-30 new followers per week, and I'm competing against hundreds of fitness creators. I'm not sure if I should invest in paid ads, change my niche, or if I'm just not cut out for content creation.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 109,
+    "raw_submission": "I run a tech podcast on YouTube with 890K subscribers and I monetize through brand deals and Patreon, but recently my Patreon members are dropping off as my content feels repetitive. I've been covering the same topics for 3 years and my community engagement has declined significantly. I'm not sure how to refresh my content without alienating my long-time supporters who are funding my work.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 110,
+    "raw_submission": "I'm a beauty creator on TikTok with 125K followers and there are suddenly 10+ new creators in my exact niche with almost identical content and production quality. My views have dropped from 80K per video to 20K, and I can't figure out how to stand out anymore. The barrier to entry has lowered so much that I'm losing market share to competitors with similar or sometimes even lower production value.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 111,
+    "raw_submission": "I'm a gaming streamer with 42K YouTube followers doing daily streams, and despite the consistent viewership, YouTube hasn't offered me monetization yet. I meet most requirements but my channel seems to be shadowbanned or flagged. The platform's monetization algorithm is mysterious and I have no way to appeal or understand why I'm being denied.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 112,
+    "raw_submission": "I create comedy skits across YouTube, TikTok, and Instagram with 156K TikTok followers but only 23K YouTube subscribers and 31K Instagram followers. I'm spending 20+ hours per week creating content for three platforms and barely breaking even financially. I feel stretched too thin and I'm not sure which platform to focus on or if I should just abandon the smaller ones.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 113,
+    "raw_submission": "I'm a personal finance creator with 8.7K YouTube subscribers and I want to pivot from general budgeting content to investment advice, which is my true passion. However, my existing community seems to want budgeting content and I'm worried that a pivot will alienate them. I don't know if I should start a new channel, gradually transition, or just stick with what's working.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 114,
+    "raw_submission": "I'm a cooking creator with 3.4M Instagram followers and I've been burned out for months from the constant pressure to post perfect content, respond to DMs, and deal with entitled followers. The toxicity in my comments has increased dramatically and moderating alone takes 4-5 hours daily. I love cooking but the creator lifestyle is destroying my mental health.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 115,
+    "raw_submission": "I'm a history content creator on TikTok with 78K followers and my engagement rate is only 1.2%, which is extremely low for this follower count. I suspect the algorithm is suppressing my content because it's educational rather than entertaining, and I'm seeing creators with half my followers getting 3x the views. I'm not sure if I should make content more sensationalized or if I should switch platforms.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 116,
+    "raw_submission": "I'm a tech YouTuber with 2.1M subscribers and I had one viral video last year that got 8M views, but I haven't been able to replicate that success since. My subscribers expect that level of virality now and my recent videos are getting average views even though they're better quality than before. I'm obsessing over the viral formula instead of just making good content.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 117,
+    "raw_submission": "I'm a gaming content creator with 12K TikTok followers and I've hit a complete growth plateau for 5 months. My videos consistently get 2K-3K views but I can't break into the 10K+ view range that would trigger the algorithm to push me to a wider audience. I'm starting to wonder if my content just isn't good enough or if the algorithm is working against me.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 118,
+    "raw_submission": "I'm a beauty influencer with 567K Instagram followers and brands are finally reaching out for partnerships, but my monetization is still inconsistent. CPM rates have dropped 40% in the last year and affiliate commissions are barely enough to cover equipment costs. I'm not sure if I should diversify into digital products, consulting, or if Instagram monetization just isn't viable anymore.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 119,
+    "raw_submission": "I'm a comedy creator with 2.8K followers on both YouTube and Instagram, trying to grow on TikTok, but I can't figure out what resonates with each platform's audience. My YouTube subscribers don't follow me on TikTok, my Instagram followers barely engage there, and every platform requires different editing styles and timing. I'm exhausted from creating three different versions of similar content.",
+    "platform": "Multi-platform",
+    "follower_range": "1K-10K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 120,
+    "raw_submission": "I'm a finance educator on Instagram with 1.3M followers and I've been thinking about pivoting to more accessible, entertainment-focused content mixed with education. But my audience built their trust with me based on detailed financial analysis, and I'm terrified that making content more \"fun\" will make me look less credible. I don't know how to evolve without losing my core identity.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 121,
+    "raw_submission": "I'm a tech YouTuber with 45K subscribers who's been stuck at this number for 6 months despite consistent uploads. My older videos about iPhone reviews used to get 200K views, but my recent content barely hits 50K. The algorithm seems to have stopped recommending my videos in the tech space, and I'm losing motivation. Should I pivot to a different format or completely change my niche?",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 122,
+    "raw_submission": "As a beauty creator with 2.3M followers across TikTok and Instagram, I'm struggling to maintain engagement across both platforms simultaneously. My TikTok videos go viral easily, but my Instagram Reels get 10x fewer likes, and I'm spending 8 hours daily just creating different content for each platform. I'm burned out and unsure if I should focus on just one platform.",
+    "platform": "Multi-platform",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 123,
+    "raw_submission": "I'm a gaming streamer on Twitch with 15K followers, and every time I try to branch out to YouTube or TikTok shorts, my content completely flops. My audience seems locked to Twitch, and I can't grow beyond my current viewership there. I've tried recording highlights and posting them elsewhere, but nothing gains traction. How do I expand without abandoning my core audience?",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 124,
+    "raw_submission": "I've been creating finance content on YouTube for 2 years and have 8K subscribers, but I'm making less than $500 per month from AdSense. My content is quality and gets decent engagement, but monetization through ads alone isn't viable. I haven't been able to attract sponsorships because my subscriber count feels too small. How do I diversify my income before giving up?",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 125,
+    "raw_submission": "My comedy TikTok account exploded from 50K to 500K followers in 2 months after one viral video, but now my newer videos are getting significantly lower engagement. My audience grew so fast that I don't have a clear sense of who they are or what specifically made that first video work. I'm struggling to replicate the viral success and my growth has completely stalled.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 126,
+    "raw_submission": "I'm a cooking channel with 350K YouTube subscribers, but I'm getting crushed by competition from channels like Tasty and Gordon Ramsay who have millions of followers. My videos used to consistently hit 500K views, but now the same effort only gets 150K views. The cooking niche feels oversaturated and I'm losing confidence in my ability to stand out.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 127,
+    "raw_submission": "I started as a history content creator on Instagram with 12K followers, but the platform's algorithm change has made educational content nearly invisible. My detailed history posts now reach less than 1% of my followers, and I've been told to switch to Reels or TikTok. I'm not sure how to adapt my in-depth educational format to short-form video without losing the substance that makes my content valuable.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 128,
+    "raw_submission": "My tech review channel has 850K subscribers, and while I get consistent viewership, my growth has completely plateaued for 4 months. I notice that creators who started reviewing AI tools 6 months ago are now at 5M subscribers. Should I pivot my entire channel to AI reviews, or would that alienate my existing audience who expect traditional tech coverage?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 129,
+    "raw_submission": "I'm a fitness creator with 2.8M Instagram followers, but my community engagement has tanked. My recent posts get thousands of likes but only dozens of meaningful comments. Followers seem less interested in my fitness advice and more interested in unboxing luxury products I post about. I'm worried about brand partnerships that don't align with my original fitness mission.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 130,
+    "raw_submission": "I'm a small gaming YouTuber with 3K subscribers and I've hit a harsh reality: my 50-minute long-form gaming videos get 200 views while my 8-minute clips barely get 500 views. The algorithm seems to heavily favor short-form content, but my expertise and passion are in deep, analytical gaming commentary. Do I need to completely change my content style to survive?",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 131,
+    "raw_submission": "I've built a loyal community of 95K followers on TikTok as a productivity creator, but I realize my niche is extremely saturated with bigger creators pushing similar content. My videos struggle to reach beyond my existing followers and I rarely go viral anymore. Every productivity guru on the platform is teaching the same strategies, and I don't know how to differentiate myself.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 132,
+    "raw_submission": "I'm a beauty creator with 60K Instagram followers and I'm completely burned out from the pressure to constantly show my face, look perfect, and maintain a flawless image. I want to evolve my content to focus more on techniques and less on personal aesthetics, but I'm afraid that changing my format will cause me to lose followers. My mental health is suffering from this constant performance.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 133,
+    "raw_submission": "I'm a financial advice creator with 420K YouTube subscribers, but I'm being outcompeted by creators with massive production budgets and celebrity status. Andrew Tate-style finance bros are dominating the algorithm with flashy content that I don't feel comfortable creating. My educational approach is being overshadowed, and I'm losing relevance in a space that's becoming more about personality than substance.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 134,
+    "raw_submission": "I'm a tech YouTuber with 5.2M subscribers and I've made significant income from sponsorships, but I'm now getting approached by companies whose products I genuinely don't believe in. Turning down sponsorships means losing hundreds of thousands in monthly revenue, but accepting them feels dishonest to my audience. I'm struggling with how to grow my income without compromising my credibility.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 135,
+    "raw_submission": "I run a history educational channel on YouTube with 22K subscribers and I'm frustrated that my carefully researched 20-minute videos get less engagement than a 2-minute conspiracy theory video made by someone else. The algorithm seems to favor entertainment and controversy over accuracy. I'm worried that if I compromise my standards to chase engagement, I'll lose what makes my content valuable.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 136,
+    "raw_submission": "I'm a cooking creator with 180K TikTok followers, but my audience is entirely on TikTok and I've failed to build any presence on YouTube despite putting the same effort into both platforms. TikTok's algorithm favors me but YouTube's doesn't, and I feel trapped in one platform. If TikTok gets banned or changes their algorithm, my entire creator career collapses.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 137,
+    "raw_submission": "I'm a comedy creator with 7K YouTube subscribers who finally hit partner status, but my RPM is only $0.80 per thousand views because my audience is mostly from lower-income countries. I'm making $200 a month from a channel I've invested 2 years into building. Should I change my content to target a Western audience, or am I being greedy wanting to earn more from my existing community?",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 138,
+    "raw_submission": "I'm a gaming content creator with 650K YouTube subscribers, but I'm experiencing severe burnout from maintaining daily upload schedules and constantly streaming. My content quality is suffering because I'm exhausted, but reducing my output causes my subscribers to unfollow and my algorithm reach to decrease. I feel trapped in a cycle where I have to destroy my health to maintain my status.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 139,
+    "raw_submission": "I'm a tech creator with 2.1M TikTok followers, but TikTok is 95% of my income and audience while YouTube and Instagram barely get traction. I'm completely dependent on one platform with an uncertain future, and I've tried everything to grow elsewhere without success. My audience doesn't seem interested in consuming my tech content on other platforms, even when I reformat it.",
+    "platform": "Multi-platform",
+    "follower_range": "1M+",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 140,
+    "raw_submission": "I'm a beauty educator with 34K Instagram followers, and my DMs are flooded with people asking for personalized skincare advice that I can't possibly give to everyone. My community is growing emotionally dependent on my content, and I feel guilty that I can't provide individual consultations. Building a sustainable business model while managing community expectations is becoming overwhelming, and I'm not sure how to scale this humanely.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 141,
+    "raw_submission": "I'm a tech reviewer on YouTube with 45K subscribers, but my growth has completely stalled for the past 6 months. I've tried different thumbnail styles, video lengths, and upload schedules, but nothing seems to move the needle. My watch time is decent but I'm not getting recommended to new audiences anymore. I'm starting to wonder if I should switch niches entirely or if there's something fundamentally wrong with my content strategy.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 142,
+    "raw_submission": "As a beauty influencer with 320K followers across Instagram, TikTok, and YouTube, I'm experiencing severe burnout from the constant need to produce content daily. My engagement is dropping because I'm forcing myself to create when I'm exhausted, and my audience can tell I'm not as passionate anymore. I don't know how to maintain my momentum without burning out completely or losing my audience to competitors.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 143,
+    "raw_submission": "I'm a finance education creator on TikTok with 8.2K followers, and while my content is educational and valuable, none of my videos are going viral. I see comedy and dance creators blowing up with millions of views while my financial literacy content gets 500-2K views per video. I'm struggling to understand if educational content just doesn't work on TikTok or if I need to make it more entertaining.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 144,
+    "raw_submission": "My gaming channel on YouTube hit 240K subscribers, but I'm completely dependent on YouTube AdSense and sponsorships, which are inconsistent and unpredictable. I've tried Patreon and channel memberships but adoption is low. My loyal fans want to support me but I haven't figured out the right monetization mix. I'm afraid if the ad rates drop or a sponsor falls through, I won't be able to sustain this full-time.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 145,
+    "raw_submission": "I'm a history educator with 2.3M YouTube subscribers, but the algorithm seems to favor entertainment over education now. My average view duration is high and my community loves me, but my reach on new videos has declined by 40% in the last year. I'm competing with shorts and TikToks but my long-form content is my strength. I feel trapped between staying true to my format and chasing algorithmic trends.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 146,
+    "raw_submission": "As a cooking creator, I started on Instagram Reels and built 67K followers there, but when I tried expanding to YouTube with longer-form recipes, my audience didn't follow. My Reels get 50K-100K views but my YouTube videos get 2K-5K views. I'm spending time creating content for multiple platforms but each one requires a completely different approach and I'm not sure how to optimize my effort.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 147,
+    "raw_submission": "I'm a comedy creator on TikTok with 340K followers, but the algorithm has shifted and my videos that used to get 2M views are now capping at 300K. I've noticed the FYP is prioritizing newer creators and I'm not getting the same organic reach. I'm considering trying Instagram Reels and YouTube Shorts but I'm worried about splitting my effort and losing momentum on TikTok.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 148,
+    "raw_submission": "I started as a fitness creator on Instagram with 15K followers, but I've realized the fitness niche is oversaturated and highly competitive. I have a unique twist on nutrition and psychology, but I'm getting lost among the thousands of other fitness creators. My engagement is decent but I'm not growing because people are choosing the bigger, more established fitness accounts.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 149,
+    "raw_submission": "My tech startup review channel on YouTube hit 1.8M subscribers, and I've been approached to pivot into general business advice and entrepreneurship content. Some of my audience wants this pivot, but others only care about tech reviews. I'm worried that if I change my content direction, I'll alienate my core audience and lose credibility in tech. But staying in tech feels limiting for growth.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 150,
+    "raw_submission": "I'm a beauty creator with 92K Instagram followers, but my community is extremely toxic. I get constant hate comments, unsolicited criticism, and harassment from people saying my makeup techniques are wrong or that I'm not a 'real' makeup artist. I love creating but the negativity is draining. I've tried moderating and responding to critics but it's taking all my energy away from actual content creation.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 151,
+    "raw_submission": "I'm a gaming streamer on Twitch with 3.5K concurrent viewers who has been trying to grow on YouTube Gaming, but the audience there doesn't engage the same way. My Twitch community is loyal and interactive, but Twitch growth has plateaued at my current level. I've tried cross-posting to YouTube but viewers prefer the live interaction on Twitch. I'm not sure how to expand without starting from scratch on a new platform.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 152,
+    "raw_submission": "As a finance creator with 156K YouTube subscribers, I'm frustrated because the algorithm seems to punish educational content in favor of sensational clickbait. Creators making false promises about get-rich-quick schemes are getting more views than my legitimate, researched financial education. My viewers appreciate my content but I can't seem to break through to reach the massive audience that clickbait creators get.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 153,
+    "raw_submission": "I've been creating tech content on Instagram Reels for 8 months and only have 3.2K followers, even though my engagement rate is above average. The growth is painfully slow and I'm getting discouraged. I see other tech creators with similar content quality growing much faster. I wonder if I should switch platforms to TikTok or YouTube where tech content might perform better, or if I'm just not cut out for this.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 154,
+    "raw_submission": "I'm a cooking creator with 425K followers across YouTube and TikTok, and I'm monetized on both platforms, but the revenue is inconsistent. Some months I make decent income from ads and sponsorships, other months it drops significantly. I want to build a more stable income stream through digital products or a course, but I'm overwhelmed by the technical setup and marketing required. I don't want to become a businessman, I just want to create.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 155,
+    "raw_submission": "I'm a history content creator on TikTok with 680K followers, but I recently started noticing that my videos about obscure historical figures don't perform as well as my videos about popular history topics. I'm torn between creating content I'm truly passionate about or content that will get the most views. My community seems to want both, but the algorithm only rewards the mainstream content.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 156,
+    "raw_submission": "I'm a comedy creator with 2.1M TikTok followers, and I had one viral video that got 45M views last month, but my other videos are averaging 1M-3M views. I'm being crushed by the expectation to replicate that viral success, and my mental health is suffering because I'm obsessing over why some videos go viral and others don't. I don't feel like I have control over my own growth anymore.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 157,
+    "raw_submission": "I'm a tech reviewer with 34K YouTube subscribers, but I've hit a growth plateau and I'm losing market share to competitors who are better at SEO and video optimization. I create great content but it's not getting discovered. I've tried keyword research and better titles, but I don't fully understand YouTube's search algorithm. My videos aren't ranking for the terms I'm targeting and I don't know how to fix it without completely changing my approach.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 158,
+    "raw_submission": "I'm a beauty creator on YouTube with 578K subscribers, and I've been getting pressure from my audience to start a physical product line. I'm considering launching makeup or skincare products, but that would require significant investment and management time. I'm worried it will distract me from content creation, but I'm also worried that if I don't pivot into products, I'll be leaving money on the table.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 159,
+    "raw_submission": "I'm a gaming content creator with 22K TikTok followers and I want to grow on YouTube simultaneously, but creating high-quality gaming content for two platforms requires double the work. My YouTube videos take 2-3x longer to produce than TikToks, and I don't have the bandwidth. I'm trying to repurpose TikTok content as YouTube Shorts, but it doesn't feel authentic and my YouTube growth is stagnant.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 160,
+    "raw_submission": "I'm a finance educator with 1.2M YouTube subscribers, but I'm experiencing severe burnout from constantly creating new content while also managing community, responding to emails, and handling sponsorship deals. I've been thinking about stepping back or taking a break, but I'm terrified that my audience will move on to other creators and I'll lose my position. I feel trapped by my own success and I don't know how to sustainably maintain this without destroying my mental health.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 161,
+    "raw_submission": "I'm a tech reviewer on YouTube with 45K subscribers, but my views have plateaued at around 8K per video for the last 6 months. I've tried different thumbnail styles, SEO optimization, and even changed my upload schedule, but nothing seems to move the needle. My analytics show my audience retention is solid at 60%, so the issue isn't content quality. I'm wondering if the tech review niche is just oversaturated or if there's something fundamental I'm missing about the algorithm.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 162,
+    "raw_submission": "As a beauty influencer with 250K followers on Instagram, I'm struggling to get my posts in front of new audiences despite consistent engagement on my existing content. My Reels perform okay with 50K-100K views, but the reach cap seems to have hit a wall. I've noticed newer beauty creators with 50K followers are getting exponentially more visibility, and I'm not sure if it's an algorithm shift or if my content style has become stale to the platform.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 163,
+    "raw_submission": "I'm a gaming streamer on TikTok with 3.2M followers, and I'm experiencing serious burnout from the pressure to post daily viral content. My audience expects constant entertainment, and if I miss even two days, my engagement drops by 40%. I'm making decent money from sponsorships and gifts, but the mental toll is unsustainable. I don't know how to maintain this momentum while protecting my mental health.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 164,
+    "raw_submission": "I create financial education content on YouTube with 67K subscribers, and I'm stuck in the mid-tier monetization trap. My CPM is only $2.50 even though my audience is US-based professionals, which should command premium rates. I suspect it's because YouTube's algorithm doesn't recognize finance as a high-value category, or my content isn't reaching the right advertisers. I need to figure out how to improve my monetization without compromising my educational mission.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 165,
+    "raw_submission": "As a comedy creator, I've built 8.5K TikTok followers with consistent 300K+ view videos, but none of them have gone truly viral and I feel stuck in this follower range. My comedic timing is solid and friends say my jokes are hilarious, but the TikTok algorithm isn't pushing my content to the For You Page consistently. I'm not sure if I need to change my humor style, niche down, or if it's just luck and timing.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 166,
+    "raw_submission": "I'm a cooking content creator with 180K Instagram followers, but my engagement rate has dropped from 8% to 2.5% over the past four months despite maintaining the same posting frequency and quality. My audience seems less interested in my traditional recipe content, and I'm seeing higher engagement when I post behind-the-scenes or personal stories. I'm torn between pivoting to lifestyle content or doubling down on what made me popular.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 167,
+    "raw_submission": "I'm a history educator on YouTube with 92K subscribers, and I'm losing community engagement in the comment section and community posts. My educational content is solid and views are steady, but the community feels passive and disconnected. I want to build a more engaged community that discusses historical topics, but I'm not sure how to foster that without diluting my educational focus or taking up too much time managing discussions.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 168,
+    "raw_submission": "I started as a TikTok gaming creator with 420K followers, but I'm struggling to grow on Instagram and YouTube despite having the same content strategy. My TikTok videos perform well, but when I cross-post or adapt them for other platforms, they underperform significantly. I'm realizing that my content strategy is too TikTok-optimized and I need to rethink my multi-platform approach, but I don't have the bandwidth to create platform-specific content.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 169,
+    "raw_submission": "I'm a fitness tech reviewer with 34K YouTube subscribers, competing against massive channels with 5M+ followers and unlimited budgets for equipment reviews. Even though my production quality is high and my reviews are honest, I can't compete on reach or get early access to products from brands because I'm considered too small. I'm wondering if there's a viable path forward in this saturated niche or if I should pivot entirely.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 170,
+    "raw_submission": "I'm a beauty creator with 2.1M TikTok followers, but I've been rejected by every major brand for sponsorships because they say my audience skews too young (mostly Gen Z) and doesn't match their target demographic. My engagement is phenomenal with millions of views per video, but brands perceive my followers as low-purchasing-power. I'm struggling to monetize effectively despite massive reach because the audience quality perception doesn't align with reality.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 171,
+    "raw_submission": "I'm a tech unboxing creator on Instagram with 156K followers, and I've hit a follower plateau at this exact number for three months. My Reels get decent views but don't convert to follows, and my Stories have good swipe-up engagement but that doesn't drive new followers. I'm caught between the 100K and 1M follower tiers and feel invisible to both algorithm boosts. I'm starting to wonder if my niche has matured and if I need a complete rebrand.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 172,
+    "raw_submission": "I'm a personal finance creator across YouTube, TikTok, and Instagram with 1.4M total followers spread across platforms, but each platform requires completely different content approaches and I'm burning out managing three separate strategies. TikTok wants short snappy tips, YouTube wants deep dives, and Instagram wants aesthetic posts. I'm spending 40+ hours a week just to maintain presence, and the return on investment is becoming questionable.",
+    "platform": "Multi-platform",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 173,
+    "raw_submission": "I'm a gaming content creator with 12K TikTok followers who went viral once with a 4M view video, but I haven't replicated that success despite analyzing what made that video work. I tried recreating the concept multiple times and nothing has approached those numbers. My other videos get 150K-300K views, which is decent, but I'm chasing that viral feeling and it's affecting my content quality and consistency.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 174,
+    "raw_submission": "I'm a cooking educator on YouTube with 520K subscribers, and the algorithm has completely changed how it distributes cooking content in the last six months. My videos that used to get 200K views now get 50K, even though my production quality and content strategy haven't changed. I've tried incorporating trending sounds, changing titles, and adjusting thumbnails, but nothing is moving the reach needle like it used to.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 175,
+    "raw_submission": "I'm a history content creator with 78K YouTube subscribers who wants to expand to TikTok and Instagram, but my long-form educational content doesn't naturally fit the short-form format. I've tried adapting my content into 60-second history facts, but it feels like I'm dumbing down my expertise. I'm torn between staying in my lane on YouTube or forcing myself to pivot to platforms where growth seems easier but feels inauthentic.",
+    "platform": "Multi-platform",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 176,
+    "raw_submission": "I'm a tech creator with 2.8M YouTube subscribers, and despite massive reach, I'm struggling to build a genuine community that engages beyond watching videos. Comments are often generic, and my Discord server is barely active. I want to create meaningful connections with my audience, but with millions of followers, it feels impossible to foster authentic community without hiring a team I can't afford.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 177,
+    "raw_submission": "I'm a comedy creator with 67K Instagram followers, but I've noticed my humor style that worked great a year ago is getting stale engagement. My audience's sense of humor seems to have evolved, and I'm not sure if I should lean into edgier content, more relatable content, or something completely different. Every pivot feels risky when I've built followers around my current style, but staying the same feels like slow death.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 178,
+    "raw_submission": "I'm a beauty and fashion creator across YouTube, TikTok, and Instagram with 890K total followers, and the competition in each platform is completely different. On TikTok, I compete with thousands of similar creators daily, on Instagram my reach is limited by the algorithm, and on YouTube established channels dominate the recommendations. I'm getting lost trying to compete on multiple fronts simultaneously instead of dominating one.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 179,
+    "raw_submission": "I'm a gaming streamer on YouTube with 5.2M subscribers, and I've hit a hard ceiling on monetization despite massive numbers. My CPM is incredibly low because gaming content is considered less valuable to advertisers, and sponsorship opportunities are saturated with competing creators. I'm making decent money, but the revenue ceiling feels much lower than other niches with similar subscriber counts, and I'm wondering if I should pivot niches.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 180,
+    "raw_submission": "I'm a finance educator with 34K TikTok followers, and the algorithm seems to deprioritize financial content in favor of entertainment and trends. My educational videos about investing and budgeting get much lower engagement than similar content in the entertainment space, even though my audience clearly values the information. I'm frustrated that the platform seems to penalize educational content, and I'm not sure if I should fight the algorithm or abandon the platform.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 181,
+    "raw_submission": "I'm a tech YouTuber with 45K subscribers and I've been stuck at this number for 6 months. My videos get decent engagement but I can't seem to break through to the next level. I've tried different thumbnail styles, titles, and upload schedules but nothing moves the needle. My average view duration is solid at 65% but my click-through rate has plateaued around 3.2%. I'm wondering if my niche is too saturated or if I'm just missing something fundamental about the algorithm.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 182,
+    "raw_submission": "As a beauty influencer with 280K Instagram followers, I'm struggling to maintain consistent reach on my posts even though my follower count keeps growing. My engagement rate has dropped from 8% to 3.2% over the past 3 months despite using trending sounds and posting at optimal times. The algorithm seems to favor short-form video content but my brand is built around long carousel posts and educational captions. I'm caught between staying true to my format or completely pivoting to Reels.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 183,
+    "raw_submission": "I'm a comedy creator on TikTok with 2.3M followers and I've been getting 50-100K views per video consistently, but I haven't had a viral hit in 4 months. My followers seem engaged in the comments but the For You Page isn't distributing my content beyond my existing fanbase. I've tried collaborating with other creators, experimenting with trending sounds, and posting at different times, but nothing triggers that viral spike I used to get regularly.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 184,
+    "raw_submission": "I run a finance education channel on YouTube with 67K subscribers but my monetization is inconsistent because YouTube demonetizes my videos about crypto and controversial financial topics. Some months I make $2K, other months only $300 from the same production effort. I've tried splitting content into separate channels but that dilutes my audience. I'm looking at alternative revenue streams but my niche doesn't align well with sponsorships and affiliate products are limited.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 185,
+    "raw_submission": "I started as a gaming streamer on Twitch with 8.5K followers but I want to expand to YouTube to reach people who prefer edited content. The problem is I don't know how to leverage my Twitch audience to grow on YouTube without cannibalizing my stream viewership. My editing takes 20 hours per week and I'm burned out trying to maintain quality content on two platforms simultaneously while working a full-time job.",
+    "platform": "Multi-platform",
+    "follower_range": "1K-10K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 186,
+    "raw_submission": "As a history educator with 156K YouTube subscribers, I'm facing intense competition from bigger channels with larger budgets for production and guest appearances. My research-heavy long-form videos (20-30 minutes) are performing well with my core audience but the algorithm seems to favor shorter, more sensationalized content. I'm worried that if I dumb down my content to compete, I'll lose the credibility that my community values.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 187,
+    "raw_submission": "I'm a cooking creator with 34K TikTok followers and my videos consistently get 200K+ views, but I'm struggling to convert any of that reach into meaningful income. TikTok Creator Fund pays almost nothing and I can't land brand sponsorships because my audience skews young (mostly Gen Z) and brands say my demographic doesn't convert to sales. I'm considering pivoting to Instagram Reels or YouTube Shorts but I'm worried about rebuilding my audience.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 188,
+    "raw_submission": "I've been a tech YouTuber for 3 years with 520K subscribers but I'm completely burned out. My audience expects weekly videos and the pressure to constantly produce content about new gadgets and software is affecting my mental health. I've taken breaks but my channel loses traction immediately when I stop posting. I'm considering stepping back but I worry about losing my income stream and disappointing my community.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 189,
+    "raw_submission": "As a beauty creator with 12K Instagram followers, I'm struggling to grow because the algorithm seems to only push content from accounts already at 100K+. My content quality is high with professional lighting and editing, but new posts get 200-300 likes max and my reach cap is around 8K per post. I've tried all the recommended strategies but growth feels impossible when you're starting out in such a saturated niche.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 190,
+    "raw_submission": "I'm a gaming creator with 890K YouTube subscribers but my community is unhappy because I've been shifting away from my original niche (retro games) to cover newer AAA titles for better algorithmic performance. My comment sections are full of people saying 'not the content I subscribed for' and my view-to-subscriber ratio has gotten worse despite the pivot. I'm caught between what the algorithm rewards and what my community actually wants.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 191,
+    "raw_submission": "I run a finance education Instagram account with 45K followers and I've built a loyal community with genuine engagement, but I'm starting to see organized criticism and harassment from people who disagree with my investment philosophy. The hostile comments are escalating and some followers are defending me aggressively, which is creating drama that's overshadowing my actual content. I'm not sure how to manage a polarized community without either silencing legitimate debate or allowing toxicity.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 192,
+    "raw_submission": "I'm a cooking TikTok creator with 5.2M followers and I'm facing increasing pressure to constantly innovate and create 'never-before-seen' recipes or techniques. My audience's expectations have grown with my follower count, but creating truly original content at this scale is nearly impossible without significant resources. I'm worried about becoming stale but also terrified of trying something too experimental and losing credibility.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 193,
+    "raw_submission": "I'm a comedy YouTuber with 78K subscribers and I've built my audience through character sketches, but I want to pivot to stand-up comedy content because I'm genuinely more passionate about it. My fear is that my existing audience won't follow me into this new format and I'll lose 60-70% of my subscriber base. I don't want to start a new channel and rebuild from scratch, but I also don't want to force content I'm not excited about.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 194,
+    "raw_submission": "I'm a multi-platform creator across YouTube (145K), Instagram (89K), and TikTok (234K) but my analytics show that each platform's audience is completely different. The content that goes viral on TikTok flops on YouTube, and my Instagram Reels perform differently than my TikTok videos. I'm struggling to create a cohesive brand identity and I'm exhausted trying to optimize for three different algorithms simultaneously.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 195,
+    "raw_submission": "I'm a history TikTok creator with 1.8M followers and I've recently signed sponsorship deals that require me to integrate branded content into my educational videos. My audience is vocal about not wanting ads and some have started unfollowing over sponsored content, even when it's relevant to my niche. I need the sponsorship income to make this sustainable but I'm worried that alienating my community will hurt long-term growth.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 196,
+    "raw_submission": "I'm a gaming YouTuber with 3.2K subscribers and I'm trying to grow but every piece of advice contradicts the others. One source says I need to post daily, another says quality over quantity. Some say I should focus on short videos, others say long-form content wins. I'm paralyzed trying to figure out the right strategy and I'm producing content that's mediocre because I'm spreading myself too thin.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 197,
+    "raw_submission": "I'm a beauty creator with 567K Instagram followers but I'm struggling to maintain consistency because I'm dealing with serious burnout from the constant pressure to look camera-ready and curate a perfect life. My audience expects me to be accessible and responsive to DMs, but managing 500+ DMs daily is overwhelming. I've thought about stepping back but my audience has become dependent on my content and I feel responsible for them.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 198,
+    "raw_submission": "I'm a tech reviewer on YouTube with 6.8K subscribers and I'm competing against channels with budgets 100x larger than mine. They can buy every new gadget on day one while I have to strategically choose what to review based on what I can afford. This limits my content velocity and relevance. I'm wondering if there's a sustainable path forward in this niche or if I should pivot to a more attainable angle like budget tech.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 199,
+    "raw_submission": "I'm a finance educator with 234K TikTok followers but TikTok's policy on financial content is increasingly restrictive and some of my videos are being shadowbanned or flagged as potentially misleading. This is killing my reach unpredictably and I can't maintain consistency when I don't know which videos will even be distributed. I'm considering diversifying to YouTube and Instagram but that requires completely rebuilding my presence on new platforms.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 200,
+    "raw_submission": "I'm a cooking creator across YouTube (312K), Instagram (478K), and TikTok (1.2M) and my audience keeps asking why I don't upload more frequently across all platforms. The reality is I'm a solo creator and producing high-quality recipe videos is extremely time-consuming. I'm at the point where I need to hire a team but I can't afford the infrastructure costs without significant sponsorship deals that I don't have access to yet.",
+    "platform": "Multi-platform",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
   }
 ]
