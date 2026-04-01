@@ -1285,8 +1285,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T16:33:40.698Z",
+    "thread_id": "be9e34d2-4cfe-4131-b53b-6ae3261c3ab9"
   },
   {
     "id": 130,
@@ -1294,8 +1295,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T16:34:20.335Z",
+    "thread_id": "61f37596-6f3f-4fe5-a7b2-2d7000886177"
   },
   {
     "id": 131,
@@ -1303,8 +1305,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T16:34:59.113Z",
+    "thread_id": "f576823e-32ce-456f-aa45-0a064cf980ba"
   },
   {
     "id": 132,
