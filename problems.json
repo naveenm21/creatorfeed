@@ -1225,8 +1225,9 @@
     "platform": "Multi-platform",
     "follower_range": "10K-100K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T08:02:03.057Z",
+    "thread_id": "25263a27-30fb-41de-a6d1-9709b633c696"
   },
   {
     "id": 124,
@@ -1234,8 +1235,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T08:02:42.298Z",
+    "thread_id": "4fc8e93b-c391-4655-872a-9c64da22fab4"
   },
   {
     "id": 125,
@@ -1243,8 +1245,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-01T08:03:22.364Z",
+    "thread_id": "a3ef74e7-0243-4192-b7b8-e794b75cdf0a"
   },
   {
     "id": 126,
