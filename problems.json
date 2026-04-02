@@ -1345,8 +1345,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T07:48:27.243Z",
+    "thread_id": "397df22e-9062-4562-8374-7f9f7947959d"
   },
   {
     "id": 136,
@@ -1354,8 +1355,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T07:49:08.399Z",
+    "thread_id": "e1a1a591-7225-462e-98fe-20af45b74341"
   },
   {
     "id": 137,
@@ -1363,8 +1365,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T07:49:49.701Z",
+    "thread_id": "13618685-da40-4731-aed6-f157dfabc8e1"
   },
   {
     "id": 138,
