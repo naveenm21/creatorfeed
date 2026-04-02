@@ -1375,8 +1375,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T14:04:03.515Z",
+    "thread_id": "8abbdc08-6474-4ef5-af53-93f30d45cf99"
   },
   {
     "id": 139,
@@ -1384,8 +1385,9 @@
     "platform": "Multi-platform",
     "follower_range": "1M+",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T14:04:44.818Z",
+    "thread_id": "b47c48de-469d-4cd3-9f7f-7180fcf24dd8"
   },
   {
     "id": 140,
@@ -1393,8 +1395,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-02T14:05:24.435Z",
+    "thread_id": "861633f3-1247-45f1-8931-e8a86cfad7b9"
   },
   {
     "id": 141,
