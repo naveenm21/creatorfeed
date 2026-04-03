@@ -1465,8 +1465,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-03T07:44:57.763Z",
+    "thread_id": "dc33cd57-8d42-48bc-aac4-3df6e8f1a3bd"
   },
   {
     "id": 148,
@@ -1474,8 +1475,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-03T07:45:37.059Z",
+    "thread_id": "5bd469c5-2202-4b5d-bfbd-5a2145ece66d"
   },
   {
     "id": 149,
@@ -1483,8 +1485,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-03T07:46:16.748Z",
+    "thread_id": "e196d42c-e753-4495-9d58-402127782885"
   },
   {
     "id": 150,
