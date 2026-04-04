@@ -1555,8 +1555,9 @@
     "platform": "TikTok",
     "follower_range": "1M+",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-04T03:44:21.318Z",
+    "thread_id": "03c0d0e2-bd63-46b3-961c-78a4b5085080"
   },
   {
     "id": 157,
@@ -1564,8 +1565,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-04T03:45:00.203Z",
+    "thread_id": "b21a0392-c041-491d-8642-896498a34c94"
   },
   {
     "id": 158,
@@ -1573,8 +1575,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-04T03:45:39.469Z",
+    "thread_id": "a2a96bed-8346-4238-aaeb-82a20c6d7302"
   },
   {
     "id": 159,
