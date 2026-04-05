@@ -1735,8 +1735,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T13:36:36.624Z",
+    "thread_id": "91679362-0a0a-4e69-8426-4ddaff529280"
   },
   {
     "id": 175,
@@ -1744,8 +1745,9 @@
     "platform": "Multi-platform",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T13:37:17.756Z",
+    "thread_id": "edfc4d1a-7763-4114-9552-d4e1148e70e2"
   },
   {
     "id": 176,
@@ -1753,8 +1755,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T13:37:58.405Z",
+    "thread_id": "f04635d7-5c44-4091-89d2-9ba2186eb332"
   },
   {
     "id": 177,
