@@ -1705,8 +1705,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T07:39:05.306Z",
+    "thread_id": "c2ebe8f5-58d6-41c0-8aba-2fbc2cbaa5bf"
   },
   {
     "id": 172,
@@ -1714,8 +1715,9 @@
     "platform": "Multi-platform",
     "follower_range": "1M+",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T07:39:45.633Z",
+    "thread_id": "32c0b674-5918-43c3-8b85-d36e82dfe5c8"
   },
   {
     "id": 173,
@@ -1723,8 +1725,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T07:40:27.090Z",
+    "thread_id": "de48bb2e-bb9f-4092-ba6d-e92781f3a8c7"
   },
   {
     "id": 174,
