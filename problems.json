@@ -1675,8 +1675,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T04:12:33.506Z",
+    "thread_id": "b5fd11d3-fede-45da-9dc1-ac356540409d"
   },
   {
     "id": 169,
@@ -1684,8 +1685,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T04:13:14.804Z",
+    "thread_id": "e17b7c41-47ca-4deb-b514-320224f4d83d"
   },
   {
     "id": 170,
@@ -1693,8 +1695,9 @@
     "platform": "TikTok",
     "follower_range": "1M+",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-05T04:13:53.234Z",
+    "thread_id": "17430f57-cfb2-4443-a8de-e15b8ce10249"
   },
   {
     "id": 171,
