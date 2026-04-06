@@ -1795,8 +1795,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T04:19:52.030Z",
+    "thread_id": "884a0fa9-97be-496b-b5f9-d7f84c7386a2"
   },
   {
     "id": 181,
@@ -1804,8 +1805,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T04:20:35.303Z",
+    "thread_id": "0f1927c3-5805-4bef-933e-11f6547d8a38"
   },
   {
     "id": 182,
@@ -1813,8 +1815,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T04:21:12.979Z",
+    "thread_id": "69abe9a0-335a-4274-95ad-882fc18ca532"
   },
   {
     "id": 183,
