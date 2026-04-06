@@ -1855,8 +1855,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T13:53:05.978Z",
+    "thread_id": "7d98bec4-c81e-4df5-af58-1d16dbbd1b2d"
   },
   {
     "id": 187,
@@ -1864,8 +1865,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T13:53:48.511Z",
+    "thread_id": "73e73f85-caba-4914-b8f5-a2b8473a95d3"
   },
   {
     "id": 188,
@@ -1873,8 +1875,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-06T13:54:32.170Z",
+    "thread_id": "6531702f-5b79-4723-8acc-7cb314263e57"
   },
   {
     "id": 189,
