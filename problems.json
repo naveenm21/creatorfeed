@@ -2104,8 +2104,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-10T13:56:02.138Z",
+    "thread_id": "75fba5dd-f3f5-442c-8cf5-5a3f01f8b470"
   },
   {
     "id": 212,
@@ -2113,8 +2114,9 @@
     "platform": "Multi-platform",
     "follower_range": "1K-10K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-10T13:56:43.934Z",
+    "thread_id": "f229653c-bac7-4576-9b17-c12bd3fd9be4"
   },
   {
     "id": 213,
