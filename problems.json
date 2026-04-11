@@ -2164,8 +2164,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-11T07:34:16.806Z",
+    "thread_id": "fe3317e7-d87d-4a2b-8dce-0db199dfcffc"
   },
   {
     "id": 218,
@@ -2173,8 +2174,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-11T07:34:57.285Z",
+    "thread_id": "3ccff38b-f19b-4514-989a-9b1c2ac2d3f6"
   },
   {
     "id": 219,
