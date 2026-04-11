@@ -20,6 +20,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    const overLimit = answers.find((a: {answer: string}) => a.answer.length > 2000)
+    if (overLimit) {
+      return NextResponse.json(
+        { error: 'One or more answers exceed the 2000 character limit' },
+        { status: 400 }
+      )
+    }
+
     for (const answer of answers) {
       await supabaseAdmin
         .from('intake_questions')

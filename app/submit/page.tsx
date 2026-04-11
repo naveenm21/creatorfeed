@@ -125,6 +125,7 @@ export default function SubmitPage() {
             <div className="mb-6 relative">
               <textarea
                 value={problemText}
+                maxLength={2000}
                 onChange={(e) => {
                   setProblemText(e.target.value);
                   if (error) setError(null);
@@ -135,7 +136,7 @@ export default function SubmitPage() {
                 }`}
               />
               <div className="absolute bottom-4 right-4 text-[12px] text-tertiary">
-                {problemText.length} characters
+                {problemText.length} / 2000 characters
               </div>
             </div>
 

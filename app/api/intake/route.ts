@@ -71,6 +71,13 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    if (rawSubmission.length > 2000) {
+      return NextResponse.json(
+        { error: 'Submission too long (max 2000 characters)' },
+        { status: 400 }
+      )
+    }
+
     const message = await anthropic.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 1000,

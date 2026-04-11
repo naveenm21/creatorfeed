@@ -141,12 +141,20 @@ export default function QuestionsPage() {
                     ))}
                   </div>
                 ) : (
-                  <textarea
-                    value={answers[q.question_order] || ''}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, [q.question_order]: e.target.value }))}
-                    placeholder="Type your answer here..."
-                    className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
-                  />
+                  <div className="relative">
+                    <textarea
+                      value={answers[q.question_order] || ''}
+                      maxLength={2000}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, [q.question_order]: e.target.value }))}
+                      placeholder="Type your answer here..."
+                      className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
+                    />
+                    <div className="flex justify-end mt-1.5">
+                      <span className="text-[11px] text-tertiary">
+                        {(answers[q.question_order] || '').length} / 2000 characters
+                      </span>
+                    </div>
+                  </div>
                 )}
               </div>
             ))}
