@@ -2094,8 +2094,9 @@
     "platform": "Multi-platform",
     "follower_range": "10K-100K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T07:50:49.471Z",
+    "thread_id": "5b9b46f1-a472-4c99-8c7c-835769cebe8d"
   },
   {
     "id": 211,
@@ -2103,8 +2104,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T07:51:28.885Z",
+    "thread_id": "6e889a5b-52cd-4bcb-9325-2bf1c9681e5f"
   },
   {
     "id": 212,
