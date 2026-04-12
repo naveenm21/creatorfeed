@@ -2134,8 +2134,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T16:03:23.349Z",
+    "thread_id": "7d0b981f-bb95-4ba8-b227-1be58382f902"
   },
   {
     "id": 215,
@@ -2143,8 +2144,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T16:04:04.260Z",
+    "thread_id": "7d22b34f-925a-427f-9507-4ad87c7c3010"
   },
   {
     "id": 216,
