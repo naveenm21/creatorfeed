@@ -2114,8 +2114,9 @@
     "platform": "Multi-platform",
     "follower_range": "1K-10K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T13:41:13.098Z",
+    "thread_id": "a3e2a5a2-12d7-4545-a0dd-28e7abc8e7af"
   },
   {
     "id": 213,
@@ -2123,8 +2124,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-12T13:41:53.967Z",
+    "thread_id": "fd2c697c-9a5b-4be2-9005-d24e4f6d3400"
   },
   {
     "id": 214,
