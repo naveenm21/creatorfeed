@@ -2174,8 +2174,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T08:29:57.558Z",
+    "thread_id": "4d323522-c0b1-48db-a654-b5966009dab4"
   },
   {
     "id": 219,
@@ -2183,8 +2184,9 @@
     "platform": "TikTok",
     "follower_range": "1M+",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T08:30:40.459Z",
+    "thread_id": "99f21594-5057-43d6-bbc9-0ac8d3e5482d"
   },
   {
     "id": 220,
