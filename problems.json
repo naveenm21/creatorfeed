@@ -2154,8 +2154,9 @@
     "platform": "Multi-platform",
     "follower_range": "1K-10K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T04:34:04.332Z",
+    "thread_id": "f1e30dc1-3415-4a8d-814d-77ecad075c1f"
   },
   {
     "id": 217,
@@ -2163,8 +2164,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T04:34:45.141Z",
+    "thread_id": "6b695ced-0d38-42e3-8fab-d26cca97ac77"
   },
   {
     "id": 218,
