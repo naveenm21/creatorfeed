@@ -2194,8 +2194,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T14:15:24.046Z",
+    "thread_id": "9106ea00-89c5-44a6-b823-855d4166c44d"
   },
   {
     "id": 221,
@@ -2203,8 +2204,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-13T14:16:07.502Z",
+    "thread_id": "2a5fbf7e-4c09-472e-9189-a225d3aa5d51"
   },
   {
     "id": 222,
