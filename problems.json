@@ -2234,8 +2234,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-14T04:22:01.810Z",
+    "thread_id": "c7f51d37-d057-434d-883b-db05533adfe9"
   },
   {
     "id": 225,
@@ -2243,8 +2244,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-14T04:22:43.896Z",
+    "thread_id": "4f203b7b-476a-42e6-8250-c60c4e54ca5e"
   },
   {
     "id": 226,
