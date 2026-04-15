@@ -2323,8 +2323,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-15T16:37:22.353Z",
+    "thread_id": "06b43a95-51be-4890-99d5-ae4411da5261"
   },
   {
     "id": 234,
