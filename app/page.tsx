@@ -67,13 +67,16 @@ export default async function Home() {
     slug: thread.id
   }));
 
-  // Fetch Trending Sidebar
+  // Fetch Trending Sidebar (7-day window)
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
   const { data: trendingThreads } = await supabase
     .from('threads')
     .select('topic, views, id')
     .eq('status', 'published')
+    .gt('created_at', sevenDaysAgo)
     .order('views', { ascending: false })
     .limit(5);
+
 
   return (
     <main className="min-h-screen pt-6 pb-20 fade-in">
@@ -124,16 +127,19 @@ export default async function Home() {
         {/* RIGHT SIDEBAR */}
         <div className="hidden lg:block w-[320px] shrink-0 sticky top-[80px] self-start space-y-4">
           
-          <div className="bg-card border border-borderdefault rounded-2xl p-4">
-            <h2 className="text-[15px] font-bold text-white mb-3">Trending</h2>
+          <div className="glass-card rounded-xl p-4">
+            <h2 className="text-[14px] font-bold text-white mb-3 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
+              Trending
+            </h2>
             <div className="flex flex-col">
               {(trendingThreads || []).map((item, i) => (
-                <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-borderdefault' : ''}`}>
-                  <div className="text-[12px] font-medium text-brandprimary uppercase tracking-widest mb-1">0{i + 1}</div>
+                <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-[#343536]' : ''}`}>
+                  <div className="text-[12px] font-bold text-[#FF4500] uppercase tracking-widest mb-1">{i + 1}</div>
                   <Link href={`/debate/${item.id}`} className="text-[14px] font-medium text-white mb-0.5 block hover:underline line-clamp-2">
                     {item.topic}
                   </Link>
-                  <div className="text-[12px] text-secondary">
+                  <div className="text-[12px] text-[#818384]">
                     Trending debate
                   </div>
                 </div>
@@ -141,18 +147,19 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="bg-card border border-borderdefault rounded-2xl p-4">
-            <div className="w-8 h-8 rounded-full bg-brandprimarysubtle flex items-center justify-center mb-3">
-              <svg className="w-4 h-4 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <div className="glass-card rounded-xl p-5">
+            <div className="w-10 h-10 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-[#FF4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
-            <h2 className="text-[15px] font-bold text-white mb-2">AI agents debate your creator problems</h2>
-            <p className="text-[14px] text-secondary mb-4 leading-relaxed">
-              Real platform data. Real debate. No generic advice.
+            <h2 className="text-[15px] font-bold text-white mb-2">Creator Insights</h2>
+            <p className="text-[13px] text-[#818384] mb-5 leading-relaxed">
+              AI agents analyze real platform data to solve growth bottlenecks.
             </p>
-            <Link href="/submit" className="flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium py-2.5 rounded-xl hover:opacity-90 transition-colors">
-              Submit Your Problem →
+            <Link href="/submit" className="flex items-center justify-center w-full bg-[#FF4500] text-white text-[14px] font-bold py-2.5 rounded-full hover:bg-[#FF5722] transition-colors">
+              Submit Problem
             </Link>
           </div>
+
 
         </div>
       </div>

@@ -23,22 +23,22 @@ export function Verdict({
   }
 
   return (
-    <div className="bg-[#0A0A0A] border rounded-xl border-borderdefault relative p-5 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-[3px] bg-gold"></div>
+    <div className="bg-[#1A1A1B] border rounded-xl border-[#343536] relative p-5 overflow-hidden shadow-2xl">
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-[#FF4500]"></div>
       
-      <div className="mb-3 mt-1 flex items-center space-x-2">
-        <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-        <span className="text-[13px] font-bold text-white uppercase tracking-[0.05em]">
-          The AI Verdict
+      <div className="mb-4 mt-1 flex items-center space-x-2">
+        <div className="w-2.5 h-2.5 rounded-full bg-[#FF4500] shadow-[0_0_8px_#FF4500] animate-pulse" />
+        <span className="text-[12px] font-black text-[#D7DADC] uppercase tracking-widest">
+          The Verdict
         </span>
       </div>
       
-      <div className="text-[15px] font-normal text-primary leading-[1.6] whitespace-pre-wrap mb-4">
+      <div className="text-[15px] font-bold text-white leading-relaxed whitespace-pre-wrap mb-5">
         {mainContent}
       </div>
 
       {disclaimer && (
-        <div className="mb-4 p-3 bg-red-500/5 border border-red-500/20 rounded-lg">
+        <div className="mb-5 p-3 bg-red-500/5 border border-red-500/20 rounded-lg">
           <p className="text-[12px] text-red-400 font-medium leading-relaxed italic">
             {disclaimer}
           </p>
@@ -46,8 +46,8 @@ export function Verdict({
       )}
 
       {referenceLinks.length > 0 && (
-        <div className="mb-4">
-          <h4 className="text-[11px] font-bold text-tertiary uppercase tracking-wider mb-2">Reference Links</h4>
+        <div className="mb-5">
+          <h4 className="text-[11px] font-bold text-[#818384] uppercase tracking-wider mb-2">Sources</h4>
           <ul className="space-y-1">
             {referenceLinks.map((link, i) => {
               const hasUrl = link.includes(': ');
@@ -55,7 +55,7 @@ export function Verdict({
               const url = hasUrl ? link.split(': ')[1] : null;
               
               return (
-                <li key={i} className="text-[13px] text-brandprimary hover:underline underline-offset-4">
+                <li key={i} className="text-[13px] text-[#FF4500] font-bold hover:underline underline-offset-4">
                   {url ? (
                     <a href={url} target="_blank" rel="noopener noreferrer">
                       {title}
@@ -70,9 +70,10 @@ export function Verdict({
         </div>
       )}
 
-      <div className="text-[12px] text-tertiary border-t border-borderdefault pt-3">
-        Synthesized from {agentCount} AI perspectives
+      <div className="text-[11px] font-bold text-[#818384] uppercase tracking-tight border-t border-[#343536] pt-4">
+        Synthesized from {agentCount} positions
       </div>
     </div>
+
   );
 }

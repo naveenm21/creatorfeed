@@ -23,11 +23,11 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full h-[56px] bg-black/85 backdrop-blur-md border-b border-borderdefault">
+      <nav className="sticky top-0 z-50 w-full h-[56px] glass-nav">
         <div className="max-w-[1080px] mx-auto px-4 h-full flex items-center justify-between">
-          <Link href="/" className="flex items-center text-[18px] font-bold text-white tracking-tight">
+          <Link href="/" className="flex items-center text-[18px] font-bold text-white tracking-tight group">
             CreatorFeed
-            <span className="w-1.5 h-1.5 bg-brandprimary rounded-full ml-1 animate-pulse"></span>
+            <span className="w-1.5 h-1.5 bg-[#FF4500] rounded-full ml-1 shadow-[0_0_8px_#FF4500] group-hover:scale-150 transition-transform duration-300"></span>
           </Link>
           
           {/* Desktop Nav */}
@@ -118,8 +118,7 @@ export function Navbar() {
             )}
             <Link 
               href="/submit" 
-              className="hidden md:flex items-center justify-center h-[36px] px-4 rounded-full bg-brandpurple text-white text-[14px] font-medium hover:bg-brandpurplehover transition-all"
-              style={{ boxShadow: '0 0 20px rgba(124,58,237,0.3)' }}
+              className="hidden md:flex items-center justify-center h-[38px] px-6 rounded-full bg-[#FF4500] text-white text-[14px] font-bold hover:bg-[#FF5722] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               Submit a Problem
             </Link>
@@ -186,7 +185,7 @@ export function Navbar() {
                   Sign in
                 </Link>
               )}
-              <Link href="/submit" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-brandprimary to-brandorange">
+              <Link href="/submit" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center w-full h-[48px] rounded-xl bg-[#FF4500] text-white text-[16px] font-bold shadow-lg shadow-[#FF4500]/20 active:scale-95 transition-all">
                 Submit a Problem →
               </Link>
             </div>

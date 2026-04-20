@@ -51,7 +51,10 @@ export function DebateView({
   initialHumanReplies: HumanReply[];
 }) {
 
-  const [activeTab, setActiveTab] = useState('AI Debate');
+  const [activeTab, setActiveTab] = useState('Verdict');
+  const [isScannerMode, setIsScannerMode] = useState(true);
+  const [expandedResponses, setExpandedResponses] = useState<Set<string>>(new Set());
+
   const [respondingTo, setRespondingTo] = useState('General');
   const [sentiment, setSentiment] = useState('');
   const [replyText, setReplyText] = useState('');
@@ -225,12 +228,20 @@ export function DebateView({
       window.scrollTo({ top: y, behavior: 'smooth' });
       
       // Briefly highlight the response
-      el.classList.add('ring-2', 'ring-brandprimary', 'rounded-xl', 'animate-pulse');
+      el.classList.add('ring-2', 'ring-[#FF4500]', 'border-transparent', 'rounded-xl', 'animate-pulse');
       setTimeout(() => {
-        el.classList.remove('ring-2', 'ring-brandprimary', 'rounded-xl', 'animate-pulse');
+        el.classList.remove('ring-2', 'ring-[#FF4500]', 'border-transparent', 'rounded-xl', 'animate-pulse');
       }, 2000);
     }
   };
+
+  const toggleResponseExpansion = (id: string) => {
+    const newExpanded = new Set(expandedResponses);
+    if (newExpanded.has(id)) newExpanded.delete(id);
+    else newExpanded.add(id);
+    setExpandedResponses(newExpanded);
+  };
+
 
 
   // ── STATE: NOT FOUND ──
@@ -352,26 +363,27 @@ export function DebateView({
           <div className="w-full h-px bg-[#1F1F1F] mb-0" />
 
           {/* STICKY TAB BAR */}
-          <div className="sticky top-[56px] z-20 bg-[#000000]/80 backdrop-blur border-b border-[#1F1F1F] h-[48px] flex items-center gap-6 mb-8 px-2">
-            {['AI Debate', 'Community', 'Verdict'].map(tab => (
+          <div className="sticky top-[56px] z-20 bg-[#030303]/80 backdrop-blur border-b border-[#343536] h-[48px] flex items-center gap-6 mb-8 px-2">
+            {['Verdict', 'AI Debate', 'Community'].map(tab => (
               <button
                 key={tab}
                 onClick={() => handleTabSwitch(tab)}
                 className={`h-full flex items-center border-b-2 transition-colors duration-200 ${
                   activeTab === tab
-                    ? tab === 'Community' ? 'border-teal-400 text-white' : 'border-brandprimary text-white'
-                    : 'border-transparent text-secondary hover:text-primary'
+                    ? 'border-[#FF4500] text-white'
+                    : 'border-transparent text-[#818384] hover:text-white'
                 }`}
               >
-                <span className="text-[14px] font-medium mr-2">{tab}</span>
+                <span className="text-[14px] font-bold uppercase tracking-tight mr-2">{tab}</span>
                 {tab === 'Community' && humanReplies.length > 0 && (
-                  <span className="bg-teal-500/20 text-teal-400 text-[11px] font-bold px-2 py-0.5 rounded-full">
+                  <span className="bg-[#FF4500]/10 text-[#FF4500] text-[11px] font-bold px-2 py-0.5 rounded-full">
                     {humanReplies.length}
                   </span>
                 )}
               </button>
             ))}
           </div>
+
 
           {/* CONTENT */}
           <div ref={contentRef} className="pb-10">
@@ -410,59 +422,127 @@ export function DebateView({
               )}
 
               {/* Responses */}
+              {/* Responses */}
               {agentResponses.length === 0 && isLive ? (
-                <div className="text-center py-16 text-secondary text-[15px]">
+                <div className="text-center py-16 text-[#818384] text-[15px]">
                   The debate will appear here as agents respond. This usually takes 1–3 minutes.
                 </div>
               ) : (
                 <>
                   <ConflictHeatmap responses={agentResponses} onNavigate={scrollToResponse} />
-                  {rounds.map((roundNum) => (
-                  <div key={roundNum} className="mb-12">
-                     <div className="flex items-center gap-4 mb-6">
-                      <div className="h-px bg-[#1F1F1F] flex-1" />
-                      <span className="text-[11px] uppercase tracking-widest font-bold text-brandprimary">Round {roundNum}</span>
-                      <div className="h-px bg-[#1F1F1F] flex-1" />
+
+                  <div className="bg-[#1A1A1B] border border-[#343536] rounded-xl p-5 mb-10 flex items-center justify-between animate-in fade-in slide-in-from-top-4 duration-500">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#FF4500]/10 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#FF4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div>
+                        <h3 className="text-[14px] font-bold text-white tracking-tight">Debate Scanner</h3>
+                        <p className="text-[12px] text-[#818384] font-medium">Condensing the logic for faster scanning</p>
+                      </div>
                     </div>
-                    {roundsMap[roundNum].map((agent: AgentResponse, i: number) => {
-                      const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
-                      const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
-                      return (
-                        <div key={agent.id} id={agent.id} className="mb-6 animate-[fadeIn_0.4s_ease-out_forwards] transition-all duration-500">
-                          <div className="pl-4 border-l-[3px] flex flex-col py-1" style={{ borderLeftColor: color }}>
-                            <div className="flex items-center gap-3 mb-2">
-                              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center border-2 z-10 relative overflow-hidden shrink-0" style={{ borderColor: color }}>
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img 
-                                  src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
-                                  alt={agent.agent_name}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div className="flex flex-col">
-                                <span className="text-[15px] font-bold text-white leading-tight">{agent.agent_name}</span>
-                                <span className="text-[13px] text-secondary">{expertise}</span>
-                              </div>
-                              {agent.position && agent.position !== 'none' && (
-                                <div className="ml-auto">
-                                  <span className={`text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded-full ${
-                                    agent.position === 'agree' ? 'bg-green-500/10 text-green-400' :
-                                    agent.position === 'disagree' ? 'bg-red-500/10 text-red-400' :
-                                    'bg-blue-500/10 text-blue-400'
-                                  }`}>{agent.position}</span>
+                    <button 
+                      onClick={() => setIsScannerMode(!isScannerMode)}
+                      className={`px-4 py-2 rounded-full text-[12px] font-bold transition-all transform active:scale-95 ${isScannerMode ? 'bg-[#FF4500] text-white' : 'bg-[#272729] text-[#D7DADC] border border-[#343536] hover:bg-[#343536]'}`}
+                    >
+                      {isScannerMode ? 'Scanner ON' : 'Scanner OFF'}
+                    </button>
+                  </div>
+
+
+                  {(() => {
+                    // Pre-calculate turning points
+                    const turningPointsInner = new Set<string>();
+                    const lastPosMap: Record<string, string> = {};
+                    agentResponses.forEach(r => {
+                      if ((r.position === 'agree' || r.position === 'partial') && lastPosMap[r.agent_name] === 'disagree') {
+                        turningPointsInner.add(r.id);
+                      }
+                      if (r.position && r.position !== 'none') lastPosMap[r.agent_name] = r.position;
+                    });
+
+                    return rounds.map((roundNum) => (
+                      <div key={roundNum} className="mb-12">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="h-px bg-[#343536] flex-1" />
+                          <span className="text-[11px] uppercase tracking-widest font-black text-[#FF4500]">Round {roundNum}</span>
+                          <div className="h-px bg-[#343536] flex-1" />
+                        </div>
+                        {roundsMap[roundNum].map((agent: AgentResponse, i: number) => {
+                          const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
+                          const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
+                          const isExpanded = expandedResponses.has(agent.id) || !isScannerMode;
+                          const isTurningPoint = turningPointsInner.has(agent.id);
+                          
+                          return (
+                            <div key={agent.id} id={agent.id} className={`mb-10 animate-in fade-in slide-in-from-left-2 duration-300 ${isTurningPoint ? 'relative' : ''}`}>
+                              {isTurningPoint && (
+                                <div className="absolute -left-2 -top-2 z-20 flex items-center gap-1.5 bg-[#FF4500] text-white text-[10px] font-bold uppercase tracking-tight px-2 py-0.5 rounded shadow-lg">
+                                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13.536 14.243a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707zM14.243 5.05l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414z" /></svg>
+                                  Progress
                                 </div>
                               )}
+                              
+                              <div 
+                                className={`pl-5 border-l-2 flex flex-col py-1 transition-all duration-200 ${isScannerMode && !isExpanded ? 'cursor-pointer hover:bg-[#1A1A1B] rounded-r-lg' : ''}`} 
+                                style={{ borderLeftColor: color }}
+                                onClick={() => isScannerMode && !isExpanded && toggleResponseExpansion(agent.id)}
+                              >
+                                <div className="flex items-center gap-3 mb-3">
+                                  <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center border border-[#343536] bg-[#1A1A1B] z-10 relative overflow-hidden">
+                                    <img 
+                                      src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
+                                      alt={agent.agent_name}
+                                      className="w-full h-full object-cover"
+                                    />
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <span className="text-[14px] font-bold text-[#D7DADC] tracking-tight leading-tight">{agent.agent_name}</span>
+                                    <span className="text-[12px] text-[#818384] font-medium">{expertise}</span>
+                                  </div>
+                                  {agent.position && agent.position !== 'none' && (
+                                    <div className="ml-auto">
+                                      <span className={`text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border ${
+                                        agent.position === 'agree' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+                                        agent.position === 'disagree' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
+                                        'bg-[#FF4500]/10 text-[#FF4500] border-[#FF4500]/20'
+                                      }`}>{agent.position}</span>
+                                    </div>
+                                  )}
+                                </div>
+                                
+                                <div className={`relative transition-all duration-300 ${!isExpanded ? 'max-h-[80px] overflow-hidden' : 'max-h-[3000px]'}`}>
+                                  <p className={`text-[15px] text-[#D7DADC] leading-relaxed mb-4 pr-4 ${!isExpanded ? 'line-clamp-2' : ''}`}>
+                                    {agent.response_text}
+                                  </p>
+                                  {!isExpanded && (
+                                    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
+                                  )}
+                                </div>
+
+                                {isScannerMode && (
+                                  <button 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      toggleResponseExpansion(agent.id);
+                                    }}
+                                    className="text-[13px] font-bold text-[#FF4500] hover:underline w-fit mt-1 flex items-center gap-1.5"
+                                  >
+                                    {isExpanded ? 'See Less' : 'See Full Analysis'}
+                                    <svg className={`w-3.5 h-3.5 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
+                                  </button>
+                                )}
+                              </div>
+                              {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-[#343536] mt-8" />}
                             </div>
-                            <p className="text-[15px] text-white leading-[1.7] mb-3 pr-2">{agent.response_text}</p>
-                          </div>
-                          {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-[#1F1F1F] mt-6" />}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  ))}
+                          );
+                        })}
+                      </div>
+                    ));
+                  })()}
                 </>
               )}
+
 
               {/* "Next agent responding" indicator */}
               {isLive && typingAgent && (

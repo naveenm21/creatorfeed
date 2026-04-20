@@ -8,22 +8,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#09050A",
-        card: "#0A0A0A",
-        cardhover: "#111111",
-        borderdefault: "#1F1F1F",
-        borderhover: "#333333",
-        primary: "#F7F7F7",
-        secondary: "#888888",
+        background: "#030303",
+        card: "#1A1A1B",
+        cardhover: "#272729",
+        borderdefault: "#343536",
+        borderhover: "#444546",
+        primary: "#D7DADC",
+        secondary: "#818384",
         tertiary: "#555555",
-        brandprimary: "#EC4899",
-        brandprimaryhover: "#DB2777",
-        brandprimarysubtle: "#381123",
-        brandorange: "#F97316",
+        brandprimary: "#FF4500", // Reddit Orangered
+        brandprimaryhover: "#FF5722",
+        brandprimarysubtle: "rgba(255, 69, 0, 0.1)",
+        brandorange: "#FF4500",
         ytred: "#FF0000",
         igpink: "#E1306C",
         tiktokwhite: "#FFFFFF",
-        gold: "#F59E0B",
       },
       fontFamily: {
         sans: ['var(--font-inter)'], // Used Inter font variable defined in layout
