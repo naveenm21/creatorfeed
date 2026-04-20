@@ -2353,8 +2353,9 @@
     "platform": "Multi-platform",
     "follower_range": "1K-10K",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-20T08:34:51.989Z",
+    "thread_id": "f2776f79-04aa-4ba5-814c-7724ed68c36d"
   },
   {
     "id": 237,
