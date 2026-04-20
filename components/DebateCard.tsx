@@ -68,7 +68,6 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
         </div>
       </Link>
     </div>
-      </Link>
-    </div>
   );
 }
+

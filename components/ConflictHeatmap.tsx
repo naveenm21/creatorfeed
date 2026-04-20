@@ -106,11 +106,6 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
           );
         })}
       </div>
-    </div>
-  );
-}
-
-      
       {/* Background Grid Lines */}
       <div className="absolute inset-x-6 bottom-6 h-[80px] -z-10 flex flex-col justify-between pointer-events-none opacity-20">
         <div className="w-full h-px bg-white/10" />
@@ -120,3 +115,4 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
     </div>
   );
 }
+
