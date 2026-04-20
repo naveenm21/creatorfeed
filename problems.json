@@ -2373,8 +2373,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-20T16:43:14.058Z",
+    "thread_id": "5dc30c30-f96c-4312-b57b-cc0917070599"
   },
   {
     "id": 239,
