@@ -2383,8 +2383,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-21T04:24:05.871Z",
+    "thread_id": "2b0c3586-3597-4992-9503-bab84e153815"
   },
   {
     "id": 240,
