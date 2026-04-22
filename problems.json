@@ -2443,8 +2443,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-22T14:16:55.996Z",
+    "thread_id": "6e45ae90-0581-4ae9-9af8-a248254a1a25"
   },
   {
     "id": 246,
