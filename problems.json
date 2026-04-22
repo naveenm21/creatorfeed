@@ -2423,8 +2423,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-22T04:22:31.288Z",
+    "thread_id": "cc16f926-447d-4d04-b26f-5ed380236a18"
   },
   {
     "id": 244,
