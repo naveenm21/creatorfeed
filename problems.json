@@ -2483,8 +2483,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-04-28T04:48:59.257Z",
+    "thread_id": "38fb45f6-3ed5-41d7-82b0-676df907304e"
   },
   {
     "id": 250,
