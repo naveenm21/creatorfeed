@@ -2633,8 +2633,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-02T13:54:20.175Z",
+    "thread_id": "0e473e77-84e2-401c-9aba-6bf2be12e71b"
   },
   {
     "id": 265,
