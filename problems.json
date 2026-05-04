@@ -2693,8 +2693,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-04T04:53:13.738Z",
+    "thread_id": "15aa7135-1a30-42ff-b500-d06e2a2791ce"
   },
   {
     "id": 271,
