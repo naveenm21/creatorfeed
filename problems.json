@@ -2753,8 +2753,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-05T17:06:12.876Z",
+    "thread_id": "4ac7ef24-3524-45f4-9851-b15119257f90"
   },
   {
     "id": 277,
