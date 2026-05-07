@@ -2783,8 +2783,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-07T15:14:46.040Z",
+    "thread_id": "6fd291e4-37a6-4cea-abf9-011c3070c878"
   },
   {
     "id": 280,
