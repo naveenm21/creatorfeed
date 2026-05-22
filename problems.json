@@ -2833,8 +2833,9 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-22T15:36:21.373Z",
+    "thread_id": "134b308d-c78b-4ea2-bd77-3aaefe16ccd7"
   },
   {
     "id": 285,
