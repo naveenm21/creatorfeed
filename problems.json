@@ -2903,8 +2903,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-24T09:06:22.478Z",
+    "thread_id": "cfc32445-e3a2-424b-a8fd-d294c56c1310"
   },
   {
     "id": 292,
