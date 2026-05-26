@@ -2993,7 +2993,8 @@
     "platform": "Multi-platform",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-05-26T16:26:42.676Z",
+    "thread_id": "90cd00fb-3f8d-4373-9867-5b1c070e1daf"
   }
 ]
