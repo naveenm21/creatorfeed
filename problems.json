@@ -2996,5 +2996,1805 @@
     "posted": true,
     "posted_at": "2026-05-26T16:26:42.676Z",
     "thread_id": "90cd00fb-3f8d-4373-9867-5b1c070e1daf"
+  },
+  {
+    "id": 301,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and I've hit a complete plateau for the last 6 months. My Reels used to get 200K views consistently, but now they're barely hitting 50K even though the content quality hasn't changed. I suspect the algorithm has shifted away from tech reviews, but I'm not sure if I should pivot to AI tool reviews or stick with my original niche.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 302,
+    "raw_submission": "As a beauty creator with 250K followers, I'm struggling with the rise of AI-generated makeup tutorials. Brands are now asking me to use AI tools to speed up content creation, but my audience specifically follows me for my authentic techniques and personalized approach. I'm losing brand deals to creators who use AI, but compromising my brand feels wrong.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 303,
+    "raw_submission": "I run a finance education account with 78K followers, and Instagram's new policy on financial advice has severely limited my reach. My posts about investment strategies now require heavy disclaimers, and some content gets shadow-banned without explanation. I'm losing engagement and sponsorships because brands think my content is too risky.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 304,
+    "raw_submission": "I'm a gaming content creator with 120K Instagram followers, but my Reels barely generate viral moments anymore. The algorithm seems to favor short-form clips over the 3-5 minute gaming breakdowns I create. I've tried TikTok and YouTube, but my audience doesn't follow me there, so I'm stuck creating content for Instagram that doesn't perform.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 305,
+    "raw_submission": "As a history content creator with 34K followers on Instagram, I'm burned out from constantly adapting to trending sounds and formats just to stay relevant. My audience wants deep historical analysis, but the algorithm rewards 15-second Reels with trending audio. I feel like I'm compromising my educational mission for reach, and it's draining me mentally.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 306,
+    "raw_submission": "I have 550K followers as a cooking creator on Instagram, and my monetization through brand deals has dropped 40% in the last year. Brands are now using AI-generated recipe content and working with smaller nano-influencers instead of mid-tier creators like me. I'm overqualified for smaller deals but too niche for major brands.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 307,
+    "raw_submission": "I'm a comedy creator with 92K followers on Instagram, and my audience engagement has shifted dramatically. Comments and saves have decreased, but shares have increased, which suggests my content is being shared outside my follower base and not growing my account. I don't understand how to capitalize on this trend without changing my style.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 308,
+    "raw_submission": "As a political commentary creator with 180K Instagram followers, I'm facing increased pressure from the platform regarding content moderation policies that seem to change monthly. My posts about controversial topics get suppressed, and I've lost sponsorships because brands don't want to be associated with political content. I'm considering pivoting to a safer niche.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 309,
+    "raw_submission": "I'm an ASMR creator with 56K followers on Instagram, and I'm struggling to adapt my content to Reels since ASMR is inherently slow and meditative. The platform wants fast, engaging content, but my niche thrives on pacing and sound design. I'm caught between what my community loves and what the algorithm rewards.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 310,
+    "raw_submission": "I have 1.2M followers on Instagram as a tech lifestyle creator, but I'm exhausted from maintaining consistent posting schedules to stay relevant. The algorithm now favors accounts that post daily, and I'm losing visibility on days I take off. I'm battling severe creator burnout, and my mental health is suffering from the pressure to constantly produce content.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 311,
+    "raw_submission": "As a beauty creator with 15K followers on Instagram, I'm trying to go viral but my content consistently caps at 80K views while similar accounts reach 500K+. I've tested every trending format and sound, but something isn't clicking with the algorithm. I'm wondering if I should completely rebrand or if there's a technical issue I'm missing.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 312,
+    "raw_submission": "I'm a gaming creator with 3.5K followers on TikTok trying to grow, but the platform's algorithm heavily favors established creators. My videos get stuck at 200-500 views regardless of content quality, and I can't seem to break through the growth ceiling. I'm considering abandoning TikTok entirely to focus on YouTube where I have more control.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 313,
+    "raw_submission": "As a cooking creator with 380K followers on Instagram, I'm struggling to diversify my income beyond sponsorships. My Instagram Shop underperforms, and I haven't been able to successfully convert followers to my external cooking course. The platform takes such a large commission that I can't afford to offer competitive pricing.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 314,
+    "raw_submission": "I'm a finance creator with 8.2K followers on YouTube, and my niche is oversaturated with AI-powered financial advisors that can produce daily content automatically. My manual, thoughtful analysis can't compete with the volume these tools generate. I'm struggling to find my unique angle in an increasingly crowded space.",
+    "platform": "YouTube",
+    "follower_range": "1K-10K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 315,
+    "raw_submission": "I'm a history creator with 210K followers on Instagram, but my community is becoming toxic as my content reaches broader audiences. Comments sections are filled with misinformation and heated debates that distract from educational discussions. I'm considering making accounts private or disabling comments, but that would limit growth.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 316,
+    "raw_submission": "As an ASMR creator with 47K followers on Instagram, I'm trying to expand to YouTube Shorts but my audience doesn't follow me there. My Instagram followers specifically subscribed for my ASMR content, but they're not converting to YouTube viewers. I'm spending double the time creating for both platforms with minimal return on YouTube.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 317,
+    "raw_submission": "I'm a political commentary creator with 2.1M followers on Instagram, and I'm experiencing severe burnout from the constant pressure to have strong opinions on daily news cycles. My audience expects me to post about every political development, but I'm exhausted by the emotional labor of staying informed and creating nuanced content under time pressure.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 318,
+    "raw_submission": "I'm a tech reviewer on YouTube with 34K subscribers, but I'm losing views to AI-generated review videos that are faster and cheaper to produce. Brands are switching to AI tools instead of hiring creators like me. I'm considering pivoting to niche tech topics that AI can't cover, but I'm unsure if that audience exists.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 319,
+    "raw_submission": "I'm a comedy creator with 6.2K followers on TikTok, and my viral potential feels non-existent despite putting maximum effort into trending formats. I've watched smaller accounts with lower-quality content blow up while my jokes don't gain traction. I'm questioning whether TikTok's algorithm favors certain creators or if my comedic style simply doesn't fit the platform.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 320,
+    "raw_submission": "As a beauty creator with 670K followers on Instagram, I'm facing a community crisis where followers are demanding I take political stances on controversial issues. My content is apolitical, and I've lost significant followers because I refuse to engage with these demands. I'm struggling to maintain my neutral brand while keeping my audience satisfied.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 321,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and my reach has completely flatlined over the past three months. I've noticed that Instagram's algorithm now heavily prioritizes Reels with AI-generated thumbnails and transitions, but my authentic product teardowns aren't getting the same engagement anymore. Every time I post a traditional carousel or static image, it barely hits 2% of my follower base, even though my audience used to love these formats. I'm torn between compromising my authentic style and potentially losing my identity as a creator.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 322,
+    "raw_submission": "I've been creating beauty tutorials for 2 years and hit 250K followers, but now I'm completely burned out from the constant pressure to use new AI filters and virtual try-on tools that Instagram keeps pushing. My audience expects me to have AI-enhanced content, but I feel like I'm just becoming a puppet for Meta's AI systems rather than a genuine educator. The monetization rates have dropped 40% since I stopped using these tools, but my mental health is suffering from the inauthentic grind.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 323,
+    "raw_submission": "I'm a finance educator with 18K followers on Instagram, but I'm struggling to convert my Instagram audience to my paid courses and newsletter. The platform keeps limiting organic reach to my educational carousel posts, pushing me toward ads instead. My conversion rate from Instagram followers to paying customers is only 0.8%, while my TikTok followers convert at 3x that rate, but TikTok's audience is much smaller. I'm losing money trying to maintain presence on Instagram when my real monetization happens elsewhere.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 324,
+    "raw_submission": "My gaming content channel hit 85K followers six months ago, but I've noticed my Reels performance has tanked since Instagram's algorithm shifted to favor clips under 15 seconds. My audience wants longer, more thoughtful gaming analysis that takes 30-45 seconds, but the algorithm literally punishes this format now. I'm caught between creating content that satisfies my existing community and chasing algorithm favor with short, snappy clips that feel hollow.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 325,
+    "raw_submission": "I run a history education account with 320K followers on Instagram, and I've hit a growth plateau that feels impossible to break through. The algorithm seems to favor trending, sensationalized historical takes over my well-researched, nuanced content. When I try to jump on viral history trends with quick takes, my followers complain about the quality drop. But when I stick to my in-depth format, I barely get 5% engagement and virtually no new follower growth.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 326,
+    "raw_submission": "I'm a cooking creator with 12K followers on Instagram, and I've noticed that AI-generated recipe suggestions and meal plans are now flooding the platform from big food brands using Instagram's AI tools. My original recipes that used to perform well are getting buried beneath their AI-optimized content. It feels like I'm competing against infinite AI-generated content from corporations with massive budgets, and I can't keep up.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 327,
+    "raw_submission": "I'm a comedy creator with 560K followers on Instagram, but I'm experiencing serious niche burnout from the constant pressure to make content about the same three topics that went viral years ago. My audience still engages with those topics, but I'm creatively exhausted and want to explore new comedy angles. When I try to pivot to different themes, engagement drops by 60% immediately. I feel trapped in a pigeonhole that's slowly suffocating my creativity.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 328,
+    "raw_submission": "I run a political commentary account with 67K followers on Instagram, and Instagram's content moderation has become increasingly restrictive and unpredictable for political topics. My posts are getting hidden, shadowbanned, or limited reach without clear explanation. I can't pivot to other platforms easily because my entire audience is on Instagram, but the platform is becoming unusable for political content. I'm losing reach not because of engagement metrics but because of algorithmic suppression.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 329,
+    "raw_submission": "I'm an ASMR content creator with 145K followers on Instagram, and I'm facing a unique problem: Instagram's feed algorithm doesn't favor long-form ASMR content, but Reels auto-play with sound off by default, which completely ruins the entire point of my niche. My best performing ASMR videos are 2-4 minutes long, but the algorithm wants short clips. I've tried adapting, but short ASMR clips feel pointless to my audience. I'm considering abandoning Instagram, but my community is entirely there.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 330,
+    "raw_submission": "I have 8K followers on Instagram as a tech niche creator, and I'm struggling to go viral because I'm competing against hundreds of AI-generated tech content accounts that have unlimited content volume. These accounts post 20+ times per day with AI-created videos, and they're somehow getting prioritized by the algorithm. My carefully crafted, authentic tech reviews get buried beneath their output. I'm starting to wonder if the algorithm is literally broken for human creators in my space.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 331,
+    "raw_submission": "I'm a beauty creator with 2.3M followers on Instagram, but my monetization has dropped dramatically because Instagram's new ad policy limits sponsored content in certain beauty categories. My main income stream from beauty brand partnerships has shrunk by 55% in three months. I'm not losing followers, but my ability to make money from them has become severely constrained by platform policies that seem to shift without warning.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 332,
+    "raw_submission": "I run a cooking education account with 34K followers on Instagram, and I've discovered that my cross-platform strategy isn't working anymore. My Instagram followers don't follow me on YouTube or TikTok, even though I consistently ask them to. The algorithms on each platform are so different that I essentially have to create three entirely different content strategies. I'm spreading myself too thin maintaining multiple platforms while each one treats me like a new creator.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 333,
+    "raw_submission": "I'm a gaming creator with 95K followers on Instagram, and I've hit a plateau because my specific niche (retro gaming analysis) doesn't perform well in Reels format. The algorithm clearly wants fast-paced gameplay or viral moments, but my audience loves deep dives into 80s and 90s game design. Instagram is pushing me toward trending games and trending formats, but my authentic voice is in educational analysis that the algorithm actively suppresses.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 334,
+    "raw_submission": "I'm a finance creator with 1.8M followers on Instagram, and I'm experiencing massive community backlash because I started using AI-generated explainer animations for my financial content. Some followers are questioning whether my analysis is genuine or AI-generated, and engagement on my educational carousel posts has dropped 35% in two months. The trust I built over years feels fragile now that people are skeptical about what's real versus what's AI.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 335,
+    "raw_submission": "I'm a history creator with 55K followers on Instagram, and I'm burned out from the constant pressure to make historical content 'trendy' for Gen Z audiences. My followers want authentic, nuanced historical education, but the algorithm only rewards sensationalized, dramatized versions of history. I'm sacrificing accuracy to chase reach, and it's compromising my integrity as an educator. But if I don't chase trends, nobody sees my content.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 336,
+    "raw_submission": "I'm a comedy creator with 3.2K followers on Instagram, and I'm struggling to go viral because Instagram's algorithm seems to favor established comedy accounts with existing reach. My jokes are getting 2-3% engagement even though my friends say they're funny. I've tried posting the same content on TikTok and got 10x better engagement, but I'm locked into trying to grow on Instagram because that's what the platform recommends. I feel like the algorithm is gatekeeping viral success.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 337,
+    "raw_submission": "I have 5.8K followers on TikTok as a beauty creator, and I'm frustrated because my niche is getting oversaturated with AI-generated makeup tutorials that are technically perfect but completely lack personality. The algorithm seems to favor these polished, AI-enhanced videos over my authentic, sometimes-messy makeup journey content. I'm trying to stay authentic, but I'm barely growing while the AI content creators are exploding in popularity.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 338,
+    "raw_submission": "I'm a tech creator with 28K followers on TikTok, and I've hit a growth plateau because my audience wants longer, more detailed tech explanations that contradict TikTok's format preference for snappy, under-30-second content. I've tried creating a YouTube channel for longer content, but my TikTok followers aren't converting to YouTube subscribers. I'm basically maintaining two separate audiences on two platforms instead of building one cohesive community.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 339,
+    "raw_submission": "I'm a YouTube creator with 156K subscribers in the finance niche, and I'm struggling because YouTube's algorithm has shifted to favor Shorts over long-form content. My 15-20 minute deep-dive financial analysis videos that built my entire channel are getting buried in the recommendation algorithm. When I upload Shorts, they perform well but don't monetize at the same rate. I'm facing a choice between content that grows my audience or content that pays my bills.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 340,
+    "raw_submission": "I'm a cooking creator with 312K YouTube subscribers, and I'm experiencing serious niche burnout because I've been making the same style of content for five years. My audience is loyal, but I'm creatively exhausted and want to explore new cooking styles and formats. Every time I try to pivot, YouTube's algorithm deprioritizes my videos, and I see immediate subscriber loss. The algorithm is basically punishing me for trying to evolve, so I'm stuck repeating the same content formula indefinitely.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 341,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and my engagement has completely stalled for the last two months. Every time I post detailed product reviews, the algorithm seems to favor short-form clips and memes instead. I've tried switching to Reels but they feel disconnected from my brand's educational approach. How do I regain traction without completely abandoning my long-form content style?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 342,
+    "raw_submission": "As a beauty creator with 2.3M followers, I'm facing intense pressure from AI-generated makeup tutorials that are undercutting my sponsored content deals. Brands are asking why they should pay me when they can generate unlimited content with AI tools for pennies. My exclusivity and human expertise feel worthless right now, and I'm struggling to justify my rates.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 343,
+    "raw_submission": "I run a gaming channel with 156K followers on Instagram and I'm completely burned out from the pressure to post daily content while also streaming and managing community interactions. The algorithm demands consistency, but my creative tank is empty. I'm considering quitting entirely because the mental toll isn't worth the diminishing returns I'm seeing.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 344,
+    "raw_submission": "My comedy niche on Instagram (observational humor about corporate life) hit 67K followers, but now Instagram's algorithm prioritizes trending sounds and challenges over original comedic writing. Every time I try to pivot to trending content, I lose my core audience. I'm stuck between staying true to my style and chasing virality.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 345,
+    "raw_submission": "I've been posting financial literacy content for everyday people with 34K followers on Instagram, but the platform's new policies around financial advice have shadowbanned my most valuable educational posts. I'm now uncertain which topics are safe to cover without risking my account, and my reach has dropped by 60%. How do I rebuild trust with the algorithm while staying compliant?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 346,
+    "raw_submission": "As a history educator with 892K followers, I've built my audience through long-form carousel posts and Stories, but my analytics show younger audiences are moving to TikTok. I'm terrified of fragmenting my content strategy across platforms, but staying Instagram-only means I'm missing massive growth opportunities with Gen Z. Should I completely rebrand for a different platform?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 347,
+    "raw_submission": "I'm a cooking creator with 5.2K followers stuck in a niche about vegan meal prep, and I realize there are thousands of competitors doing the exact same thing. My posts get 200-400 likes, and growth has completely plateaued. Every time I try to expand into broader cooking topics, my core audience disengages. I don't know if my niche is viable anymore.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "niche_burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 348,
+    "raw_submission": "My ASMR channel on Instagram has 41K followers, but Instagram's focus on video engagement metrics means my static ASMR content that performed well in 2024 is now invisible. The platform seems hostile to audio-focused creators, and I'm watching TikTok creators in my niche grow 10x faster. I'm considering abandoning Instagram entirely, but that feels like throwing away years of work.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 349,
+    "raw_submission": "I grew a political commentary account to 234K followers on Instagram by responding to news cycles in real-time, but Instagram's new misinformation policies have made me paranoid about every post. My captions get flagged for fact-checking, my reach plummets when I discuss divisive topics, and sponsors are pulling away. I feel like I'm being silently suppressed by algorithmic policies I don't fully understand.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 350,
+    "raw_submission": "I'm a tech creator with 12K followers on Instagram who made the mistake of going all-in on one niche (AI tools for marketers), but the market is now saturated with creators offering the same content. My engagement rate dropped from 8% to 2.1% in three months. I want to pivot to a broader tech audience, but I'm worried about losing the followers I've spent years building in this specific niche.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 351,
+    "raw_submission": "As a beauty creator with 87K followers, I'm losing sponsorship deals to smaller creators who are willing to work with AI-generated content overlays and automated posting tools that cost nothing. Brands see the same aesthetic results at a fraction of the cost, so they're dropping creators like me who demand fair rates for authentic content creation. My entire income model feels threatened.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 352,
+    "raw_submission": "I run a gaming content account with 567K followers, and my community is fragmenting across Discord, YouTube, TikTok, and Instagram. Managing engagement across all platforms is exhausting, and I'm finding that my YouTube and TikTok audiences expect different content styles. I can't figure out how to create cohesive content that works everywhere without diluting my brand.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 353,
+    "raw_submission": "My cooking channel with 3.1K followers is suffering because I'm trying to compete with massive food creators who have production budgets I can't match. Every time I try a viral trend like rapid recipe videos, I get drowned out. My unique angle (cooking in tiny apartments) isn't gaining traction because Instagram's algorithm favors polished, high-production content. I'm considering quitting because I feel invisible.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 354,
+    "raw_submission": "I've been creating ASMR content for two years with 18K followers, and the burnout is real—constantly filming in silence, meeting upload schedules, and maintaining a calm persona exhausts me mentally. The algorithm demands frequency, but quality ASMR content takes time. I'm at a breaking point where I'm producing content I don't believe in just to stay relevant.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 355,
+    "raw_submission": "As a history creator with 34K followers, I spent months building deep, researched content about lesser-known historical events, but these posts barely get 300 likes. Meanwhile, creators posting 'history facts' TikToks with 0 sources are going viral. I feel demoralized because my actual expertise isn't valued by the algorithm, and I'm losing followers to creators spreading misinformation.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 356,
+    "raw_submission": "I'm a finance educator with 6.7K followers trying to build credibility in the personal finance niche, but Instagram's algorithm treats my educational carousel posts as low-engagement content compared to trend-chasing Reels. My target audience (people genuinely wanting to learn) seems smaller than my potential audience (people scrolling for entertainment), and I'm stuck deciding whether to pivot toward entertainment or stay true to education.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "niche_burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 357,
+    "raw_submission": "I'm a TikTok creator with 78K followers in the comedy space, but I'm completely dependent on trending sounds and formats that disappear within days. My original content rarely goes viral, and I'm locked in a cycle of chasing trends just to stay relevant. I've tried pivoting to YouTube to build a more sustainable audience, but my TikTok followers don't translate and I'm starting from zero.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 358,
+    "raw_submission": "As a YouTube creator with 234K subscribers in the tech niche, I'm struggling to monetize because YouTube's algorithm favors 10-minute videos for ad revenue, but my audience expects detailed 25-minute deep dives. I'm caught between creating content that pays me and content my audience actually wants. Sponsorships help, but they're unpredictable and come with creative restrictions.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 359,
+    "raw_submission": "I'm a political commentary creator with 145K followers on Instagram, but recent platform policy shifts around election content have made my niche impossible to monetize. Brands avoid me, sponsored posts get shadowbanned, and my reach plummets during election cycles when my content is most relevant. I'm considering a complete career pivot because my niche feels politically targeted by the platform.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 360,
+    "raw_submission": "As a TikTok creator with 2.1M followers, I've realized my audience doesn't want to follow me to YouTube or Instagram—they're exclusively on TikTok. When I try to cross-promote, engagement drops dramatically. I'm essentially building an asset I can't diversify, and I'm terrified of platform algorithm changes or policy shifts that could destroy my entire income overnight with no backup audience.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 361,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and my reach has completely flatlined for the past 3 months despite posting consistently. Instagram's algorithm seems to favor short-form video content now, but my in-depth product comparisons don't perform well in that format. I've tried reposting the same content on Reels but the engagement is still lower than it was a year ago. My followers are asking for more detailed reviews, but the platform penalizes longer-form content. I'm stuck between what my audience wants and what the algorithm rewards.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 362,
+    "raw_submission": "As a beauty creator with 200K followers on Instagram, I'm seeing my engagement rates drop by 40% ever since Instagram implemented stricter policies around sponsored content and affiliate links. My income relied heavily on product recommendations and brand partnerships, but now there's so much friction with disclosures that brands are hesitant to work with me. Smaller creators are undercutting my rates because they don't have the same compliance requirements. I'm struggling to find alternative monetization methods that don't rely on product promotion.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 363,
+    "raw_submission": "I'm a finance educator with 8K followers on Instagram, and I'm completely burned out from the pressure to post daily or lose relevance. The algorithm demands constant content, but producing high-quality financial advice takes time and research. Every time I take a week off, my metrics plummet. I've also noticed that my detailed educational posts get less traction than clickbait-y trend-focused content, which makes me question if I should compromise my educational standards. I'm at the breaking point of maintaining this pace.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 364,
+    "raw_submission": "I run a gaming channel on Instagram with 320K followers, but I'm losing viewers to TikTok creators who post the same gaming clips but get 10x more views. I've tried cross-posting my TikTok content to Instagram Reels, but the quality degrades and engagement suffers. My audience is split between platforms, and managing content for both is exhausting. I don't know if I should focus exclusively on TikTok or find a way to make my Instagram content more competitive again.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 365,
+    "raw_submission": "As a history content creator with 52K followers on Instagram, I'm facing a unique challenge: AI-generated historical content is flooding the platform, and much of it is inaccurate but visually compelling. My authentic, well-researched posts are being overshadowed by flashy AI videos that aren't fact-checked. Brands and sponsors are increasingly asking me why they should pay for my content when they can use AI tools to generate similar-looking material cheaper. I'm questioning how to differentiate my human expertise in an AI-saturated landscape.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 366,
+    "raw_submission": "I'm a cooking creator with 156K followers on Instagram who's hit a growth plateau. Every cooking niche is saturated with creators, and my content isn't viral-worthy anymore. I've tried pivoting to trending sounds and formats, but my audience followed me for traditional recipe content, not dances or comedy skits. I'm torn between staying true to my niche and adapting to what the algorithm rewards. My growth has stalled completely despite consistent posting.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 367,
+    "raw_submission": "As a political commentator with 34K followers on Instagram, I've noticed that my reach has been suppressed or inconsistent depending on the topic I cover. Some of my posts about controversial political issues get almost no reach, while lighter content performs well. I suspect Instagram is deprioritizing political content, but I can't confirm it. My core audience came for political analysis, but the algorithm seems to punish me for that niche. I'm afraid to experiment with other content types because I'll lose my identity.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 368,
+    "raw_submission": "I'm an ASMR creator with 78K followers on Instagram, and I'm struggling because Instagram's algorithm increasingly favors dynamic, highly engaging content over the calm, slow-paced ASMR that my audience craves. My videos get decent watches but terrible engagement metrics because viewers don't interact with ASMR content the way they do with other genres. Instagram is pushing me toward a format that contradicts my niche entirely. I'm considering moving entirely to YouTube, but I'm worried about losing my existing Instagram audience.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 369,
+    "raw_submission": "As a comedy creator with 892K followers on Instagram, I'm facing pressure from new AI comedy generation tools that can produce joke content at scale. Brands are starting to ask why they should pay me when they can use AI to generate similar humor. My follower growth has slowed significantly, and my reach per post is declining even though my content quality hasn't changed. I'm worried that my unique voice is becoming less valuable in a market flooded with AI-generated alternatives.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 370,
+    "raw_submission": "I'm a tech educator with 5.2K followers on Instagram who's desperate to go viral, but every time I try, my content flops or feels inauthentic. I've studied viral trends extensively, but when I attempt to replicate them in my niche, it doesn't work. My followers appreciate educational depth, but the algorithm doesn't reward that. I'm stuck in the 'stuck at 5K' trap where I need virality to grow, but authenticity doesn't go viral in my niche.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 371,
+    "raw_submission": "As a beauty creator with 1.3M followers on Instagram, I've noticed a disturbing trend: my sponsored content gets flagged or shadow-banned more often than it used to, even when I follow all disclosure guidelines. Instagram's new AI moderation is overly aggressive and hard to appeal. My income from brand deals is being affected because brands see inconsistent reach on my posts. I'm losing money due to algorithmic decisions I can't control, and Instagram support won't provide clarity on why specific posts are being deprioritized.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 372,
+    "raw_submission": "I'm a finance creator with 67K followers on Instagram, but I've hit a growth ceiling because my niche is oversaturated with similar content. Every finance creator is talking about the same stocks, crypto trends, and investment strategies. I've tried differentiating by focusing on niche topics like tax optimization for freelancers, but that smaller audience doesn't grow as fast. I'm at a crossroads: do I broaden my content to grow faster or deepen my niche expertise and accept slower growth?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 373,
+    "raw_submission": "As a gaming content creator with 12K followers on Instagram, I'm struggling to convert my Instagram audience to other platforms where I can monetize better. Instagram's monetization options are limited for gaming content, but YouTube and Twitch offer better revenue potential. Every time I direct followers to other platforms, only 5-10% actually follow me. I'm stuck with an audience on the wrong platform, and I can't grow on Instagram fast enough to make it worthwhile.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 374,
+    "raw_submission": "I'm a cooking creator with 234K followers on Instagram, and I'm experiencing severe niche burnout. I've been making the same type of recipes for 3 years, and I've run out of fresh ideas within my niche. My audience expects consistency, but I'm creatively drained and want to experiment with different content. Every time I deviate from my core niche, engagement drops. I'm trapped in a prison of my own success, unable to evolve without sacrificing my audience.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 375,
+    "raw_submission": "As a political commentator with 456K followers on Instagram, I've watched my community become increasingly toxic and polarized. Political discussions in my comment sections have escalated to personal attacks and harassment. Instagram's community management tools feel inadequate for handling this level of conflict. I'm spending more time moderating than creating content, and I'm mentally exhausted. I'm considering stepping back from political content entirely, which would devastate my brand identity.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 376,
+    "raw_submission": "I'm an ASMR creator with 234K followers on TikTok, and I'm struggling to replicate my success on other platforms. TikTok's algorithm has been incredibly favorable to ASMR content, but if I ever need to migrate to another platform, I'm worried my content won't perform the same way. The cross-platform conversion rate is terrible, and I feel trapped on one platform. I need to diversify but TikTok is giving me diminishing returns compared to potential growth elsewhere.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 377,
+    "raw_submission": "As a tech reviewer with 1.8M followers on YouTube, I'm facing a major challenge: AI-powered review tools are now competing with human creators, producing technically accurate but soulless reviews at scale. Brands are starting to question why they should sponsor my videos when AI can generate similar content cheaper. My view counts are stable, but my growth has plateaued, and sponsorship rates are being undercut by AI alternatives. I need to find ways to emphasize my human perspective and unique value.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 378,
+    "raw_submission": "I'm a history content creator with 89K followers on YouTube, and I'm experiencing algorithm frustration. My deep-dive historical documentaries take weeks to produce but get buried under shorter, more sensational history content. YouTube's recommendation system seems to favor watch time for entertainment over educational value. I'm considering pivoting to shorter, snappier history content, but that would dilute the educational depth that attracted my core audience. I'm torn between algorithm success and content integrity.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 379,
+    "raw_submission": "As a comedy creator with 45K followers on TikTok, I'm struggling to go viral consistently. I had one viral video that got 2M views, but I can't replicate that success. The TikTok algorithm feels random, and my engagement has become incredibly inconsistent. I'm posting 5-6 times daily just trying to hit the algorithm, and I'm burning out. I don't understand what makes content go viral on TikTok anymore, and the uncertainty is killing my motivation.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 380,
+    "raw_submission": "I'm a finance creator with 3.2M followers on YouTube, and I'm dealing with a difficult platform policy change: YouTube has made it harder for finance content creators to use affiliate links and promotional content without extensive disclaimers. My monetization model was heavily dependent on product recommendations and affiliate commissions, but now there's so much friction that brands are moving to other creators who don't have the same restrictions. I'm losing significant income due to policy shifts I can't control.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 381,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and my reach has completely flatlined over the past three months. I've been posting the same format of unboxing videos and deep-dive specs breakdowns that used to get 15-20K views consistently, but now I'm lucky to hit 3K. I think Instagram's algorithm is deprioritizing tech content in favor of lifestyle creators, and I'm watching newer accounts blow past me despite having lower engagement rates. I don't know if I should pivot to short-form content, invest in Reels, or just accept that my niche is becoming oversaturated.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 382,
+    "raw_submission": "As a beauty creator with 320K Instagram followers, I'm struggling because AI-generated makeup tutorials and virtual try-on content are flooding the platform and getting massive engagement without any production cost. Brands are now asking me to compete against AI filters and CGI makeup looks, which feels unfair since my whole value proposition was authentic, real-world application tutorials. My engagement has dropped 40% in six weeks, and I'm questioning whether investing in professional photography and filming is still worth it when a tool can generate comparable content in minutes.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 383,
+    "raw_submission": "I run a niche finance channel on YouTube with 87K subscribers focused on tax optimization for freelancers, and I'm completely burnt out. The algorithm keeps pushing me toward clickbait stock market prediction content that I refuse to create, while my deep-dive educational series on tax deductions barely get recommended. I spend 40 hours per week researching and scripting content that gets 2-3K views, while low-effort reaction videos to market crashes get 50K+ views. I'm questioning if educational finance content has a sustainable future on YouTube.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 384,
+    "raw_submission": "My gaming channel on Instagram Reels has 156K followers but I can't seem to convert them into any monetization. I get decent view counts on my short-form gaming clips and commentary, but Instagram's monetization thresholds keep changing and I'm not hitting the requirements consistently. Meanwhile, the same content performs way better on TikTok, but I don't have the audience there yet. I'm stuck in a situation where I have followers but no revenue stream, and it's become unsustainable to keep investing time without income.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 385,
+    "raw_submission": "I'm a history educator with 5.2M Instagram followers who built my entire brand on long-form educational carousel posts and Reels about historical events. Instagram's latest algorithm update has deprioritized educational content in favor of entertainment and lifestyle posts, and my reach has plummeted from 2M per post to 400K in just two months. Brands that used to pay me $50K per partnership are now looking for creators with more 'lifestyle' appeal. I'm terrified that my audience will migrate to other platforms and I'll lose relevance.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 386,
+    "raw_submission": "As a cooking creator with 34K Instagram followers in the macro-balanced meal prep niche, I'm facing severe burnout from the constant demand to post new recipes daily while maintaining consistent quality. The algorithm rewards consistency over creativity, so I feel trapped posting variations of the same meals to maintain my posting schedule. Newer creators with AI-assisted meal planning tools are posting faster and getting higher engagement, and I'm exhausted from trying to keep up without using shortcuts that feel inauthentic to my brand.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 387,
+    "raw_submission": "I've been a TikTok comedy creator with 2.1M followers for three years, but my recent videos are getting suppressed due to Instagram's new policy against political satire and commentary. Three of my videos that went viral last year would violate current community guidelines, and I'm worried my entire comedy style is being shadow-banned. I don't want to sanitize my content or pivot to family-friendly humor because that's not what my audience subscribed for, but I also can't afford to have my reach tank completely.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 388,
+    "raw_submission": "My ASMR channel on Instagram with 67K followers is struggling because the algorithm is now deprioritizing audio-heavy content in favor of visually dynamic Reels. Instagram's autoplay feature doesn't give viewers a choice to hear my audio without being in a full-screen experience, and many users are muting videos by default. I've built my entire brand on the quality of my soundscapes, but the platform's technical limitations and policy changes are making it impossible to showcase what makes my content valuable.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 389,
+    "raw_submission": "I'm a political commentary creator with 412K Instagram followers who's facing constant pressure to moderate my content due to new platform policies against 'misinformation' and 'polarizing' political discussion. My most engaging content gets flagged as potentially harmful, and my reach has been cut in half because of shadow-banning. I'm stuck between staying true to my voice and having any visibility at all, and I'm unsure if I should pivot platforms, soften my messaging, or find a completely different niche.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 390,
+    "raw_submission": "As a tech startup founder and creator with 156K YouTube subscribers, I've hit a plateau where my audience is too niche and specialized for brand deals, but not large enough to sustain me on AdSense alone. My content is valuable for a specific audience of engineers and founders, but YouTube's algorithm doesn't reward this type of deep-dive technical content anymore. I'm making maybe $2K per month on a channel that takes 30 hours per week to produce, and I need to find a way to monetize my audience without diluting the quality that got them here.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 391,
+    "raw_submission": "I have 234K followers across Instagram and my gaming channel where I do retro game reviews and speedrunning content, but I can't seem to convert my Instagram audience to YouTube viewers. My Instagram Reels get 300K+ views regularly, but when I link to my YouTube channel, only 2-3% of my Instagram followers follow over. I feel like I'm building two separate audiences instead of one cohesive community, and I'm wasting energy creating content for both platforms when the conversion rate is so poor.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 392,
+    "raw_submission": "My ASMR content on TikTok has 890K followers with viral videos regularly hitting 5-10M views, but TikTok's algorithm is pushing me toward increasingly sexualized and provocative content to maintain virality. I'm getting pressure from my audience and the algorithm itself to make ASMR content that's more suggestive, and I'm uncomfortable with that direction. I'm at a crossroads where I need to choose between staying true to my original brand of relaxation content or pivoting to what the algorithm and audience seem to want.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 393,
+    "raw_submission": "I'm a beauty creator with 78K Instagram followers who specializes in makeup for mature skin, and I'm watching my niche become increasingly crowded by larger creators entering the space. Beauty brands are now creating their own content and AI-powered virtual try-on experiences, reducing their dependency on micro-influencers like me. My engagement is stable but my growth has completely stalled, and I'm questioning whether I should try to scale up to compete with bigger creators or lean into an even more niche angle.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 394,
+    "raw_submission": "I run a history podcast and YouTube channel with 45K subscribers focusing on lesser-known World War II stories, and I'm struggling to maintain momentum. My audience engagement is loyal but hasn't grown in eight months, and newer creators are using AI-generated narration and animation to produce similar content at a fraction of my production cost. I'm tempted to integrate AI tools to speed up my workflow, but I'm worried that sacrificing my personal touch will alienate my audience while still not being able to compete on scale and velocity.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 395,
+    "raw_submission": "As a comedy creator with 523K Instagram followers, I'm facing severe burnout from the pressure to stay relevant by constantly watching trends and adapting my humor to whatever's viral that week. My original comedy style that got me to 500K followers isn't landing as well anymore, and younger creators are doing similar humor faster and with more energy. I feel like I've lost my creative voice chasing the algorithm, and I'm genuinely considering stepping back or pivoting to a completely different type of content creation.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 396,
+    "raw_submission": "My finance education channel on Instagram with 2.3M followers built its reputation on ethical, conservative investment advice and long-term wealth building strategies. Instagram's new algorithm heavily favors viral, short-form content about get-rich-quick schemes and meme stocks, and my thoughtful financial literacy content is getting buried. Followers want quick wins, not patient, decades-long investment strategies, and I'm losing audience engagement and brand partnership opportunities because I refuse to promote risky financial advice.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 397,
+    "raw_submission": "I'm a cooking creator with 91K Instagram followers who specializes in low-ingredient, budget-friendly recipes for people with dietary restrictions. The problem is that my niche audience is incredibly loyal but small, and I've hit a ceiling where almost everyone interested in this specific content is already following me. Viral cooking content requires dramatic plating or exotic ingredients, which goes against my entire brand, and I'm struggling to find ways to grow beyond my current plateau without compromising my core message.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 398,
+    "raw_submission": "My political commentary YouTube channel with 234K subscribers has been demonetized three times in the past year due to policy violations around 'misinformation' and 'divisive content,' even though I'm just sharing mainstream political analysis. The algorithm is also suppressing my reach significantly, and I'm making almost no revenue despite significant viewership. I'm considering moving to a subscription model, but I'm worried about losing my audience if I put content behind a paywall when they're used to free YouTube content.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 399,
+    "raw_submission": "I have a gaming channel on Instagram with 156K followers where I post clips of competitive esports gameplay and analysis, but my reach dropped 60% when Instagram stopped promoting gaming content as heavily. The same clips I posted six months ago would get 200K views, but now they get 30-40K at best. I've tried pivoting to more entertainment-focused gaming content mixed with lifestyle elements, but it feels inauthentic and isn't resonating with my core audience. I'm not sure if I should stick it out or redirect my energy to platforms that actually support gaming content.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 400,
+    "raw_submission": "I'm a beauty creator on Instagram with 3.8M followers who's built my entire brand around exclusive product recommendations and beauty tips, but AI-powered recommendation engines are now doing exactly what I do automatically and for free. Brands are asking if they still need to partner with me when they can use AI to target consumers directly with personalized recommendations. My engagement metrics are still strong, but I'm genuinely worried that my value proposition is being eroded by technology, and I need to find a new way to differentiate myself beyond recommendations.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 401,
+    "raw_submission": "My TikTok account has 1.2M followers and gets consistently viral videos, but I'm struggling to monetize because TikTok's Creator Fund pays incredibly low rates and I don't have enough followers for brand deals. I've tried to cross-promote to Instagram and YouTube to build alternative income streams, but my TikTok audience doesn't follow me elsewhere, and I'm trapped in a platform that's great for reach but terrible for revenue. I'm considering pivoting my entire content strategy to YouTube or Instagram, but I'm afraid of losing the 1.2M followers I've built on TikTok.",
+    "platform": "TikTok",
+    "follower_range": "1M+",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 402,
+    "raw_submission": "I run a tech review channel with 45K followers on Instagram, but my engagement has dropped 60% since Instagram's new AI recommendation algorithm started prioritizing Reels with under 15 seconds of watch time. My detailed product breakdowns are getting buried, and when I try to match the algorithm's preference with shorter clips, my audience complains about lack of depth. I'm stuck between pleasing the algorithm or maintaining my community's trust.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 403,
+    "raw_submission": "As a beauty creator with 230K followers, I've hit a plateau because AI-generated makeup tutorials are now flooding Instagram's search results, making it nearly impossible for my organic content to compete. Brands are also asking me to prove my followers are real humans before sponsorships, which is exhausting. I'm losing potential partnerships to creators using AI-amplified follower growth tactics, and I don't know if I should compromise my ethics or accept slower growth.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 404,
+    "raw_submission": "I'm a finance educator with 8.2K followers on Instagram, and I'm struggling to convert my followers into paid course students because my audience is too young and price-sensitive. My content gets decent reach, but the conversion funnel is broken—Instagram's new policy restricting financial advice content has also limited my reach by 40%. I'm considering pivoting to cryptocurrency content, but I'm worried about further policy restrictions and reputational risk.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 405,
+    "raw_submission": "My gaming channel has 1.3M followers on Instagram, but I'm burning out because the platform now demands 4 Reels per week plus daily Stories to maintain algorithm favor, and I'm a solo creator. I've tried hiring editors, but the quality suffers and my community notices. I'm also losing viewers to TikTok creators who post the same gaming clips I do but in rapid-fire format. I don't know how to scale without sacrificing my mental health or content quality.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 406,
+    "raw_submission": "I create ASMR content with 67K followers on Instagram, and I've realized the platform's audio compression and video playback settings are destroying the quality that makes ASMR special. My reach is decent, but engagement is tanking because viewers can't hear the subtle sounds properly on Instagram's compressed format. I'm thinking about moving to YouTube, but I'd be starting from scratch, and I'm scared of losing my existing audience.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 407,
+    "raw_submission": "As a history educator with 34K followers on Instagram, I'm facing a reach crisis because educational content is being deprioritized in favor of entertainment-focused Reels. My followers want deep dives, but the algorithm rewards quick, sensationalized clips. I've tried both approaches, but the sensationalized content feels inauthentic and attracts trolls who argue about historical facts in comments. I'm struggling to stay true to my niche while competing for algorithmic visibility.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 408,
+    "raw_submission": "I run a cooking channel with 156K followers on Instagram, but brands are now requiring me to use their AI-powered recipe-generation tools for sponsored content, which feels like they're trying to replace my creativity. My niche is struggling because AI cooking channels are producing mediocre but fast content that clogs the search results. My engagement is still strong, but I'm worried about long-term viability if AI continues to commoditize cooking content.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 409,
+    "raw_submission": "I'm a comedy creator with 5.8K followers on Instagram, and I'm caught in a viral trap—my one video hit 2M views three months ago, but nothing has come close since. My follower growth has stalled because that viral moment was a fluke, and my regular content doesn't match that algorithm spike. New followers who arrived from the viral video are disappointed by my consistent content, and my engagement rate is now lower than before the viral moment.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 410,
+    "raw_submission": "As a political commentator with 89K followers on Instagram, I'm facing a dual crisis: the platform's new policy restricts political content visibility in certain regions, and my community is fragmenting into echo chambers due to algorithmic polarization. My reach dropped 45% after the policy change, and I'm losing sponsors who are nervous about the political nature of my content. I'm considering diversifying into other platforms, but my brand is tightly tied to Instagram.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 411,
+    "raw_submission": "I've built a tech niche with 523K followers on Instagram, but my community is fragmenting because followers expect me to cover everything—AI, crypto, gaming, hardware, software. I'm burning out trying to be everything to everyone, and my engagement drops when I go deep into any single topic. I'm thinking about creating a second account for my main passion, but I'm terrified of splitting my audience and losing the network effects I've built.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "niche burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 412,
+    "raw_submission": "I'm a beauty creator with 12K followers on Instagram, and I'm struggling to cross-promote to YouTube where I have only 2K subscribers. My Instagram followers seem hesitant to follow me elsewhere, possibly because they view Instagram as their primary social platform. I'm investing heavily in YouTube content, but the growth is glacially slow, and I can't justify the time investment when Instagram is where my audience actually engages.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 413,
+    "raw_submission": "As a gaming creator with 2.3M followers on Instagram, I've realized that my audience is aging out of gaming content but staying for the community. I want to pivot to lifestyle or education content, but doing so would alienate my core gaming audience who followed me specifically for that niche. I'm stuck—my platform success is tied to a niche I'm losing passion for, and pivoting could destroy everything I've built.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 414,
+    "raw_submission": "I run a finance education account with 41K followers on Instagram, but my monetization options are limited because financial advice content has strict regulatory requirements on the platform. Instagram's policies require disclaimers that reduce engagement, and my affiliate income is 30% lower than similar creators on other platforms. I'm thinking about moving to YouTube where financial content is more accepted, but my audience seems locked into Instagram habits.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 415,
+    "raw_submission": "I'm a cooking creator with 78K followers on Instagram, and I've hit a plateau because niche cooking content (vegan, keto, allergen-free) is oversaturated. My growth has stalled at 78K for 8 months, and every piece of content performs similarly—no viral moments, no breakthroughs. I'm experimenting with trending sounds and formats, but it feels like I'm chasing the algorithm instead of creating what I'm passionate about. I'm considering whether this niche is sustainable or if I should pivot.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 416,
+    "raw_submission": "I'm a history creator with 192K followers on TikTok, where my short-form content performs exceptionally, but I'm struggling to convert this TikTok success into sustainable monetization because TikTok's creator fund is unpredictable. I've tried cross-promoting to Instagram and YouTube, but my audience doesn't follow because they see me as a TikTok creator. I'm trapped in a platform where I have massive reach but minimal earnings potential.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 417,
+    "raw_submission": "I create ASMR content with 3.4K followers on TikTok, and I'm frustrated because the platform's algorithm rewards fast cuts and scene changes, which is the opposite of what ASMR requires. My high-quality, slow-paced ASMR content barely gets views on TikTok, but I'm hesitant to pivot to YouTube because I lack the initial audience to build momentum there. I feel like I'm in the wrong platform for my niche.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 418,
+    "raw_submission": "I run a tech education channel on YouTube with 287K subscribers, but I'm losing viewers to shorter AI-generated summary channels that condense my 20-minute deep dives into 2-minute clips. My watch time is dropping, my average view duration is declining, and I'm struggling to justify the time investment in detailed research when AI competitors can summarize my work instantly. I'm considering pivoting to more niche technical topics that AI can't easily replicate.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 419,
+    "raw_submission": "I'm a comedy creator with 542K subscribers on YouTube, but YouTube's algorithm is pushing Shorts heavily, which is fragmenting my audience between long-form and short-form content. My Shorts perform better algorithmically, but they generate less revenue than my long-form videos. I'm forced to produce both formats to stay relevant, which is burning me out. I'm frustrated that the platform I built my career on is trying to turn me into a short-form creator.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 420,
+    "raw_submission": "I'm a beauty creator with 18K subscribers on YouTube, and my growth has completely stalled despite consistent uploads and good engagement rates. My videos aren't going viral, my suggested video placement is poor, and YouTube's recommendation algorithm seems to favor larger channels. I'm thinking about moving my focus back to Instagram where I have more followers, but I don't want to abandon YouTube entirely. I'm unsure if I should double down on YouTube or accept it as a secondary platform.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 421,
+    "raw_submission": "I'm a political commentator with 94K followers on Instagram, and I'm losing community trust because algorithmic content distribution is fragmenting my audience into echo chambers. Users who follow me are only seeing content that agrees with them, and I'm losing the ability to have nuanced conversations. I'm considering moving to YouTube or Substack for better community control, but my audience is so entrenched in Instagram that cross-platform conversion feels impossible.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 422,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, and my engagement has dropped 60% in the last 3 months since Instagram's new AI-generated content policy started showing creator content alongside bot-generated tech reviews. My audience can't distinguish between my authentic hands-on testing and algorithmically-generated competitor content, so they're engaging less with my posts. I've tried switching to Reels but the algorithm seems to favor AI-summarized content now. How do I stand out when Instagram is essentially competing against me with my own niche?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 423,
+    "raw_submission": "As a beauty creator with 280K followers, I'm experiencing severe niche burnout because I've been doing makeup tutorials for 6 years and Instagram's algorithm now heavily penalizes repetitive content. Every new trend (like the viral 'chromatic blending' technique) lasts only 2-3 weeks before the algorithm moves on, forcing me to constantly chase trends instead of building sustainable content. My core audience wants my signature style back, but the algorithm won't push it. I'm torn between staying authentic and staying relevant, and it's affecting my mental health.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 424,
+    "raw_submission": "I have 8.2K followers as a niche gaming historian covering retro arcade games, and I'm plateauing hard on Instagram despite consistent posting. The platform's algorithm shift in 2026 heavily favors short-form entertainment over educational content, which is my core offering. I've noticed that my 15-minute deep-dive posts about the development of 1980s arcade cabinets get 40 likes, while generic gaming memes from accounts with 2K followers get thousands of impressions. I'm considering moving to YouTube, but I'm terrified of starting from scratch.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 425,
+    "raw_submission": "My finance education account just hit 125K followers, but I'm facing a monetization nightmare because Instagram's new policy restricts financial advice creators from using affiliate links and promotional content. I was relying on fintech product sponsorships for 70% of my income, and now I can only earn through ads and Instagram's creator fund, which pays pennies. My content quality hasn't changed, but my revenue dropped 75% overnight. I'm scrambling to find alternative income streams before I have to shut down.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 426,
+    "raw_submission": "I'm a cooking channel creator with 550K followers on Instagram, and I'm experiencing a reach crisis because AI recipe-generation tools have flooded the platform with auto-generated recipe content that Instagram's algorithm now promotes. My authentic, tested recipes are being buried beneath AI-generated variations that cost nothing to produce. When I try to compete by posting more frequently, my feed looks spammy, but if I maintain my 3x weekly schedule, I'm invisible. The platform is essentially helping AI creators cannibalize my niche.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 427,
+    "raw_submission": "As a comedy creator with 34K followers on Instagram, I'm struggling with cross-platform conversion because my viral Instagram Reels (2-5M views) aren't translating to YouTube subscribers or TikTok followers. My content performs completely differently on each platform—what's hilarious on Instagram feels stale on TikTok, and my YouTube audience expects longer-form content. I'm essentially managing three different audiences as three different creators, burning myself out trying to optimize for each platform's unique algorithm and culture.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 428,
+    "raw_submission": "I run a political commentary account with 890K followers on Instagram, and I'm facing intense burnout from the constant pressure to go viral with takes on breaking news. The algorithm now heavily rewards immediate reactions to political events, so I'm forced to post multiple times daily on developing stories, often before I've had time to properly research or think critically. My followers appreciate my analysis, but the algorithm rewards hot takes, not thoughtful content. I'm exhausted and my mental health is suffering from the relentless pace.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 429,
+    "raw_submission": "My ASMR account has 12K followers on Instagram, but I'm plateauing because ASMR content fundamentally works better on YouTube and TikTok where viewers can watch full-length videos without interruption. Instagram's feed format and video compression technology ruins the audio quality that makes ASMR effective. I'm considering pivoting to YouTube, but I've invested years building my Instagram community and I'm afraid of losing my existing followers during the transition.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 430,
+    "raw_submission": "I'm a beauty creator with 2.3M followers on Instagram, and my viral content cycle has become unpredictable because Instagram's algorithm now uses AI to detect when content might go viral and suppresses it to test new creators instead. This 'algorithmic rotation' means that even my most popular content types (tutorial Reels) get suppressed after a few strong days to give visibility to micro-creators. I'm losing millions of potential views to a system designed to democratize reach, but it's destroying my ability to build sustained momentum.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 431,
+    "raw_submission": "As a tech unboxing creator with 156K followers on Instagram, I'm facing a severe competition problem because AI-generated unboxing videos from bot accounts are flooding the market and Instagram's algorithm can't distinguish between authentic reviews and synthetic content. Real companies are now hiring AI to generate unboxing videos instead of working with creators like me, driving down sponsorship rates by 50%. My unique perspective and authentic enthusiasm are being undercut by cheap, automated alternatives.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 432,
+    "raw_submission": "I have 67K followers as a gaming content creator on TikTok, and I'm experiencing a pivot crisis because TikTok's 2026 algorithm update now heavily penalizes gaming content in favor of trends and challenges. My gaming guides and gameplay breakdowns are getting buried, and to stay relevant, I'd need to rebrand toward trend-chasing content that doesn't align with why my audience followed me. I'm stuck choosing between staying authentic or staying visible, and both options feel like failure.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 433,
+    "raw_submission": "My history education channel on YouTube has 245K subscribers, but I'm struggling with monetization because YouTube's 2026 policy now limits educational content creators' ability to use copyrighted historical footage and music for 'fair use' purposes. Many of my videos rely on archival content, and I'm either facing demonetization or expensive licensing fees. I'm caught between maintaining educational quality and maintaining financial viability.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 434,
+    "raw_submission": "As an ASMR creator with 89K followers on Instagram, I'm experiencing a community breakdown because my audience has splintered across platforms (some follow me on YouTube, some on TikTok), and each platform's community features and comment culture are different. I'm essentially managing three separate communities with different expectations, inside jokes, and engagement styles. It's impossible to build a cohesive community when I'm fragmented across platforms.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 435,
+    "raw_submission": "I'm a comedy creator with 21K followers on TikTok, and my reach has collapsed because TikTok's algorithm now heavily favors trending sounds and dances, but my comedy style is observational and character-based. I tried forcing my comedy into trending formats, but it felt inauthentic and my engagement dropped. I'm facing a choice: abandon my creative identity to chase trends or stay true to my style and accept lower visibility.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 436,
+    "raw_submission": "My cooking channel on YouTube has 523K subscribers, but I'm experiencing severe burnout because viewers now expect me to constantly innovate and create viral content, while also maintaining a consistent upload schedule and engaging deeply with my community. AI-powered recipe recommendation tools are now competing with my content by suggesting what I should cook, and I feel like I'm always chasing what the algorithm wants rather than cooking what excites me.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 437,
+    "raw_submission": "I'm a beauty creator with 4.1M followers on Instagram, and I'm facing an algorithm crisis because Instagram's new policy limits visibility for creators over 1M followers to encourage engagement with smaller creators. My reach has been artificially capped, and even my most engaged content only reaches 15% of my followers now. This policy is designed to democratize reach, but it's destroying my ability to sustain sponsorship rates and maintain my creator lifestyle.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 438,
+    "raw_submission": "As a tech creator with 3.8K followers on Instagram, I'm experiencing severe competition from established tech channels because AI tools now allow anyone to create professional-looking tech reviews and breakdowns with minimal expertise or investment. My unique insights and hands-on testing aren't valuable enough to differentiate me when someone can use AI to generate a review in minutes. I'm struggling to find my angle before I burn out completely.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 439,
+    "raw_submission": "I'm a political creator with 156K followers on Instagram, and I'm experiencing community toxicity that's spiraling out of control because my controversial takes attract algorithmic promotion from the platform, which then attracts hostile engagement and harassment from opposing viewpoints. Instagram's algorithm amplifies divisive content for engagement, but it's turning my comment section into a warzone and driving away my genuine community members.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 440,
+    "raw_submission": "My gaming channel on YouTube has 1.2M subscribers, but I'm facing a viral content trap because my audience now expects every video to be a viral event, and the algorithm punishes consistent, quality content that doesn't hit viral benchmarks. I'm caught in a cycle where I need viral hits to maintain relevance, but chasing virality is exhausting and compromises my creative integrity. The pressure is unsustainable.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 441,
+    "raw_submission": "I'm a finance creator with 78K followers on Instagram, and I'm pivoting away from the niche because Instagram's algorithm now heavily suppresses educational financial content in favor of entertainment and lifestyle content. My audience engagement has plummeted because people scroll past educational posts for viral entertainment. I'm considering pivoting to comedy or lifestyle content to stay visible, but that abandons the community I've built and my authentic expertise.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 442,
+    "raw_submission": "As an ASMR creator with 234K followers on Instagram, I'm struggling with cross-platform burnout because I'm managing accounts on Instagram, YouTube, TikTok, and Twitch, and each platform requires completely different content strategies, upload schedules, and community management styles. My ASMR content works on YouTube and TikTok, but Instagram's feed format and Twitch's live format require different approaches. I'm essentially working four full-time jobs and burning out rapidly.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 443,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, but my engagement has dropped by 60% in the last three months. I've noticed that the algorithm now heavily favors Reels with AI-generated thumbnails and auto-captions, which feels inauthentic to my brand. Every time I post my carefully edited, original content, it gets buried beneath creators using AI tools. I'm torn between compromising my values or losing visibility entirely.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 444,
+    "raw_submission": "My beauty channel hit 2.3M followers last year, but Instagram's new policy restricting 'cosmetic enhancement' claims has made it impossible to promote products authentically. They flagged 15 of my recent posts for showing before-and-after makeup transformations, calling them 'misleading content.' My monetization dropped 40% because brands can't work with me anymore. I don't know how to evolve my content without abandoning the transformation-focused approach that built my audience.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 445,
+    "raw_submission": "I'm a gaming streamer with 8.5K followers on Instagram, mostly posting short gaming clips and highlights. The problem is that all the viral gaming content in my niche is now being generated or heavily edited by AI, and creators with massive budgets for AI animation are dominating the Reels feed. My authentic, raw gameplay clips never go viral anymore. I'm stuck at 8K followers while AI-powered competitors with less skill are hitting 500K.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 446,
+    "raw_submission": "As a history educator with 67K Instagram followers, I built my audience sharing lesser-known historical facts and stories. Recently, Instagram pushed me towards making 'trend-based' historical content using their new trending sounds and effects. When I refused and stuck to my educational format, my reach plummeted. Now I'm seeing history content creators pivot to comedy-history hybrids just to stay relevant, but that dilutes the educational value I originally promised my audience.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 447,
+    "raw_submission": "I'm a cooking creator with 156K followers on Instagram, and I'm experiencing severe niche burnout. I've made thousands of recipes, and every unique idea I have is already being done by 10 other creators simultaneously. The algorithm treats all cooking content the same way, so I can't differentiate based on authenticity anymore. I'm considering completely pivoting to restaurant reviews or food criticism, but I'm terrified of losing my audience in the process.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 448,
+    "raw_submission": "My ASMR channel on Instagram has 34K followers, but I'm struggling to convert followers to other platforms for sustainable income. Instagram's monetization rates for ASMR content are abysmal, and when I try to direct followers to YouTube or my Patreon, the platform deprioritizes those posts. I'm trapped in a cycle where I grow on Instagram but can't monetize properly, while my growth on other platforms remains stagnant.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 449,
+    "raw_submission": "I'm a comedy creator with 22K Instagram followers, but my jokes are getting stolen by AI-powered accounts that generate similar content in seconds. I'll post an original joke, and within 24 hours, there are 50 AI-generated variations ranking higher than my original. Instagram's content ID system isn't designed to catch AI plagiarism, so I have no recourse. My growth has stalled because my original ideas aren't rewarded anymore.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 450,
+    "raw_submission": "As a finance educator with 523K followers on Instagram, I face constant policy changes around financial advice disclaimers. Instagram now requires automatic disclaimers on every post mentioning investments or crypto, which breaks my Reel's narrative flow and kills engagement. When I tried complying with the new 2026 guidelines, my click-through rates dropped 45%. But non-compliance risks account suspension. I'm caught between legal compliance and algorithmic success.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 451,
+    "raw_submission": "I'm a tech reviewer with 5.2K followers on Instagram who just realized that 90% of my audience watches my content but never engages or follows my links. My community is invisible to the algorithm, which means my growth is capped. I've invested hundreds of hours into building authentic relationships, but Instagram only rewards viral moments and sensationalism. I don't know how to rebuild community engagement when the platform actively discourages it.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 452,
+    "raw_submission": "I'm a political commentator with 189K followers on Instagram, and the new 2026 policy restricting 'politically divisive content' has created a massive gray area. My entire brand is built on nuanced political analysis, but Instagram is now demonetizing and reducing reach on 60% of my content without clear explanations. I can't pivot away from politics because that's my brand, but staying in the niche means declining revenue and reach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 453,
+    "raw_submission": "I have 12.3K followers on TikTok as a beauty creator, but TikTok's new algorithm heavily favors accounts using their proprietary AI makeup filter in videos. When I use professional makeup in my content instead of their filter, my videos get 70% less reach. It feels like TikTok is forcing me to use their AI tools rather than showcase real makeup skills. I'm considering switching to Instagram or YouTube, but I've built my audience here.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 454,
+    "raw_submission": "I'm a gaming content creator with 850K followers on YouTube, and I'm experiencing major niche saturation within esports commentary. Every game patch gets covered by 100+ creators within hours, and my long-form analysis videos that used to get 500K views now barely hit 200K. I'm considering pivoting to streaming gameplay instead, but that requires completely rebuilding my audience and production pipeline.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 455,
+    "raw_submission": "As a history channel with 4.1K followers on Instagram, I'm watching my growth stall completely while history creators who post 'day in the life' content and personal stories get exponential growth. Instagram's algorithm now treats educational history content the same as entertainment history content, which means I can't compete on authenticity anymore. I need to add entertainment value, but I'm worried that will compromise my educational integrity.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 456,
+    "raw_submission": "I'm a cooking creator with 2.1M followers on Instagram, but I'm hitting a severe viral ceiling. My authentic, slow-paced cooking videos used to trend, but now Instagram's algorithm only prioritizes fast-paced, highly-edited food content with trending audio. I've tried adapting, but my audience came for slow, meditative cooking content. If I fully pivot to fast-paced trends, I'll alienate my core community. I'm stuck between audience loyalty and algorithmic success.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 457,
+    "raw_submission": "I'm a tech explainer with 78K followers on Instagram, but I can't cross over to YouTube successfully. My Instagram Reels get 100K+ views, but when I post the same content on YouTube, it barely hits 5K. The audience behaviors are completely different, and YouTube's algorithm doesn't recognize Instagram virality. I'm trapped in an Instagram bubble with no way to diversify my income through YouTube's better monetization rates.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 458,
+    "raw_submission": "I'm a comedy creator with 7.3K followers on TikTok, and I'm watching my growth get completely cannibalized by AI-generated comedy content. AI comedy accounts post 10x more frequently than I can, with zero creative effort, and TikTok's algorithm treats their videos identically to my original content. I can't compete on volume or speed, and there's no way to differentiate my human creativity when the algorithm doesn't reward authenticity.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 459,
+    "raw_submission": "I'm an ASMR creator with 562K followers on Instagram, and I'm experiencing severe niche burnout. I've exhausted almost every ASMR trigger combination, and my audience is tired of repetitive content. When I tried experimenting with new ASMR subgenres, the algorithm rejected them as 'off-brand.' I need to either completely pivot my niche or accept that my growth is permanently capped. Pivoting feels like abandoning my community.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 460,
+    "raw_submission": "I'm a finance creator with 34K followers on Instagram, and my community is actively asking for more advanced investment strategies and niche financial topics. However, Instagram's monetization dashboard shows that niche content performs worse than broad financial tips. If I follow my community's requests, I'll lose monetization revenue. If I stick to broad content, I'll lose community engagement. I'm torn between serving my audience and earning income.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 461,
+    "raw_submission": "I'm a political commentator with 1.4M followers on YouTube, and my video monetization has been slashed in half due to new advertiser-friendly content guidelines that restrict 'politically sensitive' topics. My entire channel is built on political analysis, but YouTube is forcing me to either demonetize 70% of my content or pivot to safer topics. I can't compromise my mission without losing my identity as a creator.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 462,
+    "raw_submission": "I'm a beauty creator with 91K followers on Instagram, and I'm struggling to convert my Instagram audience to TikTok despite identical content. My Instagram Reels get 200K+ views, but my TikTok videos with the same content get 8K views. The platforms have completely different audience expectations and algorithms, and I'm wasting time and energy trying to replicate success across both. I need to choose one platform or find a better cross-platform strategy.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 463,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram, but my Reels engagement has dropped 60% since the platform started heavily promoting AI-generated comparison videos. Brands are now paying less because they can get similar content from AI tools for a fraction of my rate. I've tried pivoting to longer-form educational content, but the algorithm seems to favor short, snappy AI clips over my detailed analysis. How do I compete with free AI-generated tech reviews when my audience still expects human expertise?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 464,
+    "raw_submission": "As a beauty creator with 320K followers, I'm experiencing severe niche burnout from constantly testing new makeup products and trends. Every video requires expensive products, and brands are increasingly sending AI-edited 'before and after' previews, making my authentic reviews seem less dramatic. My audience engagement is still strong, but I feel like I'm stuck in a hamster wheel—either keep producing quantity or lose relevance. I'm wondering if I should pivot to beauty education or coaching, but I'm terrified of losing my follower base.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 465,
+    "raw_submission": "I have 8.5K followers on Instagram as a personal finance creator, but new platform policies restricting financial advice content have limited my reach significantly. My educational posts about investment basics now get flagged, and brand deals for fintech companies have dried up. I'm losing monetization opportunities while trying to stay compliant with policies I feel are too vague. Should I diversify to other platforms, or is this niche becoming impossible for small creators?",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 466,
+    "raw_submission": "My gaming channel has hit a 2-month plateau at 67K Instagram followers, despite consistent daily content. The algorithm seems to favor algorithmic gameplay clips over my niche focus on retro game mechanics and history. Meanwhile, larger gaming creators are using AI-powered gameplay prediction tools to create viral 'spoiler' content, which audiences engage with more than my thoughtful analysis. I'm losing motivation because my content quality hasn't changed, but my reach is stagnant.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 467,
+    "raw_submission": "As a history creator with 156K followers on Instagram, I'm struggling to convert my audience to other platforms for deeper engagement. My Reels perform well, but when I try to direct followers to YouTube for longer documentaries or to my website for premium content, the conversion rate is under 3%. Instagram's algorithm is optimized for short content, but my value proposition requires longer formats. How do I leverage Instagram growth without being trapped by platform dependency?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 468,
+    "raw_submission": "I run a cooking channel with 12K Instagram followers, but AI recipe generators have flooded the platform with similar beginner recipes. My authentic, grandmother-inspired cooking content used to get decent engagement, but now AI-created meal prep guides are outperforming me. Brands are skeptical about sponsoring me because they think AI can do the same thing cheaper. I'm uncertain whether to focus on ultra-niche techniques or try to go viral with trendy content, neither of which feels authentic to my brand.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 469,
+    "raw_submission": "My political commentary account has 89K followers on Instagram, but recent policy changes have made political content harder to promote through ads. Organic reach is down 45%, and monetization is nearly impossible because brands avoid political creators. I have a loyal community, but I can't grow or sustain income. Pivoting away from politics feels like betraying my audience, but staying in this niche feels economically unsustainable.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 470,
+    "raw_submission": "As an ASMR creator with 34K followers on Instagram, I'm realizing that short-form ASMR content doesn't work as well as longer videos, but the algorithm heavily favors short Reels. My audience wants 30-minute triggers, but Instagram is pushing me toward 15-60 second content. I've tried adapting, but it dilutes the ASMR experience. Should I abandon Instagram for YouTube, or keep trying to make ASMR work on a platform designed for quick content consumption?",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 471,
+    "raw_submission": "I have 2.3M followers on Instagram as a comedy creator, but my viral rate has declined because AI-generated comedy content is now competing with human creators. My organic reach dropped from 8M to 3M impressions per post in three months, even though my content quality is the same. Brands are seeing my metrics decline and offering lower sponsorship rates. I'm experiencing imposter syndrome—wondering if I've lost my edge or if the platform has fundamentally changed.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 472,
+    "raw_submission": "My tech education creator account has 156K followers on Instagram, but I'm struggling with community trust after Instagram's algorithm started promoting my posts differently based on engagement rather than reach. My loyal audience is confused about why they're not seeing my content, and I'm getting accusatory DMs. I've tried explaining algorithmic changes, but my community now thinks I'm not posting regularly. How do I rebuild trust while dealing with algorithm black boxes?",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 473,
+    "raw_submission": "I'm a beauty tutorials creator with 5.2K followers on Instagram, and I just realized I've been creating content in a saturated niche with almost no differentiation. My reach is abysmal, and I don't have enough followers to attract brand deals. I'm considering pivoting to a sub-niche like accessible beauty for elderly women, but I'm terrified of starting over. My current followers might not care about this pivot, and it could tank my already-low engagement.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 474,
+    "raw_submission": "As a gaming streamer and creator with 78K followers on Instagram, I'm experiencing severe burnout from trying to maintain daily content across multiple games while AI-powered cheating detection and ban waves are making content more unpredictable. I can't bank on specific games or strategies anymore. My mental health is declining, but taking a break feels like career suicide. I'm stuck between preserving my sanity and maintaining relevance in a competitive niche.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 475,
+    "raw_submission": "My cooking content creator profile has 412K followers on Instagram, but I'm realizing that most of my audience engagement doesn't convert to actual cooking or purchases. They watch for entertainment, not education. Brands are pulling back on sponsorships because they can't prove ROI. I need to either shift my content to be more conversion-focused or accept that my niche is entertainment-based and find different monetization strategies. This identity crisis is affecting my content direction.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 476,
+    "raw_submission": "I'm a history educator with 23K Instagram followers who has been trying to grow on TikTok for the past six months with minimal success. My Instagram audience loves long-form historical analysis, but TikTok users want quick facts and viral trends. I've tried adapting the same content to both platforms, but the cross-platform conversion is almost nonexistent. Should I focus exclusively on one platform or fundamentally redesign my content strategy for each?",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 477,
+    "raw_submission": "My ASMR channel on TikTok has 4.7K followers, and I'm struggling because TikTok's algorithm seems to prioritize high-energy content over the calm, soothing content that ASMR requires. My videos get minimal views despite positive comments from my small audience. TikTok's platform design (quick scrolls, loud notifications) is fundamentally misaligned with ASMR content needs. I'm wondering if TikTok is simply the wrong platform for ASMR creators or if I'm missing something.",
+    "platform": "TikTok",
+    "follower_range": "1K-10K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 478,
+    "raw_submission": "I have 156K followers on YouTube as a tech reviewer, but my recent videos on AI tools have been demonetized due to controversial content policies I didn't violate. My monetization dropped 70% in one month, and I can't seem to get YouTube's appeals team to respond. My production costs for tech reviews are high, and I can't sustain the channel without ad revenue. Should I pivot to sponsorships-only or diversify platforms, even though YouTube is my primary home?",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 479,
+    "raw_submission": "My political commentary channel has 89K subscribers on YouTube, and I'm facing increasing demonetization due to controversial topics. My audience engagement is strong, but my income is unstable because YouTube's automated systems flag political content unpredictably. I've tried appealing, but manual reviews are inconsistent. I'm considering moving to a membership-based model, but I'm worried it will alienate my audience who expect free content.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 480,
+    "raw_submission": "I'm a finance educator with 234K YouTube subscribers, and I've hit a growth plateau despite consistent video releases. My audience retention is high, but the algorithm isn't pushing my videos to new viewers. Newer finance creators with smaller subscriber bases are ranking higher in search results, which suggests YouTube's algorithm may be favoring fresh voices or different content styles. I'm unsure whether to change my format, increase posting frequency, or accept that I've hit a ceiling in my niche.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 481,
+    "raw_submission": "As a comedy creator with 567K followers on Instagram, I'm facing a viral content crisis: my recent videos aren't reaching beyond my existing audience, despite consistent engagement from followers. The algorithm seems to prioritize new creators' first posts over my established content. I'm experimenting with different posting times and styles, but nothing is moving the needle. I feel trapped by my own follower base—successful with existing fans but unable to grow beyond them.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 482,
+    "raw_submission": "I'm a beauty creator with 11K followers on Instagram, struggling to gain sponsorships because brands require 50K+ followers for most deals. My engagement rate is actually higher than creators with 100K followers, but the follower threshold is absolute. I'm caught in a catch-22: I need sponsorship income to invest in better production quality, but I can't get sponsorships without more followers. My growth is slowing, and I'm considering buying followers, which I know is unethical but increasingly tempting.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 483,
+    "raw_submission": "I'm a tech reviewer with 45K followers on Instagram and I've been posting weekly deep-dives on new gadgets for two years. My engagement has completely flatlined over the last three months, and I suspect it's because Instagram's algorithm now heavily favors short-form video over carousel posts, which is my specialty. I've tried switching to Reels, but my audience doesn't seem to respond to the faster pace, and I'm losing followers who came for my detailed analysis. I'm stuck between adapting my content style or watching my reach disappear entirely.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 484,
+    "raw_submission": "As a beauty creator with 320K followers, I've built my entire income on affiliate links and brand partnerships, but Instagram's new policy restricting product recommendation posts has cut my monthly revenue by 40% in just six weeks. The platform is pushing creators toward their subscription model instead, but my audience isn't interested in paid content. I'm desperate to find new monetization paths without losing the trust I've built, but pivoting feels impossible at this scale.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 485,
+    "raw_submission": "I run a niche finance education account with 8.2K followers focused on cryptocurrency for beginners, and I'm experiencing severe burnout from constantly updating content as the market shifts daily. My audience expects real-time analysis, but the emotional toll of being accountable for financial advice—even educational content—is exhausting me. I'm also terrified that one misguided post could damage my credibility, so I'm spending 15+ hours a week fact-checking and editing instead of creating.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 486,
+    "raw_submission": "I'm a gaming content creator with 2.1M followers on Instagram, but AI-generated gaming commentary and clips are flooding the platform, making it nearly impossible for my original content to stand out. Brands are now asking me to compete with creators who use AI to produce five times the content volume at a fraction of the cost. My unique perspective feels worthless when algorithms can't distinguish authentic commentary from AI-generated summaries.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 487,
+    "raw_submission": "I've been posting comedy skits on Instagram for three years with 67K followers, but the platform's algorithm has become so unpredictable that I can't maintain consistent reach anymore. One week my post gets 200K views, the next it gets 8K with the same format and posting time. The inconsistency makes it impossible to pitch sponsorships to brands who need guaranteed metrics, and I'm losing income opportunities because of this volatility.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 488,
+    "raw_submission": "My ASMR channel on Instagram has hit a hard plateau at 34K followers despite consistently high engagement rates per post. I've noticed that ASMR content performs well in my Stories and DMs, but Instagram's main feed algorithm seems to suppress audio-focused content in favor of visually dynamic posts. I'm caught between staying true to my format or completely redesigning my content to chase Instagram's preferences, but I'm afraid either choice will alienate my existing community.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 489,
+    "raw_submission": "I'm a history educator with 156K Instagram followers, but I'm struggling to convert that audience into YouTube subscribers where the monetization is much better. My history content performs well on Instagram's visual-heavy format, but YouTube viewers expect longer-form narrative content that I'm not equipped to produce without completely rebuilding my workflow. I feel trapped between two platforms with different demands.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 490,
+    "raw_submission": "I run a cooking account with 89K followers on Instagram, and I've been hit hard by the rise of AI recipe generators and auto-generated cooking videos. My unique recipes and techniques are being scraped by AI tools that repurpose my content within hours, and they're appearing in search results above my original posts. I feel like I'm creating content for machines to train on rather than for actual humans to enjoy.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 491,
+    "raw_submission": "My political commentary account has 512K followers on Instagram, but I'm experiencing severe community friction as the platform's moderation policies have become stricter and more unpredictable. Posts I considered completely acceptable are now getting suppressed or flagged for political sensitivity, while similar content from other creators remains untouched. I'm self-censoring out of fear, which is destroying the authentic voice that built my audience in the first place.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 492,
+    "raw_submission": "I'm a niche gaming creator with 42K followers on Instagram focusing on retro consoles, but I've hit a viral ceiling where my content can't break through to mainstream audiences. Every post gets consistent engagement from my loyal community, but the algorithm isn't giving me the initial push needed to reach new people. I'm wondering if Instagram simply doesn't amplify niche content anymore, or if I'm just not optimizing correctly.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "viral",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 493,
+    "raw_submission": "I'm a beauty educator with 1.7M followers on Instagram, and I'm facing a massive challenge converting my audience to my own platform where I could own the monetization entirely. My Instagram followers are used to free, bite-sized beauty tips, but building a sustainable audience on a creator platform requires completely different content strategies and audience psychology. I'm terrified of losing followers if I ask them to migrate.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "multiplatform",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 494,
+    "raw_submission": "I've been creating finance content on TikTok with 156K followers, but the algorithm has shifted heavily toward entertainment over education, making my informative investing videos significantly underperform. Creators who mix comedy with finance tips are thriving, but I've built my brand on serious, credible analysis and I don't want to compromise that. I'm torn between staying authentic and adapting to what the algorithm actually rewards.",
+    "platform": "TikTok",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 495,
+    "raw_submission": "I'm a tech unboxing creator with 28K followers on TikTok, but I'm burning out from the pressure to post daily to maintain algorithmic favor. The platform's expectation of constant content creation has made this unsustainable—I'm spending 8 hours a day just filming and editing while my actual income hasn't grown proportionally. I'm questioning whether the time investment is worth it anymore.",
+    "platform": "TikTok",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 496,
+    "raw_submission": "I run a history channel on YouTube with 287K subscribers, but YouTube Shorts are cannibalizing my long-form video views, and I'm not sure how to compete for algorithm space in my own platform. The monetization on Shorts is terrible compared to traditional videos, but the algorithm seems to prioritize Shorts, forcing me to choose between audience reach and sustainable income. I feel like YouTube is pushing creators toward a format that doesn't pay well.",
+    "platform": "YouTube",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 497,
+    "raw_submission": "I'm an ASMR content creator with 95K YouTube subscribers, and I've built my entire presence around audio quality and immersive soundscapes. However, YouTube's recommendation algorithm increasingly favors visually stimulating thumbnails and high-energy content over the calm, meditative videos I create. My watch time is dropping despite consistent subscriber growth, and I'm unable to translate that growth into meaningful monetization.",
+    "platform": "YouTube",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 498,
+    "raw_submission": "I'm a niche comedy creator with 1.2M YouTube subscribers, but AI-generated comedy sketches and joke compilations are saturating the platform and making it harder for original creators to get recommended. Brands are asking why they should partner with me when AI tools can produce similar content at a fraction of the cost. My competitive advantage based on originality and humor feels increasingly fragile.",
+    "platform": "YouTube",
+    "follower_range": "1M+",
+    "category": "competition",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 499,
+    "raw_submission": "I have 5.8K followers on Instagram as a beginner cooking creator, and I'm struggling to understand CreatorFeed's algorithm because my growth has completely stalled. I post consistently three times a week, engage with my community, and use trending sounds, but I can't seem to break through to the next level. Every other cooking creator I follow seems to be growing, so I'm wondering if I'm missing something fundamental about how the platform works.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 500,
+    "raw_submission": "I'm a politics and current events commentator with 2.3M followers on Instagram, and I'm facing severe community toxicity as my audience becomes increasingly polarized. Comments sections have become battlegrounds, and I'm spending hours moderating while trying to create balanced content that seems to satisfy nobody. The emotional labor of managing a politically divided community is unsustainable, and I'm considering stepping back entirely.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
   }
 ]

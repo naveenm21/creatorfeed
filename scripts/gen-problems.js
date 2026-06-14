@@ -13,9 +13,13 @@ async function generateBatch(startId, count) {
 Each problem should represent a specific challenge a content creator faces in 2026.
 Focus on: AI tools impact, platform policy shifts, niche burnout, and cross-platform conversion.
 Niches: Tech, Beauty, Finance, Gaming, History, Cooking, Comedy, Politics, ASMR, etc.
-Platforms: YouTube, Instagram, TikTok, Multi-platform.
 Follower ranges: 1K-10K, 10K-100K, 100K-1M, 1M+.
 Categories: plateau, reach, viral, algorithm, monetization, pivot, community, burnout, multiplatform, competition.
+
+Platform Distribution Rules:
+- Exactly 75% of the generated problems must have "Instagram" as the platform (e.g. if count is 20, generate exactly 15 Instagram problems).
+- The remaining 25% must be split between "TikTok" and "YouTube" (e.g. if count is 20, generate 2-3 TikTok problems and 2-3 YouTube problems).
+- Do not generate problems for any other platforms.
 
 Return ONLY a JSON array of objects with this schema:
 {
