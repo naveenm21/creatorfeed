@@ -3013,8 +3013,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T16:57:32.762Z",
+    "thread_id": "4b6ba671-ef29-44ba-8374-0cacd39f98d2"
   },
   {
     "id": 303,
@@ -3072,8 +3073,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T16:58:14.555Z",
+    "thread_id": "28b46630-d73e-477a-ac85-3c44ff6c1d1b"
   },
   {
     "id": 309,
@@ -3081,8 +3083,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T16:58:53.468Z",
+    "thread_id": "905221c0-05e5-45ec-be93-63f05898ecca"
   },
   {
     "id": 310,
