@@ -3052,8 +3052,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T14:43:06.985Z",
+    "thread_id": "46902402-4c90-4f13-a7e7-22a6c9574577"
   },
   {
     "id": 307,
@@ -3061,8 +3062,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T14:43:45.568Z",
+    "thread_id": "e1597a59-81b5-4238-8be1-f207e76d4938"
   },
   {
     "id": 308,
