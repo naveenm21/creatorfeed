@@ -11,7 +11,7 @@ export function SubmissionForm() {
   const [triedText, setTriedText] = useState('');
   const [nameAlias, setNameAlias] = useState('');
 
-  const platforms = ['YouTube', 'Instagram', 'TikTok', 'Multi-platform'];
+  const platforms = ['YouTube', 'Instagram', 'TikTok', 'Twitch', 'Multi-platform'];
   const audiences = ['1K–10K', '10K–100K', '100K–1M', '1M+'];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

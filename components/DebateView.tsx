@@ -253,12 +253,12 @@ export function DebateView({
     </main>
   );
 
-  // ── SHARED LAYOUT (both live and published) ──
   const platform = thread.platform || 'Platform';
   let badgeStyle = 'bg-[#FFFFFF15] text-[#FFFFFF]';
   if (platform === 'YouTube') badgeStyle = 'bg-[#FF000015] text-[#FF4444]';
   if (platform.includes('Instagram')) badgeStyle = 'bg-[#E1306C15] text-[#E1306C]';
   if (platform.includes('TikTok')) badgeStyle = 'bg-[#00F2FE15] text-[#00F2FE]';
+  if (platform === 'Twitch') badgeStyle = 'bg-[#9146FF15] text-[#9146FF]';
 
   const isLive = liveStatus === 'debating' || liveStatus === 'pending';
 

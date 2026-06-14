@@ -7,7 +7,7 @@ export interface User {
   updated_at: string
 }
 
-export type Platform = 'YouTube' | 'Instagram' | 'TikTok' | 'Multi-platform'
+export type Platform = 'YouTube' | 'Instagram' | 'TikTok' | 'Multi-platform' | 'Twitch'
 
 export type AgentName = 'Riya' | 'Marcus' | 'Priya' | 'Dev' | 'Karan'
 

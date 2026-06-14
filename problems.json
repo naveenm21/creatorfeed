@@ -2025,8 +2025,8 @@
     "platform": "Twitch",
     "follower_range": "1M+",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T04:28:04.068Z"
   },
   {
     "id": 204,
@@ -2254,8 +2254,8 @@
     "platform": "Twitch",
     "follower_range": "10K-100K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-14T04:28:04.069Z"
   },
   {
     "id": 227,

@@ -6,7 +6,7 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY
 })
 
-const SUPABASE_URL = process.env.SUPABASE_URL
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_SERVICE_KEY = 
   process.env.SUPABASE_SERVICE_ROLE_KEY
 const APP_URL = process.env.APP_URL || 
@@ -215,8 +215,40 @@ async function main() {
     fs.readFileSync(PROBLEMS_FILE, 'utf8')
   )
 
+  console.log('Syncing with remote database to prevent duplicate seeding...')
+  let existingSubmissions = new Set()
+  try {
+    const existingSubmissionsData = await supabaseQuery('threads?select=raw_submission')
+    if (Array.isArray(existingSubmissionsData)) {
+      existingSubmissionsData.forEach(r => {
+        if (r.raw_submission) existingSubmissions.add(r.raw_submission)
+      })
+      console.log(`Found ${existingSubmissions.size} existing threads in DB.`)
+    }
+  } catch (err) {
+    console.warn('Failed to query existing threads from DB. Seeding may produce duplicates if git push fails.', err.message)
+  }
+
+  // Auto-sync local problems.json with DB
+  let syncCount = 0
+  problems.forEach(p => {
+    if (!p.posted && existingSubmissions.has(p.raw_submission)) {
+      p.posted = true
+      p.posted_at = p.posted_at || new Date().toISOString()
+      syncCount++
+    }
+  })
+
+  if (syncCount > 0) {
+    fs.writeFileSync(
+      PROBLEMS_FILE,
+      JSON.stringify(problems, null, 2)
+    )
+    console.log(`Sync complete: Marked ${syncCount} already-inserted problems as posted in problems.json.`)
+  }
+
   const unposted = problems.filter(
-    p => !p.posted
+    p => !p.posted && !existingSubmissions.has(p.raw_submission)
   )
 
   if (unposted.length === 0) {

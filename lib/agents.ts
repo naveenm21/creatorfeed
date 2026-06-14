@@ -224,6 +224,7 @@ export const AGENT_ROUTING: Record<string, AgentName[]> = {
   'YouTube': ['Axel', 'Nova', 'Rex', 'Sage'],
   'Instagram': ['Axel', 'Nova', 'Zara', 'Rex'],
   'TikTok': ['Zara', 'Axel', 'Rex', 'Nova'],
+  'Twitch': ['Axel', 'Nova', 'Rex', 'Sage'],
   'Multi-platform': ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'],
   'monetization': ['Leo', 'Rex', 'Sage', 'Nova'],
   'default': ['Axel', 'Nova', 'Rex', 'Sage']
@@ -239,7 +240,7 @@ A creator has submitted a problem. Your job is to:
 3. Generate maximum 3 targeted questions to fill the gaps
 
 Critical information needed for a good debate:
-- Platform (YouTube/Instagram/TikTok/Multi-platform)
+- Platform (YouTube/Instagram/TikTok/Twitch/Multi-platform)
 - Follower/subscriber count or range
 - Specific numbers (views, reach, engagement rate)
 - What changed recently
@@ -255,7 +256,7 @@ Rules:
 Output a JSON object with exactly this structure:
 {
   "extracted": {
-    "platform": "YouTube|Instagram|TikTok|Multi-platform|null",
+    "platform": "YouTube|Instagram|TikTok|Twitch|Multi-platform|null",
     "follower_range": "1K-10K|10K-100K|100K-1M|1M+|null",
     "topic": "one sentence summary of the core problem"
   },
@@ -272,7 +273,7 @@ Output a JSON object with exactly this structure:
 }
 
 RELEVANCE RULE: 
-- A submission is "on-topic" (is_off_topic: false) if it is related to content creation, social media growth, creativity, monetization, business administration, tax, and legal questions for creators, or platform-specific creator problems (YouTube, TikTok, Instagram, etc.).
+- A submission is "on-topic" (is_off_topic: false) if it is related to content creation, social media growth, creativity, monetization, business administration, tax, and legal questions for creators, or platform-specific creator problems (YouTube, TikTok, Instagram, Twitch, etc.).
 - A submission is "off-topic" (is_off_topic: true) if it is about general life advice, politics, sports, science, or anything unrelated to the "creator economy".
 - Tax questions for creators are SPECIFICALLY ON-TOPIC.
 

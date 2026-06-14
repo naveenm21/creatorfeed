@@ -6,6 +6,7 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
   let badgeStyle = "bg-[#FFFFFF15] text-[#FFFFFF]"; // TikTok/Default
   if (debate.platform === "YouTube") badgeStyle = "bg-[#FF000015] text-[#FF4444]";
   if (debate.platform === "Instagram") badgeStyle = "bg-[#E1306C15] text-[#E1306C]";
+  if (debate.platform === "Twitch") badgeStyle = "bg-[#9146FF15] text-[#9146FF]";
 
   return (
     <div className="py-5 border-b border-[#343536] hover:bg-[#1A1A1B] cursor-pointer transition-colors duration-200 group relative">
