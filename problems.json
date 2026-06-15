@@ -3123,8 +3123,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T12:49:32.637Z",
+    "thread_id": "532d2cc9-e36a-4523-a277-97f3df369612"
   },
   {
     "id": 314,
@@ -3132,8 +3133,9 @@
     "platform": "YouTube",
     "follower_range": "1K-10K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T12:50:15.311Z",
+    "thread_id": "b5a77879-e4b5-460e-920b-6a1993a73772"
   },
   {
     "id": 315,
@@ -3141,8 +3143,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T12:50:54.914Z",
+    "thread_id": "02cbd1c1-9d98-42ea-8793-78125ab486ba"
   },
   {
     "id": 316,
