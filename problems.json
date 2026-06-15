@@ -3183,8 +3183,9 @@
     "platform": "TikTok",
     "follower_range": "1K-10K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T19:29:46.293Z",
+    "thread_id": "8fe2a115-ff1e-4fec-9d73-53d977ae23d7"
   },
   {
     "id": 320,
@@ -3192,8 +3193,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T19:30:28.712Z",
+    "thread_id": "2cd79dfb-1cc8-4614-9c7e-15f6d4a138bf"
   },
   {
     "id": 321,
@@ -3201,8 +3203,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-15T19:31:08.982Z",
+    "thread_id": "a7832a74-4210-4512-99ba-462d46c6eb23"
   },
   {
     "id": 322,
