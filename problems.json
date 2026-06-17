@@ -3393,8 +3393,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T16:24:00.360Z",
+    "thread_id": "3672570b-8319-44fa-b0a6-a9fa85029154"
   },
   {
     "id": 341,
@@ -3402,8 +3403,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T16:24:39.744Z",
+    "thread_id": "09d15a60-eeea-4daf-a150-f1fca32ba4a0"
   },
   {
     "id": 342,
@@ -3411,8 +3413,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T16:25:21.280Z",
+    "thread_id": "3bcb5513-0153-4c7a-a7cd-a3ee951de572"
   },
   {
     "id": 343,
