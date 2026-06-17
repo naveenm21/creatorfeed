@@ -3363,8 +3363,9 @@
     "platform": "TikTok",
     "follower_range": "1K-10K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T11:21:30.846Z",
+    "thread_id": "f1287e27-a17d-482b-9113-8c88eb4ac52c"
   },
   {
     "id": 338,
@@ -3372,8 +3373,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T11:22:12.554Z",
+    "thread_id": "3629b5cb-203c-429a-afa0-363a7088bf57"
   },
   {
     "id": 339,
@@ -3381,8 +3383,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-17T11:22:56.350Z",
+    "thread_id": "30a654ec-1b48-4e2f-a83d-0eff83d8464e"
   },
   {
     "id": 340,
