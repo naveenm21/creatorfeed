@@ -3463,8 +3463,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "niche_burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-18T10:55:12.939Z",
+    "thread_id": "9e0a5e24-eb95-4384-a64c-7c63dad43b53"
   },
   {
     "id": 348,
@@ -3482,8 +3483,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-18T10:55:55.374Z",
+    "thread_id": "4404bb91-cf15-4d27-84dc-f9478dac42ad"
   },
   {
     "id": 350,
@@ -3491,8 +3493,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-18T10:56:36.237Z",
+    "thread_id": "b3707e06-bc45-4cbd-88cd-46d36733829f"
   },
   {
     "id": 351,
