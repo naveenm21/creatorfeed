@@ -3453,8 +3453,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-18T06:12:29.120Z",
+    "thread_id": "afb9aa5d-7a11-4ad6-a5a0-06e11e005b17"
   },
   {
     "id": 347,
@@ -3471,8 +3472,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-18T06:13:13.162Z",
+    "thread_id": "e62b6037-b43f-4cb1-9c0b-a918a0cc25f3"
   },
   {
     "id": 349,
