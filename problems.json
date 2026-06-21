@@ -3782,8 +3782,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T17:07:27.323Z",
+    "thread_id": "acc7d043-9f0c-4765-98f3-484dad9222e9"
   },
   {
     "id": 380,
@@ -3791,8 +3792,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T17:08:06.657Z",
+    "thread_id": "4988e410-aec8-45f7-b3fd-5251dd9b5ff6"
   },
   {
     "id": 381,
