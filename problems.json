@@ -3762,8 +3762,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T14:56:14.785Z",
+    "thread_id": "989d0f9d-ebd0-4194-b132-843cfbebef0c"
   },
   {
     "id": 378,
@@ -3771,8 +3772,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T14:56:56.998Z",
+    "thread_id": "04c7f141-cdbe-4fb8-a904-cf4737222881"
   },
   {
     "id": 379,
