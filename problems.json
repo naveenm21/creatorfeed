@@ -3742,8 +3742,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T10:10:20.010Z",
+    "thread_id": "acd8c426-d426-4908-96b2-3716d3ba559c"
   },
   {
     "id": 376,
@@ -3751,8 +3752,9 @@
     "platform": "TikTok",
     "follower_range": "100K-1M",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-21T10:11:01.168Z",
+    "thread_id": "5a508695-ef49-449e-89bf-01f0395fe755"
   },
   {
     "id": 377,
