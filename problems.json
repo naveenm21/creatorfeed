@@ -3862,8 +3862,9 @@
     "platform": "TikTok",
     "follower_range": "1M+",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-22T18:57:13.634Z",
+    "thread_id": "6fd0d6e1-d6ea-423e-a0f8-1d59c00d95a2"
   },
   {
     "id": 388,
@@ -3871,8 +3872,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-22T18:57:56.891Z",
+    "thread_id": "79f26050-5af5-4f67-98e7-49de1a2487aa"
   },
   {
     "id": 389,
