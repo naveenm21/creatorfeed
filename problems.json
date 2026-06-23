@@ -3922,8 +3922,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-23T15:35:35.505Z",
+    "thread_id": "de9d63e8-cc73-4c55-82a4-e5a057d02ecb"
   },
   {
     "id": 394,
@@ -3931,8 +3932,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-23T15:36:23.004Z",
+    "thread_id": "92942b4d-407b-4e8e-b9f2-973e79159d53"
   },
   {
     "id": 395,
