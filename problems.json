@@ -3982,8 +3982,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-24T09:58:23.077Z",
+    "thread_id": "c669ad16-746e-4f87-832f-a494134b7c52"
   },
   {
     "id": 400,
@@ -3991,8 +3992,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-24T09:59:06.350Z",
+    "thread_id": "12145aa0-74a4-423b-84f1-8c59e74b2f07"
   },
   {
     "id": 401,
