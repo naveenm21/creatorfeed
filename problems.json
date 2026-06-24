@@ -4002,8 +4002,9 @@
     "platform": "TikTok",
     "follower_range": "1M+",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-24T15:19:47.579Z",
+    "thread_id": "cd1ab0a0-833b-40ec-853e-51b0e6850af4"
   },
   {
     "id": 402,
@@ -4011,8 +4012,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-24T15:20:28.379Z",
+    "thread_id": "1607562d-1f08-4119-9bb8-d678f5c3ff93"
   },
   {
     "id": 403,
