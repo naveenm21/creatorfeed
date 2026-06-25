@@ -4102,8 +4102,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "niche burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-25T17:32:13.992Z",
+    "thread_id": "f6b79a0d-785e-44ba-a5b3-80811684e41a"
   },
   {
     "id": 412,
@@ -4111,8 +4112,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-25T17:32:54.076Z",
+    "thread_id": "a22ab024-946a-4142-bd4f-c556e5af8fc2"
   },
   {
     "id": 413,
