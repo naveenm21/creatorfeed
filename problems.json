@@ -4173,8 +4173,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-26T15:11:59.991Z",
+    "thread_id": "5182532a-88dc-41e2-807a-bc281eb3b126"
   },
   {
     "id": 419,
@@ -4182,8 +4183,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-26T15:12:42.281Z",
+    "thread_id": "c0a38772-f773-4d1d-a917-4cca77327d0d"
   },
   {
     "id": 420,
@@ -4191,8 +4193,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-26T15:13:23.055Z",
+    "thread_id": "961e4127-6106-4230-8794-0f9c40030ec1"
   },
   {
     "id": 421,
