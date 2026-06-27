@@ -4293,8 +4293,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T14:14:18.542Z",
+    "thread_id": "54d6ac4e-2a63-479a-ac83-0d3afc217a91"
   },
   {
     "id": 431,
@@ -4302,8 +4303,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T14:15:01.029Z",
+    "thread_id": "a1676ddb-5f67-4938-87e5-0b69aee3cd85"
   },
   {
     "id": 432,
@@ -4311,8 +4313,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T14:15:40.944Z",
+    "thread_id": "7f8fd847-b0b7-442d-b488-5c7cbcd4c17b"
   },
   {
     "id": 433,
