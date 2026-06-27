@@ -4233,8 +4233,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T05:05:45.128Z",
+    "thread_id": "321122c1-80af-480d-883c-8023ee6972d3"
   },
   {
     "id": 425,
@@ -4242,8 +4243,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T05:06:23.816Z",
+    "thread_id": "e0018534-4fa3-411c-a380-53e76b0959e4"
   },
   {
     "id": 426,
@@ -4251,8 +4253,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-27T05:07:10.772Z",
+    "thread_id": "028549e2-6174-4e8b-b674-ab1bdae0db6c"
   },
   {
     "id": 427,
