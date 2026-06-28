@@ -4443,8 +4443,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T16:44:40.316Z",
+    "thread_id": "c07d5421-ee75-4bc1-8dee-8cdb95ae0cd9"
   },
   {
     "id": 446,
@@ -4452,8 +4453,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T16:45:19.119Z",
+    "thread_id": "8f631b96-b70e-4743-8b33-5f22a657da2c"
   },
   {
     "id": 447,
@@ -4461,8 +4463,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T16:45:59.487Z",
+    "thread_id": "c136e5f0-ba06-437c-a31b-ae427711cba3"
   },
   {
     "id": 448,
