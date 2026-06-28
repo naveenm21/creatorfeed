@@ -4383,8 +4383,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T09:42:54.016Z",
+    "thread_id": "fd4aee5e-5588-403b-8562-8694bfd2af44"
   },
   {
     "id": 440,
@@ -4392,8 +4393,9 @@
     "platform": "YouTube",
     "follower_range": "1M+",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T09:43:35.059Z",
+    "thread_id": "99469c84-88c9-474e-bf32-9400c06235ff"
   },
   {
     "id": 441,
@@ -4401,8 +4403,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-28T09:44:14.670Z",
+    "thread_id": "b806f8ef-32e9-4ffc-8e29-50886ce6e5f6"
   },
   {
     "id": 442,
