@@ -4563,8 +4563,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "multiplatform",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T17:58:47.212Z",
+    "thread_id": "6af742d5-8b1b-4cbb-884b-76e3f7d732ad"
   },
   {
     "id": 458,
@@ -4572,8 +4573,9 @@
     "platform": "TikTok",
     "follower_range": "1K-10K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T17:59:26.830Z",
+    "thread_id": "0d11d70c-7aa4-4869-8558-c09d39871186"
   },
   {
     "id": 459,
@@ -4581,8 +4583,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T18:00:07.467Z",
+    "thread_id": "0c2f89f5-3873-43f1-ab6c-c0593e32106e"
   },
   {
     "id": 460,
