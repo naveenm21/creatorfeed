@@ -4503,8 +4503,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T11:32:36.186Z",
+    "thread_id": "6cb86391-256a-4dd6-b519-00e980d9e6ac"
   },
   {
     "id": 452,
@@ -4512,8 +4513,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T11:33:18.819Z",
+    "thread_id": "51f8e7fd-c6ef-480b-9ffc-c3f963f9fcdb"
   },
   {
     "id": 453,
@@ -4521,8 +4523,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-29T11:34:03.400Z",
+    "thread_id": "0efc6999-6f6d-4b4c-93b4-baf95b054324"
   },
   {
     "id": 454,
