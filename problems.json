@@ -4683,8 +4683,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T17:26:24.294Z",
+    "thread_id": "2d0bacbb-451d-4fc4-b30d-7c2acdf2132e"
   },
   {
     "id": 470,
@@ -4692,8 +4693,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T17:27:08.164Z",
+    "thread_id": "29cf176c-0cd4-45a9-bbdc-f39cc67d2509"
   },
   {
     "id": 471,
@@ -4701,8 +4703,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T17:27:51.706Z",
+    "thread_id": "df09f111-c845-4cfa-b4fc-f190eb9ff27e"
   },
   {
     "id": 472,
