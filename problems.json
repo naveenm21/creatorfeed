@@ -4623,8 +4623,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T10:07:53.305Z",
+    "thread_id": "90f9078c-3cb0-4f8f-af21-391dff191318"
   },
   {
     "id": 464,
@@ -4632,8 +4633,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T10:08:34.609Z",
+    "thread_id": "b1ea9c54-5db9-449f-ad29-42008c89fdee"
   },
   {
     "id": 465,
@@ -4641,8 +4643,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-06-30T10:09:14.479Z",
+    "thread_id": "f754573d-b6f8-4566-be55-1246d2187c9f"
   },
   {
     "id": 466,
