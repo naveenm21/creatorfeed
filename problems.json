@@ -4862,8 +4862,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T09:44:16.771Z",
+    "thread_id": "c1c4d73b-0aca-4a25-819a-96c634e0018e"
   },
   {
     "id": 488,
@@ -4871,8 +4872,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T09:44:59.719Z",
+    "thread_id": "db948ec9-fdd3-4d3c-8ca4-68b4544e74b4"
   },
   {
     "id": 489,
