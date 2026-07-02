@@ -4833,8 +4833,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T05:11:50.947Z",
+    "thread_id": "e30c5546-a4ca-482e-9a7d-e74334fe2fab"
   },
   {
     "id": 485,
@@ -4851,8 +4852,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "competition",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T05:12:35.151Z",
+    "thread_id": "f4439655-409b-4a67-a0e7-a5aa310e50cc"
   },
   {
     "id": 487,
