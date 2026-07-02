@@ -4902,8 +4902,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T17:12:31.855Z",
+    "thread_id": "c314738c-b104-4919-8d38-73e7d8903209"
   },
   {
     "id": 492,
@@ -4911,8 +4912,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "viral",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-02T17:13:12.563Z",
+    "thread_id": "8e414466-93c7-4ca8-98ea-a17b27522312"
   },
   {
     "id": 493,
