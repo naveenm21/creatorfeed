@@ -4943,8 +4943,9 @@
     "platform": "TikTok",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-03T09:42:46.218Z",
+    "thread_id": "a0530d69-3e5c-407b-85e9-9c9aff4fa131"
   },
   {
     "id": 496,
@@ -4952,8 +4953,9 @@
     "platform": "YouTube",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-03T09:43:26.210Z",
+    "thread_id": "0dfb4798-4355-4d68-b532-93c4be8b503a"
   },
   {
     "id": 497,
@@ -4961,8 +4963,9 @@
     "platform": "YouTube",
     "follower_range": "10K-100K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-07-03T09:44:06.408Z",
+    "thread_id": "9ddba9cb-4521-40a1-8d84-f808c29dfa20"
   },
   {
     "id": 498,
