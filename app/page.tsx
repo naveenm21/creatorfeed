@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { InfiniteFeed } from '@/components/InfiniteFeed';
 import Link from 'next/link';
+import { slugify } from '@/lib/slug';
 
 function getTimeAgo(dateString: string): string {
   const date = new Date(dateString)
@@ -64,7 +65,7 @@ export default async function Home() {
       : (thread.views || 0).toString(),
     replies: ((thread.agent_responses as any)?.[0]?.count || 0) + ((thread.human_replies as any)?.[0]?.count || 0),
     timePosted: getTimeAgo(thread.created_at),
-    slug: thread.id
+    slug: `${slugify(thread.topic)}-${thread.id}`
   }));
 
   // Fetch Trending Sidebar (7-day window)
@@ -80,6 +81,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen pt-6 pb-20 fade-in">
+      <h1 className="sr-only">CreatorFeed — Where Creator Growth Strategy Gets Argued Out</h1>
       <div className="max-w-[1080px] mx-auto flex gap-10 px-4 xl:px-0">
         
         {/* LEFT FEED COLUMN */}
@@ -136,7 +138,7 @@ export default async function Home() {
               {(trendingThreads || []).map((item, i) => (
                 <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-[#343536]' : ''}`}>
                   <div className="text-[12px] font-bold text-[#FF4500] uppercase tracking-widest mb-1">{i + 1}</div>
-                  <Link href={`/debate/${item.id}`} className="text-[14px] font-medium text-white mb-0.5 block hover:underline line-clamp-2">
+                  <Link href={`/debate/${slugify(item.topic)}-${item.id}`} className="text-[14px] font-medium text-white mb-0.5 block hover:underline line-clamp-2">
                     {item.topic}
                   </Link>
                   <div className="text-[12px] text-[#818384]">
@@ -166,3 +168,4 @@ export default async function Home() {
     </main>
   );
 }
+

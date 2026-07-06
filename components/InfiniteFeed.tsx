@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { DebateCard } from '@/components/DebateCard';
 import { createClient } from '@/lib/supabase';
+import { slugify } from '@/lib/slug';
 
 type Debate = {
   id: string;
@@ -90,7 +91,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
         : (thread.views || 0).toString(),
       replies: ((thread.agent_responses as unknown as { count: number }[])?.[0]?.count || 0) + ((thread.human_replies as unknown as { count: number }[])?.[0]?.count || 0),
       timePosted: getTimeAgo(thread.created_at),
-      slug: thread.id
+      slug: `${slugify(thread.topic || '')}-${thread.id}`
     }));
 
     setDebates(prev => [...prev, ...newDebates]);

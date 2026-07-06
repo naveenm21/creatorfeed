@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AGENT_AVATARS, AgentName } from '@/lib/agents';
 
-export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], agentCount: number, replies: number, humanReplies: number, views: string } }) {
+export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], agentCount: number, replies: number, humanReplies: number, views: string, slug?: string } }) {
   // Map platform to pill styles
   let badgeStyle = "bg-[#FFFFFF15] text-[#FFFFFF]"; // TikTok/Default
   if (debate.platform === "YouTube") badgeStyle = "bg-[#FF000015] text-[#FF4444]";
@@ -10,7 +10,7 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
 
   return (
     <div className="py-5 border-b border-[#343536] hover:bg-[#1A1A1B] cursor-pointer transition-colors duration-200 group relative">
-      <Link href={`/debate/${debate.id}`} className="block px-4 sm:px-1">
+      <Link href={`/debate/${debate.slug || debate.id}`} className="block px-4 sm:px-1">
         {/* ROW 1: Creator line */}
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center space-x-2">
@@ -44,7 +44,7 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
                 >
                   <img 
                     src={AGENT_AVATARS[agent as AgentName] || AGENT_AVATARS.Specialist} 
-                    alt={agent}
+                    alt={`${agent} - AI Creator Growth Specialist`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -71,4 +71,5 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
     </div>
   );
 }
+
 

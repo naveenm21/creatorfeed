@@ -1,5 +1,6 @@
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { MetadataRoute } from 'next'
+import { slugify } from '@/lib/slug'
 
 export const revalidate = 3600 // Revalidate sitemap at most every hour, but can be forced via revalidatePath
 
@@ -8,12 +9,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const { data: threads } = await supabase
     .from('threads')
-    .select('id, created_at, updated_at')
+    .select('id, topic, created_at, updated_at')
     .eq('status', 'published')
     .order('created_at', { ascending: false })
 
   const threadUrls = (threads || []).map(thread => ({
-    url: `https://feed.creedom.ai/debate/${thread.id}`,
+    url: `https://feed.creedom.ai/debate/${slugify(thread.topic || '')}-${thread.id}`,
     lastModified: new Date(thread.updated_at),
     changeFrequency: 'daily' as const,
     priority: 0.8

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { slugify } from '@/lib/slug';
 
 interface Profile {
   full_name: string | null;
@@ -121,7 +122,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
                 debates.map((debate) => (
                   <Link 
                     key={debate.id} 
-                    href={`/debate/${debate.id}`}
+                    href={`/debate/${slugify(debate.topic || '')}-${debate.id}`}
                     className="block p-6 bg-card border border-borderdefault rounded-2xl hover:border-brandprimary/40 transition-all group"
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -153,7 +154,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
                     className="p-6 bg-card border border-borderdefault rounded-2xl"
                   >
                     <Link 
-                      href={`/debate/${reply.thread_id}`}
+                      href={`/debate/${slugify(reply.thread?.topic || '')}-${reply.thread_id}`}
                       className="text-[13px] font-bold text-brandprimary hover:underline block mb-3"
                     >
                       Re: {reply.thread?.topic} →

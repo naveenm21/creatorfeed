@@ -2,7 +2,8 @@
 import { Metadata } from 'next';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { DebateView } from '@/components/DebateView';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { slugify, extractIdFromSlug } from '@/lib/slug';
 
 export const revalidate = 60; // Revalidate every minute
 
@@ -17,11 +18,12 @@ export async function generateMetadata({
   params: { slug: string } 
 }): Promise<Metadata> {
   const supabase = await createServerSupabaseClient()
+  const id = extractIdFromSlug(params.slug)
   
   const { data: thread } = await supabase
     .from('threads')
-    .select('topic, platform, raw_submission, created_at')
-    .eq('id', params.slug)
+    .select('id, topic, platform, raw_submission, created_at')
+    .eq('id', id)
     .single()
 
   if (!thread) {
@@ -34,7 +36,7 @@ export async function generateMetadata({
   const { data: verdict } = await supabase
     .from('verdicts')
     .select('verdict_text')
-    .eq('thread_id', params.slug)
+    .eq('thread_id', thread.id)
     .single()
 
   const title = `${thread.topic} — AI Agents Debate`
@@ -42,13 +44,16 @@ export async function generateMetadata({
     ? verdict.verdict_text.substring(0, 155)
     : `AI agents debate this ${thread.platform || 'creator'} growth problem. Get platform-specific advice, not generic tips.`
 
+  const canonicalSlug = `${slugify(thread.topic)}-${thread.id}`
+  const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`
+
   return {
     title,
     description,
     openGraph: {
       title,
       description,
-      url: `https://feed.creedom.ai/debate/${params.slug}`,
+      url: canonicalUrl,
       type: 'article',
       publishedTime: thread.created_at,
       tags: [
@@ -63,7 +68,7 @@ export async function generateMetadata({
       description
     },
     alternates: {
-      canonical: `https://feed.creedom.ai/debate/${params.slug}`
+      canonical: canonicalUrl
     }
   }
 }
@@ -71,16 +76,23 @@ export async function generateMetadata({
 export default async function DebatePage({ params }: Props) {
   const supabase = await createServerSupabaseClient();
   const { slug } = params;
+  const id = extractIdFromSlug(slug);
 
   // Fetch thread data
   const { data: thread } = await supabase
     .from('threads')
     .select('*')
-    .eq('id', slug)
+    .eq('id', id)
     .single();
 
   if (!thread) {
     notFound();
+  }
+
+  // Redirect to canonical URL if slug doesn't match the SEO format
+  const canonicalSlug = `${slugify(thread.topic)}-${thread.id}`;
+  if (slug !== canonicalSlug) {
+    permanentRedirect(`/debate/${canonicalSlug}`);
   }
 
   // Fetch related data if published
@@ -91,12 +103,12 @@ export default async function DebatePage({ params }: Props) {
 
   if (thread.status === 'published') {
     const [{ data: r }, { data: v }, { data: h }, { data: q }] = await Promise.all([
-      supabase.from('agent_responses').select('*').eq('thread_id', slug)
+      supabase.from('agent_responses').select('*').eq('thread_id', id)
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
-      supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
-      supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', slug).order('created_at', { ascending: true }),
-      supabase.from('intake_questions').select('*').eq('thread_id', slug).order('question_order', { ascending: true }),
+      supabase.from('verdicts').select('*').eq('thread_id', id).single(),
+      supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', id).order('created_at', { ascending: true }),
+      supabase.from('intake_questions').select('*').eq('thread_id', id).order('question_order', { ascending: true }),
     ]);
     
     if (r) {
@@ -107,6 +119,8 @@ export default async function DebatePage({ params }: Props) {
     humanReplies = h || [];
     (thread as any).intake_questions = q || [];
   }
+
+  const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`;
 
   return (
     <>
@@ -121,7 +135,7 @@ export default async function DebatePage({ params }: Props) {
                   "@type": "Article",
                   "headline": thread.topic,
                   "description": verdict?.verdict_text || thread.raw_submission?.substring(0, 200),
-                  "url": `https://feed.creedom.ai/debate/${params.slug}`,
+                  "url": canonicalUrl,
                   "datePublished": thread.created_at,
                   "dateModified": thread.updated_at,
                   "author": [
@@ -178,7 +192,7 @@ export default async function DebatePage({ params }: Props) {
                       "@type": "ListItem",
                       "position": 3,
                       "name": thread.topic,
-                      "item": `https://feed.creedom.ai/debate/${params.slug}`
+                      "item": canonicalUrl
                     }
                   ]
                 }
@@ -198,3 +212,4 @@ export default async function DebatePage({ params }: Props) {
     </>
   );
 }
+

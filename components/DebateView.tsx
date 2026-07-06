@@ -492,7 +492,7 @@ export function DebateView({
                                   <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center border border-[#343536] bg-[#1A1A1B] z-10 relative overflow-hidden">
                                     <img 
                                       src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
-                                      alt={agent.agent_name}
+                                      alt={`${agent.agent_name} - AI Creator Growth Specialist`}
                                       className="w-full h-full object-cover"
                                     />
                                   </div>
@@ -766,7 +766,7 @@ export function DebateView({
                                   {/* eslint-disable-next-line @next/next/no-img-element */}
                                   <img 
                                     src={AGENT_AVATARS[fp.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
-                                    alt={fp.agent_name}
+                                    alt={`${fp.agent_name} - AI Creator Growth Specialist`}
                                     className="w-full h-full object-cover"
                                   />
                                 </div>

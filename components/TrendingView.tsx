@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { slugify } from '@/lib/slug';
 
 export function TrendingView({ initialThreads }: { initialThreads: any[] }) {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -79,7 +80,7 @@ export function TrendingView({ initialThreads }: { initialThreads: any[] }) {
                       <span>{item.human_replies?.[0]?.count || 0} replies</span>
                       <span>{item.agent_responses?.[0]?.count || 0} agents</span>
                     </div>
-                    <Link href={`/debate/${item.id}`} className="text-brandprimary text-[13px] font-medium hover:underline shrink-0">
+                    <Link href={`/debate/${slugify(item.topic || '')}-${item.id}`} className="text-brandprimary text-[13px] font-medium hover:underline shrink-0">
                       Read Debate →
                     </Link>
                   </div>
