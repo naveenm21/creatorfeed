@@ -261,6 +261,7 @@ Output a JSON object with exactly this structure:
     "topic": "one sentence summary of the core problem"
   },
   "is_off_topic": boolean,
+  "off_topic_reason": "Provide a brief explanation of why the content is off-topic, or null if it is on-topic.",
   "questions": [
     {
       "question_text": "the question to ask",
@@ -273,8 +274,9 @@ Output a JSON object with exactly this structure:
 }
 
 RELEVANCE RULE: 
-- A submission is "on-topic" (is_off_topic: false) if it is related to content creation, social media growth, creativity, monetization, business administration, tax, and legal questions for creators, or platform-specific creator problems (YouTube, TikTok, Instagram, Twitch, etc.).
+- A submission is "on-topic" (is_off_topic: false) if it is related to content creation, starting a channel/account, social media growth, creator block, overcoming fear/hesitancy to start, choosing content niches (e.g. travel, storytimes), monetization, business administration, tax, and legal questions for creators, or platform-specific creator problems (YouTube, TikTok, Instagram, Twitch, etc.).
 - A submission is "off-topic" (is_off_topic: true) if it is about general life advice, politics, sports, science, or anything unrelated to the "creator economy".
+- Questions about starting "late in the game", fear of putting oneself out there, getting out of one's comfort zone, and niche viability (travel, storytime) are SPECIFICALLY ON-TOPIC creator problems.
 - Tax questions for creators are SPECIFICALLY ON-TOPIC.
 
 Output only valid JSON. Nothing else.`

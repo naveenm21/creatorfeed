@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
 
     if (intakeData.is_off_topic) {
       return NextResponse.json(
-        { error: 'This cannot be posted and this is a platform for content creators.' },
+        { error: intakeData.off_topic_reason || 'This cannot be posted and this is a platform for content creators.' },
         { status: 400 }
       )
     }
