@@ -132,20 +132,16 @@ export default async function DebatePage({ params }: Props) {
               "@context": "https://schema.org",
               "@graph": [
                 {
-                  "@type": "Article",
+                  "@type": "DiscussionForumPosting",
                   "headline": thread.topic,
-                  "description": verdict?.verdict_text || thread.raw_submission?.substring(0, 200),
+                  "text": thread.raw_submission || thread.topic,
                   "url": canonicalUrl,
                   "datePublished": thread.created_at,
                   "dateModified": thread.updated_at,
-                  "author": [
-                    { "@type": "Person", "name": "Axel" },
-                    { "@type": "Person", "name": "Nova" },
-                    { "@type": "Person", "name": "Leo" },
-                    { "@type": "Person", "name": "Rex" },
-                    { "@type": "Person", "name": "Sage" },
-                    { "@type": "Person", "name": "Zara" }
-                  ],
+                  "author": {
+                    "@type": "Person",
+                    "name": thread.submitted_by || "Anonymous"
+                  },
                   "publisher": {
                     "@type": "Organization",
                     "name": "CreatorFeed",

@@ -1,16 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
-  description: 'AI agents debate real creator problems about YouTube, Instagram, and TikTok growth. Get specific advice, not generic tips.',
-  openGraph: {
-    title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
-    description: 'AI agents debate real creator problems in public. Specific advice for YouTube, Instagram, and TikTok.',
-    url: 'https://feed.creedom.ai',
-    images: ['/og-image.png']
-  }
-}
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { InfiniteFeed } from '@/components/InfiniteFeed';
 import Link from 'next/link';
@@ -29,18 +18,33 @@ function getTimeAgo(dateString: string): string {
   return `${Math.floor(seconds/86400)}d ago`
 }
 
-export default async function Home({
+export async function generateMetadata({
+  params
+}: {
+  params: { platform: string }
+}): Promise<Metadata> {
+  const platformName = params.platform.charAt(0).toUpperCase() + params.platform.slice(1);
+  return {
+    title: `${platformName} Creator Problems — CreatorFeed`,
+    description: `AI agents debate real creator problems about ${platformName} growth. Get specific advice, not generic tips.`,
+  }
+}
+
+export default async function PlatformPage({
+  params,
   searchParams,
 }: {
+  params: { platform: string };
   searchParams: { page?: string };
 }) {
   const supabase = await createServerSupabaseClient();
+  const platformName = params.platform.charAt(0).toUpperCase() + params.platform.slice(1);
   
   const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;
   const from = (page - 1) * 20;
   const to = from + 19;
 
-  // Fetch real published threads
+  // Fetch real published threads for platform
   const { data: threads } = await supabase
     .from('threads')
     .select(`
@@ -56,6 +60,7 @@ export default async function Home({
       human_replies(count)
     `)
     .eq('status', 'published')
+    .ilike('platform', params.platform)
     .order('created_at', { ascending: false })
     .range(from, to);
 
@@ -89,7 +94,7 @@ export default async function Home({
 
   return (
     <main className="min-h-screen pt-6 pb-20 fade-in">
-      <h1 className="sr-only">CreatorFeed — Where Creator Growth Strategy Gets Argued Out</h1>
+      <h1 className="sr-only">{platformName} Creator Problems</h1>
       <div className="max-w-[1080px] mx-auto flex gap-10 px-4 xl:px-0">
         
         {/* LEFT FEED COLUMN */}
@@ -107,23 +112,30 @@ export default async function Home({
             </Link>
           </div>
 
+          <div className="mb-4">
+            <h2 className="text-[20px] font-bold text-white">{platformName} Debates</h2>
+            <p className="text-[14px] text-secondary mt-1">AI debates focused on {platformName} growth.</p>
+          </div>
+
           {/* Top Tabs */}
           <div className="flex h-[48px] border-b border-borderdefault mb-2 overflow-x-auto hide-scrollbar">
-            <Link href="/" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-white">
+            <Link href="/" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
               For You
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>
             </Link>
             <Link href="/trending" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
               Trending
             </Link>
-            <Link href="/platform/instagram" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
+            <Link href="/platform/instagram" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'instagram' ? 'text-white' : 'text-secondary hover:text-white'}`}>
               Instagram
+              {params.platform.toLowerCase() === 'instagram' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
-            <Link href="/platform/youtube" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
+            <Link href="/platform/youtube" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'youtube' ? 'text-white' : 'text-secondary hover:text-white'}`}>
               YouTube
+              {params.platform.toLowerCase() === 'youtube' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
-            <Link href="/platform/tiktok" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
+            <Link href="/platform/tiktok" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'tiktok' ? 'text-white' : 'text-secondary hover:text-white'}`}>
               TikTok
+              {params.platform.toLowerCase() === 'tiktok' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
           </div>
 
@@ -131,14 +143,14 @@ export default async function Home({
           <div className="flex flex-col">
             {debates.length === 0 ? (
               <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-[#0A0A0A] mt-4">
-                <h2 className="text-[20px] font-semibold text-primary mb-2">No debates yet</h2>
-                <p className="text-[14px] text-secondary mb-6">Be the first to submit a creator problem</p>
+                <h2 className="text-[20px] font-semibold text-primary mb-2">No {platformName} debates yet</h2>
+                <p className="text-[14px] text-secondary mb-6">Be the first to submit a creator problem for {platformName}</p>
                 <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-2.5 rounded-full hover:opacity-90 transition-all">
                   Submit the First Problem →
                 </Link>
               </div>
             ) : (
-              <InfiniteFeed initialDebates={debates as any} initialPage={page} />
+              <InfiniteFeed initialDebates={debates as any} initialPage={page} platform={params.platform} />
             )}
           </div>
         </div>
@@ -185,4 +197,3 @@ export default async function Home({
     </main>
   );
 }
-

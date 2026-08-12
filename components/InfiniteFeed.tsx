@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { DebateCard } from '@/components/DebateCard';
 import { createClient } from '@/lib/supabase';
 import { slugify } from '@/lib/slug';
+import Link from 'next/link';
 
 type Debate = {
   id: string;
@@ -34,11 +35,11 @@ function getTimeAgo(dateString: string): string {
   return `${Math.floor(seconds/86400)}d ago`
 }
 
-export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
+export function InfiniteFeed({ initialDebates, initialPage = 1, platform }: { initialDebates: Debate[], initialPage?: number, platform?: string }) {
   const [debates, setDebates] = useState<Debate[]>(initialDebates);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(initialPage);
   const observerTarget = useRef<HTMLDivElement>(null);
   const supabase = createClient();
 
@@ -49,7 +50,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
     const from = page * 20;
     const to = from + 19;
 
-    const { data: threads, error } = await supabase
+    let query = supabase
       .from('threads')
       .select(`
         id,
@@ -66,6 +67,12 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
       .eq('status', 'published')
       .order('created_at', { ascending: false })
       .range(from, to);
+
+    if (platform) {
+      query = query.ilike('platform', platform);
+    }
+
+    const { data: threads, error } = await query;
 
     if (error) {
       console.error('Error fetching more debates:', error);
@@ -97,7 +104,7 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
     setDebates(prev => [...prev, ...newDebates]);
     setPage(prev => prev + 1);
     setLoading(false);
-  }, [loading, hasMore, page, supabase]);
+  }, [loading, hasMore, page, supabase, platform]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -137,6 +144,11 @@ export function InfiniteFeed({ initialDebates }: { initialDebates: Debate[] }) {
         )}
         {!hasMore && debates.length > 0 && (
           <span className="text-tertiary text-[13px] py-4">You&apos;ve reached the end of the line.</span>
+        )}
+        {hasMore && !loading && (
+          <Link href={platform ? `/platform/${platform.toLowerCase()}?page=${page + 1}` : `/?page=${page + 1}`} className="text-brandprimary text-[14px] font-medium hover:underline py-4 block">
+            Load More Debates (Next Page)
+          </Link>
         )}
       </div>
     </div>

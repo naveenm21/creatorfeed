@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { MetadataRoute } from 'next'
 import { slugify } from '@/lib/slug'
@@ -7,13 +8,30 @@ export const revalidate = 3600 // Revalidate sitemap at most every hour, but can
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = await createServerSupabaseClient()
 
-  const { data: threads } = await supabase
-    .from('threads')
-    .select('id, topic, created_at, updated_at')
-    .eq('status', 'published')
-    .order('created_at', { ascending: false })
+  let allThreads: any[] = [];
+  let from = 0;
+  let hasMore = true;
 
-  const threadUrls = (threads || []).map(thread => ({
+  while (hasMore) {
+    const { data: threads } = await supabase
+      .from('threads')
+      .select('id, topic, created_at, updated_at')
+      .eq('status', 'published')
+      .order('created_at', { ascending: false })
+      .range(from, from + 999);
+
+    if (threads && threads.length > 0) {
+      allThreads = [...allThreads, ...threads];
+      from += 1000;
+      if (threads.length < 1000) {
+        hasMore = false;
+      }
+    } else {
+      hasMore = false;
+    }
+  }
+
+  const threadUrls = allThreads.map(thread => ({
     url: `https://feed.creedom.ai/debate/${slugify(thread.topic || '')}-${thread.id}`,
     lastModified: new Date(thread.updated_at),
     changeFrequency: 'daily' as const,
