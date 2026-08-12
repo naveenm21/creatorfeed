@@ -5032,8 +5032,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-12T07:03:32.105Z",
+    "thread_id": "57856a86-82e3-4ffd-80d6-88a849ec6d37"
   },
   {
     "id": 505,
@@ -5041,8 +5042,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-12T07:04:13.050Z",
+    "thread_id": "d3c902de-c227-4f1b-aa51-2d0443e10f27"
   },
   {
     "id": 506,
