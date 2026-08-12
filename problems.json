@@ -4996,5 +4996,466 @@
     "posted": true,
     "posted_at": "2026-07-03T14:53:31.733Z",
     "thread_id": "d14c1603-77a7-4000-8666-9b7618c8429a"
+  },
+  {
+    "id": 501,
+    "raw_submission": "I run a tech meme account with 45K followers that used to get 200K impressions per post, but since Instagram started deprioritizing aggregator content, my reach dropped to 8K impressions even though engagement rates stayed the same. My followers love my curated tech humor, but the algorithm now demands I create original takes instead of resharing industry jokes. I've tried pivoting to original commentary, but my audience came for the quick laughs, not lengthy analysis, so I'm stuck between losing followers or fighting against the platform's new bias toward original creators.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": true,
+    "posted_at": "2026-08-12T07:02:09.458Z",
+    "thread_id": "5371796d-f39a-4680-8f98-d90655fe1503"
+  },
+  {
+    "id": 502,
+    "raw_submission": "My beauty tutorial account with 250K followers used to thrive on polished, aesthetic reels with trending audio, but now those posts get 3K engagements while my unfiltered 'makeup fails' videos get 18K DMs asking for tips. The algorithm clearly favors shareable, relatable content over the perfectly edited content I spent years perfecting. I'm torn between doubling down on the chaotic authenticity that's working or reverting to the high-production aesthetic that defined my brand.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": true,
+    "posted_at": "2026-08-12T07:02:48.557Z",
+    "thread_id": "308b52a9-02be-462e-af8d-c0dfbdc7da7b"
+  },
+  {
+    "id": 503,
+    "raw_submission": "I started a finance education account at 8K followers and built it by posting daily breakdowns of stock news using trending formats, but the moment I missed three days due to a family emergency, my reach plummeted by 60% and hasn't recovered. Now I feel trapped posting daily or watching my account die, even though the constant posting is burning me out and my content quality is suffering. The algorithm seems to penalize any break in frequency, creating this exhausting treadmill where I can't rest without consequences.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 504,
+    "raw_submission": "My gaming highlight channel has 120K followers, but I'm drowning in DMs from fans asking for personalized build recommendations and strategy advice that the algorithm now heavily weights in my favor. I spend 6 hours daily just responding to messages, which cuts into actual content creation, but if I don't reply quickly, the algorithm suppresses my reach. I've hired a community manager, but even that costs $2K monthly and I'm only making $3K from sponsorships, so the math doesn't work.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 505,
+    "raw_submission": "I curate history memes and historical factoids for my 67K followers, and while my posts still get reshares, Instagram's algorithm now buries aggregator content in favor of original historical commentary. My followers come to me for curated content, not original analysis, but the platform is essentially punishing me for being a curator. I'm considering starting a separate original commentary account, but that would dilute my focus and energy across two different strategies.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 506,
+    "raw_submission": "My ASMR account with 2.3M followers used to dominate with whispering videos that accumulated millions of views, but now those same videos only hit 300K impressions while shorter, more relatable 'ASMR fails' clips get 2M sends and DMs from people wanting to chat. The algorithm has shifted from rewarding passive watch time to rewarding content that sparks conversation and sharing, which fundamentally contradicts what ASMR content is designed to do.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 507,
+    "raw_submission": "I run a cooking account with 34K followers where I post polished recipe videos with aesthetic plating and professional lighting, but my data shows people now send more of my messy, improvised cooking videos to friends. I've been investing in better equipment and production, but the algorithm rewards the raw, imperfect 'cooking from my pantry' content instead. This is forcing me to choose between my brand identity as a refined food creator and chasing algorithmic visibility.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 508,
+    "raw_submission": "My comedy account started at 5K followers and I was posting three reels daily to build momentum, which worked until the algorithm suddenly tanked my reach after two weeks of this pace. I learned Instagram now penalizes accounts that post with unnatural frequency, viewing it as low-quality spam behavior. Now I'm caught between the fear that reducing my posting frequency will kill my growth and the reality that overdoing it triggers algorithmic suppression.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 509,
+    "raw_submission": "I've built a 156K follower fitness account by reposting gym transformations and workout tips curated from other creators, but Instagram has started burying my posts lower than original fitness creators' content with worse production quality. My audience follows me because I curate the best fitness content, but the algorithm is essentially telling me that curation is no longer valued. I'm considering completely rebranding to original content, but that's a risky pivot when my entire audience came for my curation ability.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 510,
+    "raw_submission": "My tech education account with 89K followers has started seeing a plateau because people scroll past my detailed, well-researched carousel posts but send my off-the-cuff, conversational reel replies to friends as DMs. I'm realizing the algorithm rewards content that feels like a conversation with a friend rather than a lecture, so I'm having to completely rethink how I package my knowledge. But when I shift to this casual style, some of my OG followers complain that the content feels less professional.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 511,
+    "raw_submission": "I manage a beauty e-commerce account with 445K followers that sells makeup products, and I've noticed that my highly styled, influencer-like posts get likes but almost zero sends or DMs, while my 'real customer reviews' videos drive 40% of my sales through DM inquiries. The algorithm is clearly pushing me toward authentic, customer-focused content over brand aesthetics, which requires a completely different content approach and storytelling style than what I've been doing.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 512,
+    "raw_submission": "I run a political commentary account with 78K followers that posts original analysis, but since I gained the followers by sharing trending political memes, my audience engagement dropped when I shifted to original long-form content. The algorithm actually rewards my original commentary with better reach, but my followers don't interact with it the way they did with curated meme content. I'm watching my follower growth stall because I'm creating content that the algorithm loves but my audience doesn't engage with as much.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 513,
+    "raw_submission": "My gaming account hit 234K followers by posting daily tips and trick compilations, but I'm now so burned out from maintaining this schedule that my content quality has noticeably dropped, yet the algorithm still penalizes me if I skip a day. I've noticed that lower-quality daily content still performs better than higher-quality content posted every other day, which creates a perverse incentive to stay exhausted rather than rest. I'm afraid if I slow down to recharge, my entire account will collapse.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 514,
+    "raw_submission": "I started an education account at 12K followers teaching history through meme formats because that's what goes viral, but I'm realizing that while the content spreads, it doesn't create genuine community or generate DM conversations. The algorithm now rewards DM volume and 'sends' more than pure viral reach, so my viral meme-based strategy isn't translating to algorithmic success anymore. I need to shift to more thoughtful, discussion-generating content, but that's harder to create at scale.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 515,
+    "raw_submission": "I manage a fitness brand account with 567K followers and I'm spending 8 hours daily managing comment replies and DMs because the algorithm now heavily weights community response time. My team can't keep up with the volume, but outsourcing responses dilutes the personal brand voice that attracted followers in the first place. I'm at a point where I either hire a larger team (which eats into my already tight margins) or accept that my reach will decline if I can't maintain rapid response times.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 516,
+    "raw_submission": "My comedy account with 92K followers thrived on perfectly edited, concept-heavy skits with trending audio, but now my audience sends more of my unscripted, behind-the-scenes bloopers to friends. I'm caught between the identity I built as a polished comedy creator and the reality that the algorithm rewards raw, authentic humor. Every time I post something relatable and messy, it outperforms my high-production content, but it feels like I'm abandoning the craft I spent years perfecting.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 517,
+    "raw_submission": "I run a finance meme account with 156K followers that used to get 400K impressions per post by curating the best financial humor from across the internet, but Instagram's algorithm now buries my content in favor of original finance commentary from smaller creators. My followers specifically chose me for my curation ability, not for original analysis, but the platform is essentially forcing me to compete in a space where I'm weaker. I'm considering rebranding entirely, but that risks alienating my existing audience.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 518,
+    "raw_submission": "I started an ASMR cooking account at 18K followers and I post three times weekly, which I thought was sustainable, but after a month of consistent posting, I started seeing diminishing returns even though my frequency stayed the same. I realized the algorithm detected that I was in a high-frequency rhythm and started suppressing my reach to prevent feed saturation. When I tried reducing to twice weekly, my reach recovered, but now I'm struggling to grow because the algorithm rewards consistency differently than it did two years ago.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 519,
+    "raw_submission": "My beauty education account with 203K followers answers DM questions about skincare, but the volume has become overwhelming since Instagram's algorithm started heavily weighting response engagement. I receive 500+ DMs daily and I can only personally respond to about 100 before running out of time to create content. Hiring someone to respond on my behalf damages the personal connection that made people follow me, but not responding quickly tanks my algorithmic reach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 520,
+    "raw_submission": "I built a tech news aggregation account to 34K followers by curating the best daily tech announcements and insights, but the algorithm now deprioritizes my content in favor of original tech analysis from creators with smaller followings. My unique value was being the 'go-to' curation source, but Instagram is systematically removing the advantage that comes from being a skilled curator. I'm considering pivoting to original tech commentary, but that requires building credibility in a completely different space where I have no advantage over existing creators.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 521,
+    "raw_submission": "I run a comedy meme account with 45K followers that used to get 200K+ views per post, but since Instagram deprioritized aggregator content in favor of original creators, my reach has tanked to 12K views even though my engagement rate is still solid. I've noticed that accounts reposting trending audio and viral formats get buried, while comedians with unique POVs and original jokes are thriving. I'm considering pivoting to creating entirely original comedy sketches instead of curating memes, but I'm scared of losing my existing audience who expects that format from me.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 522,
+    "raw_submission": "My beauty tutorial account has 320K followers and I spend 3+ hours daily filming and editing flawless, aesthetic reels with trending sounds, yet my sends and DM shares have dropped 60% in the past 6 months while my friend's 'honest makeup fails' account is getting 10x more saves and forwards. I realized the algorithm now heavily prioritizes content people want to share with friends over pretty content people just like, and my perfectly curated aesthetic approach is completely misaligned with what's actually spreading on the platform.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 523,
+    "raw_submission": "I manage a finance education account at 78K followers and I've been caught in a brutal cycle where my reach kept declining, so I started posting 5-6 times daily instead of my original 2 times, which initially boosted views but then Instagram's algorithm flagged me for over-posting and now my content gets shadowbanned for 48 hours after each posting spree. I'm exhausted, my quality has suffered, and I'm making less money despite working twice as hard, and I'm not sure how to break this trap without starting from scratch.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 524,
+    "raw_submission": "My history education account grew to 250K followers by creating well-researched, visually appealing historical content, but I'm now hitting a plateau because audiences are exhausted with the typical 'historical fact' format and the algorithm is rewarding history creators who inject their unique perspective or controversial takes into their content. I'm struggling to figure out how to maintain my credibility while adopting a more opinionated voice, and I'm afraid of alienating my existing audience if I suddenly start sharing personal historical interpretations.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 525,
+    "raw_submission": "I run a gaming highlights account with 2.3M followers and I'm receiving 400-500 DMs daily from followers asking for gaming advice, team recommendations, and coaching, but I only have one person managing community replies and we can barely respond to 10% of messages within 48 hours. Instagram's algorithm now heavily weights community interaction metrics, so my declining response rate is directly hurting my reach, but hiring a full community team would cannibalize my entire monetization margin.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 526,
+    "raw_submission": "My cooking account has 156K followers and I've been posting the same high-production-value, aesthetically perfect recipe reels every Monday and Thursday for 18 months, but my engagement is stagnating because audiences now prefer raw, conversational 'here's what I'm actually making for dinner' content over polished tutorials. I invested heavily in studio setup and lighting, but that investment is now a liability since the algorithm favors authentic, low-effort content that shows personality over production value.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 527,
+    "raw_submission": "I manage a tech review account at 34K followers and I'm being outperformed by aggregator accounts that compile trending tech opinions, which technically violates Instagram's creator-first policy, but they're still somehow ranking higher in the feed and getting more viral moments than my original reviews. I feel like the algorithm update was supposed to help me, but I'm realizing the enforcement is inconsistent and these aggregators still have enough authority to compete, leaving me confused about what strategy actually works.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 528,
+    "raw_submission": "My e-commerce account has 1.8M followers and I noticed that my product aesthetic reels are getting 2M+ views but only 3-5% are actually sending the post to friends or saving it, while competitor accounts with user-generated content testimonials are getting 40% send rates on half the views. I'm realizing that relying on beautiful product shots isn't enough anymore; the algorithm is measuring actual sharing and watch-time completion, not just passive viewing, and my content strategy needs a complete overhaul.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 529,
+    "raw_submission": "I run an ASMR account with 567K followers and I've built my entire brand around trending ASMR audio loops and satisfying visual triggers, but my watch-time metrics have dropped significantly because audiences are burned out on generic triggers and want personalized, original ASMR experiences tailored to specific scenarios. I'm now competing with smaller ASMR creators who are building community and creating bespoke content, and my scale advantage is meaningless if I can't diversify my content approach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 530,
+    "raw_submission": "My fitness coaching account has 89K followers and I've been replying to every comment and DM personally, which used to take 2 hours daily but now takes 5+ hours because my audience has tripled in the past year, and the algorithm penalizes me if I don't maintain that same response rate. I'm tempted to hire a VA to handle responses, but I'm worried that impersonal replies will tank my community trust and actually hurt my viral potential more than if I just ignored the community metric entirely.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 531,
+    "raw_submission": "I manage a politics education account at 1.2M followers and I've carefully curated neutral, informative content about political systems for years, but the algorithm is now rewarding creators who take clear stances and share their authentic political opinions, making my balanced approach feel boring by comparison. My audience is increasingly sending my content less frequently and gravitating toward more opinionated creators, and I'm terrified that pivoting to a personal political POV will damage my credibility as an educator.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 532,
+    "raw_submission": "My beauty brand account has 445K followers and I've been experimenting with posting 3 times daily to combat declining reach, which temporarily boosted my visibility but then Instagram's algorithm started throttling my content as spam, and now even my best-performing posts only reach 8% of my followers compared to the 22% average I used to get. I'm stuck in a loop where posting less means less visibility, but posting more triggers penalties, and I can't figure out the optimal frequency that keeps me visible without triggering the algorithm.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 533,
+    "raw_submission": "I run a comedy sketch account with 156K followers and I noticed that my highly produced, scripted sketches with professional editing get fewer shares than raw, unedited clips where I'm just riffing with friends or responding to comments in character. The algorithm is clearly favoring authentic, relatable moments over polished content, but my entire brand identity and content pipeline is built around high-production sketches, and I'm unsure how to pivot without losing the production quality that originally attracted my audience.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 534,
+    "raw_submission": "My gaming education account has 92K followers and I've been relying on trending gaming audio and viral clips from popular streamers edited into tutorials, but Instagram's aggregator penalty has made this approach nearly impossible as my reach dropped from 180K to 45K views per post in 3 months. I need to create entirely original gaming content, but that requires significantly more time and resources, and I'm not sure my audience will stick around during the transition period when my posting frequency will inevitably drop.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 535,
+    "raw_submission": "I manage a cooking education account at 234K followers and I've received 3,500+ DMs this month from followers asking recipe questions, substitution advice, and technique clarifications, but I can only reasonably respond to maybe 200 of them, and the algorithm is punishing me for not engaging with the rest. I feel like I'm being penalized for my own success, and hiring a team to respond to every DM would require me to raise prices or partner with brands, which conflicts with my mission to make cooking education accessible.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 536,
+    "raw_submission": "My finance account has 567K followers and I've built my brand on data-driven, objective financial advice using trending audio overlays and aesthetic infographics, but my saves and shares have plummeted because audiences now want opinionated financial takes and personal stories about money mistakes rather than neutral information. The algorithm is rewarding finance creators with strong POVs, but I've always positioned myself as unbiased, and I'm worried that injecting personal opinions will damage my credibility with my existing followers who value objectivity.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 537,
+    "raw_submission": "I run a tech news aggregator account with 256K followers that used to get 800K+ views weekly by curating the best tech news and trends, but since Instagram's creator-first algorithm shift, my reach has been cut in half and I'm being deprioritized in favor of individual tech reviewers and creators who produce original analysis. I've invested years building authority through curation, but that authority is now worthless on Instagram, and I'm unsure whether to pivot to original tech content or shift my focus to another platform entirely.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 538,
+    "raw_submission": "My ASMR account has 234K followers and I've spent the last year perfecting my aesthetic, investing in premium microphones and creating visually consistent content with trending ASMR audio, but my watch-time metrics show audiences are skipping through my content in the first 3 seconds because they've heard the same triggers thousands of times. I'm exhausted from maintaining the production quality, but if I lower my standards, I risk alienating the followers who subscribed for the aesthetic in the first place.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 539,
+    "raw_submission": "I manage a fitness account at 445K followers and I noticed that my transformation reels and workout tutorials are getting solid views but almost zero shares, while micro-influencers with 50K followers posting raw, unfiltered gym struggles are getting 5x more DM forwards and saves. The algorithm is clearly measuring send-rate and watch-time completion more heavily than raw view counts, but my entire monetization strategy is based on reach numbers, so optimizing for shares and engagement actually hurts my revenue in the short term.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 540,
+    "raw_submission": "My education account has 612K followers and I've been gradually increasing my posting frequency from 4 times weekly to 10 times weekly over the past 6 months to combat reach decline, which worked initially but now my engagement rate per post has dropped 35% and I'm receiving complaints from followers about content saturation. I'm completely burned out from the content treadmill, but I'm terrified that if I reduce posting frequency, my algorithm ranking will tank even further, trapping me in a cycle where I have to post constantly just to maintain my current mediocre reach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 541,
+    "raw_submission": "I run a history meme account with 178K followers and I've been successfully curating viral historical memes and trending formats for 3 years, but the aggregator penalty has decimated my reach from 400K to 120K views per post in 2 months, and I'm realizing that my entire content model is now algorithmically disadvantaged. Creating original historical content would require completely different skills and resources, and I'm at a crossroads between investing heavily in a format I'm not confident about or accepting that my niche is now obsolete on Instagram.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 542,
+    "raw_submission": "I run a tech news aggregation account with 45K followers that used to get 8-12% engagement, but since mid-2025 my reposts of breaking news from other creators are getting buried below original explainers and hot takes. My followers come for curated industry updates, but Instagram's algorithm is punishing me for not creating original analysis, forcing me to either pivot to commentary or watch my reach tank by 60%. I've tried adding my own commentary to each post, but it takes 3x longer and my audience seems to want the speed of curation, not my opinions.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 543,
+    "raw_submission": "My beauty tutorial account hit 250K followers by perfecting aesthetic reels with trending audios, but engagement has flatlined because the algorithm now prioritizes content that gets sent to DMs and watch time over likes. My highly polished makeup transformation videos get 50K likes but only 2K saves and minimal shares, while a messy, real-time makeup fail video from a smaller creator is outperforming me in reach. I'm realizing my entire content strategy is optimized for a 2023 Instagram, and I'm terrified to completely rebrand because my audience might not follow me into more raw, unpolished territory.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 544,
+    "raw_submission": "I started a finance education account at 8K followers, posting daily market tips and investment basics, but I'm now burnt out from posting twice daily to maintain momentum after my reach dropped 40% in three months. Every time I skip a day or lower my posting frequency, the algorithm punishes me further, so I'm trapped in this exhausting cycle where I'm creating content I don't even believe in just to feed the machine. My comment section is also exploding with DM requests and clarification questions, and Instagram's algorithm is weighing my slow reply time against my account, so I'm losing sleep managing 200+ messages per day while still trying to produce content.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 545,
+    "raw_submission": "My gaming streaming clips account has 520K followers and used to go viral with highlight reels from popular streamers, but now those borrowed-content posts get 5x less reach than original commentary or reaction videos I create. The platform is clearly deprioritizing curation, and I'm caught between my audience who followed me for quick gaming news and the algorithm's demand for original perspective. I've tried pivoting to original gaming analysis, but my audience engagement is mixed because they're used to me being a news aggregator, not a creator with opinions.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 546,
+    "raw_submission": "I manage a history education account with 67K followers that thrives on well-researched, beautifully designed historical posts, but my reach has stalled because Instagram now rewards highly shareable, relatable content over informative graphics. My followers expect polished content, but the algorithm is pushing me toward more casual, opinion-driven history takes and trending audio-backed reels that feel cheap compared to my usual standards. I'm seeing smaller history accounts blow up with controversial takes and viral formats, while my substantive 10-slide carousels get ignored, forcing me to choose between staying true to my educational mission or chasing algorithmic relevance.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 547,
+    "raw_submission": "My cooking account hit 1.2M followers with aesthetic plating reels, but engagement metrics have become unhinged—I'm getting 200K likes but only 15K saves and almost no DM shares, while a chaotic, 'cooking with me' unedited reel from a 50K follower account is outperforming me in algorithmic reach. I've realized my audience doesn't want the fantasy of perfect food; they want to actually recreate recipes and feel connected to me, not my aesthetics. Pivoting to authentic, messy kitchen content feels like admitting everything I've built over three years was the wrong approach.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "pivot",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 548,
+    "raw_submission": "I run a comedy meme account with 380K followers that reposts trending formats and observational humor, but in the last six months, I've watched my reach crater because Instagram is deprioritizing accounts that remix existing content. My original comedic takes perform 3x better, but creating original comedy is infinitely harder than curating memes, and I'm burning out trying to be a comedy writer instead of a curator. My followers signed up for my taste in memes, not my original jokes, so even when I do create original content, engagement is confused and lower than my best-performing curated posts from last year.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 549,
+    "raw_submission": "My ASMR account with 92K followers used to thrive on perfectly edited, high-production audio and visual content, but watch time metrics have become everything, and my polished 60-second reels are being outperformed by unedited 15-minute long-form videos from competitors. The algorithm wants people to stay on my content longer, but my audience followed me for concise, aesthetic ASMR triggers, not rambling hour-long sessions. I'm trying to experiment with Reels+ and longer formats, but it's completely contradicting my brand identity and alienating my core audience who expect quick, satisfying ASMR hits.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "algorithm",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 550,
+    "raw_submission": "I manage a fitness education account with 156K followers, and I'm drowning in DM requests for personalized workout advice, meal plans, and form checks that the algorithm now heavily rewards me for responding to quickly. My comment section has become a support forum with 500+ new messages daily, and Instagram's algorithm is penalizing me because I can't reply to everyone within an hour. I've hired two community managers and it's still not enough, and the monetization isn't scaling fast enough to justify the operational costs of running what's essentially become a customer support operation instead of a content creation channel.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null
+  },
+  {
+    "id": 551,
+    "raw_submission": "My e-commerce brand account with 234K followers used to drive sales with aesthetically perfect product photos and trending promotional reels, but now customers want behind-the-scenes authenticity and relatable brand storytelling, and my polished product shots are getting half the engagement they did two years ago. I'm being forced to post raw, unfiltered content showing manufacturing imperfections and real customer reviews to stay relevant, but this authenticity is actually surfacing complaints and criticisms I'd rather keep hidden. The algorithm is rewarding radical transparency, but it's making customer service harder and creating public record of every operational flaw my business has.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null
   }
 ]
