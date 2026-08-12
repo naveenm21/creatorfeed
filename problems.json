@@ -5052,8 +5052,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-12T08:00:11.814Z",
+    "thread_id": "519b61ff-329b-428e-86d5-68b7f18e0bd3"
   },
   {
     "id": 507,
