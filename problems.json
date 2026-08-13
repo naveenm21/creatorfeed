@@ -5113,8 +5113,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-13T16:27:27.973Z",
+    "thread_id": "eb060fa4-251c-4ed8-8b82-99f8e18b24fb"
   },
   {
     "id": 513,
@@ -5152,8 +5153,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-13T16:28:07.680Z",
+    "thread_id": "ba9d68f2-c5f0-46ef-9aa6-07720d1d3354"
   },
   {
     "id": 517,
@@ -5161,8 +5163,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-13T16:28:47.033Z",
+    "thread_id": "1049d4c2-ef83-495c-a640-612f470a1e82"
   },
   {
     "id": 518,
