@@ -5469,5 +5469,1005 @@
     "category": "monetization",
     "posted": false,
     "posted_at": null
+  },
+  {
+    "id": 552,
+    "raw_submission": "I'm a micro-influencer with 8K followers in the sustainable fashion space. Every time I use the 'Shop' sticker on my Stories, my swipe-up rate plummets by 65% compared to Stories without it, but my brand partners require the Shop sticker in our contracts. My engagement metrics look terrible to other potential sponsors even though the actual conversion rate is decent.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 553,
+    "raw_submission": "I post productivity content and I've discovered that my Reels perform 3x better when I use a specific shade of blue in the thumbnail, but only on Wednesdays. On other days, the same blue actually performs worse than my usual thumbnail colors. I can't figure out if this is algorithmic or audience-behavior related, and scheduling content around this is killing my workflow.",
+    "platform": "Instagram",
+    "follower_range": "45K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 554,
+    "raw_submission": "My niche is interior design and I have 156K followers. I noticed that whenever I post a carousel with 8 slides, the algorithm distributes it heavily to my followers' home feeds, but when I post 9 slides, it gets pushed to Explore instead. This is backwards from what I'd expect, and my followers engage way more than random Explore traffic, so I'm losing money on brand deals.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 555,
+    "raw_submission": "I run a true crime discussion account with 67K followers. Every time I post a Reel, it gets shadow-suppressed if I mention a real person's name in the caption, but if I use a nickname or generic descriptor, the same video gets full distribution. I can't find any official policy about this, and it's affecting my ability to cover recent cases.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 556,
+    "raw_submission": "I'm a pet content creator with 320K followers. My audience is split 60/40 between US and UK followers, but Instagram's algorithm seems to penalize my Reels if the audio has a British accent narration, even though my UK audience engages more. My US audience is larger by raw numbers, so the algorithm optimizes for them, but I'm losing authenticity and my UK followers feel ignored.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 557,
+    "raw_submission": "I post art tutorials and have 34K followers. When I use the 'Collaboration' feature with other creators, my video gets shown to their followers, but it tanks with my own followers—like the algorithm actively deprioritizes it in my followers' feeds. So I gain reach with new people but lose engagement with my core audience, making my metrics look inconsistent to brand partners.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 558,
+    "raw_submission": "I'm a fitness coach with 89K followers and I've noticed that Reels featuring me doing the exercise perform worse than Reels where I'm just explaining the form without demonstrating. My audience says they prefer seeing me work out, but the algorithm clearly doesn't push those videos. It feels like I'm being punished for being on camera.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 559,
+    "raw_submission": "My cooking account has 12K followers and I discovered that if I post a Reel on Monday, Wednesday, or Friday, the comments section gets flooded with bot engagement within the first hour, which seems to suppress organic reach. But if I post on Tuesday, Thursday, or Saturday, I get clean engagement. I don't know why certain days attract bots, and changing my posting schedule is messing with my audience's expectations.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 560,
+    "raw_submission": "I run a book review account with 103K followers. Whenever I create a Reel that's critical of a popular book, the video gets demonetized despite having no policy violations, but positive reviews are always eligible for bonuses. I think the algorithm is interpreting negative sentiment as 'controversial content,' but I can't prove it, and my honest reviews are being financially penalized.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 561,
+    "raw_submission": "I'm a mental health awareness creator with 52K followers. My most engaged audience members are also the ones who engage with triggering comments, so when I pin positive, supportive comments, the algorithm shows my post to fewer people. But if I leave up toxic comments, my reach increases. I'm caught between community safety and algorithmic performance.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 562,
+    "raw_submission": "My travel account has 78K followers and I've realized that Reels shot vertically with the phone in landscape mode perform better than actual vertical videos. It's a bizarre technical quirk, but the algorithm seems to prefer the slightly off-aspect-ratio format. I can't find anyone else discussing this, and it's forcing me to change how I film.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 563,
+    "raw_submission": "I post gaming commentary with 156K followers. Every Reel I post gets initially pushed to 40K+ accounts as a test, but if the watch time drops below 65% completion in the first 10 seconds, it never recovers algorithmically, even if the watch time improves later. It's like I have one chance to hook people and there's no second chance.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 564,
+    "raw_submission": "I run a skincare education account with 34K followers. I've noticed that my Reels get throttled if I use before-and-after images, even though these are the most helpful educational content. I think Instagram thinks I'm promoting skincare products as medical treatments, but I'm just showing real transformations. The algorithm suppresses educational content that looks like it could be a testimonial.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 565,
+    "raw_submission": "I'm a comedy creator with 91K followers and I've discovered that my Reels perform better when I intentionally leave a small mistake or 'imperfection' in the edit—like a jump cut or a slightly blurry frame. Perfect, polished content underperforms compared to authentically messy videos. I'm now deliberately making production mistakes, which feels backwards.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 566,
+    "raw_submission": "My photography account has 267K followers. I've realized that Reels where I explain my editing process get half the reach of Reels showing just the final image, even though the process videos get 10x more comments. High engagement but low reach is a confusing metric that's hard to explain to brands who only look at view counts.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 567,
+    "raw_submission": "I post about personal finance and have 19K followers. Whenever I reference specific stock tickers or crypto tokens in my Reels, the video gets age-gated to 18+ and loses 70% of its potential reach, even though I'm not promoting—just discussing. My younger audience can't see it, and financial education is being gatekept by the algorithm.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 568,
+    "raw_submission": "I run a lifestyle account with 73K followers. My Stories consistently get 40% fewer views if I post them within 2 hours of posting a Reel, but if I space them out by 4+ hours, Story views return to normal. It's like the algorithm thinks I'm over-posting and suppresses my Story reach as a penalty. I have to carefully time my content to avoid this invisible throttle.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 569,
+    "raw_submission": "I'm a productivity creator with 45K followers and I've noticed that my audience engagement rate is highest between 2-4 AM (my followers are global), but the algorithm doesn't push my content to Explore during those hours. So I'm either reaching my core audience in dead hours or reaching strangers during peak hours. I can't optimize for both.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 570,
+    "raw_submission": "My niche is vintage fashion and I have 112K followers. Every time I post a Reel showing a thrifted item, the algorithm suppresses it compared to Reels showing vintage pieces from my own closet. I think Instagram's algorithm is flagging secondhand items as potentially counterfeit, even though everything I feature is authenticated. It's punishing sustainable fashion content.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 571,
+    "raw_submission": "I run a music production account with 38K followers and I've discovered that Reels with background music from major labels perform worse than Reels with independent artist tracks, even though the major label music is what my audience asks for. The algorithm seems to prioritize smaller creators' music, which is great for them but confusing for my content strategy.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 572,
+    "raw_submission": "My Reels consistently get 200k+ views, but the moment I add captions in white text with a black outline, my reach drops to 30k. If I use any other caption style, the algorithm treats it normally. I've tested this 15 times and the pattern is identical, but I can't find anyone else experiencing this caption-format shadow ban.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 573,
+    "raw_submission": "I'm a productivity coach with 45k followers, and my engagement rate is incredible on Carousel posts, but Instagram never recommends them to the Explore page. My Reels get there constantly. It's like Carousels are algorithmically invisible to discovery, even though they convert better for my business. I'm losing potential brand deals because brands see my Explore page performance, not my actual conversion metrics.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 574,
+    "raw_submission": "Every time I go live with my co-host (we're both verified, 250k followers each), our combined live view count is always lower than when either of us goes live solo. The algorithm seems to penalize dual-creator lives, and I can't find documentation on this anywhere. It's costing me sponsorship opportunities.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 575,
+    "raw_submission": "My hashtag strategy works perfectly Monday-Friday, but on weekends, using the exact same hashtags causes my posts to be shadowbanned for 6-8 hours. Removing hashtags on weekends solves it. I've documented this for 3 months straight and it's consistent, but there's zero online discussion about weekend hashtag shadowbanning.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 576,
+    "raw_submission": "I'm a micro-influencer in sustainable fashion (18k followers) and brands only want to work with me if my engagement rate is above 8%, but my audience is so engaged that they buy directly from my links instead of interacting with posts. My actual conversion rate is 12%, but brands won't negotiate because 'engagement metrics' don't reflect real sales. I'm losing money by being too effective.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 577,
+    "raw_submission": "My Stories have a weird glitch where if I post 3+ Stories within 15 minutes, the algorithm stops showing them to 40% of my followers for that entire day. But if I space them out over an hour, everyone sees them. It's like rapid-fire Story posting triggers some kind of anti-spam filter that doesn't exist in the documentation.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 578,
+    "raw_submission": "I run a meme account with 320k followers and my posts perform best at 2 AM, but Instagram's monetization dashboard doesn't reward off-peak posting. Brands see my daytime metrics which are 60% lower, so they underpay me even though my actual engaged audience is most active at night. The algorithm rewards night posts but the monetization system ignores them.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 579,
+    "raw_submission": "Whenever I use the 'Collab' feature with another creator, our post goes to both audiences but gets significantly less Explore page distribution than a regular post, even though engagement is identical. It's like the algorithm penalizes collaborative content for reach purposes, which kills the whole point of collaborating for growth.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 580,
+    "raw_submission": "I'm a true crime podcast creator (67k followers) and my Reels about solved cases perform normally, but Reels about unsolved cases get flagged by some invisible filter that prevents them from reaching the Explore page. It's not shadow-banning, but they're systematically excluded from discovery despite high engagement from my existing followers.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 581,
+    "raw_submission": "My audience in the US engages with my content 3x more than my audience in the UK, but Instagram's algorithm distributes my reach proportionally across all regions. So I'm 'wasting' reach on low-engagement regions while underserving high-engagement regions. There's no way to geotarget organic reach, only paid ads.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 582,
+    "raw_submission": "I post educational content and my 'Save' rate is 5x higher than my 'Like' rate, but the algorithm weights Likes much more heavily for Explore distribution. So my most valuable content (people literally saving it for reference) gets suppressed in favor of lighter, less-useful content that gets more Likes. My educational value is being punished by the engagement metrics.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 583,
+    "raw_submission": "My brand partnership contracts require me to post 4x per week, but Instagram's algorithm treats consistent posting as spam-like behavior and my reach drops 25% every time I hit that 4-post threshold. I'm contractually obligated to post in a way that the algorithm actively penalizes, and I can't renegotiate with the brand.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 584,
+    "raw_submission": "I'm a finance educator with 520k followers and whenever I post about crypto, my entire account's reach gets suppressed for 48 hours—not just the crypto post, but ALL my posts. It's like posting certain topics triggers an account-wide shadowban. I have to take 2-day breaks after crypto content to recover my normal reach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 585,
+    "raw_submission": "My follower count grows 200 followers per day organically, but whenever I hit a round number (10k, 100k, etc.), Instagram's algorithm suppresses my reach for exactly 3 days. It's like the platform penalizes milestone moments. I've documented this 4 times now and it happens like clockwork.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 586,
+    "raw_submission": "I'm a mental health creator (89k followers) and my most vulnerable, emotionally honest posts get the highest Saves and Comments from my core audience, but Instagram's algorithm never pushes them to Explore because the initial 30-second watch time is low (people are reading carefully, not scrolling). My most impactful content is algorithmically invisible.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 587,
+    "raw_submission": "My Reels perform worse when I include text overlays that spell out trending sounds' names, even though the audio is identical. It's like Instagram's algorithm can read text and deprioritizes posts that explicitly reference trends, possibly to force organic discovery rather than trend-chasing.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 588,
+    "raw_submission": "I run a niche community page (31k followers) with incredibly loyal engagement, but brands won't work with me because my follower count is 'too small' and my engagement rate is 'not verified' on their end. I'm making more money per post than creators with 200k followers, but I can't get into higher-tier brand programs because the algorithm metrics don't reflect real business value.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 589,
+    "raw_submission": "When I post Reels that are exactly 15-30 seconds long, they perform normally. But Reels between 31-45 seconds get dramatically less reach, and Reels over 60 seconds perform great again. There's a weird algorithmic dead zone in the 31-45 second range that I can't find any discussion about online.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 590,
+    "raw_submission": "I'm a beauty creator (156k followers) and my followers are overwhelmingly female (95%), but Instagram's algorithm distributes my content across all genders equally, wasting half my reach on demographics that don't engage. There's no way to geotarget or demographic-target organic reach, only paid ads, so I'm inefficiently reaching my own audience.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 591,
+    "raw_submission": "My Reels that feature me speaking directly to the camera perform worse than Reels with voiceover, even with identical content and identical audio. It's like the algorithm penalizes 'talking head' content, but I can't find any official documentation on this. As a personal brand creator, this is devastating.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 592,
+    "raw_submission": "I'm a beauty creator with 87k followers and I've discovered that whenever I use the 'Collab' sticker, my video gets shadowbanned from the Explore page for exactly 6 hours, even though Instagram says collabs boost reach. I've tested this 12 times and it's consistent. My brand partners are now refusing to do collabs because my reach tanks immediately after posting them.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 593,
+    "raw_submission": "My niche is vintage fashion and I have 156k followers. I noticed that whenever I use the same hashtag twice in a single month, that hashtag stops showing my posts to anyone for the rest of that month, but only for that specific hashtag. Other creators using it still show up. I can't find any documentation about this behavior anywhere.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 594,
+    "raw_submission": "I'm a productivity coach with 34k followers and my Reels that end with me saying 'DM me' get 40% fewer likes than identical Reels that end differently. But when I test this exact same CTA in my captions, it performs normally. The algorithm seems to penalize voice-based CTAs specifically in Reels.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 595,
+    "raw_submission": "I run a gaming commentary account with 2.3M followers and I've found that if I post a Reel on Tuesday between 2-4pm EST, the algorithm de-prioritizes it for Wednesday entirely, but only if my Monday post had more than 2M views. It's like the algorithm is throttling me intentionally based on previous day performance.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 596,
+    "raw_submission": "As a micro-influencer with 8,400 followers, I discovered that using a trending audio makes my video shadowbanned to anyone outside my follower base for the first 2 hours, even though it's promoted as a reach booster. If I wait 4 hours to post the same audio, it performs normally. No one talks about this timing issue.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 597,
+    "raw_submission": "I'm a mental health creator with 67k followers and brands will only work with me if my engagement rate stays above 8.5%, but my most authentic, vulnerable content that saves lives gets 3% engagement. My lighter, less helpful content gets 12% engagement. I'm being financially punished for my best work.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 598,
+    "raw_submission": "My art account has 234k followers and I've noticed that posting in threads longer than 5 images causes my next 3 posts to get shadowbanned from the Explore page. But if I post the same images individually, they all perform well. The multi-image format is being algorithmically penalized.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 599,
+    "raw_submission": "I'm a food blogger with 45k followers and whenever I reshare a brand's reel to my Stories, my Story views drop by 65% for that entire 24-hour cycle. It's like the algorithm knows I'm promoting someone else and punishes my organic story reach as a result.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 600,
+    "raw_submission": "As a lifestyle creator with 523k followers, I've realized that my audience engages most with content that took me 2 hours to create, but brands only pay me based on follower count, not content quality. Meanwhile creators with half my followers make 3x more because their audience is more aligned with luxury brands, even though my content is objectively better.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 601,
+    "raw_submission": "I run a meme account with 156k followers and I've found that if I use the same font/text style twice in one week, my posts get dramatically reduced reach. But my followers are commenting that they love my consistent branding. The algorithm is punishing me for visual consistency.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 602,
+    "raw_submission": "My photography account has 12k followers and I'm in a weird middle ground where I'm too small for most brand deals but too big to do micro-influencer campaigns. Brands at my level don't exist on Instagram's partnership platform, so I'm stuck doing unpaid collabs or nothing.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 603,
+    "raw_submission": "I'm a fitness creator with 89k followers and my before-and-after transformation posts get shadowbanned unless I wait 72 hours after uploading to Stories first. If I post them directly to feed, they're immediately limited. But this workaround isn't documented anywhere and I discovered it by accident.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 604,
+    "raw_submission": "As a true crime creator with 267k followers, every time I hit a milestone (100k, 200k, etc.), my reach drops by 30% for exactly 14 days afterward. It's like Instagram throttles successful creators at inflection points, but I can't find any explanation for why this happens.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 605,
+    "raw_submission": "I have 156k followers as a parenting creator and my comments are getting hidden from my own followers' feeds if I use more than 3 emoji in a single comment. But when I use emoji in captions, they boost reach. The algorithm treats creator comments differently than creator captions.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "community",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 606,
+    "raw_submission": "My finance education account has 34k followers and whenever I post about specific stock tickers, my post gets age-gated to 18+ even though I'm giving educational content, not financial advice. This cuts my reach in half because most of my audience is 16-17. But if I spell out the company name instead, it's fine.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 607,
+    "raw_submission": "I'm a travel creator with 512k followers and brands want me to delete my older travel content to make room for their sponsored trips, but deleting that content tanks my entire feed's algorithmic performance for weeks. I'm being asked to sabotage my own account for brand deals.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 608,
+    "raw_submission": "My music production account has 67k followers and I've noticed that Reels with jump cuts get 8x more reach than Reels without them, but my audience constantly complains in comments that jump cuts are distracting. The algorithm rewards what my audience actually hates.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "plateau",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 609,
+    "raw_submission": "I run a book review channel with 203k followers and if I post reviews of books by indie authors, my reach is 60% lower than reviews of mainstream books, even when my audience clearly prefers indie recommendations based on saves and shares. The algorithm favors big publishing houses.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 610,
+    "raw_submission": "As a craft creator with 89k followers, my Reels perform best when I post them at 3am EST, but all brand deals require me to post at optimal engagement times (6pm EST). So I'm choosing between algorithmic performance and paid work, and I can't do both.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 611,
+    "raw_submission": "I have 1.2M followers as a comedy creator and my most viral Reels are the ones I'm least proud of, so I'm stuck in a cycle where the algorithm rewards mediocrity. My best work gets 40% fewer views, but if I pivot to what performs, I'll burn out because it's not authentic content.",
+    "platform": "Instagram",
+    "follower_range": "1M+",
+    "category": "burnout",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 612,
+    "raw_submission": "My Reels consistently get 40% fewer views when I use a trending sound that peaks at #2 on the audio charts versus sounds that peak at #5-#8. It's counterintuitive, but my data shows that the most popular sounds actually underperform for my 85k follower base, possibly because Instagram's algorithm deprioritizes content using sounds that are already oversaturated.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 613,
+    "raw_submission": "I'm a micro-influencer with 34k followers, and brands are now asking me to sign contracts that include a clause requiring me to delete any post that doesn't hit 8% engagement within 48 hours. This creates pressure to game the algorithm with engagement pods, but using pods violates Instagram's terms and risks my account. I'm caught between breaching my contract or risking my account.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 614,
+    "raw_submission": "Every time I post a Carousel where the first slide is a close-up face and the second slide is a product, my swipe-through rate is 15%, but when I reverse it (product first, face second), it jumps to 67%. However, my brand partners specifically require the product to be first slide because of contractual reasons. I'm losing massive reach because of this forced format.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 615,
+    "raw_submission": "I noticed that posting at exactly 6:47 PM EST gets me 3x more reach than posting at 6:45 PM or 6:50 PM, but only on Tuesdays and Thursdays. My analytics team thinks I'm crazy, but I've tested this 47 times over 6 months with consistent results. The specificity of this time window makes it impossible to find any online resources explaining this phenomenon.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 616,
+    "raw_submission": "My DM engagement rate is highest when I respond to comments by replying in DMs instead of in the comment section, but Instagram's algorithm penalizes this because it moves the conversation off-platform. So I'm faced with a choice: build genuine community relationships through DMs or feed the algorithm by keeping interactions public and visible.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "community",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 617,
+    "raw_submission": "I'm a 156k follower creator and I've discovered that using the exact same caption twice (even 90 days apart) causes my second post to get shadowbanned for 36-48 hours. I don't reuse captions intentionally, but sometimes I naturally write similar things. This forces me to hire someone to track every caption I've ever posted to avoid accidental duplicates.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 618,
+    "raw_submission": "My Stories get 2x more replies when I post them between 11:15 PM and 11:47 PM, but only when my followers are actively online (which I can see in my activity status insights). If I post at 11:20 PM on a night when my audience isn't active, I get terrible engagement. The specificity of this window means I have to stay up late to maximize reach.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 619,
+    "raw_submission": "I run a niche art account with 67k followers, and I've found that my Reels perform better when they're 23-26 seconds long versus 15-22 seconds, but ONLY if I include a specific type of cut transition. Without that transition, the 23-26 second length actually underperforms. No online guide exists for this micro-niche discovery.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 620,
+    "raw_submission": "Every time I mention a competitor by name in my captions (even in a complimentary way), my post's algorithmic reach drops by 65% compared to when I reference them vaguely. But my community specifically asks me to name-drop competitors for transparency. I'm losing visibility by being honest with my audience.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 621,
+    "raw_submission": "I'm a 245k follower lifestyle creator, and my Reels that feature me looking directly at the camera for 3+ consecutive seconds get 50% fewer saves than Reels where I mostly look away. This is backwards from what engagement experts recommend, but my data is undeniable. It's forcing me to change my natural on-camera behavior.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 622,
+    "raw_submission": "My brand partnerships pay me based on a guaranteed engagement rate, but I've discovered that using hashtags actually DECREASES my engagement rate by 12% for my specific audience. However, my brand partners require hashtags in the contract. So I'm contractually obligated to do something that hurts my performance metrics, which then affects my pay in future deals.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 623,
+    "raw_submission": "I have 89k followers and I've noticed that my engagement drops by 30% whenever I post on the same day as a major news event (even if my content has nothing to do with the news). It's like my audience is collectively distracted. But I can't predict major news events, so I'm constantly fighting an invisible force that's completely outside my control.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 624,
+    "raw_submission": "My Captions perform differently based on whether I use the 'See More' feature or keep them short. When I use 'See More,' my engagement drops 18%, but when I use 'See Less' (by keeping captions under 125 characters), I get better reach. However, my brand partnerships require longer captions to fit all the required disclosures.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 625,
+    "raw_submission": "I'm a 412k follower creator and I've discovered that Reels I post on days when I've posted a Story get 22% less reach than Reels posted on days when I haven't posted a Story. Posting a Story alerts my followers I'm online, which seems to cannibalize my Reel views. But Stories are how I maintain community connection.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 626,
+    "raw_submission": "My Reels that include a 2-3 second pause or 'breathing room' get 4x more saves than fast-paced content, but they get significantly fewer views initially because the algorithm thinks they're boring during the first 3 seconds. So I'm getting great engagement from people who do watch, but the algorithm isn't pushing it broadly enough.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 627,
+    "raw_submission": "I run a comedy account with 156k followers, and my Reels that intentionally show the punchline in the thumbnail get 40% more clicks than Reels where the punchline is hidden. But once people click and see the punchline is already visible, they don't watch the full video, which tanks my average watch time and hurts algorithmic distribution.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 628,
+    "raw_submission": "I've noticed that my followers from certain geographic regions (specifically Southeast Asia and Eastern Europe) engage at 3x the rate of my US followers, but Instagram's algorithm seems to push my content more heavily to my US audience. So I'm essentially being punished for having an engaged international audience because the algorithm prioritizes reach over engagement.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 629,
+    "raw_submission": "My educational Reels that include on-screen text overlays get saved 8x more often than Reels without text, but they get 60% fewer initial views. The algorithm seems to treat text-heavy content as less 'native' or engaging initially, even though the people who do see it love it. I'm stuck choosing between discoverability and utility.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 630,
+    "raw_submission": "I'm a 73k follower creator and I've found that responding to comments within the first 7 minutes of posting boosts my reach by 35%, but responding after 15 minutes actually decreases it by 12%. This 8-minute window is impossibly tight and forces me to stay glued to my phone or lose algorithmic momentum. No other creator talks about this specific timing phenomenon.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 631,
+    "raw_submission": "My Reels that feature products from small/indie brands get 50% more reach than Reels featuring major corporate brands, but small brands can't afford to pay me for promotions, while major brands require exclusivity deals. So my algorithm naturally rewards me for doing unpaid work with small brands, but my income depends on paid partnerships with big corporations.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 632,
+    "raw_submission": "I'm a micro-influencer with 8.5k followers and I've discovered that when I use the 'Collab' sticker, my story reaches 45% of my followers, but when I use the regular 'Mention' sticker to tag the same creators, my story only reaches 12% of my followers. The Collab sticker seems to trigger Instagram's algorithm to suppress my story reach to people who don't follow the collaborator, even though this actually hurts my engagement metrics with my core audience.",
+    "platform": "Instagram",
+    "follower_range": "1K-10K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 633,
+    "raw_submission": "My nail art account (47k followers) has been shadowbanned from appearing on the #nailart hashtag feed specifically on Thursdays and Sundays, but I can appear on #naildesign just fine. I've tried everything—changing posting times, avoiding banned words, cleaning up my followers—but the Thursday/Sunday blackout on that specific hashtag persists. No one online talks about hashtag bans being day-specific.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 634,
+    "raw_submission": "I'm a productivity coach with 156k followers and I've noticed that whenever I post a carousel with 8-10 slides, my Saves metric is artificially inflated (3x higher than normal), but my Shares stay flat. However, my engagement rate on the actual comments section drops 60%. Instagram seems to be counting saves differently when people are just flipping through long carousels without actually engaging with the content. It's gaming my analytics.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 635,
+    "raw_submission": "I run a meme page with 234k followers, and I've discovered that if I post the exact same meme twice (separated by 3 months), the second post gets algorithmically suppressed to only 8% of my followers on the first day, even though it's technically 'new' content. The algorithm seems to be detecting near-duplicate images and penalizing them, but there's no official documentation about this.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 636,
+    "raw_submission": "My beauty tutorial account (62k followers) gets significantly fewer impressions when I use the 'Before & After' carousel feature compared to posting the same content as a regular carousel. The Before & After format apparently triggers different algorithmic treatment, pushing my content to a smaller subset of followers, but I can't find any discussion about this online.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 637,
+    "raw_submission": "I'm a brand account (89k followers) and my engagement rate is mysteriously 40% lower when I post at exactly 9:00 AM versus 9:03 AM. I've tested this over 6 months with identical content and the pattern is consistent. It seems like there's a specific algorithmic window that opens/closes around the top of the hour that no one discusses.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 638,
+    "raw_submission": "My travel vlog account (125k followers) got rejected from the Brand Collabs Manager, and the automated reason given was 'Community Guidelines violation,' but I have zero strikes and all my content complies. I suspect it's because I have 18 followers who are verified accounts from countries Instagram's system flags, but I can't remove followers without manually blocking them, and Instagram won't tell me the real reason.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 639,
+    "raw_submission": "I'm a fitness creator (312k followers) and my Reels with captions that are longer than 150 characters get pushed to significantly fewer people, even though the caption length shouldn't theoretically matter. My shorter-caption Reels average 480k views, but identical content with longer captions averages 120k views. This seems like an undocumented algorithmic penalty.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 640,
+    "raw_submission": "My photography account (34k followers) noticed that when I post images with people's faces in the center of the frame, they get 35% less reach than when faces are off-center or partially cropped. I think Instagram's algorithm might be deprioritizing content with centered faces to reduce facial recognition data processing, but this is pure speculation since no one talks about it.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 641,
+    "raw_submission": "I run a food delivery review account (71k followers) and I've been locked out of using the 'Directions' tag on my location stickers for the past 3 weeks with no explanation. My reach dropped 62% because restaurants rely on that tag to find me in their location stack, but Instagram Support just says 'this feature is unavailable' with no timeline for restoration.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 642,
+    "raw_submission": "My educational content account (198k followers) has been mysteriously excluded from appearing on the Explore page of followers who are aged 13-17, even though my content is completely age-appropriate and I haven't violated any guidelines. I suspect Instagram's algorithm is age-gating educational content creators without notification, which is killing 22% of my potential reach.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 643,
+    "raw_submission": "I'm a DIY creator (156k followers) and whenever I use the 'Save' call-to-action in my captions, my post's algorithmic distribution actually decreases by 15-20% compared to identical posts without that CTA. It's like Instagram penalizes creators for encouraging saves, which contradicts everything they say about saves being a positive signal.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 644,
+    "raw_submission": "My wellness brand account (43k followers) got approved for Instagram Shopping, but products I uploaded are randomly disappearing from my Shop tab (appearing and vanishing every 2-3 days) with no notification. My brand collabs are falling through because potential partners can't reliably see my product catalog, and Instagram has no support channel for this specific issue.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 645,
+    "raw_submission": "I run a news commentary account (267k followers) and I've noticed that my Reels get shadow-suppressed if I include more than 3 on-screen text overlays, regardless of content quality. My Reels with minimal text hit 800k+ views, but identical commentary with more text labels cap at 180k views. There's no documented rule about this.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 646,
+    "raw_submission": "My pet account (18k followers) discovered that if I post a Reel on the same day I posted a Story with the pet in it, the Reel's reach is suppressed by 50% compared to posting on different days. It's like Instagram penalizes creators for posting the 'same moment' across different formats, even though the content is technically different.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 647,
+    "raw_submission": "I'm a language learning creator (94k followers) and my engagement metrics are mysteriously 3x lower when I post content in non-English languages, even though my follower base is 40% international. The algorithm seems to be deprioritizing non-English content for non-native language accounts, which is completely undocumented.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 648,
+    "raw_submission": "My fashion brand (521k followers) was told by two separate Brand Collabs partners that they can't work with me because my 'Audience Quality Score' is low according to their proprietary tools, but Instagram won't let me see my own quality score or explain what factors determine it. I'm losing 6-figure deals over an invisible metric.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "monetization",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 649,
+    "raw_submission": "I run a comedy account (156k followers) and my Reels that include subtitled dialogue perform 70% worse than identical Reels with spoken-only dialogue (no subtitles). I thought subtitles would help accessibility, but the algorithm is clearly deprioritizing subtitled content, which feels counterintuitive to Instagram's stated inclusion values.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 650,
+    "raw_submission": "My art account (52k followers) has been algorithmically penalized (75% reach drop) ever since I started adding artist credit watermarks to my work. I think Instagram's algorithm might be treating watermarks as 'self-promotion' and reducing distribution, but I need the watermark for copyright protection. I'm caught between visibility and ownership.",
+    "platform": "Instagram",
+    "follower_range": "10K-100K",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
+  },
+  {
+    "id": 651,
+    "raw_submission": "I'm a productivity influencer (203k followers) and I've noticed that my engagement rate drops 45% whenever I post on the same day as a major news event (election day, natural disaster, etc.), regardless of whether my content is related. It seems like Instagram's algorithm is redistributing traffic during high-news cycles, but creators aren't informed about this dynamic shift.",
+    "platform": "Instagram",
+    "follower_range": "100K-1M",
+    "category": "reach",
+    "posted": false,
+    "posted_at": null,
+    "thread_id": null
   }
 ]

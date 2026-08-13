@@ -133,6 +133,8 @@ async function submitProblem(problem) {
       },
       body: JSON.stringify({
         rawSubmission: problem.raw_submission,
+        platform: problem.platform,
+        followerRange: problem.follower_range,
         userId: null,
         isSeeded: true
       })

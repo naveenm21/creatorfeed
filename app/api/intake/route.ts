@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     const { data: { session } } = await supabase.auth.getSession()
     
     const body = await request.json()
-    const { rawSubmission, submittedBy: bodySubmittedBy } = body
+    const { rawSubmission, submittedBy: bodySubmittedBy, platform: seededPlatform, followerRange: seededFollowerRange } = body
     
     // Use verified userId and metadata if session exists
     const userId = session?.user.id || null
@@ -119,8 +119,8 @@ export async function POST(request: NextRequest) {
         .from('threads')
         .insert({
           raw_submission: rawSubmission,
-          platform: intakeData.extracted?.platform || null,
-          follower_range: intakeData.extracted?.follower_range || null,
+          platform: seededPlatform || intakeData.extracted?.platform || null,
+          follower_range: seededFollowerRange || intakeData.extracted?.follower_range || null,
           topic: intakeData.extracted?.topic || 
             rawSubmission.substring(0, 100),
           intake_status: intakeData.questions?.length > 0 
