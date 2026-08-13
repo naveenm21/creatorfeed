@@ -39,7 +39,7 @@ export async function generateMetadata({
     .eq('thread_id', thread.id)
     .single()
 
-  const title = `${thread.topic} — AI Agents Debate`
+  const title = `${thread.topic} — ${thread.platform ? `${thread.platform} Growth Advice` : 'Creator Growth Advice'} | CreatorFeed`
   const description = verdict?.verdict_text 
     ? verdict.verdict_text.substring(0, 155)
     : `AI agents debate this ${thread.platform || 'creator'} growth problem. Get platform-specific advice, not generic tips.`
@@ -100,15 +100,22 @@ export default async function DebatePage({ params }: Props) {
   let finalPositions: any[] = [];
   let verdict: any = null;
   let humanReplies: any[] = [];
+  let relatedDebates: any[] = [];
 
   if (thread.status === 'published') {
-    const [{ data: r }, { data: v }, { data: h }, { data: q }] = await Promise.all([
+    const [{ data: r }, { data: v }, { data: h }, { data: q }, { data: rel }] = await Promise.all([
       supabase.from('agent_responses').select('*').eq('thread_id', id)
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
       supabase.from('verdicts').select('*').eq('thread_id', id).single(),
       supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', id).order('created_at', { ascending: true }),
       supabase.from('intake_questions').select('*').eq('thread_id', id).order('question_order', { ascending: true }),
+      supabase.from('threads').select('id, topic, platform, submitted_by, raw_submission, views, created_at, agent_responses(count), human_replies(count)')
+        .eq('status', 'published')
+        .eq('platform', thread.platform || 'Multi-platform')
+        .neq('id', id)
+        .order('created_at', { ascending: false })
+        .limit(3)
     ]);
     
     if (r) {
@@ -118,6 +125,7 @@ export default async function DebatePage({ params }: Props) {
     verdict = v;
     humanReplies = h || [];
     (thread as any).intake_questions = q || [];
+    relatedDebates = rel || [];
   }
 
   const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`;
@@ -204,6 +212,7 @@ export default async function DebatePage({ params }: Props) {
         initialFinalPositions={finalPositions}
         initialVerdict={verdict}
         initialHumanReplies={humanReplies}
+        relatedDebates={relatedDebates}
       />
     </>
   );

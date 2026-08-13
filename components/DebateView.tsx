@@ -3,9 +3,13 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Verdict } from '@/components/Verdict';
+import { formatDistanceToNow } from 'date-fns';
+import Image from 'next/image';
 import { createClient } from '@/lib/supabase';
 import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
+import { slugify } from '@/lib/slug';
+import { DebateCard } from '@/components/DebateCard';
 import { ShareDialog } from '@/components/ShareDialog';
 import { ConflictHeatmap } from '@/components/ConflictHeatmap';
 
@@ -41,7 +45,8 @@ export function DebateView({
   initialResponses, 
   initialFinalPositions, 
   initialVerdict, 
-  initialHumanReplies 
+  initialHumanReplies,
+  relatedDebates = []
 }: { 
   slug: string;
   initialThread: any;
@@ -49,6 +54,7 @@ export function DebateView({
   initialFinalPositions: AgentResponse[];
   initialVerdict: any;
   initialHumanReplies: HumanReply[];
+  relatedDebates?: any[];
 }) {
 
   const [activeTab, setActiveTab] = useState('Verdict');
@@ -490,9 +496,11 @@ export function DebateView({
                               >
                                 <div className="flex items-center gap-3 mb-3">
                                   <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center border border-[#343536] bg-[#1A1A1B] z-10 relative overflow-hidden">
-                                    <img 
+                                    <Image
                                       src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
                                       alt={`${agent.agent_name} - AI Creator Growth Specialist`}
+                                      width={36}
+                                      height={36}
                                       className="w-full h-full object-cover"
                                     />
                                   </div>
@@ -763,10 +771,11 @@ export function DebateView({
                             <div key={fp.id} className="border-l-[3px] pl-6 py-1 transition-all" style={{ borderLeftColor: color }}>
                               <div className="flex items-center gap-3 mb-3">
                                 <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden">
-                                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                                  <img 
+                                  <Image
                                     src={AGENT_AVATARS[fp.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
                                     alt={`${fp.agent_name} - AI Creator Growth Specialist`}
+                                    width={32}
+                                    height={32}
                                     className="w-full h-full object-cover"
                                   />
                                 </div>
@@ -790,6 +799,37 @@ export function DebateView({
                 </>
               )}
             </div>
+
+            {/* RELATED DEBATES */}
+            {relatedDebates.length > 0 && (
+              <div className="mt-16 pt-8 border-t border-[#343536]">
+                <h3 className="text-[18px] font-bold text-white mb-6 pl-1 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  Related Debates
+                </h3>
+                <div className="space-y-4">
+                  {relatedDebates.map(debate => {
+                    const formattedDebate = {
+                      id: debate.id,
+                      creatorName: debate.submitted_by || 'Anonymous',
+                      platform: debate.platform || 'Multi-platform',
+                      title: debate.topic,
+                      agents: [],
+                      agentCount: (debate.agent_responses as any)?.[0]?.count || 0,
+                      humanReplies: (debate.human_replies as any)?.[0]?.count || 0,
+                      preview: (debate.raw_submission || 'No details provided').substring(0, 150) + '...',
+                      views: debate.views > 1000 
+                        ? `${(debate.views/1000).toFixed(0)}K` 
+                        : (debate.views || 0).toString(),
+                      replies: ((debate.agent_responses as any)?.[0]?.count || 0) + ((debate.human_replies as any)?.[0]?.count || 0),
+                      timePosted: formatDistanceToNow(new Date(debate.created_at)) + ' ago',
+                      slug: `${slugify(debate.topic)}-${debate.id}`
+                    };
+                    return <DebateCard key={debate.id} debate={formattedDebate} />
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 

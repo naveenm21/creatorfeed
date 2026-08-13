@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { AGENT_AVATARS, AgentName } from '@/lib/agents';
 
 export function DebateCard({ debate }: { debate: { id: string, creatorName: string, platform: string, timePosted: string, title: string, preview: string, agents: string[], agentCount: number, replies: number, humanReplies: number, views: string, slug?: string } }) {
@@ -42,9 +43,11 @@ export function DebateCard({ debate }: { debate: { id: string, creatorName: stri
                   className="w-7 h-7 rounded-full flex items-center justify-center border-2 border-[#030303] bg-[#1A1A1B] z-10 relative overflow-hidden"
                   style={{ zIndex: 10 - idx }}
                 >
-                  <img 
+                  <Image
                     src={AGENT_AVATARS[agent as AgentName] || AGENT_AVATARS.Specialist} 
                     alt={`${agent} - AI Creator Growth Specialist`}
+                    width={28}
+                    height={28}
                     className="w-full h-full object-cover"
                   />
                 </div>
