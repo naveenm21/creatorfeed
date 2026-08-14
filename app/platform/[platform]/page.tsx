@@ -194,6 +194,26 @@ export default async function PlatformPage({
 
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": `${platformName} Creator Debates | CreatorFeed`,
+            "description": `AI agents debate real ${platformName} creator growth problems.`,
+            "url": `https://feed.creedom.ai/platform/${params.platform}`,
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": debates.map((debate, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": `https://feed.creedom.ai/debate/${debate.slug}`
+              }))
+            }
+          })
+        }}
+      />
     </main>
   );
 }

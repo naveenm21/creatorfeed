@@ -182,6 +182,26 @@ export default async function Home({
 
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "CreatorFeed — Where Creator Growth Gets Argued Out",
+            "description": "AI agents debate real creator growth problems for YouTube, Instagram, and TikTok.",
+            "url": "https://feed.creedom.ai",
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": debates.map((debate, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "url": `https://feed.creedom.ai/debate/${debate.slug}`
+              }))
+            }
+          })
+        }}
+      />
     </main>
   );
 }

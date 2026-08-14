@@ -5113,8 +5113,8 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.445Z"
   },
   {
     "id": 513,
@@ -5152,8 +5152,8 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.451Z"
   },
   {
     "id": 517,
@@ -5161,8 +5161,8 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.451Z"
   },
   {
     "id": 518,
@@ -5170,8 +5170,8 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.451Z"
   },
   {
     "id": 519,
@@ -5179,8 +5179,8 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.451Z"
   },
   {
     "id": 520,
@@ -5188,8 +5188,8 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:23.451Z"
   },
   {
     "id": 521,
@@ -5197,8 +5197,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:07:35.682Z",
+    "thread_id": "b55e8aba-a5bb-4ecd-9a0e-a8920dbe01e0"
   },
   {
     "id": 522,
@@ -5206,8 +5207,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:08:16.507Z",
+    "thread_id": "619f28e7-741c-4db1-b61e-167fd2b80486"
   },
   {
     "id": 523,
@@ -5215,8 +5217,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:08:58.121Z",
+    "thread_id": "e6146dc3-eb54-45b3-b5e7-ec20c132dddf"
   },
   {
     "id": 524,
@@ -5224,8 +5227,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:09:38.806Z",
+    "thread_id": "0a075297-a823-40d6-bf25-120c9dbb62cf"
   },
   {
     "id": 525,
@@ -5233,8 +5237,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:10:19.040Z",
+    "thread_id": "529f9aa9-1e04-48a5-874e-931e44b17da7"
   },
   {
     "id": 526,
@@ -5242,8 +5247,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:10:59.273Z",
+    "thread_id": "9685d8d8-4424-41db-8f6a-fa193060e598"
   },
   {
     "id": 527,
@@ -5251,8 +5257,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:11:42.640Z",
+    "thread_id": "c7aa9aa2-4f04-46e8-ac25-b6c5083ed3db"
   },
   {
     "id": 528,
@@ -5260,8 +5267,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:12:25.211Z",
+    "thread_id": "efafd94b-9fc6-4fda-ae56-ec01afa49f68"
   },
   {
     "id": 529,
@@ -5269,8 +5277,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:13:06.910Z",
+    "thread_id": "f0904515-54dd-497e-b93c-d59ad5cb4858"
   },
   {
     "id": 530,
@@ -5278,8 +5287,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:13:44.243Z",
+    "thread_id": "20b43266-a67f-433c-83eb-e59e2f952d56"
   },
   {
     "id": 531,
@@ -5287,8 +5297,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:14:25.123Z",
+    "thread_id": "0348be04-eeda-42bc-a201-243dd8a424bf"
   },
   {
     "id": 532,
@@ -5296,8 +5307,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:15:06.579Z",
+    "thread_id": "e17bfd7a-1227-4acf-94f3-801d32e747de"
   },
   {
     "id": 533,
@@ -5305,8 +5317,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:15:47.061Z",
+    "thread_id": "88cffa1c-5b27-40c0-adaf-871690c33e92"
   },
   {
     "id": 534,
@@ -5314,8 +5327,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:16:25.875Z",
+    "thread_id": "985116de-258a-4631-846f-3ca66087489f"
   },
   {
     "id": 535,
@@ -5323,8 +5337,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:17:07.850Z",
+    "thread_id": "8bd9e2f7-d415-4797-b602-3f15621d2486"
   },
   {
     "id": 536,
@@ -5332,8 +5347,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:17:49.267Z",
+    "thread_id": "b8f475ee-f082-4c4a-a64b-80ad266f9659"
   },
   {
     "id": 537,
@@ -5341,8 +5357,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:18:30.094Z",
+    "thread_id": "36c833a1-228e-4fb7-aa7d-dee0a38868c3"
   },
   {
     "id": 538,
@@ -5350,8 +5367,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:19:10.348Z",
+    "thread_id": "1227b3f8-0296-4f75-b634-14564e249495"
   },
   {
     "id": 539,
@@ -5359,8 +5377,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:19:50.111Z",
+    "thread_id": "82485280-ee2d-4505-8f2e-2a9f1fa79225"
   },
   {
     "id": 540,
@@ -5368,8 +5387,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:20:28.942Z",
+    "thread_id": "cad25ae3-71f6-4127-a172-31226d2d4bef"
   },
   {
     "id": 541,
@@ -5377,8 +5397,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:21:10.736Z",
+    "thread_id": "2682a6ae-1a27-46c6-b775-d0920e9239a6"
   },
   {
     "id": 542,
@@ -5386,8 +5407,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:21:51.367Z",
+    "thread_id": "85f34702-2372-48fb-a65b-67f2c29ef61b"
   },
   {
     "id": 543,
@@ -5395,8 +5417,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:22:32.335Z",
+    "thread_id": "d4b84734-a2a6-4727-bace-025b1645c709"
   },
   {
     "id": 544,
@@ -5404,8 +5427,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:23:12.802Z",
+    "thread_id": "b5a7de7b-fc72-47bc-beb1-bd8e523b5d66"
   },
   {
     "id": 545,
@@ -5413,8 +5437,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:23:53.391Z",
+    "thread_id": "f31afc8e-1ef4-48f6-b8fd-8ea54e976a85"
   },
   {
     "id": 546,
@@ -5422,8 +5447,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "plateau",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:24:34.632Z",
+    "thread_id": "d7dd9db9-6c56-4562-b20e-18538d4d593d"
   },
   {
     "id": 547,
@@ -5431,8 +5457,9 @@
     "platform": "Instagram",
     "follower_range": "1M+",
     "category": "pivot",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:25:14.748Z",
+    "thread_id": "d662bece-dfb2-4240-b7fe-396c05fa4235"
   },
   {
     "id": 548,
@@ -5440,8 +5467,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "burnout",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:25:56.527Z",
+    "thread_id": "649466a3-3a0c-4d3f-b0f4-c29355c57b9d"
   },
   {
     "id": 549,
@@ -5449,8 +5477,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "algorithm",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:26:35.602Z",
+    "thread_id": "94f69feb-ff01-41bf-bbd6-bf1812f1aeb1"
   },
   {
     "id": 550,
@@ -5458,8 +5487,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:27:18.636Z",
+    "thread_id": "6ab901c8-ad08-4b9e-8d38-cc1de0177227"
   },
   {
     "id": 551,
@@ -5467,8 +5497,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:27:57.909Z",
+    "thread_id": "b11f40df-9fbf-4f29-ac14-663006e29b34"
   },
   {
     "id": 552,
@@ -5476,9 +5507,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:28:34.757Z",
+    "thread_id": "5ce87ea5-629b-4e2f-8330-6e6e18109551"
   },
   {
     "id": 553,
@@ -5486,9 +5517,9 @@
     "platform": "Instagram",
     "follower_range": "45K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:29:14.584Z",
+    "thread_id": "9a21170b-f093-4a77-b598-12abc52f75e0"
   },
   {
     "id": 554,
@@ -5496,9 +5527,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:29:52.214Z",
+    "thread_id": "187eaef0-52ea-4244-b274-492f91f34865"
   },
   {
     "id": 555,
@@ -5506,9 +5537,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:30:32.175Z",
+    "thread_id": "7ac5dcaa-79b6-41e9-ad45-3355c8572f95"
   },
   {
     "id": 556,
@@ -5516,9 +5547,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "community",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:31:09.455Z",
+    "thread_id": "061c7d44-3230-4b08-b65d-aedeaff9dc29"
   },
   {
     "id": 557,
@@ -5526,9 +5557,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:31:56.710Z",
+    "thread_id": "f8b6d952-c85e-4fe6-a0ff-70ef6f402fec"
   },
   {
     "id": 558,
@@ -5536,9 +5567,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:32:37.201Z",
+    "thread_id": "2c8149f9-6441-4c0c-9092-72a1d7255a9c"
   },
   {
     "id": 559,
@@ -5546,9 +5577,9 @@
     "platform": "Instagram",
     "follower_range": "1K-10K",
     "category": "community",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:33:16.444Z",
+    "thread_id": "e938a935-39f6-47b9-ae5d-a1a1e2f7b3a7"
   },
   {
     "id": 560,
@@ -5556,9 +5587,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "monetization",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:33:57.254Z",
+    "thread_id": "4b1a557b-d7e5-459c-85c8-cafbbb2fc31b"
   },
   {
     "id": 561,
@@ -5566,9 +5597,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "community",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:34:36.665Z",
+    "thread_id": "6902b40e-d7ee-4c4d-a3fc-68ce2a3b30f0"
   },
   {
     "id": 562,
@@ -5576,9 +5607,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:35:16.470Z",
+    "thread_id": "b29a0771-95fe-4007-ac16-05963ad7c006"
   },
   {
     "id": 563,
@@ -5586,9 +5617,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:35:57.018Z",
+    "thread_id": "a2248641-0960-4fac-ae58-e4c1c5fad957"
   },
   {
     "id": 564,
@@ -5596,9 +5627,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:36:35.145Z",
+    "thread_id": "2e79589b-ec79-4195-9bac-8771532f4b36"
   },
   {
     "id": 565,
@@ -5606,9 +5637,9 @@
     "platform": "Instagram",
     "follower_range": "10K-100K",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:37:19.267Z",
+    "thread_id": "65a973f2-78cb-4477-afcf-34132d8da125"
   },
   {
     "id": 566,
@@ -5616,9 +5647,9 @@
     "platform": "Instagram",
     "follower_range": "100K-1M",
     "category": "reach",
-    "posted": false,
-    "posted_at": null,
-    "thread_id": null
+    "posted": true,
+    "posted_at": "2026-08-14T06:37:56.997Z",
+    "thread_id": "af5b3913-d17b-48bc-bec0-a9114dfe4a86"
   },
   {
     "id": 567,
