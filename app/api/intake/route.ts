@@ -4,6 +4,7 @@ import { supabaseAdmin } from '@/lib/supabase-admin'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { INTAKE_AGENT_PROMPT } from '@/lib/agents'
 import { awardKarma } from '@/lib/karma'
+import { generateEmbedding } from '@/lib/embeddings'
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY!
@@ -129,7 +130,8 @@ export async function POST(request: NextRequest) {
           user_id: userId,
           submitted_by: submittedBy,
           ip_address: ip,
-          user_agent: ua
+          user_agent: ua,
+          embedding: await generateEmbedding(rawSubmission)
         })
         .select()
         .single()

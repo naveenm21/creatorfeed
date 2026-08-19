@@ -116,17 +116,17 @@ export function InfiniteFeed({ initialDebates, initialPage = 1, platform }: { in
       { threshold: 1.0 }
     );
 
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
+    const currentTarget = observerTarget.current;
+    if (currentTarget) {
+      observer.observe(currentTarget);
     }
 
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
       }
     };
-  }, [observerTarget, page, hasMore, loading, fetchMoreDebates]);
+  }, [page, hasMore, loading, fetchMoreDebates]);
 
   return (
     <div className="flex flex-col">

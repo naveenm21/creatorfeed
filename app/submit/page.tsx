@@ -26,7 +26,7 @@ export default function SubmitPage() {
     if (user && !customName) {
       setCustomName((user.user_metadata as any)?.full_name || user.email?.split('@')[0] || '');
     }
-  }, [user, loading]);
+  }, [user, customName]);
 
   const handleExampleClick = (text: string) => {
     setProblemText(text);

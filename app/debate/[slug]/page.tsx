@@ -103,29 +103,46 @@ export default async function DebatePage({ params }: Props) {
   let relatedDebates: any[] = [];
 
   if (thread.status === 'published') {
-    const [{ data: r }, { data: v }, { data: h }, { data: q }, { data: rel }] = await Promise.all([
+    const [{ data: r }, { data: v }, { data: h }, { data: q }] = await Promise.all([
       supabase.from('agent_responses').select('*').eq('thread_id', id)
         .order('round_number', { ascending: true })
         .order('response_order', { ascending: true }),
       supabase.from('verdicts').select('*').eq('thread_id', id).single(),
       supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', id).order('created_at', { ascending: true }),
       supabase.from('intake_questions').select('*').eq('thread_id', id).order('question_order', { ascending: true }),
-      supabase.from('threads').select('id, topic, platform, submitted_by, raw_submission, views, created_at, agent_responses(count), human_replies(count)')
+    ]);
+    
+    if (thread.embedding) {
+      const { data: matches } = await supabase.rpc('match_threads', {
+        query_embedding: thread.embedding,
+        match_threshold: 0.5,
+        match_count: 3,
+        exclude_id: id
+      });
+      if (matches && matches.length > 0) {
+        const { data: rel } = await supabase.from('threads').select('id, topic, platform, submitted_by, raw_submission, views, created_at, agent_responses(count), human_replies(count)')
+          .in('id', matches.map((m: any) => m.id));
+        relatedDebates = rel || [];
+      }
+    }
+    
+    if (!relatedDebates || relatedDebates.length === 0) {
+      const { data: fallbackRel } = await supabase.from('threads').select('id, topic, platform, submitted_by, raw_submission, views, created_at, agent_responses(count), human_replies(count)')
         .eq('status', 'published')
         .eq('platform', thread.platform || 'Multi-platform')
         .neq('id', id)
         .order('created_at', { ascending: false })
-        .limit(3)
-    ]);
+        .limit(3);
+      relatedDebates = fallbackRel || [];
+    }
     
     if (r) {
-      agentResponses = r.filter((x) => !x.is_final_position);
-      finalPositions = r.filter((x) => x.is_final_position);
+      agentResponses = r.filter((x: any) => !x.is_final_position);
+      finalPositions = r.filter((x: any) => x.is_final_position);
     }
     verdict = v;
     humanReplies = h || [];
     (thread as any).intake_questions = q || [];
-    relatedDebates = rel || [];
   }
 
   const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`;
