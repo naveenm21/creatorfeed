@@ -38,9 +38,6 @@ export function Navbar() {
             <Link href="/trending" className="text-[14px] text-secondary hover:text-primary transition-colors mr-2">
               Trending
             </Link>
-            <Link href="/leaderboard" className="text-[14px] text-secondary hover:text-primary transition-colors mr-2">
-              Leaderboard
-            </Link>
             {loading ? (
               <div className="w-8 h-8 rounded-full 
                 bg-borderdefault animate-pulse"/>
@@ -165,9 +162,6 @@ export function Navbar() {
               </Link>
               <Link href="/trending" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
                 Trending
-              </Link>
-              <Link href="/leaderboard" onClick={() => setMobileMenuOpen(false)} className="text-[18px] font-semibold text-primary pb-4 border-b border-borderdefault">
-                Leaderboard
               </Link>
               {loading ? (
                 <div className="h-[44px] w-1/2 bg-borderdefault animate-pulse rounded-lg mb-4" />
