@@ -39,7 +39,8 @@ function stripHtml(html) {
              .replace(/&gt;/g, '>')
              .replace(/&quot;/g, '"')
              .replace(/&#39;/g, "'")
-             .replace(/&nbsp;/g, ' ');
+             .replace(/&nbsp;/g, ' ')
+             .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Strip markdown links
   return text.trim();
 }
 
@@ -185,6 +186,39 @@ async function main() {
       } else {
         console.log('Debate successfully generated!');
         successCount++;
+
+        // --- NEW: Hybrid Content Scraping (Comments) ---
+        try {
+          console.log('Fetching community comments for SEO hybrid content...');
+          // link is e.g. https://www.reddit.com/r/subreddit/comments/id/title/
+          const commentFeedUrl = post.link.endsWith('/') ? post.link.slice(0, -1) + '.rss' : post.link + '/.rss';
+          const commentFeed = await parser.parseURL(commentFeedUrl);
+          
+          // Item 0 is usually the post itself. Items 1+ are comments.
+          let insertedComments = 0;
+          for (let i = 1; i < commentFeed.items.length; i++) {
+            if (insertedComments >= 2) break; // Top 2 comments only
+            const cItem = commentFeed.items[i];
+            const rawComment = cItem.content || cItem.contentSnippet || '';
+            const cleanComment = stripHtml(rawComment);
+            
+            // Skip AutoModerator or tiny comments
+            if (cItem.author && cItem.author.includes('AutoModerator')) continue;
+            if (cleanComment.split(' ').length < 10) continue;
+
+            // Insert into human_replies directly
+            await supabaseQuery('human_replies', 'POST', {
+              thread_id: intakeData.threadId,
+              user_id: null,
+              author_name: "Community Perspective",
+              reply_text: cleanComment
+            });
+            console.log(`Injected human comment ${insertedComments + 1}/2`);
+            insertedComments++;
+          }
+        } catch (commentErr) {
+          console.error('Failed to scrape/inject comments:', commentErr.message);
+        }
       }
       
       // Wait slightly between requests to not overload the AI or DB

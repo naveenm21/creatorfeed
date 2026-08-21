@@ -88,7 +88,8 @@ ${previousText ?
 }
 
 This is Round ${roundNumber}. 
-Be direct and specific.`
+Be highly conversational, casual, and opinionated. Use varied sentence lengths (high burstiness).
+CRITICAL: DO NOT use typical AI buzzwords like 'delve', 'moreover', 'tapestry', 'crucial', or 'in conclusion'. Speak like a real human creator.`
 
   const message = await anthropic.messages.create({
     model: 'claude-haiku-4-5-20251001',
@@ -198,7 +199,8 @@ async function collectFinalPositions(
       messages: [{ role: 'user', content: `${context}
 
 After this full debate, give your FINAL position 
-in ONE sentence. Be direct and specific.
+in ONE sentence. Be direct, casual, and conversational. 
+DO NOT use robotic AI words like 'delve', 'crucial', or 'moreover'. 
 What is your single most important recommendation?`
       }]
     })
