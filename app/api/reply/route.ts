@@ -26,6 +26,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    const uuidMatch = threadId.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);
+    const parsedThreadId = uuidMatch ? uuidMatch[0] : threadId;
+
     // Map UI values to DB constraint values
     const sentimentMap: Record<string, string> = {
       agree: 'agreed',
@@ -39,7 +42,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await supabase
       .from('human_replies')
       .insert({
-        thread_id: threadId,
+        thread_id: parsedThreadId,
         user_id: user.id,
         agent_referenced: agentReferenced || null,
         sentiment: mappedSentiment,

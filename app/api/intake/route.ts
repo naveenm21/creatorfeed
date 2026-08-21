@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const { data: { session } } = await supabase.auth.getSession()
     
     const body = await request.json()
-    const { rawSubmission, submittedBy: bodySubmittedBy, platform: seededPlatform, followerRange: seededFollowerRange } = body
+    const { rawSubmission, submittedBy: bodySubmittedBy, platform: seededPlatform, followerRange: seededFollowerRange, sourceUrl } = body
     
     // Use verified userId and metadata if session exists
     const userId = session?.user.id || null
@@ -131,6 +131,7 @@ export async function POST(request: NextRequest) {
           submitted_by: submittedBy,
           ip_address: ip,
           user_agent: ua,
+          source_url: sourceUrl || null,
           embedding: await generateEmbedding(rawSubmission)
         })
         .select()

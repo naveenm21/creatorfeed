@@ -156,6 +156,7 @@ async function main() {
           rawSubmission: post.content,
           platform: platform,
           followerRange: '1K-10K', // Default guestimation for random posts
+          sourceUrl: post.link,
           userId: null, // Anonymous / Automated
           isSeeded: true
         })

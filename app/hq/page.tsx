@@ -19,7 +19,7 @@ export default async function AdminDashboard() {
     supabase.from('subscribers').select('*', { count: 'exact', head: true }),
     supabase.from('threads').select('*', { count: 'exact', head: true }),
     supabase.from('subscribers').select('email, created_at, status').order('created_at', { ascending: false }).limit(10),
-    supabase.from('threads').select('id, topic, status, platform, created_at').order('created_at', { ascending: false }).limit(10),
+    supabase.from('threads').select('id, topic, status, platform, source_url, created_at').order('created_at', { ascending: false }).limit(10),
     supabase.from('users').select('id, full_name, email, karma').order('karma', { ascending: false }).limit(10)
   ]);
 
@@ -50,19 +50,32 @@ export default async function AdminDashboard() {
           <div className="divide-y divide-[#1F1F1F] max-h-[400px] overflow-y-auto custom-scrollbar">
             {recentDebates?.map(debate => (
               <div key={debate.id} className="p-4 hover:bg-white/5 transition-colors">
-                <Link href={`/debate/${debate.id}`} className="block">
-                  <p className="text-white font-medium text-sm line-clamp-1 mb-1">{debate.topic}</p>
-                  <div className="flex items-center gap-2 text-xs text-secondary">
-                    <span className={
-                      "px-2 py-0.5 rounded-full font-bold uppercase " +
-                      (debate.status === 'published' ? 'bg-green-500/10 text-green-400' : 'bg-yellow-500/10 text-yellow-400')
-                    }>
-                      {debate.status}
-                    </span>
-                    <span>•</span>
-                    <span>{debate.platform || 'Multi-platform'}</span>
-                  </div>
-                </Link>
+                <div className="flex justify-between items-start">
+                  <Link href={`/debate/${debate.id}`} className="block flex-1">
+                    <p className="text-white font-medium text-sm line-clamp-1 mb-1">{debate.topic}</p>
+                    <div className="flex items-center gap-2 text-xs text-secondary">
+                      <span className={
+                        "px-2 py-0.5 rounded-full font-bold uppercase " +
+                        (debate.status === 'published' ? 'bg-green-500/10 text-green-400' : 'bg-yellow-500/10 text-yellow-400')
+                      }>
+                        {debate.status}
+                      </span>
+                      <span>•</span>
+                      <span>{debate.platform || 'Multi-platform'}</span>
+                    </div>
+                  </Link>
+                  {debate.source_url && (
+                    <a 
+                      href={debate.source_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-xs text-brandprimary hover:underline px-2 py-1 bg-brandprimary/10 rounded ml-2"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Source
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
