@@ -139,9 +139,9 @@ async function main() {
     console.log(`\nProcessing: [r/${post.subreddit}] ${post.title}`);
     
     // Determine platform tag
-    let platform = 'youtube';
-    if (post.subreddit.toLowerCase().includes('tiktok')) platform = 'tiktok';
-    if (post.subreddit.toLowerCase().includes('instagram')) platform = 'instagram';
+    let platform = 'YouTube';
+    if (post.subreddit.toLowerCase().includes('tiktok')) platform = 'TikTok';
+    if (post.subreddit.toLowerCase().includes('instagram')) platform = 'Instagram';
 
     try {
       // Call the Intake API
@@ -161,7 +161,8 @@ async function main() {
       });
 
       if (!intakeRes.ok) {
-        console.error(`Intake API failed: ${intakeRes.status}`);
+        const errorText = await intakeRes.text();
+        console.error(`Intake API failed: ${intakeRes.status} - ${errorText}`);
         continue;
       }
 
