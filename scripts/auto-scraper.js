@@ -9,7 +9,7 @@ require('dotenv').config({ path: '.env.local' });
 // We use the same environment variables as Next.js
 const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const APP_URL = process.env.APP_URL || 'https://feed.creedom.ai'; // In production, this should point to localhost if running on same server, or the actual domain
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
 
 const SUBREDDITS = [
   'NewTubers',
@@ -60,7 +60,8 @@ async function supabaseQuery(endpoint, method = 'GET', body = null) {
   if (!response.ok) {
     throw new Error(`Supabase query failed: ${response.status} ${await response.text()}`);
   }
-  return response.json();
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
 }
 
 async function main() {
@@ -145,7 +146,7 @@ async function main() {
 
     try {
       // Call the Intake API
-      const intakeRes = await fetch(`${APP_URL}/api/intake`, {
+      const intakeRes = await fetch(`${API_BASE_URL}/api/intake`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -171,7 +172,7 @@ async function main() {
       
       // Call the Debate generation endpoint directly
       console.log('Triggering AI Debate generation...');
-      const debateRes = await fetch(`${APP_URL}/api/debate`, {
+      const debateRes = await fetch(`${API_BASE_URL}/api/debate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
