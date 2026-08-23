@@ -93,7 +93,7 @@ async function main() {
     console.log(`Fetching RSS for r/${subreddit}...`);
     try {
       // Use a custom user agent to avoid Reddit blocking default node agents
-      const feed = await parser.parseURL(`https://www.reddit.com/r/${subreddit}/hot/.rss`);
+      const feed = await parser.parseURL(`https://old.reddit.com/r/${subreddit}/hot/.rss`);
       
       for (const item of feed.items) {
         const rawContent = item.content || item.contentSnippet || '';
@@ -199,7 +199,9 @@ async function main() {
         try {
           console.log('Fetching community comments for SEO hybrid content...');
           // link is e.g. https://www.reddit.com/r/subreddit/comments/id/title/
-          const commentFeedUrl = post.link.endsWith('/') ? post.link.slice(0, -1) + '.rss' : post.link + '/.rss';
+          // we should use old.reddit.com for comments feed as well
+          let commentFeedUrl = post.link.endsWith('/') ? post.link.slice(0, -1) + '.rss' : post.link + '/.rss';
+          commentFeedUrl = commentFeedUrl.replace('www.reddit.com', 'old.reddit.com');
           const commentFeed = await parser.parseURL(commentFeedUrl);
           
           // Item 0 is usually the post itself. Items 1+ are comments.
