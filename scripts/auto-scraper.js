@@ -4,7 +4,7 @@ const parser = new Parser({
     item: ['content'],
   },
   headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) CreatorFeedBot/1.1'
+    'User-Agent': 'web:creatorfeed:v1.0.0 (by /u/naveenmurugan)'
   }
 });
 require('dotenv').config({ path: '.env.local' });
@@ -121,7 +121,7 @@ async function main() {
       console.error(`Failed to fetch r/${subreddit}:`, error.message);
     }
     // Delay to avoid Reddit rate limits (429)
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 6000));
   }
 
   console.log(`Found ${allCandidates.length} high-quality candidate posts.`);
