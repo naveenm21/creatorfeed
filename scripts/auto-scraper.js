@@ -2,6 +2,9 @@ const Parser = require('rss-parser');
 const parser = new Parser({
   customFields: {
     item: ['content'],
+  },
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) CreatorFeedBot/1.1'
   }
 });
 require('dotenv').config({ path: '.env.local' });
@@ -117,6 +120,8 @@ async function main() {
     } catch (error) {
       console.error(`Failed to fetch r/${subreddit}:`, error.message);
     }
+    // Delay to avoid Reddit rate limits (429)
+    await new Promise(r => setTimeout(r, 2000));
   }
 
   console.log(`Found ${allCandidates.length} high-quality candidate posts.`);
