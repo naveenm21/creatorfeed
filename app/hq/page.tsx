@@ -70,7 +70,6 @@ export default async function AdminDashboard() {
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-xs text-brandprimary hover:underline px-2 py-1 bg-brandprimary/10 rounded ml-2"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       Source
                     </a>
