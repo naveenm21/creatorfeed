@@ -368,25 +368,7 @@ export function DebateView({
           </div>
           <div className="w-full h-px bg-[#1F1F1F] mb-0" />
 
-          {/* FEATURED SNIPPET: TL;DR BOX FOR SEO */}
-          {!isLive && verdict && (verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
-            <div className="mt-6 mb-6 bg-brandprimary/5 border border-brandprimary/20 rounded-xl p-5 shadow-lg shadow-brandprimary/5">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
-                  <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                </div>
-                <h2 className="text-[13px] font-bold text-brandprimary uppercase tracking-widest">AI Debate TL;DR</h2>
-              </div>
-              <ul className="space-y-2">
-                {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
-                  <li key={i} className="text-[14px] text-white flex items-start gap-2 leading-relaxed">
-                    <span className="text-brandprimary/50 mt-1">•</span>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+
 
           {/* STICKY TAB BAR */}
           <div className="sticky top-[56px] z-20 bg-[#030303]/80 backdrop-blur border-b border-[#343536] h-[48px] flex items-center gap-6 mb-8 px-2">
@@ -871,6 +853,26 @@ export function DebateView({
               </div>
             )}
           </div>
+
+          {/* FEATURED SNIPPET: TL;DR BOX FOR SEO (Moved to bottom) */}
+          {!isLive && verdict && (verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
+            <div className="mt-6 mb-6 bg-brandprimary/5 border border-brandprimary/20 rounded-xl p-5 shadow-lg shadow-brandprimary/5">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
+                  <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+                <h2 className="text-[13px] font-bold text-brandprimary uppercase tracking-widest">AI Debate TL;DR</h2>
+              </div>
+              <ul className="space-y-2">
+                {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
+                  <li key={i} className="text-[14px] text-white flex items-start gap-2 leading-relaxed">
+                    <span className="text-brandprimary/50 mt-1">•</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* RIGHT SIDEBAR */}
