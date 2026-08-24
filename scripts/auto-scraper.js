@@ -1,12 +1,4 @@
-const Parser = require('rss-parser');
-const parser = new Parser({
-  customFields: {
-    item: ['content'],
-  },
-  headers: {
-    'User-Agent': 'web:creatorfeed:v1.0.0 (by /u/naveenmurugan)'
-  }
-});
+// Using rss2json API to bypass Reddit's datacenter IP bans
 require('dotenv').config({ path: '.env.local' });
 
 // We use the same environment variables as Next.js
@@ -92,11 +84,17 @@ async function main() {
   for (const subreddit of SUBREDDITS) {
     console.log(`Fetching RSS for r/${subreddit}...`);
     try {
-      // Use a custom user agent to avoid Reddit blocking default node agents
-      const feed = await parser.parseURL(`https://old.reddit.com/r/${subreddit}/hot/.rss`);
+      // Use rss2json to bypass Reddit's IP block on VPS servers
+      const fetch = (await import('node-fetch')).default;
+      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/r/${subreddit}/hot/.rss`);
+      const feed = await res.json();
+      
+      if (feed.status !== 'ok' || !feed.items) {
+        throw new Error(`rss2json failed: ${feed.message || 'unknown error'}`);
+      }
       
       for (const item of feed.items) {
-        const rawContent = item.content || item.contentSnippet || '';
+        const rawContent = item.content || item.description || '';
         const cleanText = stripHtml(rawContent);
         
         // Quality checks
@@ -198,18 +196,22 @@ async function main() {
         // --- NEW: Hybrid Content Scraping (Comments) ---
         try {
           console.log('Fetching community comments for SEO hybrid content...');
-          // link is e.g. https://www.reddit.com/r/subreddit/comments/id/title/
-          // we should use old.reddit.com for comments feed as well
+          // we use rss2json for comments feed as well
           let commentFeedUrl = post.link.endsWith('/') ? post.link.slice(0, -1) + '.rss' : post.link + '/.rss';
-          commentFeedUrl = commentFeedUrl.replace('www.reddit.com', 'old.reddit.com');
-          const commentFeed = await parser.parseURL(commentFeedUrl);
+          
+          const cRes = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(commentFeedUrl)}`);
+          const commentFeed = await cRes.json();
+          
+          if (commentFeed.status !== 'ok' || !commentFeed.items) {
+            throw new Error(`rss2json comments failed: ${commentFeed.message || 'unknown error'}`);
+          }
           
           // Item 0 is usually the post itself. Items 1+ are comments.
           let insertedComments = 0;
           for (let i = 1; i < commentFeed.items.length; i++) {
             if (insertedComments >= 2) break; // Top 2 comments only
             const cItem = commentFeed.items[i];
-            const rawComment = cItem.content || cItem.contentSnippet || '';
+            const rawComment = cItem.content || cItem.description || '';
             const cleanComment = stripHtml(rawComment);
             
             // Skip AutoModerator or tiny comments
