@@ -90,7 +90,7 @@ export function DebateView({
   relatedDebates?: any[];
 }) {
 
-  const [activeTab, setActiveTab] = useState('Verdict');
+  const [activeTab, setActiveTab] = useState('AI Perspectives');
   const [isScannerMode, setIsScannerMode] = useState(true);
   const [expandedResponses, setExpandedResponses] = useState<Set<string>>(new Set());
 
@@ -469,7 +469,7 @@ export function DebateView({
           <div ref={contentRef} className="pb-10">
 
             {/* TAB 1: AI PERSPECTIVES */}
-            <div className={activeTab === 'AI Perspectives' || activeTab === 'Verdict' ? 'block' : 'hidden'}>
+            <div className={activeTab === 'AI Perspectives' ? 'block' : 'hidden'}>
               <h2 className="sr-only">AI Perspectives</h2>
 
               {/* Live: show agent circles at top while debating */}
@@ -775,35 +775,10 @@ export function DebateView({
               </div>
             </div>
 
-            {/* TAB 3: VERDICT */}
-            <div className={activeTab === 'Verdict' ? 'block' : 'hidden'}>
-              {isLive ? (
-                <div className="text-center py-16 text-secondary">
-                  <div className="w-6 h-6 border-2 border-brandprimary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                  <p>The verdict will appear once all agents have finished debating.</p>
-                </div>
-              ) : (
+            {/* PROMOTIONAL & FINAL RECOMMENDATIONS */}
+            <div className="mt-12">
+              {!isLive && (
                 <>
-                  {verdict && (
-                    <div className="bg-gradient-to-br from-[#0F0A1A] to-[#0A0A0F] border border-brandprimary/30 rounded-2xl p-6 mb-10">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
-                        <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">AI Consensus Verdict</span>
-                      </div>
-                      <p className="text-[16px] text-white leading-[1.8] mb-6 font-medium">{verdict.verdict_text}</p>
-                      {(verdict.key_takeaway_1 || verdict.key_takeaway_2 || verdict.key_takeaway_3) && (
-                        <div className="space-y-4 border-t border-[#1F1F1F] pt-6 mt-2">
-                          <p className="text-[12px] uppercase tracking-widest text-secondary font-bold mb-1">Key Takeaways</p>
-                          {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
-                            <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
-                              <span className="text-brandprimary font-black text-[16px]">{i + 1}</span>
-                              <p className="text-[14px] text-primary leading-relaxed">{t}</p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
 
                   {/* PROMOTIONAL SECTION: Only for Instagram-related problems */}
                   {thread.platform?.toLowerCase().includes('instagram') && (
