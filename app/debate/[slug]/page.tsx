@@ -165,7 +165,8 @@ export default async function DebatePage({ params }: Props) {
                   "dateModified": thread.updated_at,
                   "author": {
                     "@type": "Person",
-                    "name": thread.submitted_by || "Anonymous"
+                    "name": thread.submitted_by || "Anonymous",
+                    "url": "https://feed.creedom.ai"
                   },
                   "publisher": {
                     "@type": "Organization",
