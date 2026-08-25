@@ -315,7 +315,7 @@ export function DebateView({
       <div className="max-w-[1080px] mx-auto flex flex-col lg:flex-row gap-10">
 
         {/* LEFT COLUMN */}
-        <div className="flex-1 lg:max-w-[720px] order-2 lg:order-1 mt-8 lg:mt-0">
+        <div className="flex-1 lg:max-w-[720px] order-1 lg:order-1 mt-8 lg:mt-0">
 
           {/* THREAD HEADER */}
           <div className="mb-6">
@@ -780,36 +780,7 @@ export function DebateView({
               {!isLive && (
                 <>
 
-                  {/* PROMOTIONAL SECTION: Only for Instagram-related problems */}
-                  {thread.platform?.toLowerCase().includes('instagram') && (
-                    <div className="bg-gradient-to-br from-brandprimary/10 to-brandorange/10 border border-brandprimary/20 rounded-2xl p-6 mb-10">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-5 h-5 rounded-full bg-brandprimary/20 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-brandprimary" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                          </svg>
-                        </div>
-                        <span className="text-[12px] uppercase tracking-widest font-bold text-brandprimary">Recommended Next Step</span>
-                      </div>
-                      
-                      <h3 className="text-[18px] font-bold text-white mb-2 leading-snug">
-                        Struggling with {thread.topic}?
-                      </h3>
-                      
-                      <p className="text-[14px] text-secondary leading-relaxed mb-6">
-                        This product can help you to solve that Instagram growth problem or understand your audience better. 
-                        Go and use this tool to become a better creator.
-                      </p>
 
-                      <Link 
-                        href="https://creedom.ai" 
-                        target="_blank"
-                        className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold px-8 py-3 rounded-xl hover:opacity-90 transform active:scale-[0.98] transition-all shadow-lg shadow-brandprimary/20"
-                      >
-                        Explore Creedom.ai →
-                      </Link>
-                    </div>
-                  )}
 
                   {finalPositions.length > 0 && (
                     <div className="mb-12">
@@ -839,33 +810,6 @@ export function DebateView({
                     </div>
                   )}
 
-                  <div className="bg-card border border-borderdefault rounded-2xl p-6 text-center">
-                    <h3 className="text-[18px] font-bold text-white mb-2">Has this debate helped you?</h3>
-                    <p className="text-[14px] text-secondary mb-4">Submit your own creator problem and get 6 AI agents to debate it publicly.</p>
-                    <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-all">
-                      Submit Your Problem →
-                    </Link>
-                  </div>
-
-                  {/* AGGRESSIVE UGC CTA */}
-                  <div className="fixed bottom-6 right-6 z-50 animate-in slide-in-from-bottom-10 fade-in duration-500 delay-1000 hidden md:block">
-                    <button 
-                      onClick={() => handleTabSwitch('Community')}
-                      className="bg-[#0A0A0A] border border-[#1F1F1F] shadow-2xl rounded-2xl p-4 flex items-center gap-4 hover:border-brandprimary/50 transition-colors group cursor-pointer"
-                    >
-                      <div className="flex -space-x-2">
-                        <div className="w-10 h-10 rounded-full bg-brandprimary/20 border-2 border-[#0A0A0A] flex items-center justify-center text-brandprimary font-bold">5</div>
-                        <div className="w-10 h-10 rounded-full bg-teal-500/20 border-2 border-[#0A0A0A] flex items-center justify-center">
-                          <svg className="w-4 h-4 text-teal-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path></svg>
-                        </div>
-                      </div>
-                      <div className="text-left pr-4">
-                        <p className="text-[14px] font-bold text-white group-hover:text-brandprimary transition-colors">What&apos;s your take?</p>
-                        <p className="text-[12px] text-secondary">Earn 5 Karma for replying</p>
-                      </div>
-                      <svg className="w-5 h-5 text-secondary group-hover:text-brandprimary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
-                  </div>
                 </>
               )}
             </div>
@@ -905,7 +849,7 @@ export function DebateView({
         </div>
 
         {/* RIGHT SIDEBAR */}
-        <div className="w-full lg:w-[300px] shrink-0 lg:sticky lg:top-[80px] self-start order-1 lg:order-2 space-y-4">
+        <div className="w-full lg:w-[300px] shrink-0 lg:sticky lg:top-[80px] self-start order-2 lg:order-2 space-y-6">
           {isLive ? (
             <div className="bg-card border border-[#2A2A2A] rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-3">
@@ -919,6 +863,68 @@ export function DebateView({
               <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
             </div>
           ) : null}
+
+          {/* AGGRESSIVE UGC CTA (Sidebar Variant) */}
+          <button 
+            onClick={() => {
+              handleTabSwitch('Community');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="w-full bg-gradient-to-br from-[#0A0A0A] to-[#111] border border-[#1F1F1F] shadow-xl rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-brandprimary/50 transition-all group cursor-pointer"
+          >
+            <div className="flex -space-x-2 mb-1">
+              <div className="w-12 h-12 rounded-full bg-brandprimary/20 border-2 border-[#0A0A0A] flex items-center justify-center text-brandprimary font-bold text-[18px]">5</div>
+              <div className="w-12 h-12 rounded-full bg-teal-500/20 border-2 border-[#0A0A0A] flex items-center justify-center">
+                <svg className="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path></svg>
+              </div>
+            </div>
+            <div>
+              <p className="text-[16px] font-bold text-white group-hover:text-brandprimary transition-colors">What&apos;s your take?</p>
+              <p className="text-[13px] text-secondary mt-1">Earn 5 Karma for replying</p>
+            </div>
+            <div className="mt-2 text-[12px] font-bold text-brandprimary/80 group-hover:text-brandprimary transition-colors flex items-center gap-1">
+              Join the discussion <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+          </button>
+
+          {/* PROMOTIONAL SECTION: Only for Instagram-related problems */}
+          {!isLive && thread.platform?.toLowerCase().includes('instagram') && (
+            <div className="bg-gradient-to-br from-brandprimary/10 to-brandorange/10 border border-brandprimary/20 rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-5 h-5 rounded-full bg-brandprimary/20 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-brandprimary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                  </svg>
+                </div>
+                <span className="text-[11px] uppercase tracking-widest font-bold text-brandprimary">Recommended</span>
+              </div>
+              <h3 className="text-[16px] font-bold text-white mb-2 leading-snug">
+                Struggling with {thread.topic}?
+              </h3>
+              <p className="text-[13px] text-secondary leading-relaxed mb-4">
+                This tool helps you solve growth problems and understand your audience.
+              </p>
+              <Link 
+                href="https://creedom.ai" 
+                target="_blank"
+                className="flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[13px] font-bold px-4 py-3 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brandprimary/20"
+              >
+                Explore Creedom.ai →
+              </Link>
+            </div>
+          )}
+
+          {/* HAS THIS DEBATE HELPED YOU? */}
+          {!isLive && (
+            <div className="bg-card border border-borderdefault rounded-2xl p-5 text-center">
+              <h3 className="text-[15px] font-bold text-white mb-2">Has this debate helped you?</h3>
+              <p className="text-[12px] text-secondary mb-4">Get 6 AI agents to debate your creator problem.</p>
+              <Link href="/submit" className="flex items-center justify-center w-full bg-white/5 border border-white/10 text-white text-[13px] font-bold px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
+                Submit Your Problem →
+              </Link>
+            </div>
+          )}
+
         </div>
       </div>
       <ShareDialog 
