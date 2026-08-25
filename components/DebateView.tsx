@@ -39,6 +39,39 @@ type HumanReply = {
 
 const ALL_AGENTS = ['Axel', 'Nova', 'Leo', 'Rex', 'Sage', 'Zara'];
 
+const linkifyText = (text: string) => {
+  const keywordLinks = [
+    { word: 'youtube', link: '/platform/youtube' },
+    { word: 'tiktok', link: '/platform/tiktok' },
+    { word: 'instagram', link: '/platform/instagram' },
+    { word: 'algorithm', link: '/trending?q=algorithm' },
+    { word: 'shadowban', link: '/trending?q=shadowban' },
+    { word: 'shorts', link: '/trending?q=shorts' },
+    { word: 'reels', link: '/trending?q=reels' },
+    { word: 'monetization', link: '/trending?q=monetization' }
+  ];
+
+  let result: React.ReactNode[] = [text];
+  
+  keywordLinks.forEach(({ word, link }) => {
+    const regex = new RegExp(`\\b(${word})\\b`, 'gi');
+    result = result.flatMap((part, index) => {
+      if (typeof part === 'string') {
+        const parts = part.split(regex);
+        return parts.map((p, i) => {
+          if (p.toLowerCase() === word.toLowerCase()) {
+            return <Link key={`${word}-${index}-${i}`} href={link} className="text-[#FF4500] hover:underline font-medium">{p}</Link>;
+          }
+          return p;
+        });
+      }
+      return part;
+    });
+  });
+
+  return result;
+}
+
 export function DebateView({ 
   slug, 
   initialThread, 
@@ -521,11 +554,11 @@ export function DebateView({
                                   )}
                                 </div>
                                 
-                                <div className={`relative transition-all duration-300 ${!isExpanded ? 'max-h-[80px] overflow-hidden' : 'max-h-[3000px]'}`}>
-                                  <p className={`text-[15px] text-[#D7DADC] leading-relaxed mb-4 pr-4 ${!isExpanded ? 'line-clamp-2' : ''}`}>
-                                    {agent.response_text}
-                                  </p>
-                                  {!isExpanded && (
+                                  <div className={`relative transition-all duration-300 ${!isExpanded ? 'max-h-[80px] overflow-hidden' : 'max-h-[3000px]'}`}>
+                                    <div className={`text-[15px] text-[#D7DADC] leading-relaxed mb-4 pr-4 ${!isExpanded ? 'line-clamp-2' : ''}`}>
+                                      {linkifyText(agent.response_text)}
+                                    </div>
+                                    {!isExpanded && (
                                     <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
                                   )}
                                 </div>

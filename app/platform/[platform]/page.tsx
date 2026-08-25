@@ -94,7 +94,47 @@ export default async function PlatformPage({
 
   return (
     <main className="min-h-screen pt-6 pb-20 fade-in">
-      <h1 className="sr-only">{platformName} Creator Problems</h1>
+      {/* SEO Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://feed.creedom.ai"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Platforms",
+                "item": "https://feed.creedom.ai"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": platformName,
+                "item": `https://feed.creedom.ai/platform/${params.platform}`
+              }
+            ]
+          })
+        }}
+      />
+      
+      <div className="max-w-[1080px] mx-auto px-4 xl:px-0 mb-8 mt-4">
+        <h1 className="text-3xl font-black text-white tracking-tight mb-3">
+          {platformName} Creator Problems
+        </h1>
+        <p className="text-[#818384] text-[15px] max-w-3xl leading-relaxed">
+          Explore AI-debated strategies and real creator problems about {platformName} growth, monetization, algorithm changes, and audience building. 
+          Get specific, multi-agent advice instead of generic tips.
+        </p>
+      </div>
+
       <div className="max-w-[1080px] mx-auto flex gap-10 px-4 xl:px-0">
         
         {/* LEFT FEED COLUMN */}

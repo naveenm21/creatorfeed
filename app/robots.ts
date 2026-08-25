@@ -13,11 +13,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/'
       },
       {
+        userAgent: 'OAI-SearchBot', // OpenAI SearchGPT
+        allow: '/'
+      },
+      {
         userAgent: 'ChatGPT-User',
         allow: '/'
       },
       {
-        userAgent: 'Google-Extended',
+        userAgent: 'Google-Extended', // Google Gemini/AI Overviews
         allow: '/'
       },
       {
