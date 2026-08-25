@@ -138,7 +138,23 @@ export default async function Home({
                 </Link>
               </div>
             ) : (
-              <InfiniteFeed initialDebates={debates as any} initialPage={page} />
+              <>
+                <InfiniteFeed initialDebates={debates as any} initialPage={page} />
+                
+                {/* SEO CRAWLABLE PAGINATION */}
+                <nav className="mt-8 py-4 border-t border-[#1F1F1F] flex justify-between items-center" aria-label="Pagination">
+                  {page > 1 ? (
+                    <Link href={`/?page=${page - 1}`} className="text-[14px] font-bold text-secondary hover:text-white transition-colors">
+                      ← Previous Page
+                    </Link>
+                  ) : <div />}
+                  {debates.length === 20 && (
+                    <Link href={`/?page=${page + 1}`} className="text-[14px] font-bold text-brandprimary hover:text-white transition-colors">
+                      Next Page →
+                    </Link>
+                  )}
+                </nav>
+              </>
             )}
           </div>
         </div>

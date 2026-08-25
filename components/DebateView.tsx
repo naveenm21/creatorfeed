@@ -349,6 +349,7 @@ export function DebateView({
             {/* PROBLEM DESCRIPTION (Expandable) */}
             {thread?.raw_submission && (
               <div className="mt-4 p-4 border border-white/10 rounded-xl bg-white/5">
+                <h2 className="sr-only">Creator Context</h2>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
                     <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -403,14 +404,52 @@ export function DebateView({
 
 
 
+          {/* AI CONSENSUS & KEY TAKEAWAYS (SEO PRIORITY) */}
+          {!isLive && verdict && (
+            <div className="mt-8 mb-8 space-y-6">
+              {/* Consensus Block */}
+              <div className="bg-brandprimary/5 border border-brandprimary/20 rounded-2xl p-6 shadow-lg shadow-brandprimary/5">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-6 rounded-full bg-brandprimary/20 flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <h2 className="text-[18px] font-bold text-brandprimary tracking-tight">AI Consensus</h2>
+                </div>
+                <div className="text-[16px] text-white leading-[1.7] whitespace-pre-wrap">
+                  {linkifyText(verdict.verdict_text)}
+                </div>
+              </div>
+              
+              {/* Key Takeaways Block */}
+              {(verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
+                <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    <h2 className="text-[16px] font-bold text-white tracking-tight">Key Takeaways</h2>
+                  </div>
+                  <ul className="space-y-3">
+                    {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
+                      <li key={i} className="text-[15px] text-secondary flex items-start gap-3 leading-relaxed">
+                        <span className="text-brandprimary/60 mt-1 flex-shrink-0">•</span>
+                        <span>{linkifyText(t)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className="w-full h-px bg-[#1F1F1F] mb-0" />
+
           {/* STICKY TAB BAR */}
           <div className="sticky top-[56px] z-20 bg-[#030303]/80 backdrop-blur border-b border-[#343536] h-[48px] flex items-center gap-6 mb-8 px-2">
-            {['Verdict', 'AI Debate', 'Community'].map(tab => (
+            {['AI Perspectives', 'Community'].map(tab => (
               <button
                 key={tab}
                 onClick={() => handleTabSwitch(tab)}
                 className={`h-full flex items-center border-b-2 transition-colors duration-200 ${
-                  activeTab === tab
+                  activeTab === tab || (activeTab === 'Verdict' && tab === 'AI Perspectives')
                     ? 'border-[#FF4500] text-white'
                     : 'border-transparent text-[#818384] hover:text-white'
                 }`}
@@ -429,8 +468,9 @@ export function DebateView({
           {/* CONTENT */}
           <div ref={contentRef} className="pb-10">
 
-            {/* TAB 1: AI DEBATE */}
-            <div className={activeTab === 'AI Debate' ? 'block' : 'hidden'}>
+            {/* TAB 1: AI PERSPECTIVES */}
+            <div className={activeTab === 'AI Perspectives' || activeTab === 'Verdict' ? 'block' : 'hidden'}>
+              <h2 className="sr-only">AI Perspectives</h2>
 
               {/* Live: show agent circles at top while debating */}
               {isLive && (
@@ -798,7 +838,7 @@ export function DebateView({
 
                   {finalPositions.length > 0 && (
                     <div className="mb-12">
-                      <h3 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-6 pl-1">Individual Agent Closings</h3>
+                      <h2 className="text-[13px] uppercase tracking-widest font-bold text-secondary mb-6 pl-1">Final Recommendation</h2>
                       <div className="space-y-6">
                         {finalPositions.map(fp => {
                           const color = AGENT_COLORS[fp.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
@@ -887,25 +927,6 @@ export function DebateView({
             )}
           </div>
 
-          {/* FEATURED SNIPPET: TL;DR BOX FOR SEO (Moved to bottom) */}
-          {!isLive && verdict && (verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
-            <div className="mt-6 mb-6 bg-brandprimary/5 border border-brandprimary/20 rounded-xl p-5 shadow-lg shadow-brandprimary/5">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
-                  <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                </div>
-                <h2 className="text-[13px] font-bold text-brandprimary uppercase tracking-widest">AI Debate TL;DR</h2>
-              </div>
-              <ul className="space-y-2">
-                {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
-                  <li key={i} className="text-[14px] text-white flex items-start gap-2 leading-relaxed">
-                    <span className="text-brandprimary/50 mt-1">•</span>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -922,22 +943,9 @@ export function DebateView({
               </div>
               <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
             </div>
-          ) : verdict ? (
-            <>
-              <Verdict content={verdict.verdict_text} agentCount={finalPositions.length || agentResponses.length} />
-              {activeTab !== 'Verdict' && (
-                <button
-                  onClick={() => handleTabSwitch('Verdict')}
-                  className="w-full bg-brandprimarysubtle border border-brandprimary/30 text-brandprimary text-[13px] font-semibold py-3 rounded-xl hover:bg-brandprimary/20 transition-colors"
-                >
-                  View Full Verdict →
-                </button>
-              )}
-            </>
           ) : null}
         </div>
       </div>
-
       <ShareDialog 
         isOpen={showShareDialog} 
         onClose={() => setShowShareDialog(false)} 

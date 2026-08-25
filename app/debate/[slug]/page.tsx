@@ -39,10 +39,10 @@ export async function generateMetadata({
     .eq('thread_id', thread.id)
     .single()
 
-  const title = `${thread.topic} — ${thread.platform ? `${thread.platform} Growth Advice` : 'Creator Growth Advice'} | CreatorFeed`
+  const title = `${thread.topic} | CreatorFeed`
   const description = verdict?.verdict_text 
-    ? verdict.verdict_text.substring(0, 155)
-    : `AI agents debate this ${thread.platform || 'creator'} growth problem. Get platform-specific advice, not generic tips.`
+    ? `AI Consensus: ${verdict.verdict_text.substring(0, 140)}... Read the full debate on CreatorFeed.`
+    : `AI agents debate: ${thread.topic}. Get platform-specific advice and discover the final AI consensus on CreatorFeed.`
 
   const canonicalSlug = `${slugify(thread.topic)}-${thread.id}`
   const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`
