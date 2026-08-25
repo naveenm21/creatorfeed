@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 
 function extractIdFromSlug(slug: string) {
