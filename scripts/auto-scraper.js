@@ -129,9 +129,38 @@ async function main() {
     return;
   }
 
-  // Shuffle and pick the top N
-  allCandidates = allCandidates.sort(() => 0.5 - Math.random());
-  const selectedPosts = allCandidates.slice(0, DAILY_LIMIT);
+  // Group candidates by platform to ensure even distribution
+  const platformGroups = {
+    YouTube: [],
+    TikTok: [],
+    Instagram: []
+  };
+
+  for (const post of allCandidates) {
+    let platform = 'YouTube';
+    if (post.subreddit.toLowerCase().includes('tiktok')) platform = 'TikTok';
+    if (post.subreddit.toLowerCase().includes('instagram')) platform = 'Instagram';
+    
+    platformGroups[platform].push(post);
+  }
+
+  // Shuffle each group
+  for (const platform in platformGroups) {
+    platformGroups[platform] = platformGroups[platform].sort(() => 0.5 - Math.random());
+  }
+
+  // Pick evenly from platforms until we hit DAILY_LIMIT
+  const selectedPosts = [];
+  const platforms = ['YouTube', 'TikTok', 'Instagram'];
+  let i = 0;
+  
+  while (selectedPosts.length < DAILY_LIMIT && platforms.some(p => platformGroups[p].length > 0)) {
+    const platform = platforms[i % platforms.length];
+    if (platformGroups[platform].length > 0) {
+      selectedPosts.push(platformGroups[platform].shift());
+    }
+    i++;
+  }
 
   console.log(`Injecting ${selectedPosts.length} posts into the AI Intake Pipeline...`);
 
