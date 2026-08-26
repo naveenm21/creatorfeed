@@ -348,55 +348,59 @@ export function DebateView({
 
             {/* PROBLEM DESCRIPTION (Expandable) */}
             {thread?.raw_submission && (
-              <section className="mt-4 p-4 border border-white/10 rounded-xl bg-white/5">
-                <h2 className="sr-only">Creator Context</h2>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
-                    <svg className="w-2.5 h-2.5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                  </div>
-                  <span className="text-[12px] font-bold text-secondary uppercase tracking-widest">Problem Description</span>
+              <section className="mt-8 mb-8 relative">
+                {/* Visual quote mark or decorative element */}
+                <div className="absolute -left-2 -top-4 w-10 h-10 bg-brandprimarysubtle text-brandprimary rounded-full flex items-center justify-center font-display font-black text-4xl shadow-sm z-10 border border-brandprimary/20 leading-none pt-4">
+                  “
                 </div>
-                {(() => {
-                  const hasQuestions = (thread.intake_questions || []).some((q: any) => q.answer);
-                  
-                  return (
-                    <>
-                      <div className={`text-[15px] text-secondary leading-relaxed transition-all duration-300 ${!showFullDescription ? 'line-clamp-3' : ''}`}>
-                        <p className="mb-2">{thread.raw_submission}</p>
-                        
-                        {(thread.intake_questions || [])
-                          .filter((q: any) => q.answer)
-                          .map((q: any, idx: number) => (
-                            <div key={idx} className="mt-4 border-t border-white/5 pt-3">
-                              <p className="text-[12px] font-bold text-brandprimary uppercase tracking-tight mb-1">
-                                {q.question_text}
-                              </p>
-                              <p className="text-primary font-medium italic">
-                                &ldquo;{q.answer}&rdquo;
-                              </p>
-                            </div>
-                          ))}
-                      </div>
+                
+                <div className="p-6 pt-7 border border-borderdefault rounded-2xl bg-cardhover shadow-sm relative">
+                  <h2 className="sr-only">Creator Context</h2>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[12px] font-bold text-brandprimary uppercase tracking-widest">Original Context</span>
+                  </div>
+                  {(() => {
+                    const hasQuestions = (thread.intake_questions || []).some((q: any) => q.answer);
+                    
+                    return (
+                      <>
+                        <div className={`text-[15px] text-primary leading-relaxed transition-all duration-300 ${!showFullDescription ? 'line-clamp-3' : ''}`}>
+                          <p className="mb-2 italic">&ldquo;{thread.raw_submission}&rdquo;</p>
+                          
+                          {(thread.intake_questions || [])
+                            .filter((q: any) => q.answer)
+                            .map((q: any, idx: number) => (
+                              <div key={idx} className="mt-5 border-t border-borderdefault pt-4">
+                                <p className="text-[11px] font-bold text-secondary uppercase tracking-tight mb-1.5">
+                                  {q.question_text}
+                                </p>
+                                <p className="text-[14px] text-primary font-medium italic">
+                                  &ldquo;{q.answer}&rdquo;
+                                </p>
+                              </div>
+                            ))}
+                        </div>
 
-                      {(thread.raw_submission.length > 200 || hasQuestions) && (
-                        <button 
-                          onClick={() => setShowFullDescription(!showFullDescription)}
-                          className="mt-3 text-[13px] font-bold text-brandprimary hover:underline flex items-center gap-1 transition-all"
-                        >
-                          {showFullDescription ? 'See less' : 'See more detail'}
-                          <svg 
-                            className={`w-3.5 h-3.5 transition-transform duration-200 ${showFullDescription ? 'rotate-180' : ''}`} 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
+                        {(thread.raw_submission.length > 200 || hasQuestions) && (
+                          <button 
+                            onClick={() => setShowFullDescription(!showFullDescription)}
+                            className="mt-5 text-[13px] font-bold text-brandprimary hover:text-brandprimaryhover flex items-center gap-1.5 transition-all"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                      )}
-                    </>
-                  );
-                })()}
+                            {showFullDescription ? 'Show less context' : 'Read full context'}
+                            <svg 
+                              className={`w-3.5 h-3.5 transition-transform duration-200 ${showFullDescription ? 'rotate-180' : ''}`} 
+                              fill="none" 
+                              stroke="currentColor" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                        )}
+                      </>
+                    );
+                  })()}
+                </div>
               </section>
             )}
           </div>
