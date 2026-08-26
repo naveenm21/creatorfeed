@@ -122,7 +122,7 @@ export default function QuestionsPage() {
           <form onSubmit={handleSubmit} className="space-y-8">
             
             {questions.map((q) => (
-              <div key={q.id} className="bg-card border border-borderdefault rounded-2xl p-6">
+              <div key={q.question_order} className="bg-card border border-borderdefault rounded-2xl p-6">
                 <label className="block text-primary text-[16px] font-medium mb-3">{q.question_text}</label>
                 {q.question_type === 'multiple_choice' && q.options ? (
                   <div className="flex flex-wrap gap-3">
@@ -130,9 +130,9 @@ export default function QuestionsPage() {
                       <button
                         key={opt}
                         type="button"
-                        onClick={() => handleAnswer(q.id, opt)}
+                        onClick={() => setAnswers(prev => ({ ...prev, [q.question_order]: opt }))}
                         className={`px-4 py-2 rounded-xl text-[14px] font-medium transition-all border text-left ${
-                          answers[q.id] === opt 
+                          answers[q.question_order] === opt 
                             ? 'bg-brandprimary border-brandprimary text-white' 
                             : 'bg-background border-borderdefault text-secondary hover:border-borderhover'
                         }`}
@@ -144,15 +144,15 @@ export default function QuestionsPage() {
                 ) : (
                   <div className="relative">
                     <textarea
-                      value={answers[q.id] || ''}
+                      value={answers[q.question_order] || ''}
                       maxLength={2000}
-                      onChange={(e) => handleAnswer(q.id, e.target.value)}
+                      onChange={(e) => setAnswers(prev => ({ ...prev, [q.question_order]: e.target.value }))}
                       placeholder="Type your answer here..."
                       className="w-full bg-background border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
                     />
                     <div className="flex justify-end mt-1.5">
                       <span className="text-[11px] text-tertiary">
-                        {(answers[q.id] || '').length} / 2000 characters
+                        {(answers[q.question_order] || '').length} / 2000 characters
                       </span>
                     </div>
                   </div>

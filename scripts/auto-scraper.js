@@ -39,7 +39,8 @@ function stripHtml(html) {
              .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Strip markdown links
              
   // Remove Reddit RSS signature footer to hide scraping source
-  text = text.replace(/\s*submitted by\s+\/u\/[\s\S]*$/gi, '');
+  text = text.replace(/\s*submitted by\s+\/?u\/[\s\S]*$/gi, '');
+  text = text.replace(/\s*\[link\]\s*\[comments\]\s*$/gi, '');
              
   return text.trim();
 }
