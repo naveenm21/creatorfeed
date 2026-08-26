@@ -348,7 +348,7 @@ export function DebateView({
 
             {/* PROBLEM DESCRIPTION (Expandable) */}
             {thread?.raw_submission && (
-              <div className="mt-4 p-4 border border-white/10 rounded-xl bg-white/5">
+              <section className="mt-4 p-4 border border-white/10 rounded-xl bg-white/5">
                 <h2 className="sr-only">Creator Context</h2>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-4 h-4 rounded bg-brandprimary/20 flex items-center justify-center">
@@ -397,7 +397,7 @@ export function DebateView({
                     </>
                   );
                 })()}
-              </div>
+              </section>
             )}
           </div>
           <div className="w-full h-px bg-borderdefault mb-0" />
@@ -555,7 +555,7 @@ export function DebateView({
                           const isFinalPosition = !isLive && rounds[rounds.length - 1] === roundNum && i === roundsMap[roundNum].length - 1;
                           
                           return (
-                            <div key={agent.id} id={agent.id} className={`mb-10 animate-in fade-in slide-in-from-left-2 duration-300 ${isTurningPoint ? 'relative' : ''}`}>
+                            <article key={agent.id} id={agent.id} className={`mb-10 animate-in fade-in slide-in-from-left-2 duration-300 ${isTurningPoint ? 'relative' : ''}`}>
                               {isFinalPosition && (
                                 <div className="absolute -left-2 -top-2 z-20 flex items-center gap-1.5 bg-brandprimary text-white text-[10px] font-bold uppercase tracking-tight px-2 py-0.5 rounded shadow-lg">
                                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -585,7 +585,7 @@ export function DebateView({
                                     />
                                   </div>
                                   <div className="flex flex-col">
-                                    <span className="text-[14px] font-bold text-primary tracking-tight leading-tight">{agent.agent_name}</span>
+                                    <h3 className="text-[14px] font-bold text-primary tracking-tight leading-tight">{agent.agent_name}</h3>
                                     <span className="text-[12px] text-secondary font-medium">{expertise}</span>
                                   </div>
                                   {agent.position && agent.position !== 'none' && (
@@ -622,7 +622,7 @@ export function DebateView({
                                 )}
                               </div>
                               {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-borderdefault mt-8" />}
-                            </div>
+                            </article>
                           );
                         })}
                       </div>

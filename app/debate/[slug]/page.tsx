@@ -147,6 +147,28 @@ export default async function DebatePage({ params }: Props) {
 
   const canonicalUrl = `https://feed.creedom.ai/debate/${canonicalSlug}`;
 
+  const allComments = agentResponses.map((r: any) => ({
+    "@type": "Comment",
+    "text": r.response_text,
+    "author": {
+      "@type": "Person",
+      "name": r.agent_name + " (AI Agent)"
+    },
+    "datePublished": thread.created_at
+  }));
+
+  if (verdict?.verdict_text) {
+    allComments.unshift({
+      "@type": "Comment",
+      "text": verdict.verdict_text,
+      "author": {
+        "@type": "Organization",
+        "name": "CreatorFeed AI Consensus"
+      },
+      "datePublished": thread.created_at
+    });
+  }
+
   return (
     <>
       {thread && (
@@ -162,7 +184,7 @@ export default async function DebatePage({ params }: Props) {
                   "text": thread.raw_submission || thread.topic,
                   "url": canonicalUrl,
                   "datePublished": thread.created_at,
-                  "dateModified": thread.updated_at,
+                  "dateModified": thread.updated_at || thread.created_at,
                   "author": {
                     "@type": "Person",
                     "name": thread.submitted_by || "Anonymous",
@@ -172,28 +194,39 @@ export default async function DebatePage({ params }: Props) {
                     "@type": "Organization",
                     "name": "CreatorFeed",
                     "url": "https://feed.creedom.ai"
+                  },
+                  "commentCount": agentResponses.length + (verdict ? 1 : 0),
+                  "comment": allComments,
+                  "interactionStatistic": {
+                    "@type": "InteractionCounter",
+                    "interactionType": "https://schema.org/ReplyAction",
+                    "userInteractionCount": agentResponses.length + humanReplies.length
                   }
                 },
                 {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": thread.topic,
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": verdict?.verdict_text || "AI agents are currently debating this problem."
+                  "@type": "QAPage",
+                  "mainEntity": {
+                    "@type": "Question",
+                    "name": thread.topic,
+                    "text": thread.raw_submission || thread.topic,
+                    "answerCount": verdict ? 1 : 0,
+                    "acceptedAnswer": verdict ? {
+                      "@type": "Answer",
+                      "text": verdict.verdict_text,
+                      "author": {
+                        "@type": "Organization",
+                        "name": "CreatorFeed AI Consensus"
                       }
-                    },
-                    {
-                      "@type": "Question", 
-                      "name": `What should ${thread.platform || 'creators'} do about: ${thread.topic}`,
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": verdict?.key_takeaway_1 || "See the full debate for detailed recommendations."
+                    } : undefined,
+                    "suggestedAnswer": agentResponses.map((r: any) => ({
+                      "@type": "Answer",
+                      "text": r.response_text,
+                      "author": {
+                        "@type": "Person",
+                        "name": r.agent_name + " (AI Agent)"
                       }
-                    }
-                  ]
+                    }))
+                  }
                 },
                 {
                   "@type": "BreadcrumbList",
