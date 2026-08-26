@@ -60,7 +60,7 @@ const linkifyText = (text: string) => {
         const parts = part.split(regex);
         return parts.map((p, i) => {
           if (p.toLowerCase() === word.toLowerCase()) {
-            return <Link key={`${word}-${index}-${i}`} href={link} className="text-[#FF4500] hover:underline font-medium">{p}</Link>;
+            return <Link key={`${word}-${index}-${i}`} href={link} className="text-brandprimary hover:underline font-medium">{p}</Link>;
           }
           return p;
         });
@@ -267,9 +267,9 @@ export function DebateView({
       window.scrollTo({ top: y, behavior: 'smooth' });
       
       // Briefly highlight the response
-      el.classList.add('ring-2', 'ring-[#FF4500]', 'border-transparent', 'rounded-xl', 'animate-pulse');
+      el.classList.add('ring-2', 'ring-brandprimary', 'border-transparent', 'rounded-xl', 'animate-pulse');
       setTimeout(() => {
-        el.classList.remove('ring-2', 'ring-[#FF4500]', 'border-transparent', 'rounded-xl', 'animate-pulse');
+        el.classList.remove('ring-2', 'ring-brandprimary', 'border-transparent', 'rounded-xl', 'animate-pulse');
       }, 2000);
     }
   };
@@ -286,7 +286,7 @@ export function DebateView({
   // ── STATE: NOT FOUND ──
   if (!thread) return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-4 px-4 text-center">
-      <h1 className="text-[28px] font-bold text-white">Debate not found</h1>
+      <h1 className="text-[28px] font-bold text-primary">Debate not found</h1>
       <p className="text-secondary">This debate may have been removed or the link is incorrect.</p>
       <Link href="/" className="mt-2 text-brandprimary hover:underline font-medium">← Back to Homepage</Link>
     </main>
@@ -329,7 +329,7 @@ export function DebateView({
                 </span>
               )}
             </div>
-            <h1 className="text-[28px] font-bold text-white tracking-[-0.01em] leading-snug mb-4">{thread.topic}</h1>
+            <h1 className="text-[28px] font-bold text-primary tracking-[-0.01em] leading-snug mb-4">{thread.topic}</h1>
             <div className="text-[13px] text-secondary flex flex-wrap gap-x-2 gap-y-1 items-center">
               <span>{agentResponses.length} AI responses</span>
               <span>·</span>
@@ -337,7 +337,7 @@ export function DebateView({
               {isLive && <span>· <span className="text-yellow-400">Agents still debating...</span></span>}
               <button 
                 onClick={() => setShowShareDialog(true)}
-                className="ml-auto lg:ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[12px] font-bold text-white hover:bg-white/10 transition-all group"
+                className="ml-auto lg:ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[12px] font-bold text-primary hover:bg-white/10 transition-all group"
               >
                 <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current group-hover:rotate-12 transition-transform" strokeWidth="2.5">
                   <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
@@ -371,7 +371,7 @@ export function DebateView({
                               <p className="text-[12px] font-bold text-brandprimary uppercase tracking-tight mb-1">
                                 {q.question_text}
                               </p>
-                              <p className="text-white font-medium italic">
+                              <p className="text-primary font-medium italic">
                                 &ldquo;{q.answer}&rdquo;
                               </p>
                             </div>
@@ -400,7 +400,7 @@ export function DebateView({
               </div>
             )}
           </div>
-          <div className="w-full h-px bg-[#1F1F1F] mb-0" />
+          <div className="w-full h-px bg-borderdefault mb-0" />
 
 
 
@@ -415,17 +415,17 @@ export function DebateView({
                   </div>
                   <h2 className="text-[18px] font-bold text-brandprimary tracking-tight">AI Consensus</h2>
                 </div>
-                <div className="text-[16px] text-white leading-[1.7] whitespace-pre-wrap">
+                <div className="text-[16px] text-primary leading-[1.7] whitespace-pre-wrap">
                   {linkifyText(verdict.verdict_text)}
                 </div>
               </div>
               
               {/* Key Takeaways Block */}
               {(verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
-                <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-6">
+                <div className="bg-[#0A0A0A] border border-borderdefault rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    <h2 className="text-[16px] font-bold text-white tracking-tight">Key Takeaways</h2>
+                    <h2 className="text-[16px] font-bold text-primary tracking-tight">Key Takeaways</h2>
                   </div>
                   <ul className="space-y-3">
                     {[verdict.key_takeaway_1, verdict.key_takeaway_2, verdict.key_takeaway_3].filter(Boolean).map((t, i) => (
@@ -440,23 +440,23 @@ export function DebateView({
             </div>
           )}
 
-          <div className="w-full h-px bg-[#1F1F1F] mb-0" />
+          <div className="w-full h-px bg-borderdefault mb-0" />
 
           {/* STICKY TAB BAR */}
-          <div className="sticky top-[56px] z-20 bg-[#030303]/80 backdrop-blur border-b border-[#343536] h-[48px] flex items-center gap-6 mb-8 px-2">
+          <div className="sticky top-[56px] z-20 bg-background/80 backdrop-blur border-b border-borderdefault h-[48px] flex items-center gap-6 mb-8 px-2">
             {['AI Perspectives', 'Community'].map(tab => (
               <button
                 key={tab}
-                onClick={() => handleTabSwitch(tab)}
-                className={`h-full flex items-center border-b-2 transition-colors duration-200 ${
-                  activeTab === tab || (activeTab === 'Verdict' && tab === 'AI Perspectives')
-                    ? 'border-[#FF4500] text-white'
-                    : 'border-transparent text-[#818384] hover:text-white'
+                onClick={() => setActiveTab(tab)}
+                className={`whitespace-nowrap px-1 py-3 text-[14px] font-bold border-b-2 transition-all duration-300 ${
+                  activeTab === tab 
+                ? 'border-brandprimary text-brandprimary' 
+                : 'border-transparent text-secondary hover:text-primary'
                 }`}
               >
                 <span className="text-[14px] font-bold uppercase tracking-tight mr-2">{tab}</span>
                 {tab === 'Community' && humanReplies.length > 0 && (
-                  <span className="bg-[#FF4500]/10 text-[#FF4500] text-[11px] font-bold px-2 py-0.5 rounded-full">
+                  <span className="bg-pink-soft text-brandprimary text-[11px] font-bold px-2 py-0.5 rounded-full">
                     {humanReplies.length}
                   </span>
                 )}
@@ -474,7 +474,7 @@ export function DebateView({
 
               {/* Live: show agent circles at top while debating */}
               {isLive && (
-                <div className="mb-8 bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-5">
+                <div className="mb-8 bg-[#0A0A0A] border border-borderdefault rounded-2xl p-5">
                   <p className="text-[12px] text-secondary uppercase tracking-widest font-bold mb-4">
                     {agentResponses.length === 0 ? 'Waiting for agents to start...' : 'Agents responding...'}
                   </p>
@@ -486,7 +486,7 @@ export function DebateView({
                       return (
                         <div key={name} className="flex flex-col items-center gap-1.5">
                           <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all ${
+                            className={`w-10 h-10 rounded-full flex items-center justify-center text-primary font-bold text-sm transition-all ${
                               isTyping ? 'animate-pulse ring-2 ring-white/50 ring-offset-1 ring-offset-black' :
                               hasResponded ? 'opacity-100' : 'opacity-30'
                             }`}
@@ -503,28 +503,26 @@ export function DebateView({
               )}
 
               {/* Responses */}
-              {/* Responses */}
               {agentResponses.length === 0 && isLive ? (
-                <div className="text-center py-16 text-[#818384] text-[15px]">
+                <div className="text-center py-16 text-secondary text-[15px]">
                   The debate will appear here as agents respond. This usually takes 1–3 minutes.
                 </div>
               ) : (
                 <>
                   <ConflictHeatmap responses={agentResponses} onNavigate={scrollToResponse} />
 
-                  <div className="bg-[#1A1A1B] border border-[#343536] rounded-xl p-5 mb-10 flex items-center justify-between animate-in fade-in slide-in-from-top-4 duration-500">
+                  <div className="bg-card border border-borderdefault rounded-xl p-5 mb-10 flex items-center justify-between animate-in fade-in slide-in-from-top-4 duration-500">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-[#FF4500]/10 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-[#FF4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      <div className="w-10 h-10 rounded-full bg-pink-soft flex items-center justify-center">
+                        <svg className="w-5 h-5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                       </div>
                       <div>
-                        <h3 className="text-[14px] font-bold text-white tracking-tight">Debate Scanner</h3>
-                        <p className="text-[12px] text-[#818384] font-medium">Condensing the logic for faster scanning</p>
+                        <h3 className="text-[14px] font-bold text-primary tracking-tight">Debate Scanner</h3>
+                        <p className="text-[12px] text-secondary font-medium">Condensing the logic for faster scanning</p>
                       </div>
                     </div>
                     <button 
-                      onClick={() => setIsScannerMode(!isScannerMode)}
-                      className={`px-4 py-2 rounded-full text-[12px] font-bold transition-all transform active:scale-95 ${isScannerMode ? 'bg-[#FF4500] text-white' : 'bg-[#272729] text-[#D7DADC] border border-[#343536] hover:bg-[#343536]'}`}
+                      className={`px-4 py-2 rounded-[999px] text-[12px] font-bold transition-all transform active:scale-95 ${isScannerMode ? 'bg-brandprimary text-white shadow-[var(--raise-shadow)]' : 'bg-card text-primary border border-borderdefault hover:bg-borderhover'}`}
                     >
                       {isScannerMode ? 'Scanner ON' : 'Scanner OFF'}
                     </button>
@@ -545,32 +543,39 @@ export function DebateView({
                     return rounds.map((roundNum) => (
                       <div key={roundNum} className="mb-12">
                         <div className="flex items-center gap-4 mb-6">
-                          <div className="h-px bg-[#343536] flex-1" />
-                          <span className="text-[11px] uppercase tracking-widest font-black text-[#FF4500]">Round {roundNum}</span>
-                          <div className="h-px bg-[#343536] flex-1" />
+                          <div className="h-px bg-borderdefault flex-1" />
+                          <span className="text-[11px] uppercase tracking-widest font-black text-brandprimary">Round {roundNum}</span>
+                          <div className="h-px bg-borderdefault flex-1" />
                         </div>
                         {roundsMap[roundNum].map((agent: AgentResponse, i: number) => {
                           const color = AGENT_COLORS[agent.agent_name as keyof typeof AGENT_COLORS] || '#FFFFFF';
                           const expertise = AGENT_EXPERTISE[agent.agent_name as keyof typeof AGENT_EXPERTISE] || '';
                           const isExpanded = expandedResponses.has(agent.id) || !isScannerMode;
                           const isTurningPoint = turningPointsInner.has(agent.id);
+                          const isFinalPosition = !isLive && rounds[rounds.length - 1] === roundNum && i === roundsMap[roundNum].length - 1;
                           
                           return (
                             <div key={agent.id} id={agent.id} className={`mb-10 animate-in fade-in slide-in-from-left-2 duration-300 ${isTurningPoint ? 'relative' : ''}`}>
-                              {isTurningPoint && (
-                                <div className="absolute -left-2 -top-2 z-20 flex items-center gap-1.5 bg-[#FF4500] text-white text-[10px] font-bold uppercase tracking-tight px-2 py-0.5 rounded shadow-lg">
+                              {isFinalPosition && (
+                                <div className="absolute -left-2 -top-2 z-20 flex items-center gap-1.5 bg-brandprimary text-white text-[10px] font-bold uppercase tracking-tight px-2 py-0.5 rounded shadow-lg">
+                                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                  Final Position
+                                </div>
+                              )}
+                              {isTurningPoint && !isFinalPosition && (
+                                <div className="absolute -left-2 -top-2 z-20 flex items-center gap-1.5 bg-brandprimary text-white text-[10px] font-bold uppercase tracking-tight px-2 py-0.5 rounded shadow-lg">
                                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13.536 14.243a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707zM14.243 5.05l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414z" /></svg>
                                   Progress
                                 </div>
                               )}
                               
                               <div 
-                                className={`pl-5 border-l-2 flex flex-col py-1 transition-all duration-200 ${isScannerMode && !isExpanded ? 'cursor-pointer hover:bg-[#1A1A1B] rounded-r-lg' : ''}`} 
+                                className={`pl-5 border-l-2 flex flex-col py-1 transition-all duration-200 ${isScannerMode && !isExpanded ? 'cursor-pointer hover:bg-card rounded-r-lg' : ''}`} 
                                 style={{ borderLeftColor: color }}
                                 onClick={() => isScannerMode && !isExpanded && toggleResponseExpansion(agent.id)}
                               >
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center border border-[#343536] bg-[#1A1A1B] z-10 relative overflow-hidden">
+                                  <div className="w-[36px] h-[36px] rounded-full flex items-center justify-center border border-borderdefault bg-card z-10 relative overflow-hidden">
                                     <Image
                                       src={AGENT_AVATARS[agent.agent_name as AgentName] || AGENT_AVATARS.Specialist} 
                                       alt={`${agent.agent_name} - AI Creator Growth Specialist`}
@@ -580,26 +585,26 @@ export function DebateView({
                                     />
                                   </div>
                                   <div className="flex flex-col">
-                                    <span className="text-[14px] font-bold text-[#D7DADC] tracking-tight leading-tight">{agent.agent_name}</span>
-                                    <span className="text-[12px] text-[#818384] font-medium">{expertise}</span>
+                                    <span className="text-[14px] font-bold text-primary tracking-tight leading-tight">{agent.agent_name}</span>
+                                    <span className="text-[12px] text-secondary font-medium">{expertise}</span>
                                   </div>
                                   {agent.position && agent.position !== 'none' && (
                                     <div className="ml-auto">
                                       <span className={`text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 rounded border ${
-                                        agent.position === 'agree' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
-                                        agent.position === 'disagree' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
-                                        'bg-[#FF4500]/10 text-[#FF4500] border-[#FF4500]/20'
+                                        agent.position === 'agree' ? 'bg-green-500 text-white border-green-500' :
+                                        agent.position === 'disagree' ? 'bg-red-500 text-white border-red-500' :
+                                        'bg-brandprimary text-white border-brandprimary'
                                       }`}>{agent.position}</span>
                                     </div>
                                   )}
                                 </div>
                                 
                                   <div className={`relative transition-all duration-300 ${!isExpanded ? 'max-h-[80px] overflow-hidden' : 'max-h-[3000px]'}`}>
-                                    <div className={`text-[15px] text-[#D7DADC] leading-relaxed mb-4 pr-4 ${!isExpanded ? 'line-clamp-2' : ''}`}>
+                                    <div className={`text-[15px] text-primary leading-relaxed mb-4 pr-4 ${!isExpanded ? 'line-clamp-2' : ''}`}>
                                       {linkifyText(agent.response_text)}
                                     </div>
                                     {!isExpanded && (
-                                    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
+                                    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-background to-transparent pointer-events-none" />
                                   )}
                                 </div>
 
@@ -609,14 +614,14 @@ export function DebateView({
                                       e.stopPropagation();
                                       toggleResponseExpansion(agent.id);
                                     }}
-                                    className="text-[13px] font-bold text-[#FF4500] hover:underline w-fit mt-1 flex items-center gap-1.5"
+                                    className="text-[13px] font-bold text-brandprimary hover:underline w-fit mt-1 flex items-center gap-1.5"
                                   >
                                     {isExpanded ? 'See Less' : 'See Full Analysis'}
                                     <svg className={`w-3.5 h-3.5 transition-transform ${isExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
                                   </button>
                                 )}
                               </div>
-                              {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-[#343536] mt-8" />}
+                              {i !== roundsMap[roundNum].length - 1 && <div className="w-full h-px bg-borderdefault mt-8" />}
                             </div>
                           );
                         })}
@@ -629,13 +634,13 @@ export function DebateView({
 
               {/* "Next agent responding" indicator */}
               {isLive && typingAgent && (
-                <div className="mt-4 border border-[#1F1F1F] rounded-xl p-4 bg-[#0A0A0A] flex items-center gap-3">
+                <div className="mt-4 border border-borderdefault rounded-xl p-4 bg-[#0A0A0A] flex items-center gap-3">
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold animate-pulse shrink-0"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-primary text-[13px] font-bold animate-pulse shrink-0"
                     style={{ backgroundColor: AGENT_COLORS[typingAgent as keyof typeof AGENT_COLORS] || '#888' }}
                   >{typingAgent[0]}</div>
                   <span className="text-[13px] text-secondary">
-                    <span className="text-white font-medium">{typingAgent}</span> is forming a response...
+                    <span className="text-primary font-medium">{typingAgent}</span> is forming a response...
                   </span>
                   <div className="ml-auto flex gap-1">
                     {[0, 1, 2].map(i => (
@@ -648,7 +653,7 @@ export function DebateView({
 
             {/* TAB 2: COMMUNITY */}
             <div className={activeTab === 'Community' ? 'block' : 'hidden'}>
-              <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-4 mb-8">
+              <div className="bg-[#0A0A0A] border border-borderdefault rounded-2xl p-4 mb-8">
                 {replySuccess && (
                   <div className="mb-4 text-green-400 text-[14px] font-medium bg-green-500/10 px-4 py-2 rounded-xl">
                     ✓ Your take was added!
@@ -657,7 +662,7 @@ export function DebateView({
                 <div className="flex flex-col gap-3 mb-3">
                   {!isAnonymous ? (
                     <div className="text-[14px] text-secondary bg-white/5 px-4 py-2.5 rounded-xl border border-white/10 flex items-center justify-between">
-                       <span>Posting as <span className="text-white font-bold">{currentUserId ? 'your account' : 'Guest'}</span></span>
+                       <span>Posting as <span className="text-primary font-bold">{currentUserId ? 'your account' : 'Guest'}</span></span>
                        <button 
                          onClick={() => setIsAnonymous(true)}
                          className="text-[12px] text-brandprimary font-bold hover:underline"
@@ -681,7 +686,7 @@ export function DebateView({
                   placeholder="Share your experience or pushback..."
                   value={replyText}
                   onChange={e => setReplyText(e.target.value)}
-                  className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[90px] resize-none mb-4"
+                  className="w-full bg-[#111] border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[90px] resize-none mb-4"
                 />
 
                 <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -692,7 +697,7 @@ export function DebateView({
                       className={`flex-1 h-11 rounded-xl text-[14px] font-medium border transition-all flex items-center justify-center gap-2 ${
                         sentiment === s
                           ? s === 'agree' ? 'bg-green-500 text-white border-green-500' : 'bg-red-500 text-white border-red-500'
-                          : `bg-[#111] text-secondary border-[#1F1F1F] ${s === 'agree' ? 'hover:border-green-500/50 hover:text-green-400' : 'hover:border-red-500/50 hover:text-red-400'}`
+                          : `bg-[#111] text-secondary border-borderdefault ${s === 'agree' ? 'hover:border-green-500/50 hover:text-green-400' : 'hover:border-red-500/50 hover:text-red-400'}`
                       }`}
                     >
                       {s === 'agree' ? (
@@ -718,7 +723,7 @@ export function DebateView({
                       handleReplySubmit();
                     }}
                     disabled={replySubmitting || !replyText.trim()}
-                    className="bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold px-8 py-3 rounded-xl hover:opacity-90 transform active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brandprimary/20"
+                    className="bg-brandprimary text-white text-[14px] font-bold px-8 py-3 rounded-xl hover:opacity-90 transform active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brandprimary/20"
                   >
                     {replySubmitting ? 'Posting...' : 'Post Your Take →'}
                   </button>
@@ -734,7 +739,7 @@ export function DebateView({
                       <div key={item.id}>
                         <div className="flex flex-col">
                           <div className="flex items-center gap-3 mb-2">
-                            <span className="text-[15px] font-bold text-white transition-colors">{item.author_name || 'Anonymous'}</span>
+                            <span className="text-[15px] font-bold text-primary transition-colors">{item.author_name || 'Anonymous'}</span>
                             {item.author && item.author_name !== 'Anonymous' && (
                               <div className="flex items-center gap-2">
                                 <span className="flex items-center gap-0.5 text-[10px] font-bold text-brandprimary bg-brandprimary/10 px-1.5 py-0.5 rounded border border-brandprimary/20">
@@ -748,8 +753,8 @@ export function DebateView({
                                 ))}
                               </div>
                             )}
-                            {item.sentiment === 'agreed' && <span className="text-green-400 text-[11px] font-bold bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">Agreed</span>}
-                            {item.sentiment === 'disagreed' && <span className="text-red-400 text-[11px] font-bold bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">Disagreed</span>}
+                            {item.sentiment === 'agreed' && <span className="text-white text-[11px] font-bold bg-green-500 px-2 py-0.5 rounded-full">Agreed</span>}
+                            {item.sentiment === 'disagreed' && <span className="text-white text-[11px] font-bold bg-red-500 px-2 py-0.5 rounded-full">Disagreed</span>}
                             <span className="text-[12px] text-[#444] ml-auto">
                               {mounted ? new Date(item.created_at).toLocaleDateString() : null}
                             </span>
@@ -765,9 +770,9 @@ export function DebateView({
                               </button>
                             )}
                           </div>
-                          <p className="text-[15px] text-secondary leading-[1.6] bg-[#0A0A0A] p-4 rounded-xl border border-[#1F1F1F]">{item.reply_text}</p>
+                          <p className="text-[15px] text-secondary leading-[1.6] bg-[#0A0A0A] p-4 rounded-xl border border-borderdefault">{item.reply_text}</p>
                         </div>
-                        {i !== humanReplies.length - 1 && <div className="w-full h-px bg-[#1F1F1F] mt-6" />}
+                        {i !== humanReplies.length - 1 && <div className="w-full h-px bg-borderdefault mt-6" />}
                       </div>
                     );
                   })
@@ -800,7 +805,7 @@ export function DebateView({
                                     className="w-full h-full object-cover"
                                   />
                                 </div>
-                                <span className="font-bold text-white text-[15px]">{fp.agent_name}</span>
+                                <span className="font-bold text-primary text-[15px]">{fp.agent_name}</span>
                               </div>
                               <p className="text-[14px] text-secondary leading-[1.7]">{fp.response_text}</p>
                             </div>
@@ -816,8 +821,8 @@ export function DebateView({
 
             {/* RELATED DEBATES */}
             {relatedDebates.length > 0 && (
-              <div className="mt-16 pt-8 border-t border-[#343536]">
-                <h3 className="text-[18px] font-bold text-white mb-6 pl-1 flex items-center gap-2">
+              <div className="mt-16 pt-8 border-t border-borderdefault">
+                <h3 className="text-[18px] font-bold text-primary mb-6 pl-1 flex items-center gap-2">
                   <svg className="w-5 h-5 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                   Related Debates
                 </h3>
@@ -850,19 +855,28 @@ export function DebateView({
 
         {/* RIGHT SIDEBAR */}
         <div className="w-full lg:w-[300px] shrink-0 lg:sticky lg:top-[80px] self-start order-2 lg:order-2 space-y-6">
-          {isLive ? (
-            <div className="bg-card border border-[#2A2A2A] rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-                <span className="text-[13px] font-bold text-white uppercase tracking-widest">Live Debate</span>
-              </div>
-              <p className="text-[13px] text-secondary leading-relaxed mb-3">Agents are forming their arguments. New responses appear automatically.</p>
-              <div className="h-1.5 w-full bg-[#1F1F1F] rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-brandprimary to-brandorange rounded-full animate-pulse" style={{ width: `${Math.min(100, (agentResponses.length / 6) * 100)}%` }} />
-              </div>
-              <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
+          {/* Stats Widget */}
+          <div className="sticky top-[80px]">
+            <div className="glass-card p-6">
+              <h3 className="text-[14px] font-display font-bold text-primary mb-5 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-brandprimary" />
+                Debate Stats
+              </h3>
+              {isLive ? (
+                <div className="bg-borderdefault border border-borderhover rounded-[16px] p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                    <span className="text-[13px] font-bold text-primary uppercase tracking-widest">Live Debate</span>
+                  </div>
+                  <p className="text-[13px] text-secondary leading-relaxed mb-3">Agents are forming their arguments. New responses appear automatically.</p>
+                  <div className="h-1.5 w-full bg-card rounded-full overflow-hidden">
+                    <div className="h-full bg-brandprimary rounded-full animate-pulse" style={{ width: `${Math.min(100, (agentResponses.length / 6) * 100)}%` }} />
+                  </div>
+                  <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
+                </div>
+              ) : null}
             </div>
-          ) : null}
+          </div>
 
           {/* AGGRESSIVE UGC CTA (Sidebar Variant) */}
           <button 
@@ -870,16 +884,16 @@ export function DebateView({
               handleTabSwitch('Community');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="w-full bg-gradient-to-br from-[#0A0A0A] to-[#111] border border-[#1F1F1F] shadow-xl rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-brandprimary/50 transition-all group cursor-pointer"
+            className="w-full glass-card p-5 flex flex-col items-center text-center gap-3 hover:border-brandprimary/50 transition-all group cursor-pointer"
           >
             <div className="flex -space-x-2 mb-1">
-              <div className="w-12 h-12 rounded-full bg-brandprimary/20 border-2 border-[#0A0A0A] flex items-center justify-center text-brandprimary font-bold text-[18px]">5</div>
-              <div className="w-12 h-12 rounded-full bg-teal-500/20 border-2 border-[#0A0A0A] flex items-center justify-center">
-                <svg className="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path></svg>
+              <div className="w-12 h-12 rounded-full bg-brandprimary/20 border-2 border-card flex items-center justify-center text-brandprimary font-bold text-[18px]">5</div>
+              <div className="w-12 h-12 rounded-full bg-teal-500/10 border-2 border-card flex items-center justify-center">
+                <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path></svg>
               </div>
             </div>
             <div>
-              <p className="text-[16px] font-bold text-white group-hover:text-brandprimary transition-colors">What&apos;s your take?</p>
+              <p className="text-[16px] font-bold text-primary group-hover:text-brandprimary transition-colors">What&apos;s your take?</p>
               <p className="text-[13px] text-secondary mt-1">Earn 5 Karma for replying</p>
             </div>
             <div className="mt-2 text-[12px] font-bold text-brandprimary/80 group-hover:text-brandprimary transition-colors flex items-center gap-1">
@@ -898,7 +912,7 @@ export function DebateView({
                 </div>
                 <span className="text-[11px] uppercase tracking-widest font-bold text-brandprimary">Recommended</span>
               </div>
-              <h3 className="text-[16px] font-bold text-white mb-2 leading-snug">
+              <h3 className="text-[16px] font-bold text-primary mb-2 leading-snug">
                 Struggling with {thread.topic}?
               </h3>
               <p className="text-[13px] text-secondary leading-relaxed mb-4">
@@ -907,7 +921,7 @@ export function DebateView({
               <Link 
                 href="https://creedom.ai" 
                 target="_blank"
-                className="flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[13px] font-bold px-4 py-3 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brandprimary/20"
+                className="flex items-center justify-center w-full bg-brandprimary text-white text-[13px] font-bold px-4 py-3 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brandprimary/20"
               >
                 Explore Creedom.ai →
               </Link>
@@ -916,14 +930,26 @@ export function DebateView({
 
           {/* HAS THIS DEBATE HELPED YOU? */}
           {!isLive && (
-            <div className="bg-card border border-borderdefault rounded-2xl p-5 text-center">
-              <h3 className="text-[15px] font-bold text-white mb-2">Has this debate helped you?</h3>
+            <div className="glass-card p-6">
+              <h3 className="text-[15px] font-bold text-primary mb-2">Has this debate helped you?</h3>
               <p className="text-[12px] text-secondary mb-4">Get 6 AI agents to debate your creator problem.</p>
-              <Link href="/submit" className="flex items-center justify-center w-full bg-white/5 border border-white/10 text-white text-[13px] font-bold px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
+              <Link href="/submit" className="flex items-center justify-center w-full bg-white/5 border border-white/10 text-primary text-[13px] font-bold px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
                 Submit Your Problem →
               </Link>
             </div>
           )}
+
+          {/* Related Topics Widget */}
+          <div className="glass-card p-6 mt-4">
+            <h3 className="text-[14px] font-display font-bold text-primary mb-4">Related Topics</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Algorithm', 'Retention', 'Shorts', 'Hooks', 'Thumbnails'].map(tag => (
+                <Link key={tag} href={`/trending?q=${tag.toLowerCase()}`} className="text-[12px] font-medium text-secondary bg-borderdefault/50 hover:bg-borderhover hover:text-primary px-3 py-1.5 rounded-full transition-colors border border-borderdefault">
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          </div>
 
         </div>
       </div>

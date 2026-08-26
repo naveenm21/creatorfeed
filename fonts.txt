@@ -1,0 +1,4 @@
+font-family:Fraunces
+font-family:Manrope
+font-family:var(--font-display)
+font-family:var(--font-sans)

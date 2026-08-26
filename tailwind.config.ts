@@ -8,24 +8,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#030303",
-        card: "#1A1A1B",
-        cardhover: "#272729",
-        borderdefault: "#343536",
-        borderhover: "#444546",
-        primary: "#D7DADC",
-        secondary: "#818384",
-        tertiary: "#555555",
-        brandprimary: "#FF4500", // Reddit Orangered
-        brandprimaryhover: "#FF5722",
-        brandprimarysubtle: "rgba(255, 69, 0, 0.1)",
-        brandorange: "#FF4500",
+        background: "var(--canvas)",
+        card: "var(--surface)",
+        cardhover: "var(--surface-alt)",
+        borderdefault: "var(--hairline)",
+        borderhover: "var(--hairline-soft)",
+        primary: "var(--ink)",
+        secondary: "var(--text-2)",
+        tertiary: "var(--text-3)",
+        brandprimary: "var(--pink)",
+        brandprimaryhover: "var(--pink-deep)",
+        brandprimarysubtle: "var(--pink-soft)",
+        brandorange: "var(--pink)",
         ytred: "#FF0000",
         igpink: "#E1306C",
-        tiktokwhite: "#FFFFFF",
+        tiktokwhite: "#000000", /* Changed to black for contrast on light mode */
       },
       fontFamily: {
-        sans: ['var(--font-inter)'], // Used Inter font variable defined in layout
+        sans: ['var(--font-sans)', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
       },
     },
   },

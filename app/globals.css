@@ -9,45 +9,91 @@
 }
 
 :root {
-  --reddit-bg: #030303;
-  --reddit-surface: #1A1A1B;
-  --reddit-surface-hover: #272729;
-  --reddit-orange: #FF4500;
-  --reddit-text-main: #D7DADC;
-  --reddit-text-secondary: #818384;
-  --reddit-border: #343536;
+  /* Creedom.ai Colors */
+  --canvas: #f6f6f3;
+  --surface: #ffffff;
+  --surface-alt: #fafaf7;
+  --ink: #0b0b0b;
+  --text-2: #63635d;
+  --text-3: #6b6b63;
+  --hairline: #e8e8e1;
+  --hairline-soft: #efefea;
+  
+  --dark-bg: #0b0b0b;
+  --dark-card: #161614;
+  --dark-hairline: #26261f;
+  --dark-text: #f4f4ef;
+  --dark-text-2: #9c9c94;
+  --dark-text-3: #8a8a82;
+  
+  --pink: #ff5c8a;
+  --pink-deep: #e64980;
+  --pink-soft: #ffeef3;
+  --pink-wash: #fff6f9;
+  --pink-hairline: #f6dde6;
+  
+  --mint: #149a70;
+  --mint-soft: #e8f6f0;
+  --amber: #b97b1e;
+  --amber-soft: #faf1e2;
+  --red: #d8504a;
+  --red-soft: #fbedec;
+
+  /* Creedom.ai Radii */
+  --r-card: 24px;
+  --r-card-sm: 18px;
+  --r-sheet: 28px;
+  --r-cta: 16px;
+  --r-bubble: 20px;
+  --r-pill: 999px;
+
+  /* Creedom.ai Shadows */
+  --rest-shadow: 0 6px 16px rgba(42, 42, 32, .055);
+  --raise-shadow: 0 3px 8px rgba(42, 42, 32, .08);
+  --float-shadow: 0 12px 26px rgba(11, 11, 11, .16);
+  --photo-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), inset 0 2px 6px rgba(255, 255, 255, .2), 0 8px 12px rgba(0, 0, 0, .1), 0 24px 32px rgba(0, 0, 0, .12), 0 45px 80px rgba(0, 0, 0, .18);
+
+  /* Typography Variables (Extracted from Creedom) */
+  --t-hero: clamp(3rem, 7vw, 6.5rem);
+  --t-display-1: clamp(2.25rem, 4.2vw, 3.75rem);
+  --t-display-2: clamp(1.75rem, 2.6vw, 2.375rem);
+  --t-display-3: clamp(1.3rem, 1.6vw, 1.6rem);
+  --t-title: 1.0625rem;
+  --t-title-sm: .9375rem;
+  --t-body: clamp(1rem, 1.05vw, 1.125rem);
+  --t-small: .875rem;
+  --t-tiny: .75rem;
+  --t-eyebrow: .75rem;
+
+  /* Spacing */
+  --gutter: clamp(20px, 4vw, 48px);
 }
 
 body {
-  background: var(--reddit-bg);
-  color: var(--reddit-text-main);
+  background: var(--canvas);
+  color: var(--ink);
   overflow-x: hidden;
   position: relative;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Clear, flat Reddit background */
-body::before {
-  display: none;
-}
-
-/* Glassmorphism Utilities (Reddit Style) */
+/* Glassmorphism Utilities (Creedom Style) */
 .glass-card {
-  background: var(--reddit-surface);
-  border: 1px solid var(--reddit-border);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--rest-shadow);
+  border-radius: var(--r-card);
 }
 
 .glass-nav {
-  background: rgba(3, 3, 3, 0.8);
+  background: rgba(246, 246, 243, 0.85); /* Canvas with opacity */
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--reddit-border);
-}
-
-.glow-orange {
-  text-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.4s cubic-bezier(0.19, 1, 0.22, 1) forwards; /* --ease-out-expo */
 }
 
 @keyframes fadeIn {
@@ -55,18 +101,17 @@ body::before {
   to { opacity: 1; }
 }
 
-/* Reddit Scrollbar */
+/* Creedom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--reddit-bg);
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #343536;
+  background: #d4d4cd;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #444546;
+  background: #b5b5ad;
 }
-
