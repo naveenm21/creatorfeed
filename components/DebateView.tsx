@@ -867,18 +867,29 @@ export function DebateView({
                 Debate Stats
               </h3>
               {isLive ? (
-                <div className="bg-borderdefault border border-borderhover rounded-[16px] p-5">
+                <div className="bg-cardhover border border-borderdefault rounded-[16px] p-5 shadow-sm">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
                     <span className="text-[13px] font-bold text-primary uppercase tracking-widest">Live Debate</span>
                   </div>
                   <p className="text-[13px] text-secondary leading-relaxed mb-3">Agents are forming their arguments. New responses appear automatically.</p>
-                  <div className="h-1.5 w-full bg-card rounded-full overflow-hidden">
+                  <div className="h-1.5 w-full bg-background rounded-full overflow-hidden">
                     <div className="h-full bg-brandprimary rounded-full animate-pulse" style={{ width: `${Math.min(100, (agentResponses.length / 6) * 100)}%` }} />
                   </div>
                   <p className="text-[11px] text-tertiary mt-2">{agentResponses.length} of 6 agents responded</p>
                 </div>
-              ) : null}
+              ) : (
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-cardhover border border-borderdefault rounded-xl p-4 text-center shadow-sm">
+                    <p className="text-[24px] font-display font-black text-primary mb-1">{agentResponses.length}</p>
+                    <p className="text-[10px] font-bold text-secondary uppercase tracking-widest">AI Views</p>
+                  </div>
+                  <div className="bg-cardhover border border-borderdefault rounded-xl p-4 text-center shadow-sm">
+                    <p className="text-[24px] font-display font-black text-primary mb-1">{humanReplies.length}</p>
+                    <p className="text-[10px] font-bold text-secondary uppercase tracking-widest">Creator Takes</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
