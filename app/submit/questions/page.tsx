@@ -75,27 +75,28 @@ export default function QuestionsPage() {
           <span className="text-[12px] text-tertiary mb-2 font-medium">Step 2 of 2</span>
           <div className="flex gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
-            <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-borderdefault"></div>
           </div>
         </div>
 
-        <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-6 sm:p-10 mb-8 relative">
+        <div className="bg-card border border-borderdefault rounded-2xl p-6 sm:p-10 mb-8 relative">
           
-          <Link href="/submit" className="absolute left-6 top-6 sm:left-10 sm:top-10 text-secondary hover:text-white transition-colors">
+          <Link href="/submit" className="absolute left-6 top-6 sm:left-10 sm:top-10 text-secondary hover:text-primary transition-colors">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
           </Link>
           
           <div className="mb-6 flex justify-center mt-1 sm:mt-0">
-             <span className="bg-teal-500/10 text-teal-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-500/20">
+             <span className="bg-teal-500/10 text-teal-600 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-teal-500/20">
                QUICK QUESTIONS
              </span>
           </div>
 
           <div className="text-center mb-8">
-            <h1 className="text-[28px] font-bold text-white tracking-[-0.01em] mb-3">
-              Got it — 2 quick questions
+            <h1 className="text-[28px] font-display font-bold text-primary tracking-[-0.01em] mb-3">
+              Help the AI understand
             </h1>
             <p className="text-[15px] text-secondary">
               These help agents give you specific advice, not generic tips
@@ -103,7 +104,7 @@ export default function QuestionsPage() {
           </div>
 
           {/* ORIGINAL SUBMISSION PREVIEW */}
-          <div className="mb-10 bg-[#0A0A0A] border border-[#1F1F1F] border-l-[3px] border-l-brandprimary rounded-r-xl p-4">
+          <div className="mb-10 bg-background border border-borderdefault border-l-[3px] border-l-brandprimary rounded-r-xl p-4">
             <span className="text-[11px] font-medium text-tertiary uppercase tracking-wider block mb-2">Your problem:</span>
             <p className="text-[14px] text-secondary leading-relaxed">
               {isExpanded ? submissionText : (submissionText.length > 100 ? `${submissionText.slice(0, 100)}...` : submissionText)}
@@ -121,19 +122,19 @@ export default function QuestionsPage() {
           <form onSubmit={handleSubmit} className="space-y-8">
             
             {questions.map((q) => (
-              <div key={q.question_order}>
-                <label className="block text-white text-[16px] font-medium mb-3">{q.question_text}</label>
+              <div key={q.id} className="bg-card border border-borderdefault rounded-2xl p-6">
+                <label className="block text-primary text-[16px] font-medium mb-3">{q.question_text}</label>
                 {q.question_type === 'multiple_choice' && q.options ? (
                   <div className="flex flex-wrap gap-3">
                     {q.options.map((opt: string) => (
                       <button
                         key={opt}
                         type="button"
-                        onClick={() => setAnswers(prev => ({ ...prev, [q.question_order]: opt }))}
-                        className={`px-4 py-2.5 rounded-xl text-[14px] font-medium transition-all border ${
-                          answers[q.question_order] === opt 
+                        onClick={() => handleAnswer(q.id, opt)}
+                        className={`px-4 py-2 rounded-xl text-[14px] font-medium transition-all border text-left ${
+                          answers[q.id] === opt 
                             ? 'bg-brandprimary border-brandprimary text-white' 
-                            : 'bg-[#111] border-[#222] text-secondary hover:border-[#444]'
+                            : 'bg-background border-borderdefault text-secondary hover:border-borderhover'
                         }`}
                       >
                         {opt}
@@ -143,15 +144,15 @@ export default function QuestionsPage() {
                 ) : (
                   <div className="relative">
                     <textarea
-                      value={answers[q.question_order] || ''}
+                      value={answers[q.id] || ''}
                       maxLength={2000}
-                      onChange={(e) => setAnswers(prev => ({ ...prev, [q.question_order]: e.target.value }))}
+                      onChange={(e) => handleAnswer(q.id, e.target.value)}
                       placeholder="Type your answer here..."
-                      className="w-full bg-[#111] border border-[#1F1F1F] rounded-xl px-4 py-3 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
+                      className="w-full bg-background border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[100px] resize-y"
                     />
                     <div className="flex justify-end mt-1.5">
                       <span className="text-[11px] text-tertiary">
-                        {(answers[q.question_order] || '').length} / 2000 characters
+                        {(answers[q.id] || '').length} / 2000 characters
                       </span>
                     </div>
                   </div>

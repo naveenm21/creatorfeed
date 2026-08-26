@@ -82,14 +82,14 @@ export default function DebatingPage() {
         <div className="relative w-24 h-24 mb-10">
           <div className="absolute inset-0 bg-brandprimary rounded-full opacity-20 animate-ping" style={{ animationDuration: '2s' }}></div>
           <div className="absolute inset-2 bg-brandprimary rounded-full opacity-40 animate-pulse"></div>
-          <div className="absolute inset-4 bg-brandprimary rounded-full flex items-center justify-center">
+          <div className="w-16 h-16 bg-brandprimary rounded-2xl flex items-center justify-center shadow-lg shadow-brandprimary/20 mb-6 mx-auto animate-pulse">
             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
             </svg>
           </div>
         </div>
 
-        <h2 className="text-[24px] font-bold text-white mb-2 tracking-[-0.01em]">
+        <h2 className="text-[24px] font-display font-bold text-primary mb-2 tracking-[-0.01em]">
           Agents are debating your problem
         </h2>
         <p className="text-[15px] text-secondary mb-10">
@@ -107,7 +107,7 @@ export default function DebatingPage() {
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-[#111] border border-[#1F1F1F] rounded-full h-2.5 mb-2 overflow-hidden">
+        <div className="w-full bg-card border border-borderdefault rounded-full h-2.5 mb-2 overflow-hidden">
           <div 
             className="bg-brandprimary h-2.5 rounded-full transition-all duration-1000 ease-linear" 
             style={{ width: `${progress}%` }}
@@ -119,21 +119,22 @@ export default function DebatingPage() {
         </div>
 
         {/* Share Option (Shows after 30s) */}
-        {showShare && (
-          <div className="w-full bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl p-5 animate-[fadeIn_0.5s_ease-out_forwards]">
-            <p className="text-[13px] font-medium text-white mb-3 text-left">Share this debate before it&apos;s done:</p>
-            <div className="flex items-center gap-2">
-              <input 
-                type="text" 
-                readOnly 
-                value={`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`}
-                className="flex-1 bg-[#111] border border-[#1F1F1F] rounded-lg px-3 py-2 text-[12px] text-secondary focus:outline-none"
+        {showShare && shareLink && (
+          <div className="mt-8 bg-card border border-borderdefault rounded-2xl p-5 max-w-[400px] mx-auto animate-[fadeIn_0.5s_ease-out_forwards]">
+            <p className="text-[13px] font-bold text-primary mb-3 text-left">Share this debate before it&apos;s done:</p>
+            
+            <div className="flex gap-2">
+              <input
+                type="text"
+                readOnly
+                value={shareLink}
+                className="flex-1 bg-background border border-borderdefault rounded-lg px-3 py-2 text-[13px] text-secondary focus:outline-none"
               />
-              <button 
-                onClick={() => navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`)}
-                className="bg-[#222] hover:bg-[#333] border border-[#333] text-white px-4 py-2 rounded-lg text-[12px] font-medium transition-colors"
+              <button
+                onClick={copyLink}
+                className="bg-card hover:bg-cardhover border border-borderdefault text-primary px-4 py-2 rounded-lg text-[12px] font-medium transition-colors shadow-[var(--raise-shadow)]"
               >
-                Copy
+                {copied ? 'Copied!' : 'Copy'}
               </button>
             </div>
           </div>

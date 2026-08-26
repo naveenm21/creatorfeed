@@ -94,7 +94,7 @@ export default function SubmitPage() {
   return (
     <main className="min-h-screen pt-12 pb-24 px-4 fade-in">
       <div className="max-w-[640px] mx-auto">
-        <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl p-6 sm:p-10 mb-8">
+        <div className="bg-card border border-borderdefault rounded-2xl p-6 sm:p-10 mb-8">
           
           <div className="mb-6 flex justify-center">
              <span className="bg-brandprimarysubtle text-brandprimary text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-brandprimary/20">
@@ -103,7 +103,7 @@ export default function SubmitPage() {
           </div>
 
           <div className="text-center mb-8">
-            <h1 className="text-[28px] font-bold text-white tracking-[-0.01em] mb-3">
+            <h1 className="text-[28px] font-display font-bold text-primary tracking-[-0.01em] mb-3">
               What&apos;s your creator problem?
             </h1>
             <p className="text-[15px] text-secondary">
@@ -115,8 +115,8 @@ export default function SubmitPage() {
             <div className="mb-6 bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3 animate-slideIn">
               <svg className="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               <div className="flex-1">
-                <p className="text-[14px] font-bold text-white mb-0.5">Content Blocked</p>
-                <p className="text-[13px] text-red-100/70 leading-relaxed">{error}</p>
+                <p className="text-[14px] font-bold text-primary mb-0.5">Content Blocked</p>
+                <p className="text-[13px] text-red-600 leading-relaxed">{error}</p>
               </div>
             </div>
           )}
@@ -131,8 +131,8 @@ export default function SubmitPage() {
                   if (error) setError(null);
                 }}
                 placeholder="Example: My YouTube views dropped 60% last month after I started posting daily instead of 3x a week. I have 45K subscribers. I haven't changed my content style but something clearly changed with the algorithm. I tried posting at different times but nothing worked."
-                className={`w-full bg-[#0A0A0A] border rounded-xl px-5 py-4 text-white placeholder-secondary focus:outline-none transition-colors text-[15px] min-h-[200px] resize-y shadow-inner ${
-                  error ? 'border-red-500/50' : 'border-[#1F1F1F] focus:border-brandprimary'
+                className={`w-full bg-background border rounded-xl px-5 py-4 text-primary placeholder-secondary focus:outline-none transition-colors text-[15px] min-h-[200px] resize-y shadow-inner ${
+                  error ? 'border-red-500/50' : 'border-borderdefault focus:border-brandprimary'
                 }`}
               />
               <div className="absolute bottom-4 right-4 text-[12px] text-tertiary">
@@ -146,7 +146,7 @@ export default function SubmitPage() {
                   key={tag}
                   type="button"
                   onClick={() => handleExampleClick(tag)}
-                  className="bg-[#111] hover:bg-[#1A1A1A] border border-[#1F1F1F] text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
+                  className="bg-card hover:bg-cardhover border border-borderdefault text-secondary text-[12px] px-3 py-1.5 rounded-full transition-colors"
                 >
                   &quot;{tag}&quot;
                 </button>
@@ -154,8 +154,8 @@ export default function SubmitPage() {
             </div>
 
             {/* IDENTITY SETTINGS */}
-            <div className="bg-[#111] border border-[#1F1F1F] rounded-2xl p-6 mb-8">
-              <h3 className="text-[14px] font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+            <div className="bg-card border border-borderdefault rounded-2xl p-6 mb-8">
+              <h3 className="text-[14px] font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
                 <svg className="w-4 h-4 text-brandprimary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                 Identity Settings
               </h3>
@@ -170,7 +170,7 @@ export default function SubmitPage() {
                       value={customName}
                       onChange={(e) => setCustomName(e.target.value)}
                       placeholder="Your Name or Nickname"
-                      className="w-full bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl px-4 py-2.5 text-white placeholder-secondary focus:outline-none focus:border-brandprimary transition-all text-[14px] disabled:opacity-30"
+                      className="w-full bg-background border border-borderdefault rounded-xl px-4 py-2.5 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-all text-[14px] disabled:opacity-30"
                     />
                   </div>
                 </div>
@@ -181,12 +181,12 @@ export default function SubmitPage() {
                       type="checkbox"
                       checked={isAnonymous}
                       onChange={(e) => setIsAnonymous(e.target.checked)}
-                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-[#333] transition-all checked:border-brandprimary checked:bg-brandprimary"
+                      className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-borderdefault transition-all checked:border-brandprimary checked:bg-brandprimary"
                     />
                     <svg className="absolute h-3.5 w-3.5 text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[14px] font-medium text-white group-hover:text-brandprimary transition-colors">Post Anonymously</span>
+                    <span className="text-[14px] font-medium text-primary group-hover:text-brandprimary transition-colors">Post Anonymously</span>
                     <span className="text-[12px] text-tertiary">Your name will be hidden from the public debate</span>
                   </div>
                 </label>
@@ -195,11 +195,10 @@ export default function SubmitPage() {
 
             <button
               type="submit"
-              disabled={problemText.length < 20 || isSubmitting}
               className={`w-full py-4 rounded-xl text-white text-[15px] font-bold transition-all flex justify-center items-center ${
                 problemText.length >= 20 && !isSubmitting
                   ? 'bg-gradient-to-r from-brandprimary to-brandorange hover:opacity-90' 
-                  : 'bg-[#1F1F1F] text-[#666] cursor-not-allowed'
+                  : 'bg-borderdefault text-secondary cursor-not-allowed'
               }`}
             >
               {isSubmitting ? (

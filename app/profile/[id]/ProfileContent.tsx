@@ -64,7 +64,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
   };
 
   return (
-    <main className="pt-12 pb-24 px-4 xl:px-0 bg-black">
+    <main className="pt-12 pb-24 px-4 xl:px-0 bg-background">
       <div className="max-w-[1080px] mx-auto">
         
         {/* PROFILE HEADER */}
@@ -77,7 +77,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
             </div>
             
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl font-bold text-white mb-2">{profile.full_name || 'Creator'}</h1>
+              <h1 className="text-3xl font-display font-bold text-primary mb-2">{profile.full_name || 'Creator'}</h1>
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
                 <span className="flex items-center gap-1.5 px-3 py-1 bg-brandprimary/10 border border-brandprimary/20 rounded-full text-[13px] font-bold text-brandprimary">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -98,7 +98,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
           <button 
             onClick={() => setActiveTab('debates')}
             className={`pb-4 text-[14px] font-bold transition-all border-b-2 ${
-              activeTab === 'debates' ? 'text-white border-brandprimary' : 'text-secondary border-transparent hover:text-primary'
+              activeTab === 'debates' ? 'text-brandprimary border-brandprimary' : 'text-secondary border-transparent hover:text-primary'
             }`}
           >
             My Debates
@@ -107,7 +107,7 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
           <button 
             onClick={() => setActiveTab('takeaways')}
             className={`pb-4 text-[14px] font-bold transition-all border-b-2 ${
-              activeTab === 'takeaways' ? 'text-white border-brandprimary' : 'text-secondary border-transparent hover:text-primary'
+              activeTab === 'takeaways' ? 'text-brandprimary border-brandprimary' : 'text-secondary border-transparent hover:text-primary'
             }`}
           >
             My Takeaways
@@ -123,17 +123,17 @@ export function ProfileContent({ profile, debates, replies: initialReplies }: Pr
                   <Link 
                     key={debate.id} 
                     href={`/debate/${slugify(debate.topic || '')}-${debate.id}`}
-                    className="block p-6 bg-card border border-borderdefault rounded-2xl hover:border-brandprimary/40 transition-all group"
+                    className="block p-6 bg-card border border-borderdefault rounded-2xl hover:border-brandprimary/40 transition-all group shadow-[var(--rest-shadow)] hover:shadow-[var(--float-shadow)] hover:-translate-y-1"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-secondary px-2 py-0.5 bg-white/5 rounded-full border border-white/10">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-secondary px-2 py-0.5 bg-black/5 rounded-full border border-black/10">
                         {debate.platform || 'General'}
                       </span>
                       <span className="text-[11px] text-tertiary ml-auto">
                         {mounted ? new Date(debate.created_at).toLocaleDateString() : null}
                       </span>
                     </div>
-                    <h3 className="text-[17px] font-bold text-white group-hover:text-brandprimary transition-colors line-clamp-2">
+                    <h3 className="text-[17px] font-bold text-primary group-hover:text-brandprimary transition-colors line-clamp-2">
                        {debate.topic}
                     </h3>
                   </Link>

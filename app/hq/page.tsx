@@ -29,15 +29,15 @@ export default async function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-[#111] border border-[#222] rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Total Users</h3>
-          <p className="text-4xl font-black text-white">{totalUsers || 0}</p>
+          <p className="text-4xl font-display font-black text-primary">{totalUsers || 0}</p>
         </div>
         <div className="bg-[#111] border border-[#222] rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Subscribers</h3>
-          <p className="text-4xl font-black text-white">{totalSubscribers || 0}</p>
+          <p className="text-4xl font-display font-black text-primary">{totalSubscribers || 0}</p>
         </div>
         <div className="bg-[#111] border border-[#222] rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Debates Started</h3>
-          <p className="text-4xl font-black text-white">{totalDebates || 0}</p>
+          <p className="text-4xl font-display font-black text-primary">{totalDebates || 0}</p>
         </div>
       </div>
 
@@ -45,14 +45,14 @@ export default async function AdminDashboard() {
         {/* Recent Debates */}
         <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl">
           <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
-            <h2 className="text-white font-bold text-lg">Recent Debates</h2>
+            <h2 className="text-primary font-bold text-lg">Recent Debates</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F] max-h-[400px] overflow-y-auto custom-scrollbar">
             {recentDebates?.map(debate => (
               <div key={debate.id} className="p-4 hover:bg-white/5 transition-colors">
                 <div className="flex justify-between items-start">
                   <Link href={`/debate/${debate.id}`} className="block flex-1">
-                    <p className="text-white font-medium text-sm line-clamp-1 mb-1">{debate.topic}</p>
+                    <p className="text-primary font-medium text-sm line-clamp-1 mb-1">{debate.topic}</p>
                     <div className="flex items-center gap-2 text-xs text-secondary">
                       <span className={
                         "px-2 py-0.5 rounded-full font-bold uppercase " +
@@ -83,13 +83,13 @@ export default async function AdminDashboard() {
         {/* Top Users */}
         <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl">
           <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
-            <h2 className="text-white font-bold text-lg">Top Creators</h2>
+            <h2 className="text-primary font-bold text-lg">Top Creators</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F] max-h-[400px] overflow-y-auto custom-scrollbar">
             {topUsers?.map(u => (
               <div key={u.id} className="flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
                 <div className="flex flex-col">
-                  <span className="text-white font-bold text-sm">{u.full_name || 'Anonymous'}</span>
+                  <span className="text-primary font-bold text-sm">{u.full_name || 'Anonymous'}</span>
                   <span className="text-secondary text-xs truncate max-w-[200px]">{u.email}</span>
                 </div>
                 <div className="text-brandprimary font-bold bg-brandprimary/10 px-2 py-1 rounded text-sm">
@@ -103,7 +103,7 @@ export default async function AdminDashboard() {
         {/* Recent Subscribers */}
         <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl lg:col-span-2">
           <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
-            <h2 className="text-white font-bold text-lg">Recent Newsletter Subscribers</h2>
+            <h2 className="text-primary font-bold text-lg">Recent Newsletter Subscribers</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F]">
             {recentSubscribers?.length === 0 && (
@@ -111,7 +111,7 @@ export default async function AdminDashboard() {
             )}
             {recentSubscribers?.map(sub => (
               <div key={sub.email} className="flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
-                <span className="text-white font-medium">{sub.email}</span>
+                <span className="text-primary font-medium">{sub.email}</span>
                 <div className="flex items-center gap-4">
                   <span className="text-secondary text-sm">
                     {new Date(sub.created_at).toLocaleDateString()}

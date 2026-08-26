@@ -67,7 +67,7 @@ export default function MyDebatesPage() {
       <div className="max-w-[720px] mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-[30px] font-bold text-white tracking-[-0.02em] mb-1">My Debates</h1>
+          <h1 className="text-[30px] font-display font-bold text-primary tracking-[-0.02em] mb-1">My Debates</h1>
           <p className="text-secondary text-[15px]">All the creator problems you&apos;ve submitted for debate</p>
         </div>
 
@@ -79,8 +79,8 @@ export default function MyDebatesPage() {
               onClick={() => setActiveFilter(f)}
               className={`h-[34px] px-4 rounded-full text-[13px] font-medium border transition-colors ${
                 activeFilter === f
-                  ? 'bg-brandprimarysubtle text-white border-brandprimary'
-                  : 'bg-[#111] text-secondary border-borderdefault hover:border-borderhover'
+                  ? 'bg-brandprimarysubtle text-brandprimary border-brandprimary'
+                  : 'bg-card text-secondary border-borderdefault hover:border-borderhover'
               }`}
             >{f}</button>
           ))}
@@ -139,7 +139,7 @@ export default function MyDebatesPage() {
                           }`}>{status.label}</span>
                         </div>
                       </div>
-                      <h3 className="text-[15px] font-bold text-white leading-snug mb-2 line-clamp-2">{t.topic}</h3>
+                      <h3 className="text-[15px] font-bold text-primary leading-snug mb-2 line-clamp-2">{t.topic}</h3>
                       <div className="flex items-center gap-4 text-[12px] text-secondary">
                         <span>{agentCount} AI responses</span>
                         <span>{replyCount} community replies</span>
