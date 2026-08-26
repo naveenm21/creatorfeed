@@ -897,7 +897,6 @@ export function DebateView({
           <button 
             onClick={() => {
               handleTabSwitch('Community');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="w-full glass-card p-5 flex flex-col items-center text-center gap-3 hover:border-brandprimary/50 transition-all group cursor-pointer"
           >
