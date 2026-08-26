@@ -119,22 +119,22 @@ export default function DebatingPage() {
         </div>
 
         {/* Share Option (Shows after 30s) */}
-        {showShare && shareLink && (
-          <div className="mt-8 bg-card border border-borderdefault rounded-2xl p-5 max-w-[400px] mx-auto animate-[fadeIn_0.5s_ease-out_forwards]">
+        {showShare && (
+          <div className="w-full bg-card border border-borderdefault rounded-2xl p-5 animate-[fadeIn_0.5s_ease-out_forwards]">
             <p className="text-[13px] font-bold text-primary mb-3 text-left">Share this debate before it&apos;s done:</p>
             
             <div className="flex gap-2">
               <input
                 type="text"
                 readOnly
-                value={shareLink}
+                value={`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`}
                 className="flex-1 bg-background border border-borderdefault rounded-lg px-3 py-2 text-[13px] text-secondary focus:outline-none"
               />
               <button
-                onClick={copyLink}
+                onClick={() => navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_APP_URL || 'https://feed.creedom.ai'}/debate/${threadId}`)}
                 className="bg-card hover:bg-cardhover border border-borderdefault text-primary px-4 py-2 rounded-lg text-[12px] font-medium transition-colors shadow-[var(--raise-shadow)]"
               >
-                {copied ? 'Copied!' : 'Copy'}
+                Copy
               </button>
             </div>
           </div>
