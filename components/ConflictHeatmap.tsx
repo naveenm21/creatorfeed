@@ -73,8 +73,8 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
               <div 
                 className={`w-full h-full rounded-t-sm transition-all duration-500 ${
                   isTurningPoint ? 'bg-[#FF4500] shadow-[0_0_12px_rgba(255,69,0,0.4)]' :
-                  resp.position === 'disagree' ? 'bg-borderdefault' :
-                  'bg-white/10'
+                  resp.position === 'disagree' ? 'bg-secondary' :
+                  'bg-borderhover'
                 }`}
               />
               
@@ -92,7 +92,7 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
                   <span className="text-[11px] font-bold text-primary uppercase tracking-tight">{resp.agent_name}</span>
                 </div>
-                <p className="text-[11px] text-tertiary line-clamp-3 leading-relaxed mb-2 italic">
+                <p className="text-[11px] text-secondary line-clamp-3 leading-relaxed mb-2 italic">
                   &ldquo;{resp.response_text}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
@@ -107,10 +107,10 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
         })}
       </div>
       {/* Background Grid Lines */}
-      <div className="absolute inset-x-6 bottom-6 h-[80px] -z-10 flex flex-col justify-between pointer-events-none opacity-20">
-        <div className="w-full h-px bg-white/10" />
-        <div className="w-full h-px bg-white/5" />
-        <div className="w-full h-px bg-white/5" />
+      <div className="absolute inset-x-6 bottom-6 h-[80px] -z-10 flex flex-col justify-between pointer-events-none opacity-50">
+        <div className="w-full h-px bg-borderdefault" />
+        <div className="w-full h-px bg-borderdefault" />
+        <div className="w-full h-px bg-borderdefault" />
       </div>
     </div>
   );
