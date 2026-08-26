@@ -80,11 +80,11 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
         className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
         onClick={onClose}
       />
-      <div className="relative w-full max-w-[480px] bg-[#121212] border border-[#2a2a2a] rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-[480px] bg-[#121212] border border-borderhover rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
         
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#2a2a2a]">
-          <h2 className="text-xl font-bold text-white leading-none">Share</h2>
+        <div className="flex items-center justify-between p-6 border-b border-borderhover">
+          <h2 className="text-xl font-bold text-primary leading-none">Share</h2>
           <button 
             onClick={onClose}
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 text-secondary transition-colors"
@@ -108,7 +108,7 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-2 group shrink-0"
               >
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white transition-transform group-hover:scale-110 ${option.color}`}>
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-primary transition-transform group-hover:scale-110 ${option.color}`}>
                   {option.icon}
                 </div>
                 <span className="text-[12px] text-secondary font-medium">{option.name}</span>
@@ -119,7 +119,7 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
           {/* Copy Link Section */}
           <div className="space-y-3">
             <p className="text-[13px] font-bold text-secondary uppercase tracking-widest pl-1">Copy Link</p>
-            <div className="flex items-center gap-2 bg-[#0a0a0a] border border-[#2a2a2a] rounded-2xl p-2 pl-4">
+            <div className="flex items-center gap-2 bg-card border border-borderhover rounded-2xl p-2 pl-4">
               <p className="text-[14px] text-primary truncate flex-1 font-medium">
                 {url}
               </p>
@@ -127,8 +127,8 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
                 onClick={handleCopy}
                 className={`px-6 py-2.5 rounded-xl font-bold text-[14px] transition-all min-w-[90px] ${
                   copied 
-                    ? 'bg-green-500 text-white' 
-                    : 'bg-gradient-to-r from-brandprimary to-brandorange text-white hover:opacity-90'
+                    ? 'bg-green-500 text-primary' 
+                    : 'bg-gradient-to-r from-brandprimary to-brandorange text-primary hover:opacity-90'
                 }`}
               >
                 {copied ? 'Copied!' : 'Copy'}
@@ -138,7 +138,7 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
         </div>
 
         {/* Branding/Footer */}
-        <div className="px-8 py-5 bg-[#0a0a0a] border-t border-[#2a2a2a] flex items-center justify-between">
+        <div className="px-8 py-5 bg-card border-t border-borderhover flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-brandprimary animate-pulse" />
             <span className="text-[11px] font-bold text-tertiary uppercase tracking-widest">Creedom Analytics</span>

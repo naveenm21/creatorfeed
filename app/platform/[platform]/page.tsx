@@ -181,7 +181,7 @@ export default async function PlatformPage({
           {/* Debate Cards */}
           <div className="flex flex-col">
             {debates.length === 0 ? (
-              <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-[#0A0A0A] mt-4">
+              <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-card mt-4">
                 <h2 className="text-[20px] font-semibold text-primary mb-2">No {platformName} debates yet</h2>
                 <p className="text-[14px] text-secondary mb-6">Be the first to submit a creator problem for {platformName}</p>
                 <Link href="/submit" className="inline-flex items-center justify-center bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-medium px-6 py-2.5 rounded-full hover:opacity-90 transition-all">

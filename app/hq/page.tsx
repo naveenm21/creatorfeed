@@ -27,15 +27,15 @@ export default async function AdminDashboard() {
     <div className="space-y-8">
       {/* Metrics Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-[#111] border border-[#222] rounded-xl p-6">
+        <div className="bg-background border border-borderdefault rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Total Users</h3>
           <p className="text-4xl font-display font-black text-primary">{totalUsers || 0}</p>
         </div>
-        <div className="bg-[#111] border border-[#222] rounded-xl p-6">
+        <div className="bg-background border border-borderdefault rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Subscribers</h3>
           <p className="text-4xl font-display font-black text-primary">{totalSubscribers || 0}</p>
         </div>
-        <div className="bg-[#111] border border-[#222] rounded-xl p-6">
+        <div className="bg-background border border-borderdefault rounded-xl p-6">
           <h3 className="text-secondary text-sm font-bold uppercase tracking-wider mb-2">Debates Started</h3>
           <p className="text-4xl font-display font-black text-primary">{totalDebates || 0}</p>
         </div>
@@ -43,8 +43,8 @@ export default async function AdminDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Recent Debates */}
-        <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl">
-          <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
+        <div className="bg-card border border-borderdefault rounded-2xl overflow-hidden shadow-2xl">
+          <div className="px-6 py-4 border-b border-borderdefault bg-background">
             <h2 className="text-primary font-bold text-lg">Recent Debates</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F] max-h-[400px] overflow-y-auto custom-scrollbar">
@@ -81,8 +81,8 @@ export default async function AdminDashboard() {
         </div>
 
         {/* Top Users */}
-        <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl">
-          <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
+        <div className="bg-card border border-borderdefault rounded-2xl overflow-hidden shadow-2xl">
+          <div className="px-6 py-4 border-b border-borderdefault bg-background">
             <h2 className="text-primary font-bold text-lg">Top Creators</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F] max-h-[400px] overflow-y-auto custom-scrollbar">
@@ -101,8 +101,8 @@ export default async function AdminDashboard() {
         </div>
 
         {/* Recent Subscribers */}
-        <div className="bg-[#0A0A0A] border border-[#1F1F1F] rounded-2xl overflow-hidden shadow-2xl lg:col-span-2">
-          <div className="px-6 py-4 border-b border-[#1F1F1F] bg-[#111111]">
+        <div className="bg-card border border-borderdefault rounded-2xl overflow-hidden shadow-2xl lg:col-span-2">
+          <div className="px-6 py-4 border-b border-borderdefault bg-background">
             <h2 className="text-primary font-bold text-lg">Recent Newsletter Subscribers</h2>
           </div>
           <div className="divide-y divide-[#1F1F1F]">

@@ -88,7 +88,7 @@ export default function MyDebatesPage() {
 
         {/* Thread List */}
         {filtered.length === 0 ? (
-          <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-[#0A0A0A]">
+          <div className="text-center py-20 px-4 border border-borderdefault rounded-2xl bg-card">
             <h2 className="text-[20px] font-semibold text-primary mb-2">
               {activeFilter === 'All' ? "You haven't submitted any problems yet" : `No ${activeFilter.toLowerCase()} debates`}
             </h2>

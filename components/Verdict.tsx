@@ -33,7 +33,7 @@ export function Verdict({
         </span>
       </div>
       
-      <div className="text-[15px] font-bold text-white leading-relaxed whitespace-pre-wrap mb-5">
+      <div className="text-[15px] font-bold text-primary leading-relaxed whitespace-pre-wrap mb-5">
         {mainContent}
       </div>
 

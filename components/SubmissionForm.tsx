@@ -45,7 +45,7 @@ export function SubmissionForm() {
               className={`h-[36px] px-4 rounded-full text-[14px] font-medium transition-colors border ${
                 selectedPlatform === p 
                   ? 'bg-brandprimarysubtle text-white border-brandprimary'
-                  : 'bg-[#111] text-secondary border-borderdefault hover:border-borderhover'
+                  : 'bg-background text-secondary border-borderdefault hover:border-borderhover'
               }`}
             >
               {p}
@@ -64,7 +64,7 @@ export function SubmissionForm() {
             value={accountHandle}
             onChange={(e) => setAccountHandle(e.target.value)}
             placeholder="yourchannel or yourhandle"
-            className="w-full bg-[#0A0A0A] border border-borderdefault rounded-xl pl-9 pr-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px]"
+            className="w-full bg-card border border-borderdefault rounded-xl pl-9 pr-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px]"
           />
         </div>
         <p className="text-[13px] text-tertiary">Agents analyze your public data for more specific advice</p>
@@ -84,7 +84,7 @@ export function SubmissionForm() {
               className={`h-[36px] px-4 rounded-full text-[14px] font-medium transition-colors border ${
                 selectedRange === a 
                   ? 'bg-brandprimarysubtle text-white border-brandprimary'
-                  : 'bg-[#111] text-secondary border-borderdefault hover:border-borderhover'
+                  : 'bg-background text-secondary border-borderdefault hover:border-borderhover'
               }`}
             >
               {a}
@@ -101,7 +101,7 @@ export function SubmissionForm() {
         <div className="relative">
           <textarea 
             placeholder="Be specific. What platform, what numbers, what changed? Example: My Instagram reach dropped 60% in 3 weeks after posting 5 Reels. Engagement is fine but new people aren't finding me."
-            className={`w-full bg-[#0A0A0A] rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none transition-colors text-[15px] min-h-[120px] resize-none border ${
+            className={`w-full bg-card rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none transition-colors text-[15px] min-h-[120px] resize-none border ${
               isOverLimit ? 'border-red-500 focus:border-red-500' : 'border-borderdefault focus:border-brandprimary'
             }`}
             required
@@ -123,7 +123,7 @@ export function SubmissionForm() {
           placeholder="This helps agents avoid suggesting things you've already done"
           value={triedText}
           onChange={(e) => setTriedText(e.target.value)}
-          className="w-full bg-[#0A0A0A] border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px] min-h-[80px] resize-none"
+          className="w-full bg-card border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px] min-h-[80px] resize-none"
         />
       </div>
 
@@ -135,7 +135,7 @@ export function SubmissionForm() {
           value={nameAlias}
           onChange={(e) => setNameAlias(e.target.value)}
           placeholder="How should we credit you? e.g. Sarah from NYC or anonymous"
-          className="w-full bg-[#0A0A0A] border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px]"
+          className="w-full bg-card border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[15px]"
         />
       </div>
 

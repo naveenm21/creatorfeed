@@ -175,7 +175,7 @@ export default function SubmitPage() {
                   </div>
                 </div>
 
-                <label className="flex items-center gap-3 cursor-pointer group p-3 rounded-xl border border-transparent hover:border-[#1F1F1F] transition-all">
+                <label className="flex items-center gap-3 cursor-pointer group p-3 rounded-xl border border-transparent hover:border-borderdefault transition-all">
                   <div className="relative flex items-center">
                     <input 
                       type="checkbox"

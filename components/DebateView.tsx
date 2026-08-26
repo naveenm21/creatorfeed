@@ -422,7 +422,7 @@ export function DebateView({
               
               {/* Key Takeaways Block */}
               {(verdict.key_takeaway_1 || verdict.key_takeaway_2) && (
-                <div className="bg-[#0A0A0A] border border-borderdefault rounded-2xl p-6">
+                <div className="bg-card border border-borderdefault rounded-2xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                     <h2 className="text-[16px] font-bold text-primary tracking-tight">Key Takeaways</h2>
@@ -474,7 +474,7 @@ export function DebateView({
 
               {/* Live: show agent circles at top while debating */}
               {isLive && (
-                <div className="mb-8 bg-[#0A0A0A] border border-borderdefault rounded-2xl p-5">
+                <div className="mb-8 bg-card border border-borderdefault rounded-2xl p-5">
                   <p className="text-[12px] text-secondary uppercase tracking-widest font-bold mb-4">
                     {agentResponses.length === 0 ? 'Waiting for agents to start...' : 'Agents responding...'}
                   </p>
@@ -634,7 +634,7 @@ export function DebateView({
 
               {/* "Next agent responding" indicator */}
               {isLive && typingAgent && (
-                <div className="mt-4 border border-borderdefault rounded-xl p-4 bg-[#0A0A0A] flex items-center gap-3">
+                <div className="mt-4 border border-borderdefault rounded-xl p-4 bg-card flex items-center gap-3">
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center text-primary text-[13px] font-bold animate-pulse shrink-0"
                     style={{ backgroundColor: AGENT_COLORS[typingAgent as keyof typeof AGENT_COLORS] || '#888' }}
@@ -653,7 +653,7 @@ export function DebateView({
 
             {/* TAB 2: COMMUNITY */}
             <div className={activeTab === 'Community' ? 'block' : 'hidden'}>
-              <div className="bg-[#0A0A0A] border border-borderdefault rounded-2xl p-4 mb-8">
+              <div className="bg-card border border-borderdefault rounded-2xl p-4 mb-8">
                 {replySuccess && (
                   <div className="mb-4 text-green-400 text-[14px] font-medium bg-green-500/10 px-4 py-2 rounded-xl">
                     ✓ Your take was added!
@@ -686,7 +686,7 @@ export function DebateView({
                   placeholder="Share your experience or pushback..."
                   value={replyText}
                   onChange={e => setReplyText(e.target.value)}
-                  className="w-full bg-[#111] border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[90px] resize-none mb-4"
+                  className="w-full bg-background border border-borderdefault rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-brandprimary transition-colors text-[14px] min-h-[90px] resize-none mb-4"
                 />
 
                 <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -697,7 +697,7 @@ export function DebateView({
                       className={`flex-1 h-11 rounded-xl text-[14px] font-medium border transition-all flex items-center justify-center gap-2 ${
                         sentiment === s
                           ? s === 'agree' ? 'bg-green-500 text-white border-green-500' : 'bg-red-500 text-white border-red-500'
-                          : `bg-[#111] text-secondary border-borderdefault ${s === 'agree' ? 'hover:border-green-500/50 hover:text-green-400' : 'hover:border-red-500/50 hover:text-red-400'}`
+                          : `bg-background text-secondary border-borderdefault ${s === 'agree' ? 'hover:border-green-500/50 hover:text-green-400' : 'hover:border-red-500/50 hover:text-red-400'}`
                       }`}
                     >
                       {s === 'agree' ? (
@@ -770,7 +770,7 @@ export function DebateView({
                               </button>
                             )}
                           </div>
-                          <p className="text-[15px] text-secondary leading-[1.6] bg-[#0A0A0A] p-4 rounded-xl border border-borderdefault">{item.reply_text}</p>
+                          <p className="text-[15px] text-secondary leading-[1.6] bg-card p-4 rounded-xl border border-borderdefault">{item.reply_text}</p>
                         </div>
                         {i !== humanReplies.length - 1 && <div className="w-full h-px bg-borderdefault mt-6" />}
                       </div>

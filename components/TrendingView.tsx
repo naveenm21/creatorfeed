@@ -26,7 +26,7 @@ export function TrendingView({ initialThreads }: { initialThreads: any[] }) {
             key={filter}
             onClick={() => setActiveFilter(filter)} 
             className={`h-[36px] px-4 rounded-full text-[14px] font-medium transition-colors border ${
-              activeFilter === filter ? 'bg-brandprimarysubtle text-white border-brandprimary' : 'bg-[#111] text-secondary border-borderdefault hover:border-borderhover'
+              activeFilter === filter ? 'bg-brandprimarysubtle text-brandprimary border-brandprimary' : 'bg-background text-secondary border-borderdefault hover:border-borderhover'
             }`}
           >
             {filter}
