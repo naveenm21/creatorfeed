@@ -126,10 +126,10 @@ export default async function PlatformPage({
       />
       
       <div className="max-w-[1080px] mx-auto px-4 xl:px-0 mb-8 mt-4">
-        <h1 className="text-3xl font-black text-white tracking-tight mb-3">
+        <h1 className="text-[32px] font-display font-black text-primary tracking-tight mb-3">
           {platformName} Creator Problems
         </h1>
-        <p className="text-[#818384] text-[15px] max-w-3xl leading-relaxed">
+        <p className="text-secondary text-[15px] max-w-3xl leading-relaxed">
           Explore AI-debated strategies and real creator problems about {platformName} growth, monetization, algorithm changes, and audience building. 
           Get specific, multi-agent advice instead of generic tips.
         </p>
@@ -140,40 +140,39 @@ export default async function PlatformPage({
         {/* LEFT FEED COLUMN */}
         <div className="flex-1 max-w-[680px]">
           {/* Mobile-only Submit CTA */}
-          <div className="md:hidden mb-6 p-5 bg-gradient-to-br from-[#1A0B2E] to-[#0A0A0A] border border-brandpurple/30 rounded-2xl relative overflow-hidden shadow-lg shadow-brandpurple/10">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brandpurple/10 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
-            <h2 className="text-[17px] font-bold text-white mb-2 relative z-10">Have a creator problem?</h2>
+          <div className="md:hidden mb-6 p-5 bg-card border border-borderdefault rounded-2xl relative overflow-hidden shadow-lg">
+            <h2 className="text-[17px] font-display font-bold text-primary mb-2 relative z-10">Have a creator problem?</h2>
             <p className="text-[13px] text-secondary mb-4 relative z-10 leading-relaxed">Get AI agents to debate your growth strategy for YouTube, Instagram or TikTok.</p>
             <Link 
               href="/submit" 
-              className="relative z-10 inline-flex items-center justify-center w-full bg-gradient-to-r from-brandprimary to-brandorange text-white text-[14px] font-bold py-3 rounded-xl shadow-lg shadow-brandprimary/20 transition-transform active:scale-[0.98]"
+              className="relative z-10 inline-flex items-center justify-center w-full bg-brandprimary text-white text-[14px] font-bold py-3 rounded-xl shadow-[var(--raise-shadow)] transition-transform active:scale-[0.98]"
             >
               Submit Your Problem →
             </Link>
           </div>
 
           <div className="mb-4">
-            <h2 className="text-[20px] font-bold text-white">{platformName} Debates</h2>
+            <h2 className="text-[20px] font-display font-bold text-primary">{platformName} Debates</h2>
             <p className="text-[14px] text-secondary mt-1">AI debates focused on {platformName} growth.</p>
           </div>
 
           {/* Top Tabs */}
           <div className="flex h-[48px] border-b border-borderdefault mb-2 overflow-x-auto hide-scrollbar">
-            <Link href="/" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
+            <Link href="/" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-primary">
               For You
             </Link>
-            <Link href="/trending" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-white">
+            <Link href="/trending" className="flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative text-secondary hover:text-primary">
               Trending
             </Link>
-            <Link href="/platform/instagram" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'instagram' ? 'text-white' : 'text-secondary hover:text-white'}`}>
+            <Link href="/platform/instagram" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'instagram' ? 'text-primary' : 'text-secondary hover:text-primary'}`}>
               Instagram
               {params.platform.toLowerCase() === 'instagram' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
-            <Link href="/platform/youtube" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'youtube' ? 'text-white' : 'text-secondary hover:text-white'}`}>
+            <Link href="/platform/youtube" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'youtube' ? 'text-primary' : 'text-secondary hover:text-primary'}`}>
               YouTube
               {params.platform.toLowerCase() === 'youtube' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
-            <Link href="/platform/tiktok" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'tiktok' ? 'text-white' : 'text-secondary hover:text-white'}`}>
+            <Link href="/platform/tiktok" className={`flex-none px-6 flex items-center justify-center text-[15px] font-medium transition-colors relative ${params.platform.toLowerCase() === 'tiktok' ? 'text-primary' : 'text-secondary hover:text-primary'}`}>
               TikTok
               {params.platform.toLowerCase() === 'tiktok' && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brandprimary rounded-t-full"></span>}
             </Link>
@@ -194,14 +193,14 @@ export default async function PlatformPage({
                 <InfiniteFeed initialDebates={debates as any} initialPage={page} platform={params.platform} />
                 
                 {/* SEO CRAWLABLE PAGINATION */}
-                <nav className="mt-8 py-4 border-t border-[#1F1F1F] flex justify-between items-center" aria-label="Pagination">
+                <nav className="mt-8 py-4 border-t border-borderdefault flex justify-between items-center" aria-label="Pagination">
                   {page > 1 ? (
-                    <Link href={`/platform/${params.platform}?page=${page - 1}`} className="text-[14px] font-bold text-secondary hover:text-white transition-colors">
+                    <Link href={`/platform/${params.platform}?page=${page - 1}`} className="text-[14px] font-bold text-secondary hover:text-primary transition-colors">
                       ← Previous Page
                     </Link>
                   ) : <div />}
                   {debates.length === 20 && (
-                    <Link href={`/platform/${params.platform}?page=${page + 1}`} className="text-[14px] font-bold text-brandprimary hover:text-white transition-colors">
+                    <Link href={`/platform/${params.platform}?page=${page + 1}`} className="text-[14px] font-bold text-brandprimary hover:text-brandprimaryhover transition-colors">
                       Next Page →
                     </Link>
                   )}
@@ -212,21 +211,21 @@ export default async function PlatformPage({
         </div>
 
         {/* RIGHT SIDEBAR */}
-        <div className="hidden lg:block w-[320px] shrink-0 sticky top-[80px] self-start space-y-4">
+        <div className="hidden lg:block w-[320px] shrink-0 sticky top-[80px] self-start space-y-6">
           
-          <div className="glass-card rounded-xl p-4">
-            <h2 className="text-[14px] font-bold text-white mb-3 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
+          <div className="glass-card p-6">
+            <h2 className="text-[16px] font-display font-bold text-primary mb-4 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brandprimary" />
               Trending
             </h2>
             <div className="flex flex-col">
               {(trendingThreads || []).map((item, i) => (
-                <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-[#343536]' : ''}`}>
-                  <div className="text-[12px] font-bold text-[#FF4500] uppercase tracking-widest mb-1">{i + 1}</div>
-                  <Link href={`/debate/${slugify(item.topic)}-${item.id}`} className="text-[14px] font-medium text-white mb-0.5 block hover:underline line-clamp-2">
+                <div key={item.id} className={`py-3 ${i !== (trendingThreads?.length || 1) - 1 ? 'border-b border-borderdefault/50' : ''}`}>
+                  <div className="text-[11px] font-bold text-brandprimary uppercase tracking-widest mb-1">{i + 1}</div>
+                  <Link href={`/debate/${slugify(item.topic)}-${item.id}`} className="text-[14px] font-bold text-primary mb-1 block hover:text-brandprimary transition-colors line-clamp-2 leading-snug">
                     {item.topic}
                   </Link>
-                  <div className="text-[12px] text-[#818384]">
+                  <div className="text-[12px] text-secondary">
                     Trending debate
                   </div>
                 </div>
@@ -234,15 +233,15 @@ export default async function PlatformPage({
             </div>
           </div>
 
-          <div className="glass-card rounded-xl p-5">
-            <div className="w-10 h-10 rounded-full bg-[#FF4500]/10 flex items-center justify-center mb-4">
-              <svg className="w-5 h-5 text-[#FF4500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <div className="glass-card p-6">
+            <div className="w-12 h-12 rounded-full bg-pink-soft flex items-center justify-center mb-4">
+              <svg className="w-6 h-6 text-brandprimary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
-            <h2 className="text-[15px] font-bold text-white mb-2">Creator Insights</h2>
-            <p className="text-[13px] text-[#818384] mb-5 leading-relaxed">
+            <h2 className="text-[18px] font-display font-bold text-primary mb-2">Creator Insights</h2>
+            <p className="text-[14px] text-secondary mb-5 leading-relaxed">
               AI agents analyze real platform data to solve growth bottlenecks.
             </p>
-            <Link href="/submit" className="flex items-center justify-center w-full bg-[#FF4500] text-white text-[14px] font-bold py-2.5 rounded-full hover:bg-[#FF5722] transition-colors">
+            <Link href="/submit" className="flex items-center justify-center w-full bg-brandprimary text-white text-[14px] font-bold py-3 rounded-[16px] shadow-[var(--raise-shadow)] hover:bg-brandprimaryhover hover:-translate-y-[1px] transition-all">
               Submit Problem
             </Link>
           </div>
