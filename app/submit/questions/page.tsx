@@ -166,7 +166,7 @@ export default function QuestionsPage() {
               className={`w-full py-4 rounded-xl text-white text-[15px] font-bold transition-all flex justify-center items-center mt-4 ${
                 isFormComplete && !isSubmitting
                   ? 'bg-gradient-to-r from-brandprimary to-brandorange hover:opacity-90' 
-                  : 'bg-[#1F1F1F] text-[#666] cursor-not-allowed'
+                  : 'bg-background text-secondary cursor-not-allowed'
               }`}
             >
               {isSubmitting ? (

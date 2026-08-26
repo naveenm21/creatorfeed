@@ -40,18 +40,18 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
   };
 
   return (
-    <div className="w-full bg-[#1A1A1B] border border-[#343536] rounded-xl p-6 mb-10 overflow-hidden relative group">
+    <div className="w-full bg-card border border-borderdefault rounded-xl p-6 mb-10 overflow-hidden relative group">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-full bg-[#FF4500] shadow-[0_0_8px_#FF4500] animate-pulse" />
-          <span className="text-[12px] uppercase tracking-widest font-black text-[#D7DADC]">Consensus Pipeline</span>
+          <span className="text-[12px] uppercase tracking-widest font-black text-primary">Consensus Pipeline</span>
         </div>
-        <div className="flex gap-4 text-[10px] font-bold uppercase tracking-wider text-[#818384]">
+        <div className="flex gap-4 text-[10px] font-bold uppercase tracking-wider text-tertiary">
           <div className="flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-[#FF4500] shadow-[0_0_8px_rgba(255,69,0,0.5)]" /> Consensus Shift
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#343536]" /> Conflict
+            <span className="w-2 h-2 rounded-full bg-borderdefault" /> Conflict
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
               <div 
                 className={`w-full h-full rounded-t-sm transition-all duration-500 ${
                   isTurningPoint ? 'bg-[#FF4500] shadow-[0_0_12px_rgba(255,69,0,0.4)]' :
-                  resp.position === 'disagree' ? 'bg-[#343536]' :
+                  resp.position === 'disagree' ? 'bg-borderdefault' :
                   'bg-white/10'
                 }`}
               />
@@ -87,16 +87,16 @@ export function ConflictHeatmap({ responses, onNavigate }: ConflictHeatmapProps)
               )}
               
               {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 p-3 rounded-xl bg-[#1A1A1B] border border-[#343536] shadow-2xl opacity-0 group-hover/bar:opacity-100 transition-opacity pointer-events-none z-50 min-w-[160px]">
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 p-3 rounded-xl bg-card border border-borderdefault shadow-2xl opacity-0 group-hover/bar:opacity-100 transition-opacity pointer-events-none z-50 min-w-[160px]">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
                   <span className="text-[11px] font-bold text-primary uppercase tracking-tight">{resp.agent_name}</span>
                 </div>
-                <p className="text-[11px] text-[#818384] line-clamp-3 leading-relaxed mb-2 italic">
+                <p className="text-[11px] text-tertiary line-clamp-3 leading-relaxed mb-2 italic">
                   &ldquo;{resp.response_text}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className={`text-[9px] font-black uppercase tracking-widest ${isTurningPoint ? 'text-[#FF4500]' : 'text-[#818384]'}`}>
+                  <span className={`text-[9px] font-black uppercase tracking-widest ${isTurningPoint ? 'text-[#FF4500]' : 'text-tertiary'}`}>
                     {isTurningPoint ? 'Turning Point' : resp.position || 'Neutral'}
                   </span>
                   <span className="text-[9px] text-[#444] font-bold">Rnd {resp.round_number}</span>

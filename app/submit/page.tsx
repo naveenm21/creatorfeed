@@ -218,11 +218,11 @@ export default function SubmitPage() {
           <div className="mt-8 text-center text-[13px] text-tertiary">
             <p className="mb-4">Our AI will ask 2-3 quick questions, then AI agents will debate your problem publicly</p>
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-[#666]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Takes 2 minutes</span>
+              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Takes 2 minutes</span>
               <span className="hidden sm:inline">·</span>
-              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-[#666]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Completely free</span>
+              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>Completely free</span>
               <span className="hidden sm:inline">·</span>
-              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-[#666]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>No account needed</span>
+              <span className="flex items-center"><svg className="w-4 h-4 mr-1 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>No account needed</span>
             </div>
           </div>
           

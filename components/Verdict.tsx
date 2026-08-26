@@ -23,12 +23,12 @@ export function Verdict({
   }
 
   return (
-    <div className="bg-[#1A1A1B] border rounded-xl border-[#343536] relative p-5 overflow-hidden shadow-2xl">
+    <div className="bg-card border rounded-xl border-borderdefault relative p-5 overflow-hidden shadow-2xl">
       <div className="absolute top-0 left-0 w-full h-[3px] bg-[#FF4500]"></div>
       
       <div className="mb-4 mt-1 flex items-center space-x-2">
         <div className="w-2.5 h-2.5 rounded-full bg-[#FF4500] shadow-[0_0_8px_#FF4500] animate-pulse" />
-        <span className="text-[12px] font-black text-[#D7DADC] uppercase tracking-widest">
+        <span className="text-[12px] font-black text-primary uppercase tracking-widest">
           The Verdict
         </span>
       </div>
@@ -47,7 +47,7 @@ export function Verdict({
 
       {referenceLinks.length > 0 && (
         <div className="mb-5">
-          <h4 className="text-[11px] font-bold text-[#818384] uppercase tracking-wider mb-2">Sources</h4>
+          <h4 className="text-[11px] font-bold text-tertiary uppercase tracking-wider mb-2">Sources</h4>
           <ul className="space-y-1">
             {referenceLinks.map((link, i) => {
               const hasUrl = link.includes(': ');
@@ -70,7 +70,7 @@ export function Verdict({
         </div>
       )}
 
-      <div className="text-[11px] font-bold text-[#818384] uppercase tracking-tight border-t border-[#343536] pt-4">
+      <div className="text-[11px] font-bold text-tertiary uppercase tracking-tight border-t border-borderdefault pt-4">
         Synthesized from {agentCount} positions
       </div>
     </div>

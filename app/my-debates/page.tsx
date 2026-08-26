@@ -108,11 +108,11 @@ export default function MyDebatesPage() {
           <div className="flex flex-col gap-3">
             {filtered.map(t => {
               const platform = t.platform || 'Multi-platform';
-              let badgeStyle = 'bg-[#FFFFFF15] text-[#FFFFFF]';
-              if (platform === 'YouTube') badgeStyle = 'bg-[#FF000015] text-[#FF4444]';
-              if (platform.includes('Instagram')) badgeStyle = 'bg-[#E1306C15] text-[#E1306C]';
-              if (platform.includes('TikTok')) badgeStyle = 'bg-[#00F2FE15] text-[#00F2FE]';
-              if (platform === 'Twitch') badgeStyle = 'bg-[#9146FF15] text-[#9146FF]';
+              let badgeStyle = "bg-primary/10 text-primary border border-primary/20";
+              if (platform === "YouTube") badgeStyle = "bg-red-soft text-red border border-red/20";
+              if (platform.includes("Instagram")) badgeStyle = "bg-pink-soft text-brandprimary border border-brandprimarysubtle";
+              if (platform.includes("TikTok")) badgeStyle = "bg-primary/10 text-primary border border-primary/20";
+              if (platform === "Twitch") badgeStyle = "bg-purple-100 text-purple-600 border border-purple-200";
 
               const statusConfig: Record<string, { dot: string; label: string; pulse: boolean }> = {
                 debating: { dot: 'bg-yellow-400', label: 'Agents debating...', pulse: true },
