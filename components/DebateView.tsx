@@ -337,7 +337,7 @@ export function DebateView({
               {isLive && <span>· <span className="text-yellow-400">Agents still debating...</span></span>}
               <button 
                 onClick={() => setShowShareDialog(true)}
-                className="ml-auto lg:ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[12px] font-bold text-primary hover:bg-white/10 transition-all group"
+                className="ml-auto lg:ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-borderdefault text-[12px] font-bold text-primary hover:bg-borderhover shadow-[var(--raise-shadow)] transition-all group"
               >
                 <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current group-hover:rotate-12 transition-transform" strokeWidth="2.5">
                   <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />

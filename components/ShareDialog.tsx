@@ -77,10 +77,10 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 animate-in fade-in duration-300">
       <div 
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+        className="absolute inset-0 bg-black/40 backdrop-blur-sm" 
         onClick={onClose}
       />
-      <div className="relative w-full max-w-[480px] bg-[#121212] border border-borderhover rounded-3xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-[480px] bg-card border border-borderdefault rounded-3xl overflow-hidden shadow-[var(--float-shadow)] animate-in zoom-in-95 duration-300">
         
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-borderhover">
@@ -147,25 +147,6 @@ export function ShareDialog({ isOpen, onClose, url, title }: ShareDialogProps) {
         </div>
       </div>
 
-      <style jsx>{`
-        .animate-in {
-          animation-fill-mode: forwards;
-        }
-        .fade-in {
-          animation: fadeIn 0.3s ease-out;
-        }
-        .zoom-in-95 {
-          animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes zoomIn {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
     </div>
   );
 }
