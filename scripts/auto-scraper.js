@@ -41,6 +41,11 @@ function stripHtml(html) {
   // Remove Reddit RSS signature footer to hide scraping source
   text = text.replace(/\s*submitted by\s+\/?u\/[\s\S]*$/gi, '');
   text = text.replace(/\s*\[link\]\s*\[comments\]\s*$/gi, '');
+  text = text.replace(/\[link\]/gi, '');
+  text = text.replace(/\[comments\]/gi, '');
+  
+  // Scrub any remaining Reddit username mentions in the body
+  text = text.replace(/\b\/?u\/[a-zA-Z0-9_-]+\b/gi, '[user]');
              
   return text.trim();
 }
@@ -103,9 +108,15 @@ async function main() {
         const rawContent = item.content || item.description || '';
         const cleanText = stripHtml(rawContent);
         
-        // Quality checks
+        // Quality checks - dynamically adjust based on platform typical length
+        let currentMinWords = MIN_WORDS; // Default 50 for YouTube
+        const lowerSub = subreddit.toLowerCase();
+        if (lowerSub.includes('tiktok') || lowerSub.includes('instagram')) {
+          currentMinWords = 20; // Short-form platforms often have shorter text questions
+        }
+        
         const wordCount = cleanText.split(/\s+/).length;
-        if (wordCount < MIN_WORDS) {
+        if (wordCount < currentMinWords) {
           continue; // Too short
         }
 
