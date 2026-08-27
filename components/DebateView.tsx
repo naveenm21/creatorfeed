@@ -901,8 +901,8 @@ export function DebateView({
             className="w-full glass-card p-5 flex flex-col items-center text-center gap-3 hover:border-brandprimary/50 transition-all group cursor-pointer"
           >
             <div className="flex -space-x-2 mb-1">
-              <div className="w-12 h-12 rounded-full bg-brandprimary/20 border-2 border-card flex items-center justify-center text-brandprimary font-bold text-[18px]">5</div>
-              <div className="w-12 h-12 rounded-full bg-teal-500/10 border-2 border-card flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-brandprimarysubtle border-2 border-card flex items-center justify-center text-brandprimary font-bold text-[18px]">5</div>
+              <div className="w-12 h-12 rounded-full bg-teal-50 border-2 border-card flex items-center justify-center">
                 <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path></svg>
               </div>
             </div>
