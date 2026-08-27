@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { getSeededViews, formatViews } from '@/lib/utils';
 import { createClient } from '@/lib/supabase';
 
 function getTimeAgo(dateString: string): string {
@@ -143,7 +144,7 @@ export default function MyDebatesPage() {
                       <div className="flex items-center gap-4 text-[12px] text-secondary">
                         <span>{agentCount} AI responses</span>
                         <span>{replyCount} community replies</span>
-                        <span>{t.views || 0} views</span>
+                        <span>{formatViews(getSeededViews(t.id, t.views || 0))} views</span>
                         <span>{getTimeAgo(t.created_at)}</span>
                       </div>
                     </div>

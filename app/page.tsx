@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next';
+import { getSeededViews, formatViews } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'CreatorFeed — Where Creator Growth Gets Argued Out',
@@ -68,9 +69,7 @@ export default async function Home({
     agentCount: (thread.agent_responses as any)?.[0]?.count || 0,
     humanReplies: (thread.human_replies as any)?.[0]?.count || 0,
     preview: (thread.raw_submission || 'No details provided').substring(0, 150) + '...',
-    views: thread.views > 1000 
-      ? `${(thread.views/1000).toFixed(0)}K` 
-      : (thread.views || 0).toString(),
+    views: formatViews(getSeededViews(thread.id, thread.views)),
     replies: ((thread.agent_responses as any)?.[0]?.count || 0) + ((thread.human_replies as any)?.[0]?.count || 0),
     timePosted: getTimeAgo(thread.created_at),
     slug: `${slugify(thread.topic)}-${thread.id}`

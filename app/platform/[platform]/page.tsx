@@ -4,6 +4,7 @@ import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { InfiniteFeed } from '@/components/InfiniteFeed';
 import Link from 'next/link';
 import { slugify } from '@/lib/slug';
+import { getSeededViews, formatViews } from '@/lib/utils';
 
 function getTimeAgo(dateString: string): string {
   const date = new Date(dateString)
@@ -73,9 +74,7 @@ export default async function PlatformPage({
     agentCount: (thread.agent_responses as any)?.[0]?.count || 0,
     humanReplies: (thread.human_replies as any)?.[0]?.count || 0,
     preview: (thread.raw_submission || 'No details provided').substring(0, 150) + '...',
-    views: thread.views > 1000 
-      ? `${(thread.views/1000).toFixed(0)}K` 
-      : (thread.views || 0).toString(),
+    views: formatViews(getSeededViews(thread.id, thread.views)),
     replies: ((thread.agent_responses as any)?.[0]?.count || 0) + ((thread.human_replies as any)?.[0]?.count || 0),
     timePosted: getTimeAgo(thread.created_at),
     slug: `${slugify(thread.topic)}-${thread.id}`

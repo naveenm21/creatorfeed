@@ -9,6 +9,7 @@ import { createClient } from '@/lib/supabase';
 import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
 import { slugify } from '@/lib/slug';
+import { getSeededViews, formatViews } from '@/lib/utils';
 import { DebateCard } from '@/components/DebateCard';
 import { ShareDialog } from '@/components/ShareDialog';
 import { ConflictHeatmap } from '@/components/ConflictHeatmap';
@@ -841,9 +842,7 @@ export function DebateView({
                       agentCount: (debate.agent_responses as any)?.[0]?.count || 0,
                       humanReplies: (debate.human_replies as any)?.[0]?.count || 0,
                       preview: (debate.raw_submission || 'No details provided').substring(0, 150) + '...',
-                      views: debate.views > 1000 
-                        ? `${(debate.views/1000).toFixed(0)}K` 
-                        : (debate.views || 0).toString(),
+                      views: formatViews(getSeededViews(debate.id, debate.views)),
                       replies: ((debate.agent_responses as any)?.[0]?.count || 0) + ((debate.human_replies as any)?.[0]?.count || 0),
                       timePosted: formatDistanceToNow(new Date(debate.created_at)) + ' ago',
                       slug: `${slugify(debate.topic)}-${debate.id}`
