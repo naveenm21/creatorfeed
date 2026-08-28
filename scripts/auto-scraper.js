@@ -10,8 +10,7 @@ const SUBREDDITS = [
   'NewTubers',
   'PartneredYoutube',
   'youtubers',
-  'Tiktokhelp',
-  'TikTokCreators',
+  'TikTok',
   'InstagramMarketing',
   'Instagram'
 ];
@@ -91,21 +90,21 @@ async function main() {
 
   // 2. Fetch RSS feeds
   let allCandidates = [];
+  const Parser = require('rss-parser');
+  const parser = new Parser({
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+  });
 
   for (const subreddit of SUBREDDITS) {
     console.log(`Fetching RSS for r/${subreddit}...`);
     try {
-      // Use rss2json to bypass Reddit's IP block on VPS servers
-      const fetch = (await import('node-fetch')).default;
-      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.reddit.com/r/${subreddit}/hot/.rss`);
-      const feed = await res.json();
-      
-      if (feed.status !== 'ok' || !feed.items) {
-        throw new Error(`rss2json failed: ${feed.message || 'unknown error'}`);
-      }
+      // Use rss-parser with a valid User-Agent to fetch Reddit RSS natively
+      const feed = await parser.parseURL(`https://www.reddit.com/r/${subreddit}/hot.rss`);
       
       for (const item of feed.items) {
-        const rawContent = item.content || item.description || '';
+        const rawContent = item.content || item.contentSnippet || '';
         const cleanText = stripHtml(rawContent);
         
         // Quality checks - dynamically adjust based on platform typical length
@@ -136,7 +135,7 @@ async function main() {
       console.error(`Failed to fetch r/${subreddit}:`, error.message);
     }
     // Delay to avoid Reddit rate limits (429)
-    await new Promise(r => setTimeout(r, 6000));
+    await new Promise(r => setTimeout(r, 12000));
   }
 
   console.log(`Found ${allCandidates.length} high-quality candidate posts.`);
