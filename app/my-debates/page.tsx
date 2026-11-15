@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getSeededViews, formatViews } from '@/lib/utils';
-import { createClient } from '@/lib/supabase';
 
 function getTimeAgo(dateString: string): string {
   const date = new Date(dateString);
@@ -21,36 +20,20 @@ export default function MyDebatesPage() {
   const [threads, setThreads] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('All');
-  const supabase = createClient();
-
   useEffect(() => {
     async function load() {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!session) {
+      const res = await fetch('/api/my-debates', { cache: 'no-store' });
+      if (res.status === 401) {
         router.push('/signin');
         return;
       }
-
-      const { data } = await supabase
-        .from('threads')
-        .select(`
-          id,
-          topic,
-          platform,
-          status,
-          views,
-          created_at,
-          agent_responses(count),
-          human_replies(count)
-        `)
-        .eq('user_id', session.user.id)
-        .order('created_at', { ascending: false });
+      const data = res.ok ? (await res.json()).threads : [];
 
       setThreads(data || []);
       setLoading(false);
     }
     load();
-  }, [router, supabase]);
+  }, [router]);
 
   const filters = ['All', 'Debating', 'Published', 'Failed'];
   const filtered = activeFilter === 'All'

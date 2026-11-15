@@ -1,4 +1,5 @@
-import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { getSessionUser } from '@/auth';
+import { queryOne } from '@/lib/db';
 import { redirect } from 'next/navigation';
 
 export default async function AdminLayout({
@@ -6,19 +7,17 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createServerSupabaseClient();
-  const { data: { user } } = await supabase.auth.getUser();
+  const user = await getSessionUser();
 
   if (!user) {
     redirect('/signin');
   }
 
   // Check if user is admin
-  const { data: profile } = await supabase
-    .from('users')
-    .select('is_admin')
-    .eq('id', user.id)
-    .single();
+  const profile = await queryOne<{ is_admin: boolean }>(
+    `SELECT is_admin FROM users WHERE id = $1`,
+    [user.id]
+  );
 
   if (!profile || !profile.is_admin) {
     redirect('/');

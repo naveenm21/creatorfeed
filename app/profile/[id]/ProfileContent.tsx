@@ -4,20 +4,20 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { slugify } from '@/lib/slug';
 
-interface Profile {
+export interface Profile {
   full_name: string | null;
   karma: number;
   badges: string[];
 }
 
-interface Debate {
+export interface Debate {
   id: string;
   topic: string;
   platform: string | null;
   created_at: string;
 }
 
-interface Reply {
+export interface Reply {
   id: string;
   thread_id: string;
   reply_text: string;

@@ -1,17 +1,13 @@
-import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { query } from '@/lib/db';
 import { slugify } from '@/lib/slug';
 
 export const revalidate = 3600; // Cache for 1 hour
 
 export async function GET() {
-  const supabase = await createServerSupabaseClient();
-  
-  const { data: threads } = await supabase
-    .from('threads')
-    .select('id, topic, raw_submission, created_at')
-    .eq('status', 'published')
-    .order('created_at', { ascending: false })
-    .limit(100);
+  const threads = await query<{ id: string; topic: string; raw_submission: string; created_at: string }>(
+    `SELECT id, topic, raw_submission, created_at FROM threads
+      WHERE status = 'published' ORDER BY created_at DESC LIMIT 100`
+  );
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://feed.creedom.ai';
 

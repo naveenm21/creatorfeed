@@ -1,21 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { getSessionUser } from '@/auth'
+import { queryOne } from '@/lib/db'
 import { awardKarma } from '@/lib/karma'
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = await createServerSupabaseClient()
-    
     // 1. Validate Session
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) {
+    const user = await getSessionUser()
+    if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
       )
     }
 
-    const user = session.user
     const body = await request.json()
     const { threadId, agentReferenced, sentiment, replyText, isAnonymous } = body
 
@@ -39,23 +37,26 @@ export async function POST(request: NextRequest) {
     const mappedSentiment = sentiment ? (sentimentMap[sentiment] ?? null) : null
 
     // 2. Perform Insert with verified identity
-    const { data, error } = await supabase
-      .from('human_replies')
-      .insert({
-        thread_id: parsedThreadId,
-        user_id: user.id,
-        agent_referenced: agentReferenced || null,
-        sentiment: mappedSentiment,
-        reply_text: replyText,
-        author_name: isAnonymous ? 'Anonymous' : (user.user_metadata?.full_name || user.email?.split('@')[0] || 'Anonymous')
-      })
-      .select()
-      .single()
-
-    if (error) {
+    let data
+    try {
+      data = await queryOne(
+        `INSERT INTO human_replies
+           (thread_id, user_id, agent_referenced, sentiment, reply_text, author_name)
+         VALUES ($1, $2, $3, $4, $5, $6)
+         RETURNING *`,
+        [
+          parsedThreadId,
+          user.id,
+          agentReferenced || null,
+          mappedSentiment,
+          replyText,
+          isAnonymous ? 'Anonymous' : (user.name || user.email.split('@')[0] || 'Anonymous'),
+        ]
+      )
+    } catch (error) {
       console.error('SERVER-SIDE REPLY INSERT ERROR:', error)
       return NextResponse.json(
-        { error: 'Failed to save reply', details: error },
+        { error: 'Failed to save reply' },
         { status: 500 }
       )
     }

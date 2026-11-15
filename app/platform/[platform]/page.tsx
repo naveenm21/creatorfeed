@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from 'next';
-import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { listPublishedThreads, trendingSidebar } from '@/lib/queries';
 import { InfiniteFeed } from '@/components/InfiniteFeed';
 import Link from 'next/link';
 import { slugify } from '@/lib/slug';
@@ -38,32 +38,13 @@ export default async function PlatformPage({
   params: { platform: string };
   searchParams: { page?: string };
 }) {
-  const supabase = await createServerSupabaseClient();
   const platformName = params.platform.charAt(0).toUpperCase() + params.platform.slice(1);
   
   const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;
   const from = (page - 1) * 20;
-  const to = from + 19;
 
   // Fetch real published threads for platform
-  const { data: threads } = await supabase
-    .from('threads')
-    .select(`
-      id,
-      topic,
-      platform,
-      creator_handle,
-      submitted_by,
-      raw_submission,
-      views,
-      created_at,
-      agent_responses(count),
-      human_replies(count)
-    `)
-    .eq('status', 'published')
-    .ilike('platform', params.platform)
-    .order('created_at', { ascending: false })
-    .range(from, to);
+  const threads = await listPublishedThreads({ platform: params.platform, orderBy: 'created_at', limit: 20, offset: from });
 
   const debates = (threads || []).map(thread => ({
     id: thread.id,
@@ -81,14 +62,7 @@ export default async function PlatformPage({
   }));
 
   // Fetch Trending Sidebar (7-day window)
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
-  const { data: trendingThreads } = await supabase
-    .from('threads')
-    .select('topic, views, id')
-    .eq('status', 'published')
-    .gt('created_at', sevenDaysAgo)
-    .order('views', { ascending: false })
-    .limit(5);
+  const trendingThreads = await trendingSidebar(7, 5);
 
 
   return (

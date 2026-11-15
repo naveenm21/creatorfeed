@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { query, queryOne } from '@/lib/db';
+import { getVisibleThread } from '@/lib/queries';
 
 function extractIdFromSlug(slug: string) {
   const parts = slug.split('-');
@@ -10,30 +11,21 @@ export async function GET(
   request: Request,
   { params }: { params: { slug: string } }
 ) {
-  const supabase = await createServerSupabaseClient();
   const id = extractIdFromSlug(params.slug);
 
-  const { data: thread } = await supabase
-    .from('threads')
-    .select('*')
-    .eq('id', id)
-    .single();
+  // Public markdown export: published debates only
+  const thread = await getVisibleThread(id, null);
 
   if (!thread) {
     return new Response('Debate not found', { status: 404 });
   }
 
-  const { data: responses } = await supabase
-    .from('agent_responses')
-    .select('*')
-    .eq('thread_id', id)
-    .order('created_at', { ascending: true });
+  const responses: any[] = await query(
+    `SELECT * FROM agent_responses WHERE thread_id = $1 ORDER BY created_at ASC`,
+    [thread.id]
+  );
 
-  const { data: verdict } = await supabase
-    .from('verdicts')
-    .select('*')
-    .eq('thread_id', id)
-    .single();
+  const verdict: any = await queryOne(`SELECT * FROM verdicts WHERE thread_id = $1`, [thread.id]);
 
   let markdown = `# ${thread.topic}\n\n`;
   markdown += `**Platform:** ${thread.platform || 'Multi-platform'}\n`;

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 import Anthropic from '@anthropic-ai/sdk'
-import { supabaseAdmin } from '@/lib/supabase-admin'
+import { query, queryOne } from '@/lib/db'
+import { isInternalRequest } from '@/lib/internal'
 import { 
   AGENT_PERSONAS,
   AGENT_EXPERTISE,
@@ -104,20 +105,15 @@ CRITICAL: DO NOT use typical AI buzzwords like 'delve', 'moreover', 'tapestry', 
   const position = extractPosition(rawText)
   const responseText = cleanResponse(rawText)
 
-  const { error: insertError } = await supabaseAdmin.from('agent_responses').insert({
-    thread_id: threadId,
-    agent_name: agent,
-    expertise: expertise || 'Guest Specialist',
-    response_text: responseText,
-    round_number: roundNumber,
-    response_order: responseOrder,
-    position,
-    is_final_position: false,
-    agreed_count: 0,
-    disagreed_count: 0
-  })
-
-  if (insertError) {
+  try {
+    await query(
+      `INSERT INTO agent_responses
+         (thread_id, agent_name, expertise, response_text, round_number, response_order,
+          position, is_final_position, agreed_count, disagreed_count)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, false, 0, 0)`,
+      [threadId, agent, expertise || 'Guest Specialist', responseText, roundNumber, responseOrder, position]
+    )
+  } catch (insertError) {
     console.error(`FAILED to insert response for ${agent}:`, insertError)
   }
 
@@ -210,21 +206,13 @@ What is your single most important recommendation?`
 
     finalPositions.push(`${agent}: ${finalText}`)
 
-    await supabaseAdmin
-      .from('agent_responses')
-      .insert({
-        thread_id: threadId,
-        agent_name: agent,
-        expertise: expertise[agent],
-        response_text: finalText,
-        round_number: 99,
-        response_order: 99,
-        position: 'agree',
-        final_position: finalText,
-        is_final_position: true,
-        agreed_count: 0,
-        disagreed_count: 0
-      })
+    await query(
+      `INSERT INTO agent_responses
+         (thread_id, agent_name, expertise, response_text, round_number, response_order,
+          position, final_position, is_final_position, agreed_count, disagreed_count)
+       VALUES ($1, $2, $3, $4, 99, 99, 'agree', $4, true, 0, 0)`,
+      [threadId, agent, expertise[agent], finalText]
+    )
   }
 
   return finalPositions.join('\n')
@@ -281,23 +269,19 @@ Generate the verdict based on these final positions.`
     finalVerdictText += `\n\nReference Links:\n` + verdictData.reference_links.join('\n');
   }
 
-  await supabaseAdmin.from('verdicts').insert({
-    thread_id: threadId,
-    verdict_text: finalVerdictText,
-    key_takeaway_1: verdictData.key_takeaway_1,
-    key_takeaway_2: verdictData.key_takeaway_2,
-    key_takeaway_3: verdictData.key_takeaway_3,
-    total_exchanges: totalExchanges,
-    total_rounds: totalRounds,
-    consensus_reached: consensusReached,
-    forced_by_cap: totalExchanges >= HARD_CAP,
-    community_agree_percent: 0
-  })
+  await query(
+    `INSERT INTO verdicts
+       (thread_id, verdict_text, key_takeaway_1, key_takeaway_2, key_takeaway_3,
+        total_exchanges, total_rounds, consensus_reached, forced_by_cap, community_agree_percent)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 0)`,
+    [
+      threadId, finalVerdictText,
+      verdictData.key_takeaway_1, verdictData.key_takeaway_2, verdictData.key_takeaway_3,
+      totalExchanges, totalRounds, consensusReached, totalExchanges >= HARD_CAP,
+    ]
+  )
 
-  await supabaseAdmin
-    .from('threads')
-    .update({ status: 'published' })
-    .eq('id', threadId)
+  await query(`UPDATE threads SET status = 'published' WHERE id = $1`, [threadId])
 
   // Revalidate sitemap and homepage when a new debate is published
   revalidatePath('/sitemap.xml')
@@ -308,13 +292,8 @@ Generate the verdict based on these final positions.`
 export async function POST(request: NextRequest) {
   let threadId: string | undefined;
   try {
-    // Basic protection for internal trigger
-    const isSeeded = 
-      request.headers.get('x-service-role') === 
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-
-    const authHeader = request.headers.get('authorization')
-    if (!isSeeded && process.env.NODE_ENV === 'production' && authHeader !== `Bearer ${process.env.INTERNAL_API_KEY}`) {
+    // Only internal callers (intake/answers route, seed script) may run the debate engine
+    if (process.env.NODE_ENV === 'production' && !isInternalRequest(request)) {
       console.warn('Unauthorized attempt to trigger debate engine')
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -329,30 +308,27 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { data: thread, error: threadError } = 
-      await supabaseAdmin
-        .from('threads')
-        .select('*')
-        .eq('id', threadId)
-        .single()
+    const thread = await queryOne<{
+      id: string; platform: string | null; follower_range: string | null
+      topic: string | null; raw_submission: string
+    }>(
+      `SELECT id, platform, follower_range, topic, raw_submission FROM threads WHERE id = $1`,
+      [threadId]
+    )
 
-    if (threadError || !thread) {
+    if (!thread) {
       return NextResponse.json(
         { error: 'Thread not found' },
         { status: 404 }
       )
     }
 
-    await supabaseAdmin
-      .from('threads')
-      .update({ status: 'debating' })
-      .eq('id', threadId)
+    await query(`UPDATE threads SET status = 'debating' WHERE id = $1`, [threadId])
 
-    const { data: intakeQuestions } = await supabaseAdmin
-      .from('intake_questions')
-      .select('*')
-      .eq('thread_id', threadId)
-      .order('question_order')
+    const intakeQuestions = await query<{ question_text: string; answer: string | null }>(
+      `SELECT question_text, answer FROM intake_questions WHERE thread_id = $1 ORDER BY question_order`,
+      [threadId]
+    )
 
     const answersContext = intakeQuestions
       ?.filter(q => q.answer)
@@ -487,10 +463,8 @@ ${answersContext ?
     console.error('Debate engine error:', error)
     
     if (threadId) {
-      await supabaseAdmin
-        .from('threads')
-        .update({ status: 'failed' })
-        .eq('id', threadId)
+      await query(`UPDATE threads SET status = 'failed' WHERE id = $1`, [threadId])
+        .catch(e => console.error('Failed to mark thread failed:', e))
     }
 
     return NextResponse.json(
