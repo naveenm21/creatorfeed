@@ -1,27 +1,37 @@
-import { createServerSupabaseClient } from '@/lib/supabase-server';
+import { redirect } from 'next/navigation';
+import { getSessionUser } from '@/auth';
+import { query, queryOne } from '@/lib/db';
 import Link from 'next/link';
 
 export const revalidate = 0; // Don't cache admin page
 
 export default async function AdminDashboard() {
-  const supabase = await createServerSupabaseClient();
+  // Defense in depth: the layout already checks, but this page reads private data
+  // (emails) with full DB access now that RLS is gone, so verify admin here too.
+  const user = await getSessionUser();
+  const me = user ? await queryOne<{ is_admin: boolean }>(`SELECT is_admin FROM users WHERE id = $1`, [user.id]) : null;
+  if (!me?.is_admin) redirect('/');
 
   // 1. Fetch Metrics
-  const [
-    { count: totalUsers },
-    { count: totalSubscribers },
-    { count: totalDebates },
-    { data: recentSubscribers },
-    { data: recentDebates },
-    { data: topUsers }
-  ] = await Promise.all([
-    supabase.from('users').select('*', { count: 'exact', head: true }),
-    supabase.from('subscribers').select('*', { count: 'exact', head: true }),
-    supabase.from('threads').select('*', { count: 'exact', head: true }),
-    supabase.from('subscribers').select('email, created_at, status').order('created_at', { ascending: false }).limit(10),
-    supabase.from('threads').select('id, topic, status, platform, source_url, created_at').order('created_at', { ascending: false }).limit(10),
-    supabase.from('users').select('id, full_name, email, karma').order('karma', { ascending: false }).limit(10)
+  const [counts, recentSubscribers, recentDebates, topUsers] = await Promise.all([
+    queryOne<{ users: number; subscribers: number; threads: number }>(
+      `SELECT (SELECT count(*)::int FROM users) AS users,
+              (SELECT count(*)::int FROM subscribers) AS subscribers,
+              (SELECT count(*)::int FROM threads) AS threads`
+    ),
+    query<{ email: string; created_at: string; status: string }>(
+      `SELECT email, created_at, status FROM subscribers ORDER BY created_at DESC LIMIT 10`
+    ),
+    query<{ id: string; topic: string; status: string; platform: string; source_url: string; created_at: string }>(
+      `SELECT id, topic, status, platform, source_url, created_at FROM threads ORDER BY created_at DESC LIMIT 10`
+    ),
+    query<{ id: string; full_name: string; email: string; karma: number }>(
+      `SELECT id, full_name, email, karma FROM users ORDER BY karma DESC NULLS LAST LIMIT 10`
+    ),
   ]);
+  const totalUsers = counts?.users ?? 0;
+  const totalSubscribers = counts?.subscribers ?? 0;
+  const totalDebates = counts?.threads ?? 0;
 
   return (
     <div className="space-y-8">

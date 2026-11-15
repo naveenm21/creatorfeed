@@ -6,9 +6,8 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY
 })
 
-const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL
-const SUPABASE_SERVICE_KEY = 
-  process.env.SUPABASE_SERVICE_ROLE_KEY
+// Internal API key: authorizes calls to /api/intake, /api/debate and /api/internal/*
+const INTERNAL_API_KEY = process.env.INTERNAL_API_KEY
 const APP_URL = process.env.APP_URL || 
   'https://feed.creedom.ai'
 
@@ -16,28 +15,19 @@ const PROBLEMS_FILE = path.join(
   __dirname, '..', 'problems.json'
 )
 
-async function supabaseQuery(
-  endpoint, 
-  method = 'GET', 
-  body = null
-) {
-  const options = {
+async function internalApi(apiPath, method = 'GET', body = null) {
+  const fetch = (await import('node-fetch')).default
+  const response = await fetch(`${APP_URL}${apiPath}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'apikey': SUPABASE_SERVICE_KEY,
-      'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
-      'Prefer': method === 'POST' 
-        ? 'return=representation' : ''
-    }
+      'Authorization': `Bearer ${INTERNAL_API_KEY}`
+    },
+    body: body ? JSON.stringify(body) : undefined
+  })
+  if (!response.ok) {
+    throw new Error(`${method} ${apiPath} failed: ${response.status}`)
   }
-  if (body) options.body = JSON.stringify(body)
-  
-  const fetch = (await import('node-fetch')).default
-  const response = await fetch(
-    `${SUPABASE_URL}/rest/v1/${endpoint}`,
-    options
-  )
   return response.json()
 }
 
@@ -129,7 +119,7 @@ async function submitProblem(problem) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-service-role': SUPABASE_SERVICE_KEY
+        'Authorization': `Bearer ${INTERNAL_API_KEY}`
       },
       body: JSON.stringify({
         rawSubmission: problem.raw_submission,
@@ -170,7 +160,7 @@ async function submitProblem(problem) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-service-role': SUPABASE_SERVICE_KEY
+          'Authorization': `Bearer ${INTERNAL_API_KEY}`
         },
         body: JSON.stringify({
           threadId: intakeData.threadId,
@@ -195,7 +185,7 @@ async function submitProblem(problem) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-service-role': SUPABASE_SERVICE_KEY
+          'Authorization': `Bearer ${INTERNAL_API_KEY}`
         },
         body: JSON.stringify({
           threadId: intakeData.threadId
@@ -220,10 +210,10 @@ async function main() {
   console.log('Syncing with remote database to prevent duplicate seeding...')
   let existingSubmissions = new Set()
   try {
-    const existingSubmissionsData = await supabaseQuery('threads?select=raw_submission')
-    if (Array.isArray(existingSubmissionsData)) {
-      existingSubmissionsData.forEach(r => {
-        if (r.raw_submission) existingSubmissions.add(r.raw_submission)
+    const { submissions } = await internalApi('/api/internal/submissions')
+    if (Array.isArray(submissions)) {
+      submissions.forEach(text => {
+        if (text) existingSubmissions.add(text)
       })
       console.log(`Found ${existingSubmissions.size} existing threads in DB.`)
     }

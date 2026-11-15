@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { getVisibleThread } from '@/lib/queries'
 
 export const alt = 'CreatorFeed Debate'
 export const size = { width: 1200, height: 630 }
@@ -9,12 +9,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
   const slugParts = params.slug.split('-');
   const id = slugParts[slugParts.length - 1];
 
-  const supabase = await createServerSupabaseClient()
-  const { data: thread } = await supabase
-    .from('threads')
-    .select('topic, platform')
-    .eq('id', id)
-    .single()
+  const thread = await getVisibleThread(id, null)
 
   const topic = thread?.topic || 'Creator Growth Debate'
   const platform = thread?.platform || 'Multi-platform'

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase';
 
 export default function DebatingPage() {
   const router = useRouter();
@@ -30,16 +29,11 @@ export default function DebatingPage() {
       return;
     }
 
-    const supabase = createClient();
-
-    // Poll Supabase every 5s for status 'published'
+    // Poll every 5s for status 'published'
     const pollInterval = setInterval(async () => {
-      const { data } = await supabase
-        .from('threads')
-        .select('status')
-        .eq('id', tId)
-        .single();
-        
+      const res = await fetch(`/api/threads/${tId}/status`, { cache: 'no-store' }).catch(() => null);
+      const data = res && res.ok ? await res.json() : null;
+
       if (data?.status === 'published') {
         sessionStorage.removeItem('tempSubmissionText');
         sessionStorage.removeItem('tempQuestions');

@@ -1,24 +1,19 @@
 import { NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { getSessionUser } from '@/auth'
+import { queryOne } from '@/lib/db'
 
 export async function GET() {
   try {
-    const supabase = await createServerSupabaseClient()
-    const { data: { session } } = await supabase.auth.getSession()
+    const user = await getSessionUser()
 
-    if (!session) {
+    if (!user) {
       return NextResponse.json({ error: 'Auth required' }, { status: 401 })
     }
 
-    const { data, error } = await supabase
-      .from('users')
-      .select('karma, badges')
-      .eq('id', session.user.id)
-      .single()
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    const data = await queryOne<{ karma: number | null; badges: string[] | null }>(
+      `SELECT karma, badges FROM users WHERE id = $1`,
+      [user.id]
+    )
 
     return NextResponse.json({ 
       karma: data?.karma || 0,

@@ -5,6 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { NewsletterBanner } from '@/components/NewsletterBanner'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { AuthProvider } from '@/components/AuthProvider'
 
 const fraunces = Fraunces({ 
   subsets: ['latin'],
@@ -88,10 +89,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${fraunces.variable} font-sans min-h-screen flex flex-col`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <NewsletterBanner />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <NewsletterBanner />
+        </AuthProvider>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
