@@ -35,52 +35,11 @@ This document provides a comprehensive overview of **CreatorFeed**, its codebase
 ---
 
 ## 3. Server Configuration & Hosting Details
-The project is hosted on a DigitalOcean VPS at IP `68.183.232.215`.
+The app runs on a GCP Compute Engine VM (Ubuntu 22.04, `asia-southeast1`) with nginx → PM2 → `next start` on port 3000 in `/var/www/creatorfeed`, connected to Cloud SQL over the private IP.
 
-- **Web Server:** Nginx proxies requests to the Next.js port.
-  - Configuration Path: `/etc/nginx/sites-available/creatorfeed`
-  - Maps `feed.creedom.ai` traffic to loopback `http://[::1]:3000`.
-  - Maps API backend traffic (`/api/backend/`) to `http://[::1]:4000`.
-  - Configures SSL certificates via Let's Encrypt.
-- **Process Manager:** PM2 is used to run and keep the Next.js production server alive.
-  - Working directory (`exec cwd`): `/var/www/creatorfeed`
-  - PM2 App Name: `creatorfeed` (Process ID: `0`)
-  - Entry Command: `npm start` (which runs `next start` on port 3000)
+The previous DigitalOcean VPS (`68.183.232.215`) is being retired.
 
 ---
 
 ## 4. Deployment Procedure
-Whenever changes are pushed to the remote repository, follow these steps to deploy them to the production server:
-
-### Step 1: Connect to VPS
-Access the server via SSH:
-```bash
-ssh root@68.183.232.215
-```
-
-### Step 2: Navigate to Project Directory
-```bash
-cd /var/www/creatorfeed
-```
-
-### Step 3: Fetch the Latest Codebase
-```bash
-git pull origin main
-```
-
-### Step 4: Build the Optimized Next.js Bundle
-```bash
-npm run build
-```
-*(Optionally run `npm install` first if dependencies in `package.json` were updated).*
-
-### Step 5: Restart the Application via PM2
-```bash
-pm2 restart creatorfeed
-```
-
-To monitor logs or check system performance:
-```bash
-pm2 logs creatorfeed
-pm2 status
-```
+See [docs/deploy-gcp-vm.md](docs/deploy-gcp-vm.md) for first-time VM setup, cutover, and the update procedure (`git pull` → `npm ci` → `npm run build` → `pm2 restart creatorfeed`).
