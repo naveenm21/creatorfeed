@@ -1,26 +1,21 @@
-import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { NextResponse } from 'next/server';
+import { query } from '@/lib/db';
 
 export async function POST(req: Request) {
   try {
     const { email } = await req.json();
 
-    if (!email || !email.includes('@')) {
+    if (!email || typeof email !== 'string' || !email.includes('@') || email.length > 320) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
     }
 
-    const supabase = await createServerSupabaseClient();
+    const rows = await query(
+      `INSERT INTO subscribers (email) VALUES ($1) ON CONFLICT (email) DO NOTHING RETURNING id`,
+      [email.trim()]
+    );
 
-    const { error } = await supabase
-      .from('subscribers')
-      .insert({ email });
-
-    if (error) {
-      // Postgres error code for unique violation is 23505
-      if (error.code === '23505') {
-        return NextResponse.json({ success: true, message: 'Already subscribed' });
-      }
-      throw error;
+    if (rows.length === 0) {
+      return NextResponse.json({ success: true, message: 'Already subscribed' });
     }
 
     return NextResponse.json({ success: true });

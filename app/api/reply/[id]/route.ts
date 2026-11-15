@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { getSessionUser } from '@/auth'
+import { query, queryOne } from '@/lib/db'
 import { revokeKarma } from '@/lib/karma'
 
 export async function DELETE(
@@ -8,44 +9,37 @@ export async function DELETE(
 ) {
   try {
     const { id } = params
-    const supabase = await createServerSupabaseClient()
-    
+
     // 1. Validate Session
-    const { data: { session } } = await supabase.auth.getSession()
-    if (!session) {
+    const user = await getSessionUser()
+    if (!user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const userId = session.user.id
-
     // 2. Verify Ownership
-    const { data: reply, error: fetchError } = await supabase
-      .from('human_replies')
-      .select('user_id')
-      .eq('id', id)
-      .single()
+    const reply = await queryOne<{ user_id: string | null }>(
+      `SELECT user_id FROM human_replies WHERE id = $1`,
+      [id]
+    ).catch(() => null)
 
-    if (fetchError || !reply) {
+    if (!reply) {
       return NextResponse.json({ error: 'Reply not found' }, { status: 404 })
     }
 
-    if (reply.user_id !== userId) {
+    if (reply.user_id !== user.id) {
       return NextResponse.json({ error: 'You can only delete your own replies' }, { status: 403 })
     }
 
-    // 3. Delete Reply
-    const { error: deleteError } = await supabase
-      .from('human_replies')
-      .delete()
-      .eq('id', id)
-
-    if (deleteError) {
+    // 3. Delete Reply (ownership re-checked in the WHERE clause)
+    try {
+      await query(`DELETE FROM human_replies WHERE id = $1 AND user_id = $2`, [id, user.id])
+    } catch (deleteError) {
       console.error('Delete error:', deleteError)
       return NextResponse.json({ error: 'Failed to delete reply' }, { status: 500 })
     }
 
     // 4. Revoke Karma (5 points for community reply)
-    await revokeKarma(userId, 5, 'Deleted a community reply')
+    await revokeKarma(user.id, 5, 'Deleted a community reply')
 
     return NextResponse.json({ success: true })
   } catch (error) {

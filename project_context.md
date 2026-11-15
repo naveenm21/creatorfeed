@@ -17,7 +17,9 @@ This document provides a comprehensive overview of **CreatorFeed**, its codebase
 - **Framework:** Next.js 14 (App Router) + TypeScript
 - **Styling:** TailwindCSS
 - **LLM Engine:** Anthropic Claude SDK (using Claude Haiku models)
-- **Database & Auth:** Supabase (PostgreSQL client + SSR context)
+- **Database:** Google Cloud SQL for PostgreSQL 17 (`casttree:asia-southeast1:creatorfeed-db`) with pgvector, accessed server-side via `pg` (`lib/db.ts`, `lib/queries.ts`). Schema: `db/schema.sql`.
+- **Auth:** Auth.js / NextAuth v5 with Google (`auth.ts`), JWT session cookies; users in `public.users`, Google identities in `public.auth_accounts`.
+- **Required env:** `DATABASE_URL`, `DATABASE_CA_CERT` (required when using sslmode), `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `INTERNAL_API_KEY`, `ANTHROPIC_API_KEY`, `YOUTUBE_API_KEY`, `NEXT_PUBLIC_APP_URL`.
 - **Process Manager:** PM2 (running inside root user namespace)
 - **Web Server:** Nginx (acting as reverse proxy with SSL certificate)
 

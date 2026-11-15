@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Verdict } from '@/components/Verdict';
 import { formatDistanceToNow } from 'date-fns';
 import Image from 'next/image';
-import { createClient } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
 import { AGENT_COLORS, AGENT_EXPERTISE, AGENT_AVATARS, AgentName } from '@/lib/agents';
 import Link from 'next/link';
 import { slugify } from '@/lib/slug';
@@ -124,72 +124,56 @@ export function DebateView({
     }
   }, []);
 
-  const supabase = createClient();
-
-  // Fetch current user for ownership checks
+  // Current user for ownership checks
+  const { user: authUser } = useAuth();
   useEffect(() => {
     setMounted(true);
-    supabase.auth.getUser().then(({ data }) => {
-      if (data?.user) setCurrentUserId(data.user.id);
-    });
   }, []);
+  useEffect(() => {
+    setCurrentUserId(authUser?.id ?? null);
+  }, [authUser?.id]);
 
-  // Fetch all data for a published thread
-  const fetchFullDebate = async () => {
-    const [{ data: r }, { data: v }, { data: h }] = await Promise.all([
-      supabase.from('agent_responses').select('*').eq('thread_id', slug)
-        .order('round_number', { ascending: true })
-        .order('response_order', { ascending: true }),
-      supabase.from('verdicts').select('*').eq('thread_id', slug).single(),
-      supabase.from('human_replies').select('*, author:users(id, karma, badges)').eq('thread_id', slug).order('created_at', { ascending: true }),
-    ]);
-
-    if (r) {
-      setAgentResponses(r.filter((x: AgentResponse) => !x.is_final_position));
-      setFinalPositions(r.filter((x: AgentResponse) => x.is_final_position));
-    }
-    setVerdict(v);
-    setHumanReplies(h || []);
+  // Live debate data from the server (agent responses, verdict, replies, status)
+  const fetchDebateData = async () => {
+    const res = await fetch(`/api/threads/${thread.id}/debate`, { cache: 'no-store' }).catch(() => null);
+    if (!res || !res.ok) return null;
+    return res.json() as Promise<{
+      status: string;
+      agentResponses: AgentResponse[];
+      finalPositions: AgentResponse[];
+      verdict: any;
+      humanReplies: HumanReply[];
+    }>;
   };
+
 
   // Live polling while debating — fetch new agent_responses every 3 seconds
   useEffect(() => {
     if (!liveStatus || liveStatus === 'published' || liveStatus === 'failed') return;
 
     const poll = setInterval(async () => {
-      // Check thread status
-      const { data: statusData } = await supabase
-        .from('threads')
-        .select('status')
-        .eq('id', slug)
-        .single();
+      const d = await fetchDebateData();
+      if (!d) return;
 
-      if (statusData?.status === 'published') {
+      if (d.status === 'published') {
         setLiveStatus('published');
         clearInterval(poll);
-        await fetchFullDebate();
+        setAgentResponses(d.agentResponses);
+        setFinalPositions(d.finalPositions);
+        setVerdict(d.verdict);
+        setHumanReplies(d.humanReplies || []);
         return;
       }
 
-      // Fetch any newly posted agent responses
-      const { data: r } = await supabase
-        .from('agent_responses')
-        .select('*')
-        .eq('thread_id', slug)
-        .order('round_number', { ascending: true })
-        .order('response_order', { ascending: true });
+      // Newly posted agent responses
+      const nonFinal = d.agentResponses;
+      setAgentResponses(nonFinal);
+      setFinalPositions(d.finalPositions);
 
-      if (r) {
-        const nonFinal = r.filter((x: AgentResponse) => !x.is_final_position);
-        const final = r.filter((x: AgentResponse) => x.is_final_position);
-        setAgentResponses(nonFinal);
-        setFinalPositions(final);
-
-        // Figure out which agent is "next" (typing)
-        const respondedAgents = new Set(nonFinal.map((x: AgentResponse) => x.agent_name));
-        const nextAgent = ALL_AGENTS.find(a => !respondedAgents.has(a)) || null;
-        setTypingAgent(nextAgent);
-      }
+      // Figure out which agent is "next" (typing)
+      const respondedAgents = new Set(nonFinal.map((x: AgentResponse) => x.agent_name));
+      const nextAgent = ALL_AGENTS.find(a => !respondedAgents.has(a)) || null;
+      setTypingAgent(nextAgent);
     }, 3000);
 
     return () => clearInterval(poll);
@@ -206,8 +190,8 @@ export function DebateView({
   // Increment views on mount
   useEffect(() => {
     const increment = async () => {
-      const { error } = await supabase.rpc('increment_views', { thread_id: thread.id });
-      if (!error) {
+      const res = await fetch(`/api/threads/${thread.id}/view`, { method: 'POST' }).catch(() => null);
+      if (res?.ok) {
         // Optimistically update the local state view count
         // setThread((prev: any) => prev ? { ...prev, views: (prev.views || 0) + 1 } : prev);
       }

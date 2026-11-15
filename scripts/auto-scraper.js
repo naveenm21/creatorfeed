@@ -2,8 +2,8 @@
 require('dotenv').config({ path: '.env.local' });
 
 // We use the same environment variables as Next.js
-const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Internal API key: authorizes calls to /api/intake, /api/debate and /api/internal/*
+const INTERNAL_API_KEY = process.env.INTERNAL_API_KEY;
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
 
 const SUBREDDITS = [
@@ -49,41 +49,37 @@ function stripHtml(html) {
   return text.trim();
 }
 
-async function supabaseQuery(endpoint, method = 'GET', body = null) {
-  const options = {
+async function internalApi(apiPath, method = 'GET', body = null) {
+  const fetch = (await import('node-fetch')).default;
+  const response = await fetch(`${API_BASE_URL}${apiPath}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'apikey': SUPABASE_SERVICE_KEY,
-      'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`
-    }
-  };
-  if (body) options.body = JSON.stringify(body);
-  
-  const fetch = (await import('node-fetch')).default;
-  const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, options);
+      'Authorization': `Bearer ${INTERNAL_API_KEY}`
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
   if (!response.ok) {
-    throw new Error(`Supabase query failed: ${response.status} ${await response.text()}`);
+    throw new Error(`${method} ${apiPath} failed: ${response.status} ${await response.text()}`);
   }
-  const text = await response.text();
-  return text ? JSON.parse(text) : null;
+  return response.json();
 }
 
 async function main() {
   console.log(`Starting Auto-Pilot Scraper at ${new Date().toISOString()}`);
 
-  if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
-    console.error("Missing Supabase credentials in environment.");
+  if (!INTERNAL_API_KEY) {
+    console.error("Missing INTERNAL_API_KEY in environment.");
     process.exit(1);
   }
 
   // 1. Fetch existing threads to prevent duplicates
   console.log('Fetching existing threads to prevent duplicates...');
-  const existingThreads = await supabaseQuery('threads?select=raw_submission');
+  const { submissions } = await internalApi('/api/internal/submissions');
   const existingSubmissions = new Set();
-  if (Array.isArray(existingThreads)) {
-    existingThreads.forEach(r => {
-      if (r.raw_submission) existingSubmissions.add(r.raw_submission);
+  if (Array.isArray(submissions)) {
+    submissions.forEach(text => {
+      if (text) existingSubmissions.add(text);
     });
   }
   console.log(`Found ${existingSubmissions.size} existing threads in DB.`);
@@ -198,7 +194,7 @@ async function main() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-service-role': SUPABASE_SERVICE_KEY
+          'Authorization': `Bearer ${INTERNAL_API_KEY}`
         },
         body: JSON.stringify({
           rawSubmission: post.content,
@@ -225,7 +221,7 @@ async function main() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-service-role': SUPABASE_SERVICE_KEY
+          'Authorization': `Bearer ${INTERNAL_API_KEY}`
         },
         body: JSON.stringify({
           threadId: intakeData.threadId
@@ -264,11 +260,10 @@ async function main() {
             if (cleanComment.split(' ').length < 10) continue;
 
             // Insert into human_replies directly
-            await supabaseQuery('human_replies', 'POST', {
-              thread_id: intakeData.threadId,
-              user_id: null,
-              author_name: "Community Perspective",
-              reply_text: cleanComment
+            await internalApi('/api/internal/replies', 'POST', {
+              threadId: intakeData.threadId,
+              authorName: "Community Perspective",
+              replyText: cleanComment
             });
             console.log(`Injected human comment ${insertedComments + 1}/2`);
             insertedComments++;

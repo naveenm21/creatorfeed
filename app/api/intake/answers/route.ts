@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-admin'
+import { query } from '@/lib/db'
+import { isInternalRequest } from '@/lib/internal'
 
 export async function POST(request: NextRequest) {
   try {
-    const isSeeded = 
-      request.headers.get('x-service-role') === 
-      process.env.SUPABASE_SERVICE_ROLE_KEY
+    const isSeeded = isInternalRequest(request)
 
     const { threadId, answers } = await request.json()
 
@@ -29,11 +28,10 @@ export async function POST(request: NextRequest) {
     }
 
     for (const answer of answers) {
-      await supabaseAdmin
-        .from('intake_questions')
-        .update({ answer: answer.answer })
-        .eq('thread_id', threadId)
-        .eq('question_order', answer.question_order)
+      await query(
+        `UPDATE intake_questions SET answer = $1 WHERE thread_id = $2 AND question_order = $3`,
+        [answer.answer, threadId, answer.question_order]
+      )
     }
 
     const platformAnswer = answers.find(
@@ -43,23 +41,15 @@ export async function POST(request: NextRequest) {
       (a: {field?: string}) => a.field === 'follower_range'
     )
 
-    const updateData: Record<string, string> = {
-      intake_status: 'ready'
-    }
-    if (platformAnswer) {
-      updateData.platform = platformAnswer.answer
-    }
-    if (followerAnswer) {
-      updateData.follower_range = followerAnswer.answer
-    }
+    await query(
+      `UPDATE threads
+          SET intake_status = 'ready',
+              platform = COALESCE($2, platform),
+              follower_range = COALESCE($3, follower_range)
+        WHERE id = $1`,
+      [threadId, platformAnswer?.answer ?? null, followerAnswer?.answer ?? null]
+    )
 
-    await supabaseAdmin
-      .from('threads')
-      .update(updateData)
-      .eq('id', threadId)
-
-    // Internal server-to-server call must use http://localhost — never the public HTTPS URL
-    // (nginx handles TLS externally; the Node.js process is plain HTTP on port 3000)
     // Internal server-to-server call must use http://localhost — never the public HTTPS URL
     // (nginx handles TLS externally; the Node.js process is plain HTTP on port 3000)
     const port = process.env.PORT || 3000
@@ -69,8 +59,7 @@ export async function POST(request: NextRequest) {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.INTERNAL_API_KEY}`,
-          'x-service-role': process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+          'Authorization': `Bearer ${process.env.INTERNAL_API_KEY}`
         },
         body: JSON.stringify({ threadId })
       }

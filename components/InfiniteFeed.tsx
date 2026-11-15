@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { DebateCard } from '@/components/DebateCard';
-import { createClient } from '@/lib/supabase';
 import { slugify } from '@/lib/slug';
 import { getSeededViews, formatViews } from '@/lib/utils';
 import Link from 'next/link';
@@ -42,40 +42,20 @@ export function InfiniteFeed({ initialDebates, initialPage = 1, platform }: { in
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(initialPage);
   const observerTarget = useRef<HTMLDivElement>(null);
-  const supabase = createClient();
 
   const fetchMoreDebates = useCallback(async () => {
     if (loading || !hasMore) return;
     setLoading(true);
 
-    const from = page * 20;
-    const to = from + 19;
+    const params = new URLSearchParams({ page: String(page) });
+    if (platform) params.set('platform', platform);
 
-    let query = supabase
-      .from('threads')
-      .select(`
-        id,
-        topic,
-        platform,
-        creator_handle,
-        submitted_by,
-        raw_submission,
-        views,
-        created_at,
-        agent_responses(count),
-        human_replies(count)
-      `)
-      .eq('status', 'published')
-      .order('created_at', { ascending: false })
-      .range(from, to);
-
-    if (platform) {
-      query = query.ilike('platform', platform);
-    }
-
-    const { data: threads, error } = await query;
-
-    if (error) {
+    let threads: any[] = [];
+    try {
+      const res = await fetch(`/api/feed?${params}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      threads = (await res.json()).threads;
+    } catch (error) {
       console.error('Error fetching more debates:', error);
       setLoading(false);
       return;
@@ -85,7 +65,7 @@ export function InfiniteFeed({ initialDebates, initialPage = 1, platform }: { in
       setHasMore(false);
     }
 
-    const newDebates = (threads || []).map(thread => ({
+    const newDebates = (threads || []).map((thread: any) => ({
       id: thread.id,
       creatorName: thread.submitted_by || 'Anonymous',
       platform: thread.platform || 'Multi-platform',
@@ -103,7 +83,7 @@ export function InfiniteFeed({ initialDebates, initialPage = 1, platform }: { in
     setDebates(prev => [...prev, ...newDebates]);
     setPage(prev => prev + 1);
     setLoading(false);
-  }, [loading, hasMore, page, supabase, platform]);
+  }, [loading, hasMore, page, platform]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
