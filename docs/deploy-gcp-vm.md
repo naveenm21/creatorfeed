@@ -1,4 +1,4 @@
-# Deploying CreatorFeed on the GCP VM (Ubuntu 22.04)
+# Deploying CreatorFeed on the GCP VM (Ubuntu 22.04+)
 
 How to run CreatorFeed on a Compute Engine VM against Cloud SQL, then move
 `feed.creedom.ai` over from the old DigitalOcean VPS. The layout is the same as
@@ -35,10 +35,10 @@ SSH in with the console's **SSH** button or `gcloud compute ssh <vm-name> --zone
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git nginx certbot python3-certbot-nginx build-essential postgresql-client
 
-# Node.js 20 LTS
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+# Node.js 20 or 22 LTS (skip if `node -v` already shows one of these)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
-node -v   # v20.x
+node -v   # v22.x
 
 # PM2 (process manager)
 sudo npm install -g pm2
@@ -115,6 +115,7 @@ DATABASE_CA_CERT=/etc/creatorfeed/server-ca.pem
 # Never set DATABASE_SSL_INSECURE here.
 
 # --- Auth.js ---
+AUTH_URL=https://feed.creedom.ai     # required: behind nginx, Next 14 reports its own URL as localhost:3000
 AUTH_SECRET=<run: openssl rand -base64 33   (new value, not the one from your laptop)>
 AUTH_GOOGLE_ID=<same OAuth client as local>
 AUTH_GOOGLE_SECRET=<same OAuth client as local>
@@ -262,7 +263,7 @@ pm2 logs creatorfeed --lines 50
 | Connection timeout to `10.34.113.3` | The VM isn't on the `default` VPC, or isn't in a region with access to it. |
 | `password authentication failed` | Wrong `creatorfeed_app` password, or special characters not URL-encoded in `DATABASE_URL`. |
 | 502 Bad Gateway | The app isn't running: `sudo -iu creatorfeed pm2 status` / `pm2 logs creatorfeed`. |
-| Google `redirect_uri_mismatch` | nginx isn't sending `X-Forwarded-Proto`/`Host`, or the OAuth client lacks `https://feed.creedom.ai/api/auth/callback/google`. |
+| Google `redirect_uri_mismatch` | `AUTH_URL` missing (callback becomes `http://localhost:3000/...`; check `curl -s localhost:3000/api/auth/providers`), or the OAuth client lacks `https://feed.creedom.ai/api/auth/callback/google`. |
 | Login loop / `MissingSecret` | `AUTH_SECRET` not set; restart PM2 after editing env. |
 | Build killed / exit 137 | Out of memory: check swap (`free -h`) or use a larger machine type. |
 | Debates stay in "debating" | `INTERNAL_API_KEY` missing or different between callers; check `pm2 logs` for `Unauthorized attempt to trigger debate engine`. |
